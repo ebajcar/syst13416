@@ -29,10 +29,43 @@ code {
 .sher-teal {
   color: #00b2ce;
 }
+.bg-sher-teal {
+  background-color: #00b2ce;
+}
 figcaption {
   color: #00b2ce;
   font-weight: 500;
 }
+
+* {
+  box-sizing: border-box;
+}
+
+span.template-3col {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 7px;
+  box-shadow: 0 2px 6px -2px rgba(0, 0, 0, 0.42);
+  height: 15vh;
+  display: grid;
+  grid-gap: 0.5rem;
+}
+span b {
+  background-color: #333940;
+  border-radius: 4px;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-size: 1.5rem;
+  1
+}
+span.template-3col {
+  grid-template-columns: repeat(7, 1fr);
+}
+
+
+
+
 </style>
 </head>
 
@@ -73,8 +106,7 @@ figcaption {
       </div>   
       <nav id="navList" class="min-h-screen hidden md:block sidebar-nav flex-grow px-1 lg:px-4 pb-4 md:pb-0 md:overflow-y-auto break-words">
 
-          <button class="bg-dark-gray sher-teal active:bg-purple-600 font-bold uppercase text-base px-3 py-3 rounded shadow-md hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button"><a href="index.html" style="color:white">The Essence of Unix</button>
-          <!--a class="bg-gray-100 text-gray-900" href="index.html">The Essence of Unix</a-->
+          <div class="bg-gray-100 px-3 py-3"><small class="sher-teal">Module 1</small><br><span class="font-bold uppercase text-base">The Essence of Unix</span></div>
           <a href="computers.html">Computers</a>
           <a href="languages.html">Programming languages</a>
           <a href="operating-system.html">Operating system</a>
@@ -87,25 +119,80 @@ figcaption {
     </div>  
         
     <section class="pt-4 px-2 md:px-0 lg:px-4 pb-16 w-full overflow-hidden">
-        <h1 class="text-4xl font-medium leading-tight mt-0 mb-2 text-black-600">The Essence of Unix</h1>
+        
 
         <h6 class="text-lg font-light leading-relaxed mt-6 mb-4 text-gray-800"><q>Linux (/ˈliːnʊks/ is a family of open-source Unix-like operating systems based on the Linux kernel,an operating system kernel first released on September 17, 1991, by Linus Torvalds.Linux is typically packaged in a Linux distribution.</q><br> <a href="https://en.wikipedia.org/wiki/Linux" target="_blank">&mdash;wikipedia</a></h6>
 
 
+
+
 <!-- Learning Objectives-->
-<div class="flex justify-center mt-6 w-full">
-  <div class="block p-6 rounded-lg shadow-lg bg-white w-full">
-    <h5 class="text-2xl font-semibold sher-teal">Concepts and Terminology</h5>
-	<ul class="list-outside">
-		<li>Computers</li>
-        <li>Programming languages</li>
-        <li>Operating system</li>
-        <li>Why Linux?</li>
-        <li>Standards</li>
-	</ul>
+<div class="my-5">
+  <div class="flex w-full mx-auto overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800">
+    <div class="flex items-center justify-center px-4 bg-sher-teal">
+        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="triangle-exclamation" class="w-6 h-6 text-white fill-current" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M506.3 417l-213.3-364c-16.33-28-57.54-28-73.98 0l-213.2 364C-10.59 444.9 9.849 480 42.74 480h426.6C502.1 480 522.6 445 506.3 417zM232 168c0-13.25 10.75-24 24-24S280 154.8 280 168v128c0 13.25-10.75 24-23.1 24S232 309.3 232 296V168zM256 416c-17.36 0-31.44-14.08-31.44-31.44c0-17.36 14.07-31.44 31.44-31.44s31.44 14.08 31.44 31.44C287.4 401.9 273.4 416 256 416z"></path></svg>     
+    </div>
+    <div class="px-4 py-2 -mx-3">
+      <div class="mx-3">
+        <h5 class="text-2xl font-semibold sher-teal">In this module...</h5>
+        <ul class="list-outside">
+            <li>Understand and describe computing environments and their key components. Overview basics of computer hardware and software. Discuss background and philosophy of computers.</li>
+            <li>Acknowledge responsibilities and computer use concerns.</li>
+            <li>Explain what is an operating system and what are the common ones used today.</li>
+            <li>Contrast open source and proprietarycode.</li>
+            <li>Explain the role of international standards in computing.</li>
+            <li>Contrast the use of GUI and CLI. Distinguish between client and server environment.</li>
+            <li>Discuss Unix/Linux operating system, its role and components. Summarize the history of the UNIX Operating System. Compare characteristics of UNIX with other OS. Illustrate features and advantages of using the UNIX OS.</li>
+            <li>Describe Linux Account and what it provides.</li>
+            <li>Use remote login to log on and off the computer network.</li>
+            <li>Understand and use the following commands:             
+            <span class="template-3col">
+	<b>ssh</b>
+	<b>login</b>
+	<b>bash</b>
+	<b>sh</b>
+	<b>csh</b>
+    <b>tcsh</b>
+    <b>ksh</b>
+    <b>logout</b><b>exit</b><b>su</b><b>sudo</b><b>passwd</b><b>man</b>
+    
+</span>
+            </li>
+        </ul>
+        
+      </div>
+    </div>
   </div>
 </div>
 
+<!-- Learning Objectives-->
+<div class="my-5">
+  <div class="flex w-full mx-auto overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800">
+    <div class="flex items-center justify-center px-4 bg-sher-teal">
+        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="triangle-exclamation" class="w-6 h-6 text-white fill-current" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M506.3 417l-213.3-364c-16.33-28-57.54-28-73.98 0l-213.2 364C-10.59 444.9 9.849 480 42.74 480h426.6C502.1 480 522.6 445 506.3 417zM232 168c0-13.25 10.75-24 24-24S280 154.8 280 168v128c0 13.25-10.75 24-23.1 24S232 309.3 232 296V168zM256 416c-17.36 0-31.44-14.08-31.44-31.44c0-17.36 14.07-31.44 31.44-31.44s31.44 14.08 31.44 31.44C287.4 401.9 273.4 416 256 416z"></path></svg>     
+    </div>
+    <div class="px-4 py-2 -mx-3">
+      <div class="mx-3">
+        <h5 class="text-2xl font-semibold sher-teal">Concepts and Terminology</h5>
+        <ul class="list-outside">
+            <li>Computers</li>
+            <li>Programming languages</li>
+            <li>Operating system</li>
+            <li>Why Linux?</li>
+            <li>Standards</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Why Linux? -->
+<div class="flex justify-center mt-6 w-full">
+  <div class="block p-6 rounded-lg shadow-lg bg-white w-full">
+    <h5 class="text-2xl font-semibold sher-teal">Why Linux?</h5>
+    <iframe width="500" height="315" src="http://www.youtube.com/embed/yVpbFMhOAwE" frameborder="0" allowfullscreen></iframe>
+  </div>
+</div>
 
 </section>
   </main>
