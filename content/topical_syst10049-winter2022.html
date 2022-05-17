@@ -5,7 +5,13 @@
     <title>Class Plan Spring 2022
     </title>
       <!-- Bootstrap CSS -->
+      <!--
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+  -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <style>
       * {
         box-sizing: border-box;
@@ -15,6 +21,7 @@
         margin: 0;
         padding: 0;
         font-family:Verdana,sans-serif;
+        font-size: 1em;
       }
       @media only screen {
         body {
@@ -149,7 +156,7 @@
 <tr id="01">
 <td class="cell-title">Week 1</td>
 <td class="cell-date"><time>05/09/2022 → 05/13/2022 </time></td>
-<td class="cell-desc">M1 The Essence of Unix &mdash;<small>Background, philosophy, and history of Unix and Linux operating system • Overview of basics of digital computer hardware. Computer use.</small></td>
+<td class="cell-desc">M1 The Essence of Unix &mdash;<small>Background, philosophy, and history of Unix and Linux operating system • Overview of basics of digital computer hardware. Computer use.</small> <br><a href="slides/m1-extra.html" target="_blank">Week 1 Overview Slides</a></td>
 <td>1,2,5</td>
 <td class="assigned"><a href="worksheets/module1.html" target="_blank">Worksheet 1</a></td>
 <td class="due"></td>
@@ -159,7 +166,14 @@
 <td class="cell-date"><time>05/16/2022 → 05/20/2022 </time></td>
 <td class="cell-desc">M2 Linux Command Line &mdash;<small> "One of the most important features of the shell is that users can use it as a programming language." [ Mark G. Sobell ]</small></td>
 <td>3</td>
-<td class="assigned"><span style="color:blue;">Quiz 1</span><br>Worksheet 2</td>
+<td class="assigned"><a href="#" data-toggle="tooltip" title="Will be released later in the week!">Quiz 1</a><br><a href="worksheets/module2.html" target="_blank">Worksheet 2</a>
+
+<script>
+$(document).ready(function(){
+  $('[data-toggle="tooltip"]').tooltip();
+});
+</script>
+</td>
 <td class="due">Worksheet 1</td>
 </tr>
 <tr id="03">
@@ -167,7 +181,7 @@
 <td class="cell-date"><time>05/23/2022 → 05/27/2022 </time></td>
 <td class="cell-desc">M3Linux File System &mdash;<small>File systems, storage, organization, and navigation.</small></td>
 <td>4,6</td>
-<td class="assigned"><span style="color:orange;">Assignment 1</span><br>Worksheet 3</td>
+<td class="assigned"><span style="color:orange;">Assignment 1</span><br><a href="worksheets/module3.html" target="_blank">Worksheet 3</a></td>
 <td class="due">Worksheet 2</td>
 </tr>
 <tr id="04">
@@ -175,7 +189,7 @@
 <td class="cell-date"><time>05/30/2022 → 06/03/2022 </time></td>
 <td class="cell-desc">M4 Linux Files &mdash;<small>ASCII text files and related utilitites; vim editor; data file formats and organization</small></td>
 <td>4,6</td>
-<td class="assigned"><span style="color:blue;">Quiz 2</span><br>Worksheet 4</td>
+<td class="assigned"><span style="color:blue;">Quiz 2</span><br><a href="worksheets/module4.html" target="_blank">Worksheet 4</a></td>
 <td class="due"><span style="color:blue;">Quiz 1</span><br>Worksheet 3</td>
 </tr>
 <tr id="05">
@@ -183,7 +197,7 @@
 <td class="cell-date"><time>06/06/2022 → 06/10/2022 </time></td>
 <td class="cell-desc">M4 Linux Files &mdash;<small>ASCII text files and related utilitites; vim editor; data file formats and organization</small></td>
 <td>4,6</td>
-<td class="assigned">Worksheet 5</td>
+<td class="assigned"><a href="worksheets/module5.html" target="_blank">Worksheet 5</a></td>
 <td class="due"><span style="color:orange;">Assignment 1</span><br>Worksheet 4</td>
 </tr>
 <tr id="06">
