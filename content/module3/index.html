@@ -29,10 +29,40 @@ code {
 .sher-teal {
   color: #00b2ce;
 }
+.bg-sher-teal {
+  background-color: #00b2ce;
+}
 figcaption {
   color: #00b2ce;
   font-weight: 500;
 }
+
+* {
+  box-sizing: border-box;
+}
+
+span.template-3col {
+  background: #fff;
+  padding: 0.2rem;
+  border-radius: 7px;
+  box-shadow: 0 2px 6px -2px rgba(0, 0, 0, 0.42);
+  height: 8vh;
+  display: grid;
+  grid-gap: 0.5rem;
+}
+span b {
+  background-color: #333940;
+  border-radius: 4px;
+  padding: 0.2rem 1.5rem;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-size: 1.5rem;
+}
+span.template-3col {
+  grid-template-columns: repeat(7, 1fr);
+}
+
 </style>
 </head>
 
@@ -73,32 +103,99 @@ figcaption {
       </div>   
       <nav id="navList" class="min-h-screen hidden md:block sidebar-nav flex-grow px-1 lg:px-4 pb-4 md:pb-0 md:overflow-y-auto break-words">
 
-          <button class="bg-dark-gray sher-teal active:bg-purple-600 font-bold uppercase text-base px-3 py-3 rounded shadow-md hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button"><a href="index.html" style="color:white">Module 2</button>
-          <!--a class="bg-gray-100 text-gray-900" href="index.html">The Essence of Unix</a-->
-          <a href="a.html">a</a>
-          
-          
+          <div class="bg-gray-100 px-3 py-3"><small class="sher-teal">Module 3</small><br><span class="font-bold uppercase text-base">Linux File System</span></div>
+          <a href="environment.html">File systems</a>
+          <a href="hci.html">Unix file system</a>
+          <a href="cli.html">Directories</a>
       </nav>
       
     </div>  
         
     <section class="pt-4 px-2 md:px-0 lg:px-4 pb-16 w-full overflow-hidden">
-        <h1 class="text-4xl font-medium leading-tight mt-0 mb-2 text-black-600">The Essence of Unix</h1>
-
-        <h6 class="text-lg font-light leading-relaxed mt-6 mb-4 text-gray-800"><q>Linux (/ˈliːnʊks/ is a family of open-source Unix-like operating systems based on the Linux kernel,an operating system kernel first released on September 17, 1991, by Linus Torvalds.Linux is typically packaged in a Linux distribution.</q><br> <a href="https://en.wikipedia.org/wiki/Linux" target="_blank">&mdash;wikipedia</a></h6>
-
+    <button title="4.&nbsp;&nbsp; Illustrate how UNIX manages files and directories.">
+										Learning Outcome 4</button>&nbsp;&nbsp;
+						<button title="6.&nbsp;&nbsp; Use file system tools">
+										Learning Outcome 6</button>
 
 <!-- Learning Objectives-->
-<div class="flex justify-center mt-6 w-full">
-  <div class="block p-6 rounded-lg shadow-lg bg-white w-full">
-    <h5 class="text-2xl font-semibold sher-teal">Concepts and Terminology</h5>
-	<ul class="list-outside">
-		<li>a</li>
-        <li>a</li>
-	</ul>
+<div class="my-5">
+  <div class="flex w-full mx-auto overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800">
+    <div class="flex items-center justify-center px-4 bg-sher-teal">
+        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="triangle-exclamation" class="w-6 h-6 text-white fill-current" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M506.3 417l-213.3-364c-16.33-28-57.54-28-73.98 0l-213.2 364C-10.59 444.9 9.849 480 42.74 480h426.6C502.1 480 522.6 445 506.3 417zM232 168c0-13.25 10.75-24 24-24S280 154.8 280 168v128c0 13.25-10.75 24-23.1 24S232 309.3 232 296V168zM256 416c-17.36 0-31.44-14.08-31.44-31.44c0-17.36 14.07-31.44 31.44-31.44s31.44 14.08 31.44 31.44C287.4 401.9 273.4 416 256 416z"></path></svg>     
+    </div>
+    <div class="px-4 py-2 -mx-3">
+      <div class="mx-3">
+        <h5 class="text-2xl font-semibold sher-teal">In this module...</h5>
+        <ul class="list-outside">
+            <li>Illustrate how Linux manages files and directories.</li>
+            <li>Describe the role of partitions, master boot record, and partition table.</li>
+            <li>Explore the difference among file system types (ntfs, fat32, ext3, ...)</li>
+            <li>Define the differences and similarities between directories and folders.</li>
+            <li>Sketch the parent-child relationship of directories and their contents.</li>
+            <li>Use shortcuts for the current working directory, the parent, the root, and user's home directory.</li>
+            <li>Construct a directory tree to organize a Linux account.</li>
+            <li>Distinguish between relative and absolute pathnames.</li>
+            <li>Navigate a directory tree.</li>
+            <li>Duplicate and rename directories.</li>
+            <li>Delete directories without removing entire account.</li>
+            
+            <li>Understand and use the following commands:             
+            <span class="template-3col">
+                <b>pwd</b>
+                <b>cd</b>
+                <b>ls</b>
+                <b>mkdir</b>
+                <b>rmdir</b>
+                <b>rm</b>
+                <b>ln</b>
+                </span>
+            </li>
+        </ul>
+        
+      </div>
+    </div>
   </div>
 </div>
 
+
+<!-- Concepts and Terminology -->
+<div class="my-5">
+  <div class="flex w-full mx-auto overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800">
+    <div class="flex items-center justify-center px-4 bg-sher-teal">
+        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="triangle-exclamation" class="w-6 h-6 text-white fill-current" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M506.3 417l-213.3-364c-16.33-28-57.54-28-73.98 0l-213.2 364C-10.59 444.9 9.849 480 42.74 480h426.6C502.1 480 522.6 445 506.3 417zM232 168c0-13.25 10.75-24 24-24S280 154.8 280 168v128c0 13.25-10.75 24-23.1 24S232 309.3 232 296V168zM256 416c-17.36 0-31.44-14.08-31.44-31.44c0-17.36 14.07-31.44 31.44-31.44s31.44 14.08 31.44 31.44C287.4 401.9 273.4 416 256 416z"></path></svg>     
+    </div>
+    <div class="px-4 py-2 -mx-3">
+      <div class="mx-3">
+        <h5 class="text-2xl font-semibold sher-teal">Concepts and Terminology</h5>
+        <ul class="list-outside">
+            <li>File systems</li>
+            <li>Unix file system</li>
+            <li>Directories</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- videos -->
+<div class="flex justify-center mt-6 w-full">
+  <div class="block p-6 rounded-lg shadow-lg bg-white w-full">
+    <h5 class="text-2xl font-semibold sher-teal">linkedin.com learning &mdash; videos</h5>
+    <ul>
+    <li>
+    <a href="https://www.linkedin.com/learning-login/share?account=2272289&forceAccount=false&redirect=https%3A%2F%2Fwww.linkedin.com%2Flearning%2Flinux-bash-shell-and-scripts%3Ftrk%3Dshare_ent_url%26shareId%3Da%252FfYJ9fbSx%252BT2knEthWV5g%253D%253D" target="_blank">Linux: Bash Shell and Scripts  (2h 46m)<ol><li>Intro to Bash Scripting</li></ol></a>
+    </li>
+    </ul>
+    <h5 class="text-2xl font-semibold sher-teal">Suggested reading</h5>
+    <ul>
+    <li>
+    <strong>Chapter 4</strong> of A Practical Guide to Linux Commands, Editors, and Shell Programming by Mark Sobell. (see home page for reference information and link to Sheridan Library)
+    </li>
+
+    </ul>
+  </div>
+</div>
 
 </section>
   </main>

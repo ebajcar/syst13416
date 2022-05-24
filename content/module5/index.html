@@ -29,9 +29,38 @@ code {
 .sher-teal {
   color: #00b2ce;
 }
+.bg-sher-teal {
+  background-color: #00b2ce;
+}
 figcaption {
   color: #00b2ce;
   font-weight: 500;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+span.template-3col {
+  background: #fff;
+  padding: 0.2rem;
+  border-radius: 7px;
+  box-shadow: 0 2px 6px -2px rgba(0, 0, 0, 0.42);
+  height: 20vh;
+  display: grid;
+  grid-gap: 0.5rem;
+}
+span b {
+  background-color: #333940;
+  border-radius: 4px;
+  padding: 0.2rem 1.5rem;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-size: 1.5rem;
+}
+span.template-3col {
+  grid-template-columns: repeat(6, 1fr);
 }
 </style>
 </head>
@@ -73,32 +102,109 @@ figcaption {
       </div>   
       <nav id="navList" class="min-h-screen hidden md:block sidebar-nav flex-grow px-1 lg:px-4 pb-4 md:pb-0 md:overflow-y-auto break-words">
 
-          <button class="bg-dark-gray sher-teal active:bg-purple-600 font-bold uppercase text-base px-3 py-3 rounded shadow-md hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button"><a href="index.html" style="color:white">Module 2</button>
-          <!--a class="bg-gray-100 text-gray-900" href="index.html">The Essence of Unix</a-->
-          <a href="a.html">a</a>
-          
-          
+          <div class="bg-gray-100 px-3 py-3"><small class="sher-teal">Module 5</small><br><span class="font-bold uppercase text-base">Bash Script Programming</span></div>
+          <a href="data.html">Data, Information, and Database tables</a>
+          <a href="filters.html">Simple filters and table manipulation</a>
+          <a href="tables.html">Working with multiple tables</a>
+          <a href="reports.html">Formatting output and reports</a>
       </nav>
+
       
     </div>  
         
     <section class="pt-4 px-2 md:px-0 lg:px-4 pb-16 w-full overflow-hidden">
-        <h1 class="text-4xl font-medium leading-tight mt-0 mb-2 text-black-600">The Essence of Unix</h1>
-
-        <h6 class="text-lg font-light leading-relaxed mt-6 mb-4 text-gray-800"><q>Linux (/ˈliːnʊks/ is a family of open-source Unix-like operating systems based on the Linux kernel,an operating system kernel first released on September 17, 1991, by Linus Torvalds.Linux is typically packaged in a Linux distribution.</q><br> <a href="https://en.wikipedia.org/wiki/Linux" target="_blank">&mdash;wikipedia</a></h6>
+        <button title="11.&nbsp;&nbsp; Solve simple problems by programming in shell scripting languages">
+										Learning Outcome 11</button>.
 
 
 <!-- Learning Objectives-->
-<div class="flex justify-center mt-6 w-full">
-  <div class="block p-6 rounded-lg shadow-lg bg-white w-full">
-    <h5 class="text-2xl font-semibold sher-teal">Concepts and Terminology</h5>
-	<ul class="list-outside">
-		<li>a</li>
-        <li>a</li>
-	</ul>
+<div class="my-5">
+  <div class="flex w-full mx-auto overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800">
+    <div class="flex items-center justify-center px-4 bg-sher-teal">
+        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="triangle-exclamation" class="w-6 h-6 text-white fill-current" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M506.3 417l-213.3-364c-16.33-28-57.54-28-73.98 0l-213.2 364C-10.59 444.9 9.849 480 42.74 480h426.6C502.1 480 522.6 445 506.3 417zM232 168c0-13.25 10.75-24 24-24S280 154.8 280 168v128c0 13.25-10.75 24-23.1 24S232 309.3 232 296V168zM256 416c-17.36 0-31.44-14.08-31.44-31.44c0-17.36 14.07-31.44 31.44-31.44s31.44 14.08 31.44 31.44C287.4 401.9 273.4 416 256 416z"></path></svg>     
+    </div>
+    <div class="px-4 py-2 -mx-3">
+      <div class="mx-3">
+        <h5 class="text-2xl font-semibold sher-teal">In this module...</h5>
+        <ul class="list-outside">
+            <li>Use standard programming process to create bash shell scripts to solve a variety of problems. Write, test, and debug scripts to automate common tasks.</li>
+            <li>Understand and use shell, environment, and user-defined variables and data structures.</li>
+            <li>Use a variety of operations, including shell operators, defining operators, evaluating operators, arithmetic operators, and conditional operators.</li>
+            <li>Use sequence, iteration, and decision structures to control the flow of the script execution.</li>
+            <li>Use command line arguments, positional parameters, and user input to pass data to the script.</li>
+
+
+            <li>Understand and use the following commands:             
+            <span class="template-3col">
+                <b>test</b>
+                <b>expr</b>
+                <b>case</b>
+                <b>if</b>
+                <b>while</b>
+                <b>for</b>
+                <b>select</b>
+                <b>shift</b>
+                <b>let</b>
+                <b>read</b>
+                <b>echo</b>
+                <b>tput</b>
+                <b>bc</b>
+                </span>
+            </li>
+        </ul>
+        
+      </div>
+    </div>
   </div>
 </div>
 
+
+<!-- Concepts and Terminology -->
+<div class="my-5">
+  <div class="flex w-full mx-auto overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800">
+    <div class="flex items-center justify-center px-4 bg-sher-teal">
+        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="triangle-exclamation" class="w-6 h-6 text-white fill-current" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M506.3 417l-213.3-364c-16.33-28-57.54-28-73.98 0l-213.2 364C-10.59 444.9 9.849 480 42.74 480h426.6C502.1 480 522.6 445 506.3 417zM232 168c0-13.25 10.75-24 24-24S280 154.8 280 168v128c0 13.25-10.75 24-23.1 24S232 309.3 232 296V168zM256 416c-17.36 0-31.44-14.08-31.44-31.44c0-17.36 14.07-31.44 31.44-31.44s31.44 14.08 31.44 31.44C287.4 401.9 273.4 416 256 416z"></path></svg>     
+    </div>
+    <div class="px-4 py-2 -mx-3">
+      <div class="mx-3">
+        <h5 class="text-2xl font-semibold sher-teal">Concepts and Terminology</h5>
+        <ul class="list-outside">
+            <li>Data, Information, and Database tables</li>
+            <li>Simple filters and table manipulation</li>
+            <li>Working with multiple tables</li>
+            <li>Formatting output and reports</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- videos -->
+<div class="flex justify-center mt-6 w-full">
+  <div class="block p-6 rounded-lg shadow-lg bg-white w-full">
+    <h5 class="text-2xl font-semibold sher-teal">linkedin.com learning &mdash; videos</h5>
+    <ul>
+    <li>
+        <a href="https://www.linkedin.com/learning-login/share?account=2272289&forceAccount=false&redirect=https%3A%2F%2Fwww.linkedin.com%2Flearning%2Flearning-linux-shell-scripting-2018%3Ftrk%3Dshare_ent_url%26shareId%3D130ep9AUQUOLz8H2trn%252BaQ%253D%253D" target="_blank">
+            Learning Linux Shell Scripting
+            <ol>
+                <li>3. Branching and loops</li>
+                <li>7. Functions</li>
+            </ol>
+        </a>
+    </li>
+    </ul>
+    <h5 class="text-2xl font-semibold sher-teal">Suggested reading</h5>
+    <ul>
+    <li>
+    <strong>Chapter 8, Chapter 10, and Chapter 13</strong> of A Practical Guide to Linux Commands, Editors, and Shell Programming by Mark Sobell. (see home page for reference information and link to Sheridan Library)
+    </li>
+
+    </ul>
+  </div>
+</div>
 
 </section>
   </main>

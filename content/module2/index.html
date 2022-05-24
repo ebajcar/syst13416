@@ -4,7 +4,7 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover"/>
 <title> SYST13416 </title>
-<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css">
 <link rel="stylesheet" href="../css/styles.css"/> 
 <link rel="stylesheet" href="../css/prism_coy_dev.css"  />
 <style>
@@ -40,10 +40,9 @@ figcaption {
 * {
   box-sizing: border-box;
 }
-
 span.template-3col {
   background: #fff;
-  padding: 1rem;
+  padding: 0.2rem;
   border-radius: 7px;
   box-shadow: 0 2px 6px -2px rgba(0, 0, 0, 0.42);
   height: 15vh;
@@ -53,14 +52,14 @@ span.template-3col {
 span b {
   background-color: #333940;
   border-radius: 4px;
+  padding: 0.2rem 1.5rem;
   display: grid;
   place-items: center;
   color: #fff;
   font-size: 1.5rem;
-  1
 }
 span.template-3col {
-  grid-template-columns: repeat(7, 1fr);
+  grid-template-columns: repeat(6, 1fr);
 }
 
 </style>
@@ -104,7 +103,7 @@ span.template-3col {
       </div>   
       <nav id="navList" class="min-h-screen hidden md:block sidebar-nav flex-grow px-1 lg:px-4 pb-4 md:pb-0 md:overflow-y-auto break-words">
 
-          <div class="bg-gray-100 px-3 py-3"><small class="sher-teal">Module 2</small><br><span class="font-bold uppercase text-base">The Command Line</span></div>
+          <div class="bg-gray-100 px-3 py-3"><small class="sher-teal">Module 2</small><br><span class="font-bold uppercase text-base">Linux Command Line</span></div>
           <a href="environment.html">Linux work environment</a>
           <a href="hci.html">Human-computer interaction</a>
           <a href="cli.html">Command line interface</a>
@@ -113,12 +112,10 @@ span.template-3col {
         
 
    <section class="pt-4 px-2 md:px-0 lg:px-4 pb-16 w-full overflow-hidden">
-        
-
-        <h6 class="text-lg font-light leading-relaxed mt-6 mb-4 text-gray-800"><q>Linux (/ˈliːnʊks/ is a family of open-source Unix-like operating systems based on the Linux kernel,an operating system kernel first released on September 17, 1991, by Linus Torvalds.Linux is typically packaged in a Linux distribution.</q><br> <a href="https://en.wikipedia.org/wiki/Linux" target="_blank">&mdash;wikipedia</a></h6>
 
 
-
+        <button title="3.&nbsp;&nbsp;Use command-line and GUI tools to interact with the OS">
+										Learning Outcome 3</button>
 
 <!-- Learning Objectives-->
 <div class="my-5">
@@ -139,16 +136,14 @@ span.template-3col {
             <li>Use history to recall previous commands.</li>
             <li>Understand and use the following commands:             
             <span class="template-3col">
-	<b>man</b>
-	<b>stty</b>
-	<b>history</b>
-	<b>date</b>
-	<b>who</b>
-    <b>cal</b>
-    <b>cat</b>
-    <b>clear</b><b>wc</b><b>grep</b><b>mesg</b><b>write</b>
-    
-</span>
+                <b>man</b>
+                <b>stty</b>
+                <b>history</b>
+                <b>date</b>
+                <b>who</b>
+                <b>cal</b>
+                <b>cat</b>
+                <b>clear</b><b>wc</b><b>grep</b><b>mesg</b><b>write</b></span>
             </li>
         </ul>
         
