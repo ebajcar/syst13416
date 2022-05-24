@@ -137,40 +137,69 @@ figcaption {
     <h5 class="text-2xl font-semibold sher-teal">Exercise 2: Navigate FS with relative and absolute pathnames</h5>
 		<ol>
 			<li value="1">The directory in which you are working at the current time is called your "working directory" The command to display your working directory is pwd, which stands for "print working directory". Give the command to find out the directory path to your current location:
-        <pre class="lang-js"><code>
-        ~$ pwd 
-        </code></pre></li>
+<pre class="language-bash"><code>
+~$ pwd 
+</code></pre>
+</li>
             
 			<li value="2">Display the names of the objects in your current directory:
-        <pre class="lang-js"><code>
-        ~$ ls
-        </code></pre></li>
+<pre class="language-shell"><code>
+~$ ls
+</code></pre>
+</li>
 
 			<li value="3">Display long listing of the current directory ("el es dash el", note: not ones)
-        <pre class="lang-js"><code>
-        ~$ ls -l 
-        </code></pre></li>
+<pre class="language-bash"><code>
+~$ ls -l 
+</code></pre>
+</li>
         
 			<li value="4">List the contents of the current directory. (Note the ownership and group membership.)</li>
-            
-			<li value="5">Change to the root directory of the Linux file system. (Note you start in your home directory.)
-        <pre class="lang-js"><code>
-        ~$ cd / 
-        /$ 
-        </code></pre></li>
+			<li>Change to the root directory of the Linux file system. (Note you start in your home directory.)
+<pre class="language-bash"><code>
+~$ cd / 
+/$ 
+</code></pre>
+</li>
 
-			<li value="6">Using an absolute pathname, change to the mnt directory. (Note you are in / directory.)</li>
-				<li class="highlight-4">~$ cd /mnt<br>/mnt </li>
-			<li value="7">Change to the parent directory. (note you are back to the root directory)</li>
-				<li class="highlight-4">/mnt$  cd .. <br>/$</li>	
-			<li value="8">Using an relative pathname, change to the mnt directory. </li>
-				<li class="highlight-4">/$ cd mnt<br>/mnt </li>			
-			<li value="9">Using a relative path, change to the etc directory. (Note you are in /mnt directory, which is a sibling directory to /mnt.)</li>
-				<li class="highlight-4">~$ cd ../etc<br>/etc</li>	
-			<li value="10">Give the following command and note where you end up.</li>
-				<li class="highlight-4">/etc$ cd <br>~$  </li>
-			<li value="11">Change to /bin directory. From here, the /bin directory, continue to the next exercise.</li>
-				<li class="highlight-4">~$ cd /bin</li>				
+			<li>Using an absolute pathname, change to the mnt directory. (Note you are in / directory.)
+<pre class="language-bash"><code>
+~$ cd /mnt
+/mnt 
+</code></pre>
+</li>
+                
+			<li>Change to the parent directory. (note you are back to the root directory)
+<pre class="language-bash"><code>
+/mnt$  cd .. 
+/$
+</code></pre>
+</li>
+
+                
+			<li>Using an relative pathname, change to the mnt directory. 
+<pre class="language-bash"><code>
+/$ cd mnt
+/mnt 
+</code></pre>
+</li>
+			<li>Using a relative path, change to the etc directory. (Note you are in /mnt directory, which is a sibling directory to /mnt.)
+<pre class="language-bash"><code>
+~$ cd ../etc
+/etc
+</code></pre>
+</li>
+			<li>Give the following command and note where you end up.
+<pre class="language-bash"><code>
+/etc$ cd 
+~$  
+</code></pre>
+</li>
+			<li>Change to /bin directory. From here, the /bin directory, continue to the next exercise.
+<pre class="language-bash"><code>
+~$ cd /bin
+</code></pre>
+</li>
 		</ol>
   </div>
 </div>
@@ -190,20 +219,27 @@ figcaption {
 			<li value="4">Use the cd command to go to the /usr/bin directory.</li>		
 			<li value="5">Use the cd command to return to your user's home directory.</li>
 			<li value="6">Again, use the cd command, but this time go to the system's root directory.</li>
-			<li value="7">Type the following command (symbol tilde) and note where you are.</li>
-				<li class="highlight-4">/$ cd ~ </li>
-			<li value="8">Next, type the following command (symbol dash) and note where you are</li>
-				<li class="highlight-4">/$ cd - </li>
-			<li value="9">Change to your instructor's home directory</li>
-				<li class="highlight-4">~$ cd ~bajcar </li>		
-			<li value="10">Change to your instructor's public sub-directory</li>
-				<li class="highlight-4">~bajcar$ cd public </li>				
-			<li value="11">In public, change to datafiles sub-directory.</li>
-				<li class="highlight-4">~bajcar/public$ cd datafiles </li>
-			<li value="12">Now, use the cd command to take you to your home directory</li>
-				<li class="highlight-4">~bajcar/public/datafiles$ cd  </li>			
+			<li value="7">Type the following command (symbol tilde) and note where you are.
+                <pre class="language-bash"><code>/$ cd ~ </code></pre></li>
+                
+			<li value="8">Next, type the following command (symbol dash) and note where you are
+				<pre class="language-bash"><code>/$ cd - </code></pre></li>
+                
+			<li value="9">Change to your instructor's home directory
+                <pre class="language-bash"><code>~$ cd ~bajcar</code></pre></li>
+                
+			<li value="10">Change to your instructor's public sub-directory
+                <pre class="language-bash"><code>~bajcar$ cd public </code></pre></li>
+                
+			<li value="11">In public, change to datafiles sub-directory.
+                <pre class="language-bash"><code>~bajcar/public$ cd datafiles</code></pre></li>
+                
+			<li value="12">Now, use the cd command to take you to your home directory
+                <pre class="language-bash"><code>~bajcar/public/datafiles$ cd  </code></pre></li>
+                
 			<li value="13">Next, type the following command (symbol dash) and note where you are.</li>
-				<li class="highlight-4">~$ cd - </li>		
+                <pre class="language-bash"><code>~$ cd - </code></pre></li>
+                
 			<li value="14"> What does the dash do? Change to a variety of different directories (explore!) Repeat this several time from different subdirectories until you find the pattern.</li>	
 			<li value="15">Change to your home directory using the least number of keystrokes.</li>		
 		</ol>	
@@ -219,7 +255,7 @@ figcaption {
 <div id="e04" class="flex justify-center mt-6 w-full">
   <div class="block p-6 rounded-lg shadow-lg bg-white w-full">
     <h5 class="text-2xl font-semibold sher-teal">Exercise 4: Directory Structure and Pathnames</h5>
-		<p>Download and complete <a href="tut03one.pdf" target="_blank">Directory Structure and Pathnames</a> 
+		<p>Download and complete <a href="../resources/tut03one.pdf" target="_blank">Directory Structure and Pathnames</a> 
 	 </p>
   </div>
 </div>
@@ -232,7 +268,7 @@ figcaption {
 <div id="e05" class="flex justify-center mt-6 w-full">
   <div class="block p-6 rounded-lg shadow-lg bg-white w-full">
     <h5 class="text-2xl font-semibold sher-teal">Exercise 5: Organize Your Home Directory</h5>
-<p>Create the structure as depicted in the diagram: <a href="https://dl.dropboxusercontent.com/u/43304210/pdf13416/syst13416a.png" target="_blank">https://dl.dropboxusercontent.com/u/43304210/pdf13416/syst13416a.png</a> 
+<p>Create the structure as depicted in the diagram: <img src="../resources/syst13416a.png" alt="suggested organization of your home directory for this course"> 
 		</p>
   </div>
 </div>
@@ -246,24 +282,28 @@ figcaption {
 <div id="e06" class="flex justify-center mt-6 w-full">
   <div class="block p-6 rounded-lg shadow-lg bg-white w-full">
     <h5 class="text-2xl font-semibold sher-teal">Exercise 6: Create a Directory Sub-tree</h5>
-		<ol>	
-			<li value="1">Make sure you are in the bash shell.</li>
-			<li value="2">Navigate to the temp directory created in the previous exercise.</li>
-			<li value="3">Display the names of the objects in your current directory. </li>	
-			<li value="4">Create a subdirectory called usr </li>
-				<li class="highlight-4">~$ mkdir usr </li>	
-			<li value="5">5. Change to the new subdirectory usr (Is this a relative or absolute pathname?) </li>
-				<li class="highlight-4">~$ cd usr <br>~/usr$</li>
-			<li value="6">Create a subdirectory called staff </li>
-				<li class="highlight-4">~/usr$ mkdir staff</li>
-			<li value="7">Create the following subdirectories. Note that we are remaining in the usr directory. (this is a single-line command, the text is wrapping!)</li>
-				<li class="highlight-4">~/usr$ mkdir staff/adams staff/joan staff/brian staff/zeke staff/bill reports meetings</li>
-			<li value="8">Create the following directories. Note there are no spaces in argument one and no spaces in argument two. Check what was actually created.  What do the braces do? (this is a single-line command, the text is wrapping!)</li>
-				<li class="highlight-4">~/usr$ mkdir reports/rpt{A,AA,AB,C,3,75} notes{1,2,3,4,5}</li>
-				
-			<li value="9">Using cd, ls, and pwd, navigate your newly created subdirectory, starting with usr as the top of your tree, and draw (on paper) the structure of the subtree.</li>
+		<ol style="list-style-type:init">	
+			<li>Make sure you are in the bash shell.</li>
+			<li>Navigate to the temp directory created in the previous exercise.</li>
+			<li>Display the names of the objects in your current directory. </li>	
+			<li>Create a subdirectory called usr
+                <pre class="language-bash"><code>~$ mkdir usr </code></pre></li>
+                
+			<li>Change to the new subdirectory usr (Is this a relative or absolute pathname?) 
+                <pre class="language-bash"><code>~$ cd usr </code></pre></li>
+                
+			<li>Create a subdirectory called staff
+                <pre class="language-bash"><code>~/usr$ mkdir staff</code></pre></li>
+                
+			<li>Create the following subdirectories. Note that we are remaining in the usr directory. (this is a single-line command, the text is wrapping!)
+                <pre class="language-bash"><code>~/usr$ mkdir staff/adams staff/joan staff/brian staff/zeke staff/bill reports meetings</code></pre></li>
+                
+			<li>Create the following directories. Note there are no spaces in argument one and no spaces in argument two. Check what was actually created.  What do the braces do? (this is a single-line command, the text is wrapping!)
+				 <pre class="language-bash"><code>~/usr$ mkdir reports/rpt{A,AA,AB,C,3,75} notes{1,2,3,4,5}</code></pre></li>
+                 
+			<li>Using cd, ls, and pwd, navigate your newly created subdirectory, starting with usr as the top of your tree, and draw (on paper) the structure of the subtree.</li>
 		
-			<li value="10">Once you have the drawing completed, explore the -R option of the ls command. Compare the result to your drawing.</li>
+			<li>Once you have the drawing completed, explore the -R option of the ls command. Compare the result to your drawing.</li>
 		</ol>
   </div>
 </div>
