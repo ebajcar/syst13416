@@ -11,6 +11,9 @@
 dl, ol {
   margin-bottom: 16px;
 }
+ol {
+  list-style-type: number;
+}
 h4, h3 {
   margin-top: 16px;
 }
@@ -35,6 +38,57 @@ code {
 figcaption {
   color: #00b2ce;
   font-weight: 500;
+}
+input {outline:none;border:none;border-bottom: 1px dotted black;margin-bottom:2px;}
+input:valid:focus { background-color:lightgreen;}
+input:invalid:focus { background-color:red;}
+
+#e02 ol {
+  counter-reset: section;
+  list-style-type: none;  
+}
+#e02 li::before {
+  counter-increment: section;
+  content: "2." counters(section,".") " ";
+}
+
+#e03 ol {
+  counter-reset: section;
+  list-style-type: none;  
+}
+#e03 li::before {
+  counter-increment: section;
+  content: "3." counters(section,".") " ";
+}
+
+#e04 ol {
+  counter-reset: section;
+  list-style-type: none;  
+}
+#e04 li::before {
+  counter-increment: section;
+  content: "4." counters(section,".") " ";
+}
+
+#e05 ol {
+  counter-reset: section;
+  list-style-type: none;  
+}
+#e05 li::before {
+  counter-increment: section;
+  content: "5." counters(section,".") " ";
+}
+
+#e07 ol {
+  counter-reset: section;
+  list-style-type: none;  
+}
+#e07 li::before {
+  counter-increment: section;
+  content: "6." counters(section,".") " ";
+}
+li pre code {
+  margin-left: 25px;
 }
 </style>
 </head>
@@ -107,8 +161,8 @@ figcaption {
 		<li><a href="#e03">Exercise 3: Modify File Permissions</a></li>
 		<li><a href="#e04">Exercise 4: Copy Files</a></li>
         <li><a href="#e05">Exercise 5: Move and Remove Files</a></li>
-		<li><a href="#e06">Exercise 6: Manipulate files using relative pathnames</a></li>
-		<li><a href="#e07">Exercise 7: Finding and Locating Files</a></li>
+		<!--li><a href="#e06">Exercise 6: Manipulate files using relative pathnames</a></li-->
+		<li><a href="#e07">Exercise 6: Finding and Locating Files</a></li>
       </div>
     </div>
   </div>
@@ -135,21 +189,23 @@ figcaption {
   <div class="block p-6 rounded-lg shadow-lg bg-white w-full">
     <h5 class="text-2xl font-semibold sher-teal">Exercise 2: Explore File Attributes</h5>
 	<ol>	
-		<li value="1">Display long listing of your current directory </li>  <li class="highlight-4">~$ </li>
-		<li value="2">Note each line and identify the following attributes. Which column contains 
+		<li>Display long listing of your current directory
+        <pre class="language-bash"><code>~$</code></pre>
+        </li>
+		<li>Note each line and identify the following attributes. Which column contains 
 			<ol style="list-style:none">
-				<li><input type="number" min="1" max="9" pattern="9" />&nbsp;name of the file or directory</li>
-				<li><input type="number" min="1" max="9" pattern="6" />&nbsp;date and time (last modification)</li>
-				<li><input type="number" min="1" max="9" pattern="3" />&nbsp;name (userID) of the owner (creator) of the object</li>
-				<li><input type="number" min="1" max="9" pattern="4" />&nbsp;default (aka primary) group of the owner</li>
-				<li><input type="number" min="1" max="9" pattern="5" />&nbsp;size of the file or directory</li>
-				<li><input type="number" min="1" max="9" pattern="1" />&nbsp;type of file [dlcbs-]</li>
-				<li><input type="number" min="1" max="9" pattern="1" />&nbsp;file permissions</li>
+				<li><input type="text" min="1" max="9" size="1" pattern="^9$" required />&nbsp;name of the file or directory</li>
+				<li><input type="text" min="1" max="9" size="1" pattern="^6$" required  />&nbsp;date and time (last modification)</li>
+				<li><input type="text" min="1" max="9" size="1" pattern="^3$" required  />&nbsp;name (userID) of the owner (creator) of the object</li>
+				<li><input type="text" min="1" max="9" size="1" pattern="^4$" required  />&nbsp;default (aka primary) group of the owner</li>
+				<li><input type="text" min="1" max="9" size="1" pattern="^5$" required  />&nbsp;size of the file or directory</li>
+				<li><input type="text" min="1" max="9" size="1" pattern="^1$" required  />&nbsp;type of file [dlcbs-]</li>
+				<li><input type="text" min="1" max="9" size="1" pattern="^1$" required  />&nbsp;file permissions</li>
 			</ol>
 		</li>
-		<li value="3">What does it mean when the first character on the line is a dash? </li> 
-		<li value="4">What does it mean when the first character on the line is the letter d? </li>	
-		<li value="5">Note the nine characters (2 to 10) in the first column. In the next exercise you will be changing these characters. 
+		<li>What does it mean when the first character on the line is a dash? </li> 
+		<li>What does it mean when the first character on the line is the letter d? </li>	
+		<li>Note the nine characters (2 to 10) in the first column. In the next exercise you will be changing these characters. 
 			<ol style="list-style:none">
 				<li>Whose permissions are affected when the first triplet is modified? &nbsp;<input type="text" size="30" placeholder=" user, group, or other?" pattern="user"> </li>
 				<li>Whose permissions are affected when the second triplet is modified? &nbsp;<input type="text" size="30" placeholder=" user, group, or other?" pattern="group"> </li>
@@ -160,11 +216,11 @@ figcaption {
 				<li>What permission is represented by the symbol dash? &nbsp;<input type="text" size="40" placeholder=" read, write, execute, or no permission?" pattern="no permission|none"> </li>
 				</ol>		
 		</li>
-		<li value="6">Run the following command and explain the output </li> <li class="highlight-4">~$ ls -la</li>
-		<li value="7">Run the following command and explain the output </li>  <li class="highlight-4">~$ ls -F</li>
-		<li value="8">Run the following command and explain the output  </li>  <li class="highlight-4">~$ ls -ul</li>
-		<li value="9">Run the following command and explain the output  </li>  <li class="highlight-4">~$ ls -il</li>	
-		<li value="9">Examine options h, R, o, and g.</li>  
+		<li>Run the following command and explain the output<pre class="language-bash"><code>$ ls -la</code></pre></li>
+		<li>Run the following command and explain the output<pre class="language-bash"><code>~$ ls -F</code></pre></li>
+		<li>Run the following command and explain the output<pre class="language-bash"><code>~$ ls -ul</code></pre></li>
+		<li>Run the following command and explain the output<pre class="language-bash"><code>~$ ls -il</code></pre></li>	
+		<li>Examine options h, R, o, and g.</li>  
 		
 	</ol>	
   </div>
@@ -176,40 +232,55 @@ figcaption {
 <div id="e03" class="flex justify-center mt-6 w-full">
   <div class="block p-6 rounded-lg shadow-lg bg-white w-full">
     <h5 class="text-2xl font-semibold sher-teal">Exercise 3: Modify File Permissions</h5>
-	<ol>	
+	<ol class="list-outside">	
 		<li value="1">There are two modes for modifying permissions 
-			<input type="text" pattern="symbolic"> and <input type="text"></li> 
+			<input type="text" pattern="symbolic"> and <input type="text">
+        </li> 
 			
-		<li value="2">Navigate to your sub-directory labs under your docs directory. 
-			(If you don't have one, create it first.) In the ~/module4 sub-directory, create a file called todayinfo using redirection that includes the system date.  </li> <li class="highlight-4">~/docs/labs/module4$ </li>
+		<li>Navigate to your sub-directory labs under your docs directory. 
+			(If you don't have one, create it first.) In the <code>~/module4</code> sub-directory, create a file called todayinfo using redirection that includes the system date.
+            <pre class="language-shell"><code>~/docs/labs/module4$ </code></pre>
+        </li>
 			
-		<li value="3">Note the permissions for the new file 
-			(HINT: use the long listing to view the permissions) </li> 
+		<li>Note the permissions for the new file (HINT: use the long listing to view the permissions) 
+        </li> 
 			
-		<li value="4">Give the following command and note the new permissions: </li> 
-			<li class="highlight-4">~/docs/labs/module4$ chmod 777 todayinfo</li>	
+		<li>Give the following command and note the new permissions: 
+            <pre class="language-shell"><code>~/docs/labs/module4$ chmod 777 todayinfo</code></pre>
+        </li>	
 			
-		<li value="5">Give the following command and note the new permissions: </li> 
-			<li class="highlight-4">~/docs/labs/module4$ chmod 000 todayinfo</li>
+		<li>Give the following command and note the new permissions: 
+            <pre class="language-shell"><code>~/docs/labs/module4$ chmod 000 todayinfo</code></pre>
+        </li>
 			
-		<li value="6">Give the following command and note the new permissions: </li> 
-			<li class="highlight-4">~/docs/labs/module4$ chmod u+rwx,go+r todayinfo</li>
+		<li>Give the following command and note the new permissions: 
+            <pre class="language-shell"><code>~/docs/labs/module4$ chmod u+rwx,go+r todayinfo</code></pre>
+        </li>
 			
-		<li value="7">Give the following command and note the new permissions: </li> 
-			<li class="highlight-4">~/docs/labs/module4$ chmod g+w,u-x todayinfo</li>
+		<li>Give the following command and note the new permissions: 
+            <pre class="language-shell"><code>~/docs/labs/module4$ chmod g+w,u-x todayinfo</code></pre>
+        </li>
 			
-		<li value="8">Change the permissions to include the ability for the owner 
-			to execute the file. Use symbolic representation. </li>  <li class="highlight-4">~/docs/labs/module4$ </li>
+		<li>Change the permissions to include the ability for the owner 
+			to execute the file. Use symbolic representation.
+            <pre class="language-shell"><code>~/docs/labs/module4$ </code></pre>
+        </li>
 			
-		<li value="9">Change the permissions  absolutely, so that the owner 
+		<li>Change the permissions  absolutely, so that the owner 
 			can read and write, the group can read, write, and execute, 
-			and others have no permissions at all. Use symbolic representation </li> <li class="highlight-4">~/docs/labs/module4$ </li>
+			and others have no permissions at all. Use symbolic representation
+            <pre class="language-shell"><code>~/docs/labs/module4$ </code></pre>
+        </li>
 			
-		<li value="10">Change the permissions using octal representation so 
-			that the owner can write only, the group can read only, and others can execute only.  </li> <li class="highlight-4">~/docs/labs/module4$ </li>
+		<li>Change the permissions using octal representation so 
+			that the owner can write only, the group can read only, and others can execute only.
+            <pre class="language-shell"><code>~/docs/labs/module4$ </code></pre>
+        </li>
 			
-		<li value="11">Restore the original permission, which you noted earlier. 
-			Save your history in file called Tutorial4.txt, exit, and close the application. Log out. </li> <li class="highlight-4">~/docs/labs/module4$ </li>
+		<li>Restore the original permission, which you noted earlier. 
+			Save your history in file called Tutorial4.txt, exit, and close the application. Log out.
+            <pre class="language-shell"><code>~/docs/labs/module4$ </code></pre>
+        </li>
 	</ol>	
 
   </div>
@@ -221,26 +292,50 @@ figcaption {
 <div id="e04" class="flex justify-center mt-6 w-full">
   <div class="block p-6 rounded-lg shadow-lg bg-white w-full">
     <h5 class="text-2xl font-semibold sher-teal">Exercise 4:  Copy Files</h5>
-	<ol>	
-		<li value="1">In your temp directory, create a directory called tutorial4 </li> 
-			<li class="highlight-4">~/temp$ mkdir tutorial4</li>
-		<li value="2">Change to the sub-directory tutorial4</li> <li class="highlight-4">~/temp$ cd tutorial4</li>
-		<li value="3">Create a file called data using redirection</li> <li class="highlight-4">~/temp/tutorial4$ man ls > data</li>	
-		<li value="4">Copy existing file data to a new file called extra</li> <li class="highlight-4">~/temp/tutorial4$ cp data extra</li>		
-		<li value="5">Copy the system file group in /etc sub-directory to your home directory, under the same name
- </li> <li class="highlight-4">~/temp/tutorial4$ cp /etc/group ~/temp/tutorial4/group</li>
-
-		<li value="6">The option -i tells the cp command to ask you for permission to overwrite the existing file, if the file called mycopy already exists </li> <li class="highlight-4">~/temp/tutorial4$ cp -i data mycopy</li>
-		<li value="7">Still in the tutorial4 sub-directory, create a directory called backups
- </li> <li class="highlight-4">~/temp/tutorial4 mkdir backups</li>
-		<li value="8">Copy existing file data to the directory named backups </li> <li class="highlight-4">~/temp/tutorial4$ cp data backups</li>
-		<li value="9">Copy existing files, data1, data2, and data3, to the directory named backups </li> <li class="highlight-4">~/temp/tutorial4$ cp extra mycopy group backups</li>	
-<li value="10">Still in the tutorial4 sub-directory, create a directory called documents </li> <li class="highlight-4">~/temp/tutorial4$ mkdir documents</li>
-<li value="11">Copy the directory itself including all its files and subdirectories </li> <li class="highlight-4">~/temp/tutorial4$ cp -r backups ../archive</li>
-<li value="12">Copies all the files in a directory named backups to a directory named documents
- </li> <li class="highlight-4">~/temp/tutorial4$ cp backups/* documents</li>
-		<li value="13">Navigate to the instructor's datafiles directory </li> <li class="highlight-4">~/temp/tutorial4$ cd ~bajcar/public/datafiles</li>
-		<li value="14">Copy all files (that you have permission to copy) to your tutorial4 directory </li> <li class="highlight-4">~bajcar/public/datafiles$ cp ./* ~/temp/tutorial4</li>
+	<ol class="list-outside">	
+		<li">In your temp directory, create a directory called tutorial4
+           <pre class="language-shell"><code> ~/temp$ mkdir tutorial4</code></pre>
+            </li>
+		<li>Change to the sub-directory tutorial4
+           <pre class="language-shell"><code> ~/temp$ cd tutorial4</code></pre>
+            </li>
+		<li>Create a file called data using redirection
+            <pre class="language-shell"><code>~/temp/tutorial4$ man ls > data</code></pre>
+            </li>	
+		<li>Copy existing file data to a new file called extra
+           <pre class="language-shell"><code> ~/temp/tutorial4$ cp data extra</code></pre>
+            </li>		
+		<li>Copy the system file group in /etc sub-directory to your home directory, under the same name
+            <pre class="language-shell"><code>~/temp/tutorial4$ cp /etc/group ~/temp/tutorial4/group</code></pre>
+            </li>
+		<li>The option -i tells the cp command to ask you for permission to overwrite the existing file, 
+            if the file called mycopy already exists 
+            <pre class="language-shell"><code>~/temp/tutorial4$ cp -i data mycopy</code></pre>
+            </li>
+		<li>Still in the tutorial4 sub-directory, create a directory called backups
+            <pre class="language-shell"><code>~/temp/tutorial4 mkdir backups</code></pre>
+            </li>
+		<li>Copy existing file data to the directory named backups 
+            <pre class="language-shell"><code>~/temp/tutorial4$ cp data backups</code></pre>
+            </li>
+		<li>Copy existing files, data1, data2, and data3, to the directory named backups
+            <pre class="language-shell"><code>~/temp/tutorial4$ cp extra mycopy group backups</code></pre>
+            </li>	
+        <li>Still in the tutorial4 sub-directory, create a directory called documents 
+            <pre class="language-shell"><code>~/temp/tutorial4$ mkdir documents</code></pre>
+            </li>
+        <li>Copy the directory itself including all its files and subdirectories
+            <pre class="language-shell"><code>~/temp/tutorial4$ cp -r backups ../archive</code></pre>
+            </li>
+        <li>Copies all the files in a directory named backups to a directory named documents
+            <pre class="language-shell"><code>~/temp/tutorial4$ cp backups/* documents</code></pre>
+            </li>
+		<li>Navigate to the instructor's datafiles directory
+            <pre class="language-shell"><code>~/temp/tutorial4$ cd ~bajcar/public/datafiles</code></pre>
+            </li>
+		<li>Copy all files (that you have permission to copy) to your tutorial4 directory 
+            <pre class="language-shell"><code>~bajcar/public/datafiles$ cp ./* ~/temp/tutorial4</code></pre>
+            </li>
 	</ol>
   </div>
 </div>
@@ -252,60 +347,101 @@ figcaption {
   <div class="block p-6 rounded-lg shadow-lg bg-white w-full">
     <h5 class="text-2xl font-semibold sher-teal">Exercise 5: Move and Remove Files</h5>
 	<ol>	
-		<li value="1">Still in the tutorial4 directory, create a directory called public </li> <li class="highlight-4">~/temp/tutorial4$ mkdir public</li>
-		<li value="2">Move all files from the tuturial4 directory (where you currently are) to the archive sub-directory
- </li> <li class="highlight-4">~/temp/tutorial4$ mv data extra mycopy public</li>
-		<li value="3">Now try the following command. Note what happens.</li> <li class="highlight-4">~/temp/tutorial4$ mv -i backups/data public</li>	
-		<li value="4">Create the following file: </li> <li class="highlight-4">~/temp/tutorial4$ man date > unimportant</li>		
-		<li value="5">Run the following command and note the results: </li> <li class="highlight-4">~/temp/tutorial4$ mv unimportant important</li>
-		<li value="6">Create the following file: </li> <li class="highlight-4">~/temp/tutorial4$ man mv > incomplete</li>
-		<li value="7">Run the following command and note the results: </li> <li class="highlight-4">~/temp/tutorial4$ mv incomplete public/complete</li>
-		<li value="8">Note the structure and content of the tutorial4 directory. Navigate to your temp directory. 
- </li> <li class="highlight-4">~/temp$ </li>
-		<li value="9">Copy the tutorial4 directory to temp4. </li> <li class="highlight-4">~/temp$ </li>
-<li value="10">Still in temp directory, give the following command: </li> <li class="highlight-4">~/temp$ rm -r tutorial4</li>	
-<li value="11">Move the entire temp4 directory to tutorial4 directory. </li> <li class="highlight-4">~/temp$ </li>	
-<li value="12">Describe what is being removed with the following commands: 
-<pre class="brush: bash; highlight: [0];" title="">
-rm data
-rm ~/essay
-rm bin/something
-rm data[123]
-rm -r dir{1,2,3}</pre></li> 		
+        <li>Still in the tutorial4 directory, create a directory called public
+            <pre class="language-shell"><code>~/temp/tutorial4$ mkdir public</code></pre>
+            </li>
+		<li>Move all files from the tuturial4 directory (where you currently are) to the archive sub-directory
+            <pre class="language-shell"><code>~/temp/tutorial4$ mv data extra mycopy public</code></pre>
+            </li>
+		<li>Now try the following command. Note what happens.
+            <pre class="language-shell"><code>~/temp/tutorial4$ mv -i backups/data public</code></pre>
+            </li>	
+		<li>Create the following file:
+            <pre class="language-shell"><code>~/temp/tutorial4$ man date > unimportant</code></pre>
+            </li>		
+		<li>Run the following command and note the results:
+            <pre class="language-shell"><code>~/temp/tutorial4$ mv unimportant important</code></pre>
+            </li>
+		<li>Create the following file:
+            <pre class="language-shell"><code>~/temp/tutorial4$ man mv > incomplete</code></pre>
+            </li>
+		<li>Run the following command and note the results:
+            <pre class="language-shell"><code>~/temp/tutorial4$ mv incomplete public/complete</code></pre>
+            </li>
+		<li>Note the structure and content of the tutorial4 directory. Navigate to your temp directory. 
+            <pre class="language-shell"><code>~/temp$</code></pre>
+            </li>
+		<li>Copy the tutorial4 directory to temp4
+        ~/temp$ </code></pre>
+        </li>
+        <li>Still in temp directory, give the following command:
+            <pre class="language-shell"><code>~/temp$ rm -r tutorial4</code></pre>
+            </li>	
+        <li>Move the entire temp4 directory to tutorial4 directory
+            <pre class="language-shell"><code>~/temp$ </code></pre>
+            </li>	
+        <li>Describe what is being removed with the following commands: 
+            <pre class="language-shell"><code>
+            rm data
+            rm ~/essay
+            rm bin/something
+            rm data[123]
+            rm -r dir{1,2,3}
+            </code></pre>
+            </li> 		
 	</ol>	
   </div>
 </div>
 
 
-<!-- Exercise 6: Manipulate files using relative pathnames  -->
+<!-- Exercise 6: Manipulate files using relative pathnames  
 <div id="e06" class="flex justify-center mt-6 w-full">
   <div class="block p-6 rounded-lg shadow-lg bg-white w-full">
     <h5 class="text-2xl font-semibold sher-teal">Exercise 6: Manipulate files using relative pathnames</h5>
-		<p>Download and complete <a href="tut04one.pdf" target="_blank">Manipulating Directories and Files</a>.  
+		<p>Download and complete <a href="../resources/tut04one.pdf" target="_blank">Manipulating Directories and Files</a>.  
 		 The questions in this exercise are examples of questions on the midterm. </p>
   </div>
 </div>
+-->
 
 
 <!-- Exercise 7: Finding and Locating Files  -->
 <div id="e07" class="flex justify-center mt-6 w-full">
   <div class="block p-6 rounded-lg shadow-lg bg-white w-full">
-    <h5 class="text-2xl font-semibold sher-teal">Exercise 7: Finding and Locating Files</h5>
+    <h5 class="text-2xl font-semibold sher-teal">Exercise 6: Finding and Locating Files</h5>
 		<p><strong>Finding forgotten files with find command</strong>Sometimes finding a file requires more than cursing at your computer or listing directory contents with ls. Instead, you can use the find command which lets you search in dozens of ways, including through the entire directory tree or through directories you specify.</p>
 		<p><strong>Locating lost files with locate command</strong>If you're looking for a system file, a program or file that is part of the Unix system itself, rather than one of your own personal files in your home directory, try locate command to find it> You'll get more results than you can handle, but it's a quick and easy way to locate system files. It is not available on all Unix systems, but it is worth a try at any rate.</p>
 		<ol>
-		<li value="1">Examine the following manual pages and note the description and browse the options
- </li> <li class="highlight-4">~$ man find</li>
-		<li value="2">The find command allows you to search for files. To search for all regular files starting in the current directory and checking all its subdirectories: </li> <li class="highlight-4">~$ find . -type f</li>
-		<li value="3">How would you change the command to look for directories starting in the current directory? </li> <li class="highlight-4">~$ find . -type d</li>
-		<li value="4">What command would you give to find all files that have exactly 5 links, starting in the current directory? </li> <li class="highlight-4">~$ find . -links 5</li>
-		<li value="5">Find all files that have at least 15 links in your home directory. (Try it in instructor's home directory, or change the number to generate output).</li> <li class="highlight-4">~$ find ~ -links +15</li>
-		<li value="6">Find all empty files, either regular or directory, in the /etc directory and its subdirectories. </li> <li class="highlight-4">~$ find /etc -empty</li>
-		<li value="7">Find all files that have been changed within the last 48 hours. </li> <li class="highlight-4">~$ find / -ctime -2</li>
-		<li value="8">Find all files in your home directory that you accessed more than 24 hours ago. </li> <li class="highlight-4">~$ find ~ -atime +1</li>
-		<li value="9">Find the file called music.data starting in your home directory.
- </li> <li class="highlight-4">~$ find  ~  -name  music.data</li>
-		<li value="10">The locate command allows you to search for system files. (NOTE: The locate command may not be available on atlas.)</li> <li class="highlight-4">~$ locate chmod</li>
+		<li>Examine the following manual pages and note the description and browse the options
+            <pre class="language-shell"><code>~$ man find</code></pre>
+            </li>
+		<li>The find command allows you to search for files. To search for all regular files starting in the current directory and checking all its subdirectories
+           <pre class="language-shell"><code>~$ find . -type f</code></pre>
+            </li>
+		<li>How would you change the command to look for directories starting in the current directory? 
+            <pre class="language-shell"><code>~$ find . -type d</code></pre>
+            </li>
+		<li>What command would you give to find all files that have exactly 5 links, starting in the current directory?
+            <pre class="language-shell"><code>~$ find . -links 5</code></pre>
+            </li>
+		<li>Find all files that have at least 15 links in your home directory. (Try it in instructor's home directory, or change the number to generate output).
+            <pre class="language-shell"><code>~$ find ~ -links +15</code></pre>
+            </li>
+		<li>Find all empty files, either regular or directory, in the /etc directory and its subdirectories. 
+            <pre class="language-shell"><code>~$ find /etc -empty</code></pre>
+            </li>
+		<li>Find all files that have been changed within the last 48 hours.
+            <pre class="language-shell"><code>~$ find / -ctime -2</code></pre>
+            </li>
+		<li>Find all files in your home directory that you accessed more than 24 hours ago.
+            <pre class="language-shell"><code>~$ find ~ -atime +1</code></pre>
+            </li>
+		<li>Find the file called music.data starting in your home directory.
+            <pre class="language-shell"><code>~$ find  ~  -name  music.data</code></pre>
+            </li>
+		<li>The locate command allows you to search for system files. (NOTE: The locate command may not be available on atlas.)
+            <pre class="language-shell"><code>~$ locate chmod</code></pre>
+            </li>
 		</ol>
   </div>
 </div>
