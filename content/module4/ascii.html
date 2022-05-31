@@ -29,40 +29,10 @@ code {
 .sher-teal {
   color: #00b2ce;
 }
-.bg-sher-teal {
-  background-color: #00b2ce;
-}
 figcaption {
   color: #00b2ce;
   font-weight: 500;
 }
-
-* {
-  box-sizing: border-box;
-}
-
-span.template-3col {
-  background: #fff;
-  padding: 0.2rem;
-  border-radius: 7px;
-  box-shadow: 0 2px 6px -2px rgba(0, 0, 0, 0.42);
-  height: 20vh;
-  display: grid;
-  grid-gap: 0.5rem;
-}
-span b {
-  background-color: #333940;
-  border-radius: 4px;
-  padding: 0.2rem 1.5rem;
-  display: grid;
-  place-items: center;
-  color: #fff;
-  font-size: 1.5rem;
-}
-span.template-3col {
-  grid-template-columns: repeat(6, 1fr);
-}
-
 </style>
 </head>
 
@@ -109,113 +79,34 @@ span.template-3col {
           <a href="ascii.html">ASCII text files</a>
 
       </nav>
-
-      
     </div>  
         
     <section class="pt-4 px-2 md:px-0 lg:px-4 pb-16 w-full overflow-hidden">
-<button title="9.&nbsp;&nbsp;Use ASCII text editors to create data file and scripts">
-										Learning Outcome 9</button>.	
+        <h1 class="text-4xl font-medium leading-tight mt-0 mb-2 text-black-600">ASCII text files</h1>
 
+        
 
 <!-- Learning Objectives-->
-<div class="my-5">
-  <div class="flex w-full mx-auto overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800">
-    <div class="flex items-center justify-center px-4 bg-sher-teal">
-        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="triangle-exclamation" class="w-6 h-6 text-white fill-current" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M506.3 417l-213.3-364c-16.33-28-57.54-28-73.98 0l-213.2 364C-10.59 444.9 9.849 480 42.74 480h426.6C502.1 480 522.6 445 506.3 417zM232 168c0-13.25 10.75-24 24-24S280 154.8 280 168v128c0 13.25-10.75 24-23.1 24S232 309.3 232 296V168zM256 416c-17.36 0-31.44-14.08-31.44-31.44c0-17.36 14.07-31.44 31.44-31.44s31.44 14.08 31.44 31.44C287.4 401.9 273.4 416 256 416z"></path></svg>     
-    </div>
-    <div class="px-4 py-2 -mx-3">
-      <div class="mx-3">
-        <h5 class="text-2xl font-semibold sher-teal">In this module...</h5>
-        <ul class="list-outside">
-            <li>Understand files and file types.</li>
-            <li>Name files that you create using namespace standards.</li>
-            <li>Display contents of text files in a variety of ways.</li>
-            <li>Create empty files and modify file dates with touch.</li>
-            <li>Use ASCII text editors to create data files.</li>
-            <li>Use basic text-file editing with vi (pico/nano).</li>
-            
-            <li>Understand and use the following commands:             
-            <span class="template-3col">
-                <b>chmod</b>
-                <b>ls</b>
-                <b>cp</b>
-                <b>rm</b>
-                <b>mv</b>
-                <b>find</b>
-                <b>locate</b>
-                <b>more</b>
-                <b>less</b>
-                <b>head</b>
-                <b>tail</b>
-                <b>touch</b>
-                <b>sort</b>
-                <b>cut</b>
-                <b>paste</b>
-                 <b>diff</b>
-                  <b>comm</b>
-                   <b>vi</b>
-                </span>
-            </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<!-- Concepts and Terminology -->
-<div class="my-5">
-  <div class="flex w-full mx-auto overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800">
-    <div class="flex items-center justify-center px-4 bg-sher-teal">
-        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="triangle-exclamation" class="w-6 h-6 text-white fill-current" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M506.3 417l-213.3-364c-16.33-28-57.54-28-73.98 0l-213.2 364C-10.59 444.9 9.849 480 42.74 480h426.6C502.1 480 522.6 445 506.3 417zM232 168c0-13.25 10.75-24 24-24S280 154.8 280 168v128c0 13.25-10.75 24-23.1 24S232 309.3 232 296V168zM256 416c-17.36 0-31.44-14.08-31.44-31.44c0-17.36 14.07-31.44 31.44-31.44s31.44 14.08 31.44 31.44C287.4 401.9 273.4 416 256 416z"></path></svg>     
-    </div>
-    <div class="px-4 py-2 -mx-3">
-      <div class="mx-3">
-        <h5 class="text-2xl font-semibold sher-teal">Concepts and Terminology</h5>
-        <ul class="list-outside">
-            <li>File attributes</li>
-            <li>File management</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<!-- videos -->
 <div class="flex justify-center mt-6 w-full">
   <div class="block p-6 rounded-lg shadow-lg bg-white w-full">
-    <h5 class="text-2xl font-semibold sher-teal">linkedin.com learning &mdash; videos</h5>
-    <ul>
-    <li>
-        <a href="https://www.linkedin.com/learning/linux-files-and-permissions-14025387/manage-files-and-permissions-in-linux?autoplay=true&contextUrn=urn%3Ali%3AlearningCollection%3A6564300925303832576&u=2272289" target="_blank">
-            Linux: Files and Permissions by Grant McWilliams (2h 51m)
-            <ol>
-                <li>Linux files </li>
-                <li>Manage Linux files</li>
-                <li>Linux permissions</li>
-                <li>Access control lists (optional)</li>
-            </ol>
-        </a>
-        <a href="https://www.linkedin.com/learning-login/share?account=2272289&forceAccount=false&redirect=https%3A%2F%2Fwww.linkedin.com%2Flearning%2Flearning-linux-shell-scripting-2018%3Ftrk%3Dshare_ent_url%26shareId%3D130ep9AUQUOLz8H2trn%252BaQ%253D%253D" target="_blank">
-            Learning Linux Shell Scripting
-            <ol>
-                <li>1. Shell scripting basics </li>
-                <li>3. Environment variables</li>
-            </ol>
-        </a>
-    </li>
-    </ul>
-    <h5 class="text-2xl font-semibold sher-teal">Suggested reading</h5>
-    <ul>
-    <li>
-    <strong>Chapter 6</strong> of A Practical Guide to Linux Commands, Editors, and Shell Programming by Mark Sobell. (see home page for reference information and link to Sheridan Library)
-    </li>
-
-    </ul>
+    <h5 class="text-2xl font-semibold sher-teal">Learning Objectives</h5>
+	<ul class="list-outside">
+        <li>Understand, recognize, and view various types of tiles</li>
+        <li>Understand what is ASCII code and it is used by operaring system</li>
+	</ul>
   </div>
 </div>
+
+
+
+<!-- slides -->
+<div class="flex justify-center mt-6 w-full">
+  <div class="block p-6 rounded-lg shadow-lg bg-white w-full">
+    <iframe src="../slides/m4-ascii.html" height="600" width="1000"></iframe>
+    <a href="../slides/m4-ascii.html" target="_blank">Open in new tab</a>
+  </div>
+</div>
+
 
 
 </section>
