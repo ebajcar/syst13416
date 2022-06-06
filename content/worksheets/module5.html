@@ -11,6 +11,9 @@
 dl, ol {
   margin-bottom: 16px;
 }
+ol {
+  list-style-type: number;
+}
 h4, h3 {
   margin-top: 16px;
 }
@@ -35,6 +38,26 @@ code {
 figcaption {
   color: #00b2ce;
   font-weight: 500;
+}
+ol li {
+  padding-bottom: 10px;
+}
+li pre code {
+  margin-left: 25px;
+}
+
+#e02 ol, #e03 ol {
+  counter-reset: section;
+  list-style-type: none;  
+}
+#e02 li::before {
+  counter-increment: section;
+  content: "2." counters(section,".") " ";
+}
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/content */
+#e03 li::before {
+  counter-increment: section;
+  content: "3." attr(value) "  ";
 }
 </style>
 </head>
@@ -123,8 +146,11 @@ figcaption {
 <!-- Exercise  -->
 <div id="e01" class="flex justify-center mt-6 w-full">
   <div class="block p-6 rounded-lg shadow-lg bg-white w-full">
-    <h5 class="text-2xl font-semibold sher-teal">Exercise</h5>
-
+    <h5 class="text-2xl font-semibold sher-teal">Exercise 1: Read and Reflect </h5>
+		<p>To help you develop your critical thinking and system thinking, consider the following questions after reading the material for Module 4:</p>
+		<ol>
+			<li></li>
+		</ol>
   </div>
 </div>
 
@@ -134,39 +160,61 @@ figcaption {
 <div id="e02" class="flex justify-center mt-6 w-full">
   <div class="block p-6 rounded-lg shadow-lg bg-white w-full">
     <h5 class="text-2xl font-semibold sher-teal">Exercise 2:  Create Text Files With Redirection</h5>
-		<ol>	
-			<li value="1">Create A HTML5 Web Page</li> 
-			<li class="highlight-4">
-~/lab5$ cat > index.html<br>
-&lt;!DOCTYPE html><br>
-&lt;html><br>
-&lt;head><br><code style="font-size:10px;color:yellow;padding:0px 5px;">Tab</code>
-&lt;title>Home Page&lt;title><br><code style="font-size:10px;color:yellow;padding:0px 5px;">Tab</code>
-&lt;meta charset=""><br>
-&lt;/head&gt;<br>
-&lt;body><br><code style="font-size:10px;color:yellow;padding:0px 5px;">Tab</code>
-&lt;p>Content goes here.&lt;/p><br>
-&lt;/body&gt;<br>
-&lt;/html><br>
-<code style="font-size:10px;color:yellow;padding:0px 5px;">Control+D</code><br>
-~/lab5$			
+    <ol class="list-outside">	
+        <li>Create an HTML5 Web Page 
+<pre class="language-shell"><code>
+~/lab5$ cat > index.html
+&lt;!DOCTYPE html>
+&lt;html>
+&lt;head>
+&lt;title>Home Page&lt;title>
+&lt;meta charset="">
+&lt;/head&gt;
+&lt;body>
+&lt;p>Content goes here.&lt;/p>
+&lt;/body&gt;
+&lt;/html></code></pre>
+            <strong>Press <code style="color:yellow;padding:0px 5px;">Control+D</code> to exit.</strong>
 			</li>
-			<li value="2">List the contents of the file to verify that it is intact: </li> <li class="highlight-4">~$ cat index.html</li>
-			<li value="3">Create a simple script</li> <li class="highlight-4">~/lab5$ cat > script1<br>#!/bin/bash
-			<br># this is a comment
-			<br>clear
-			<br>echo "This is my first script"
-			<br>date
-			<br>cal
-			<br>ls -l
-			<br><code style="font-size:10px;color:yellow;padding:0px 5px;">Control+D</code>
-			<br>~/lab5$</li>	
-			<li value="4">View the content of your script file: </li> <li class="highlight-4">~/lab5$  cat script1</li>		
-			<li value="5">Test your script: </li> <li class="highlight-4">~/lab5$ bash script1</li>
-			<li value="6">Make the file executable </li> <li class="highlight-4">~/lab5$ chmod 705 script1</li>
-			<li value="7">Run (execute) your script: </li> <li class="highlight-4">~/lab5$ script1</li>
-			<li value="8">Sometimes we need to specify the current directory to run a program </li> <li class="highlight-4">~/lab5$ ./script1</li>
-			<li value="9">Make a copy of your script in your bin directory </li> <li class="highlight-4">~/lab5$ cp script1 ../../bin</li>		
+            
+			<li>List the contents of the file to verify that it is intact:
+                <pre class="language-shell"><code> ~$ cat index.html</code></pre>
+            </li>
+            
+			<li>Create a simple script
+<pre class="language-shell"><code>             
+~/lab5$ cat > script1
+#!/bin/bash
+# this is a comment
+clear
+echo "This is my first script"
+date
+cal
+ls -l</code></pre>
+			<strong>Press <code style="color:yellow;padding:0px 5px;">Control+D</code> to exit.</strong>
+            </li>	
+            
+			<li>View the content of your script file:
+                <pre class="language-shell"><code>~/lab5$  cat script1</code></pre>
+            </li>		
+            
+			<li>Test your script:
+                <pre class="language-shell"><code>~/lab5$ bash script1</code></pre>
+            </li>
+            
+			<li>Make the file executable 
+                <pre class="language-shell"><code>~/lab5$ chmod 705 script1</code></pre>
+            </li>
+            
+			<li>Run (execute) your script: 
+                <pre class="language-shell"><code>~/lab5$ script1</code></pre>
+            </li>
+			<li>Sometimes we need to specify the current directory to run a program 
+                <pre class="language-shell"><code>~/lab5$ ./script1</code></pre>
+            </li>
+			<li>Make a copy of your script in your bin directory
+                <pre class="language-shell"><code>~/lab5$ cp script1 ../../bin</code></pre>
+            </li>		
 		</ol>	
   </div>
 </div>
@@ -176,30 +224,75 @@ figcaption {
 <div id="e03" class="flex justify-center mt-6 w-full">
   <div class="block p-6 rounded-lg shadow-lg bg-white w-full">
     <h5 class="text-2xl font-semibold sher-teal">Exercise 3: Display Contents of ASCII Text Files </h5>		
-    <p class="highlight-3"><img src="../images/exclamation.png" alt="">&nbsp;<strong>Display files: concatenate</strong> You have already been using the cat command to display the content of text files. </p>		
-		<ol>	
-			<li value="1">Try the following: </li>	<li class="highlight-4">~/lab5$ date > file1
-			<br>~/lab5$ cal > file2<br>~/lab5$ pwd > file3<br>~/lab5$ ls > file4<br>~/lab5$ cat file1 file2 file3 file4 </li>
-			<li value="2">How is the last output different from the following? Examine the manual page for the cat command, read the description and browse through the available options.</li> <li class="highlight-4">~/lab5$ cat file4 file3 file2 file1</li>
-			<li value="3">You can also save the result into yet another file, giving the order of concatenation: </li> <li class="highlight-4">~/lab5$ cat file3 file2 file4 file1 > file5</li>		
-		</ol>	
+    <p class="highlight-3">
+        <strong>Display files: concatenate</strong> You have already been using the cat command to display the content of text files. </p>		
+    <ol class="list-outside">	
+        <li value="1">Try the following:
+<pre class="language-shell"><code>
+~/lab5$ date > file1
+~/lab5$ cal > file2
+~/lab5$ pwd > file3
+~/lab5$ ls > file4
+~/lab5$ cat file1 file2 file3 file4 </code></pre>
+        </li>
+        
+        <li value="2">How is the last output different from the following? Examine the manual page for the cat command, read the description and browse through the available options.
+            <pre class="language-shell"><code>~/lab5$ cat file4 file3 file2 file1</code></pre>
+        </li>
+        
+        <li value="3">You can also save the result into yet another file, giving the order of concatenation: 
+            <pre class="language-shell"><code>~/lab5$ cat file3 file2 file4 file1 > file5</code></pre>
+        </li>
+    </ol>
+
+    <p class="highlight-3"><strong>Display Text Files -- heads or tails? :</strong> cat, more, less, head, tail. for non-ASCII files, see od, strings</p>
+    <ol class="list-outside">
+        <li value="4">Create the following file: 
+            <pre class="language-shell"><code>~/lab5$ man bash > mpbash</code></pre>
+        </li>
+        
+        <li value="5">mpbash is a very large file, therefore using cat command is not practical to display its content. There are view choices we have
+            <pre class="language-shell"><code>~/lab5$ </code></pre>
+        </li>
+        
+        <li value="6">To view the first ten lines of a file: 
+            <pre class="language-shell"><code>~/lab5$ head mpbash</code></pre>
+        </li>
+        
+        <li value="7">To view the last ten lines of a file: 
+            <pre class="language-shell"><code>~/lab5$ tail mpbash</code></pre> 
+        </li>
+        
+        <li value="8"> By default, the command displays 10 lines. To specify the number of lines you wish to display, use the –N option, where N is replaced by the number of lines to display. Examine the manual pages for the commands head and tail, read the description and browse through the available options.
+<pre class="language-shell"><code>
+~/lab5$ head -25 mpbash
+~/lab5$ tail -100 mpbash
+</code></pre> 
+        </li>	
+    </ol>	
 		
-		<p class="highlight-3"><img src="../images/exclamation.png" alt="">&nbsp;<strong>Display Text Files -- heads or tails? :</strong> cat, more, less, head, tail. for non-ASCII files, see od, strings</p>
-		<ol>	
-			<li value="4">Create the following file: </li> <li class="highlight-4">~/lab5$ man bash > mpbash</li>	
-			<li value="5">mpbash is a very large file, therefore using cat command is not practical to display its content. There are view choices we have </li> <li class="highlight-4">~/lab5$ </li>		
-			<li value="6">To view the first ten lines of a file: </li> <li class="highlight-4">~/lab5$ head mpbash</li>
-			<li value="7">To view the last ten lines of a file: </li> <li class="highlight-4">~/lab5$ tail mpbash</li>
-			<li value="8"> By default, the command displays 10 lines. To specify the number of lines you wish to display, use the –N option, where N is replaced by the number of lines to display. Examine the manual pages for the commands head and tail, read the description and browse through the available options.</li>
-			<li class="highlight-4">~/lab5$ head -25 mpbash<br>~/lab5$ tail -100 mpbash</li>	
-		</ol>	
-		
-		<p class="highlight-3"><img src="../images/exclamation.png" alt="">&nbsp;<strong>Display non-Text Files:</strong>file,  od, strings</p>
-		<ol>			
-			<li value="9">To examine what the file type is use the command file: </li> <li class="highlight-4">~/lab5$ file mpbash file1 file2 file5</li>
-			<li value="10">Copy the files from ~bajcar/public/datafiles to your current directory. Examine the file types.</li> 
-			<li value="11">Examine the files with the od command. Reference the manual page for more details.  </li> <li class="highlight-4">~/lab5$ od file1<br>~/lab5$  od -x file1<br>~/lab5$  od -b file1<br>~/lab5$  od -x /bin/ls</li>
-			<li value="12">Examine files with the strings command. Reference the manual page for more details. </li> <li class="highlight-4">~/lab5$ strings file1<br>~/lab5$  strings book14.gif<br>~/lab5$  strings /bin/chmod</li>	
+    <p class="highlight-3"><img src="../images/exclamation.png" alt="">&nbsp;<strong>Display non-Text Files:</strong>file,  od, strings</p>
+    <ol>			
+			<li value="9">To examine what the file type is use the command file:
+            <pre class="language-shell"><code>~/lab5$ file mpbash file1 file2 file5</code></pre> 
+            </li>
+            
+			<li value="10">Copy the files from <code>~bajcar/public/datafiles</code> to your current directory. Examine the file types. <br><small style="color:red">NOTE: if there are no files in the given directory, skip this step, or copy some of your files form your webspace</small></li> 
+			<li value="11">Examine the files with the od command. Reference the manual page for more details.
+<pre class="language-shell"><code>
+~/lab5$ od file1
+~/lab5$  od -x file1
+~/lab5$  od -b file1
+~/lab5$  od -x /bin/ls
+</code></pre> 
+            </li>
+			<li value="12">Examine files with the strings command. Reference the manual page for more details.
+<pre class="language-shell"><code>
+~/lab5$ strings file1
+~/lab5$  strings book14.gif
+~/lab5$  strings /bin/chmod
+</code></pre> 
+            </li>	
 		</ol>			
   </div>
 </div>
@@ -213,12 +306,16 @@ figcaption {
 		<p><img src="../images/exclamation.png" alt="">&nbsp;<strong>Complete the Tutorial: Using vim to Create and Edit a File</strong> (Chapter 6 of "A Practical Guide to Linux Commands, Editors, and Shell Programming" by Mark G. Sobell, Third Edition, available on Safari Books, Library Services - ISBN: 0-13-308504-X)</p>
 		<ol>	
 			<li value="1">To start the vi editor, give the command vi followed by the file name you wish to edit. If the file exists, it will open it, if it does not exist, it will create a new file for you. </li> <li class="highlight-4">~/lab5$ vi filename</li>
-			<li value="2">When you enter the editor, you always start in the command mode. If you just created a new file, it will display as follows. Note the cursor sits on the first character on the first line, there is nothing following it (the tildas indicate no lines.  </li>	<li class="highlight-4"><span style="color:lightgreen;background-color:lightblue;">&#9646;</span>
-			<br>~
-			<br>~
-			<br>~
-			<br>~
-			<br>"filename" [New File]
+			<li value="2">When you enter the editor, you always start in the command mode. If you just created a new file, it will display as follows. Note the cursor sits on the first character on the first line, there is nothing following it (the tildas indicate no lines. 
+            <textarea rows="7" style="width:100%;background:black;color:white;padding:0 3px;overflow:hidden;resize:none;">
+&#9646;
+~
+~
+~
+~
+~
+"filename" [New File]
+            </textarea>
 			</li>
 			<li value="3">If you start typing text, it appears that nothing is happening. With the exceptions of certain characters being commands, and since you are in the command mode, these characters will be interpreted as commands. Try i, I, a, A, o, O. Any one of these puts you into the insert mode and it will tell you at the bottom that you are in insert mode. </li> <li class="highlight-4"><span style="color:lightgreen;background-color:lightblue;">&#9646;</span>
 			<br>~
