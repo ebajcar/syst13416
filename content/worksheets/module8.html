@@ -36,6 +36,26 @@ figcaption {
   color: #00b2ce;
   font-weight: 500;
 }
+li {
+  margin-top: 12px;
+}
+pre {
+  position: relative;
+}
+.command::after {
+  content: "Command  ";
+  color: yellow;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.output::after {
+  content: "Output  ";
+  color: yellow;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
 </style>
 </head>
 
@@ -102,23 +122,171 @@ figcaption {
     <div class="px-4 py-2 -mx-3">
       <div class="mx-3">
         <h5 class="text-2xl font-semibold sher-teal">In this tutorial&hellip;</h5>
+        <ul>
+            <li>Matching Lines and Words</li>
+            <li>Using Anchors</li>
+            <li>Character Sets and Repetition</li>
+        </ul>
+        <p>	Examine the  manual pages  for the commands grep, egrep, and fgrep, 
+            and note the description of any options used in these exercises.</p>
       </div>
     </div>
-  </div>
 </div>
-
 
 
 <!-- >Exercise  -->
 <div id="e01" class="flex justify-center mt-6 w-full">
   <div class="block p-6 rounded-lg shadow-lg bg-white w-full">
-    <h5 class="text-2xl font-semibold sher-teal">Exercise</h5>
+    <h5 class="text-2xl font-semibold sher-teal">Matching Lines and Words</h5>
+	<p>• Regular expression is a compact way of specifying a pattern of characters. </p>
+	<p>• To create a regular expression, you put together ordinary characters and meta-characters according to certain rules, which are used to search within text files. </p>
+	<p>• When a regex corresponds to a particular string of characters, we say that it matches the string.</p>
+	<p>• RULE: All ordinary characters, such as letters and numbers, match themselves.</p>
+  </div>
+</div>
 
+<div id="e02" class="flex justify-center mt-6 w-full">
+  <div class="block p-6 rounded-lg shadow-lg bg-white w-full">
+    <h5 class="text-2xl font-semibold sher-teal">Using Anchors</h5>
+	<h4>You can use anchors to specify the location of the pattern on the line.</h4>
+    <ol class="list-outside">
+	<li>Given the following file, named <kbd>data</kbd>, that contains the following:
+<pre class="language-bash"><code>
+Harry is smart
+Harry
+His name is Harry
+His name is Harry Potter.
+The mellow dog likes bones.
+I know who you are and I saw what you did.
+Who knows what evil lurks in the hearts of men?
+color
+colour
+colouur
+</code></pre></li>
+
+	<li>When we run the following command, we get the given output; using <code>&nbsp;grep&nbsp;</code> command to search for
+	pattern <code>&nbsp;Harry&nbsp;</code>, in the file called <code>&nbsp;data&nbsp;</code>
+	Note that all lines containing the word (pattern) Harry have been printed.
+<pre class="command">grep Harry data</pre>
+<pre class="output">Harry is smart
+Harry
+His name is Harry
+His name is Harry Potter.
+&square;</pre></li>
+
+	<li>The ^ (circumflex or hat) meta-character is an anchor that matches the beginning of a line. Only those lines have been printed that start with the word Harry.
+<pre class="command">grep ‘^Harry’ data</pre>
+<pre class="output">
+Harry is smart
+Harry
+&square;</pre></li>
+			
+	<li>The anchor that matches the end of a line is the $ (dollar) meta-character. Only those lines ending with the word Harry have been printed.
+<pre class="command">grep ‘Harry$’ data</pre>
+<pre class="output">His name is Harry
+&square;</pre></li>
+			
+	<li>To find lines that contain only the word ‘Harry’, combine both anchors:
+<pre>grep ‘^Harry$’ data</pre>
+<pre>Harry
+&square;</pre></li>
+
+	<li>Using both anchors with nothing in between is an easy way to look for empty lines:
+<pre>grep ‘^$’ data</pre></li>
+</ol>
+
+	<h4>The anchors to match the beginning or end of the word is the two-character combination \&lt; and \> respectively.</h4>
+    <ol class="list-outside">
+	<li>To find all lines that contain the word starting with ”kn”, use
+<pre>grep ‘\&lt;kn’ data</pre>
+<pre>I know who you are and I saw what you did.
+Who knows what evil lurks in the hearts of men?
+&square;</pre></li>
+			
+	<li>To find all lines that contain the word ending with ”ow”, use
+<pre>grep ‘ow\&gt;’ data</pre>
+<pre>The mellow dog likes bones.
+I know who you are and I saw what you did.
+&square;</pre></li>	
+			
+	<li>You want to find all the lines in the file data that contain the word “color” (American spelling) or “colour” (British spelling):
+<pre>grep ‘colou*r’ data</pre>
+<pre>color
+colour
+colouur</pre>
+<pre>egrep ‘colou?r’ data</pre>
+<pre>color
+colour
+&square;</pre></li>
+	</ol>
+  </div>
+</div>
+
+<div id="e03" class="flex justify-center mt-6 w-full">
+  <div class="block p-6 rounded-lg shadow-lg bg-white w-full">
+    <h5 class="text-2xl font-semibold sher-teal">Character Sets and Repetition</h5>
+<ol class="list-outside">
+	<li>1. Using the file called dictionary<span hidden> (available in the instructor's public/datafiles subdirectory)</span>, run the following commands at the command prompt, one at a time, noting the result.
+<pre class="language-bash"><code>
+grep '^q[a-z]y$' dictionary
+grep '^q[a-z]*y$' dictionary
+grep '^qu[a-z][a-z]y$' dictionary
+grep '^qu[a-z][a-z][a-z]y$' dictionary
+grep '^qu[a-z][a-z][a-z][a-z]y$' dictionary
+grep '^qu[a-z]{1,3}y$' dictionary
+egrep -n '^qu[a-z]{1,4}y$' dictionary
+egrep -n '^qu[a-z]{4}y$' dictionary
+grep -e '^qu[a-z]{1,3}y$' dictionary
+grep -e '^qu[a-z]{1,5}y$' dictionary
+egrep '^qu[a-z]{1,5}y$' dictionary
+grep -E '^qu[a-z]{1,5}y$' dictionary
+grep -E '\&lt;qu[a-z]{1,5}y\&gt;' dictionary
+grep -E '\&lt;qu[a-z]{1,2}y\&lt;' dictionary
+grep -E 'qu[a-z]{2}y' dictionary
+</code></pre>
+Explain each command (how it works) and the result.
+If the result was empty (no output), how do you verify that the result is valid and there were no matches?</li>
+
+
+	<li>2. Compare the following variations of the command. To see the actual list, omit the pipe to wc. To see the line numbers, use the -n option.
+<pre class="language-bash"><code>
+egrep 'qu[a-z]{2}y' dictionary | wc
+egrep 'qu[a-z]{3}y' dictionary | wc
+egrep 'qu[a-z]{4}y' dictionary | wc
+egrep 'qu[a-z]{5}y' dictionary | wc
+egrep 'qu[a-z]{6}y' dictionary | wc
+egrep 'qu[a-z]{7}y' dictionary | wc
+egrep 'qu[a-z]{8}y' dictionary | wc
+egrep 'qu[a-z]{9}y' dictionary | wc
+egrep 'qu[a-z]{10}y' dictionary | wc
+egrep 'qu[a-z]{11}y' dictionary | wc
+egrep 'qu[a-z]{12}y' dictionary | wc
+egrep 'qu[a-z]{13}y' dictionary | wc
+egrep 'qu[a-z]{1,13}y' dictionary | wc
+egrep 'qu[a-z]{1,}y' dictionary | wc
+</code></pre></li>
+
+	<li>3. Compare the following variations of the command. To see the actual list, omit the pipe to wc. To see the line numbers, use the -n option.	
+<pre class="language-bash"><code>
+  603  egrep '^qu[a-z]{4}y$' dictionary | wc
+  604  egrep '^qu[a-z]{4,}y$' dictionary | wc
+  605  egrep '^qu[a-z]{,4}y$' dictionary | wc
+</code></pre></li>
+
+	<li>4. Compare the following variations of the command. To see the actual list, omit the pipe to wc.  To see the line numbers, use the -n option.
+<pre class="language-bash"><code>
+  607  egrep '^qu[a-z]{1,13}y$' dictionary | wc
+  608  egrep '^qu[a-z]{1,13}y' dictionary | wc
+  609  egrep 'qu[a-z]{1,13}y$' dictionary | wc
+  610  egrep 'qu[a-z]{1,13}y' dictionary | wc	
+</code></pre></li>
+  </ol>
   </div>
 </div>
 
 
 
+ 
 </section>
   </main>
   

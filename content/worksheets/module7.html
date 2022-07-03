@@ -36,6 +36,30 @@ figcaption {
   color: #00b2ce;
   font-weight: 500;
 }
+
+.highlight-1, .highlight-2, .highlight-3, .highlight-5 {
+	-moz-border-radius : 4px;
+	-webkit-border-radius : 4px;
+	padding : 5px 10px;
+}
+	.highlight-1 {
+		background : #ffb699;
+		border : 1px dotted #FF9966;	
+	}
+	.highlight-2 {
+		background : #FFFF99;
+		border : 1px dotted #FFCC33;	
+	}
+	.highlight-3 {
+		background : #CCFF99;
+		border : 1px dotted #CCCC33;
+		margin-top: 24px;
+	}	
+	.syntx {
+		padding-left: 25px;
+		font-size: 16px;
+        font-family: monospace;
+	}
 </style>
 </head>
 
@@ -148,13 +172,484 @@ figcaption {
   </div>
 </div>
 
-
-
-<!-- >Exercise  -->
 <div id="e01" class="flex justify-center mt-6 w-full">
   <div class="block p-6 rounded-lg shadow-lg bg-white w-full">
-    <h5 class="text-2xl font-semibold sher-teal">Exercise</h5>
+    <h5 class="text-2xl font-semibold sher-teal">Control Structures</h5>
+<p>Reference the bash manual page for descriptions:</p> 
+<pre class="syntx">
+for name [ in word ] ; do list ; done
+for (( expr1 ; expr2 ; expr3 )) ; do list ; done
+select name [ in word ] ; do list ; done
+case word in [ [(] pattern [ | pattern ] 
+if list; then list;[ elif list; then list; ] ... [ else list; ] fi
+while list; do list; done
+until list; do list; done
+</pre>
+	</p>
+	<p class="highlight-3"><strong>Sequence </strong>
+	•	Most commands are executed in a sequence, usually each line contains a single command. When you enter more than one command, separated by semi-colons, the process is still the same, a single command is executed at a time. The interpreter execute the command, when it finishes, goes to the next line, and executes the next command. If you want to put more than one command on a single line, you need to separate the commands with a semi-colon (;). The execution is exactly the same. Usually we do this to save space, but keep in mind that readability of the code decreases.</p>
+	<p class="highlight-3"><strong>Decision </strong>
+	•	Sometimes, we need to make a decision or ask a question, and depending on the answer, we take a different path. All decisions are binary using the if...then...else...fi structure. When you making more than one decision, you nest the decision, creating a unique path for each combination of choices using nested if or case.</p>
+	
+  </div>
+</div>
 
+<div id="e01" class="flex justify-center mt-6 w-full">
+  <div class="block p-6 rounded-lg shadow-lg bg-white w-full">
+    <h5 class="text-2xl font-semibold sher-teal">Exercise 1: A simple if statement</h5>
+		<p>Create a script that will find out whether the user is a full time student.  If the user enters 'Y', direct them to go to building J, otherwise send them to building A. Which control structure is most suitable to use for this problem? </p>
+<pre class="language-bash"><code>
+#!/bin/bash
+echo -n "Are you a full-time student?"
+read choice
+if [ $choice = Y ]
+then
+    echo "Please go to Building J"
+else
+    echo "Please go to Building A"
+fi
+</code></pre>
+  </div>
+</div>
+
+<div id="e01" class="flex justify-center mt-6 w-full">
+  <div class="block p-6 rounded-lg shadow-lg bg-white w-full">
+    <h5 class="text-2xl font-semibold sher-teal">Exercise 2:  Nested if statements</h5>
+		<p>IF...THEN...ELSE Control Structure: Write a shell script whose single command line argument is a file. If you run the program with an ordinary file, the program displays the owner’s name and last update time for the file. If the program is run with more than one argument, it generates meaningful error messages. </p>
+<pre class="language-bash"><code>
+#!/bin/bash
+if [ $# = 1 ]
+then
+   if [ -f  $1 ]
+   then
+        echo –n “The owner and last update time for $1 is “
+        ls -l $1 | tr –s ’ ’ | cut –d’ ’ -f3,8
+   else
+        echo “$1 is not an ordinary file”
+   fi
+else
+   echo “Please enter one argument, a file name.”
+fi 
+</code></pre>
+  </div>
+</div>
+
+
+<div id="e01" class="flex justify-center mt-6 w-full">
+  <div class="block p-6 rounded-lg shadow-lg bg-white w-full">
+    <h5 class="text-2xl font-semibold sher-teal">Exercise 3: case statements </h5>
+	<p>Create a file called case1 in our bin directory. Note the syntax: the value stored in $letter is compared to the pattern A, B, and C; if one of them matches, the corresponding block is executed; the double semi-colon indicates the end of the block. If there is no match found, the default (or catchall) block is executed; note the catchall pattern is an asterisk and is listed last. </p>
+<pre class="language-bash"><code>
+#!/bin/bash
+read -p "Enter A, B, or C: " letter
+case $letter in
+	A)
+		echo "You entered A"
+		;;
+	B)
+		echo "You entered B"
+		;;
+	C)
+		echo "You entered C"
+		;;
+	*)
+		echo "You did not enter A, B, or C"
+		;;
+esac
+</code></pre>
+		<p>Recall that Linux is case-sensitive:</p>	
+		<pre>
+./case1
+Enter A, B, or C: b
+You did not enter A, B, or C
+</pre>
+</ol>
+  </div>
+</div>
+
+
+<div id="e01" class="flex justify-center mt-6 w-full">
+  <div class="block p-6 rounded-lg shadow-lg bg-white w-full">
+<p class="highlight-3"><strong>Iteration </strong>
+	•	Often, we need to repeat the same set of commands a number of times, which we do by putting the block of code inside a loop. The control structures for loops to examine in the following examples are while, for, and foreach.</p>
+  </div>
+</div>
+
+
+
+<div id="e01" class="flex justify-center mt-6 w-full">
+  <div class="block p-6 rounded-lg shadow-lg bg-white w-full">
+    <h5 class="text-2xl font-semibold sher-teal">Exercise 4: for&hellip;in statements</h5>
+    <h6 class="text-lg font-light leading-relaxed mt-6 mb-4 text-gray-800">Example using file input</h6>
+    <p>Create  and examine the following script . Note the use of the for control structure.</p>
+<pre class="language-bash"><code>
+#!/bin/bash
+echo “You can see the following animals in our zoo: “
+for animal in `cat animalList`
+do
+   echo $animal
+done
+</code></pre>
+
+    <p>In order to run the above above script, create the data file called animalList</p>	
+<pre>
+cat > animalList
+lion
+monkey
+tiger
+</pre>
+    <span>&hellip;and so one, one animal per line. End the input using <code>&nbsp;Control+D </code>&nbsp;key combination.</span>
+    <h6 class="text-lg font-light leading-relaxed mt-6 mb-4 text-gray-800">Example listing items</h6>
+    <p>The list membership can come from an array or a text file. In the following example, create a text file that contains a number of lines, each line consisting of a name of an animal and name the file animalList. 
+<pre class="language-bash"><code>
+#!/bin/bash
+echo “The things I like to do include:”
+for myHobbies in read, ski, "collect stamps", run
+do
+    echo $myHobbies
+done 
+</code></pre>
+
+  </div>
+</div>
+
+
+
+<div id="e01" class="flex justify-center mt-6 w-full">
+  <div class="block p-6 rounded-lg shadow-lg bg-white w-full">
+    <h5 class="text-2xl font-semibold sher-teal">Exercise 5: C-like for loops</h5>
+    <p>Create a script to illustrate the C-style for loop. 
+    Example 1 initializes the variable x to 0 (arithmetic expression), the arithmetic expression $x&lt;5 (condition: Is value of x less than 5?) is then evaluated repeatedly until it evaluates to zero. Each time it evaluates to a non-zero value, the do-done block is executed and the arithmetic expression x=$x+1  is evaluated (in other words, the value of x is incremented, or changed, each time the body of the loop is executed. This is equivalent to a while loop as demonstrated in Example 2.</p>
+<pre class="language-bash"><code>
+#!/bin/bash
+# Examples using the C-style for loop
+echo; echo Example 1
+for (( $x=0; $x&lt;5; $x=$x+1 ))
+do
+    echo -n $x" "
+done
+
+echo; echo Example 2
+let x=0
+while (( $x &lt; 5 ))
+do
+	echo –n $x" "
+	let x=$x+1
+done
+
+echo; echo Example 3
+for (( y=25; $y > 0; y-- ))
+do
+    echo -n $y" "
+done
+
+echo; echo Example 4
+for (( z=23; $z >= 0; z=$z-2 ))
+do
+    echo -n $z" "
+done
+</code></pre>
+  </div>
+</div>
+
+
+
+<div id="e01" class="flex justify-center mt-6 w-full">
+  <div class="block p-6 rounded-lg shadow-lg bg-white w-full">
+    <h5 class="text-2xl font-semibold sher-teal">Exercise 6: while loops with nested if statements </h5>
+	<p>The first alternative demonstrates the use of the or operator and nesting decision structure in a loop.:</p>
+<pre class="language-bash"><code>
+#!/bin/bash
+# Purpose: Demonstrate the OR operator
+repeat=yes
+input=yes
+while [ $repeat = yes ]
+do
+	echo "What is your name?"
+	read name
+	if [ $name = "Ellen" -o $name = "ellen" -o $name = "ELLEN" ]
+	then
+		echo "Hello, $name"
+	else
+		echo "Hello, $name. You are not Ellen"
+	fi
+	echo "Again? (To stop, type: no)  "
+	read input
+	if [ $input = no ]
+	then
+		repeat=no
+	fi
+done
+</code></pre>
+
+	<p>This alternative demonstrates the utilization of continue and break statements:</p>  
+<pre class="language-bash"><code>
+#!/bin/bash
+# since we are making an assignment which will always 
+# evaluate to true, we have created an endless loop
+while [ repeat=y ]
+do
+	echo "What is your name?"
+	read name
+	if [ $name = "Ellen" -o $name = "ellen" -o $name = "ELLEN" ]
+	then
+		echo "Hello, $name"
+	else
+		echo "Hello, $name. You are not Ellen"
+	fi
+	read -p "Again? (Type c to continue, followed by Enter)  " input
+# when the user selects c to continue, the continue command will
+# start the next iteration of the loop. Otherwise, the break command
+# will execute and exit the loop.
+	if [ $input = c ]
+	then
+		continue
+	fi
+	break
+done
+</code></pre>
+
+  </div>
+</div>
+
+
+
+<div id="e01" class="flex justify-center mt-6 w-full">
+  <div class="block p-6 rounded-lg shadow-lg bg-white w-full">
+    <h5 class="text-2xl font-semibold sher-teal">Exercise 1: Arrays</h5>
+		<ul class="list-outside">
+			<li>Arrays are variables that store an ordered list of scalar values that are accessed with numeric subscripts</li>
+			<li>Korn and Bash support one-dimensional arrays; the first element has index 0.</li>
+			<li>Bash supports very, very large arrays. Korn arrays hold up to 1024 elements.</li>
+		</ul>
+		<h4>Processing Arrays</h4>
+		<ul class="list-outside">
+			<li>Array elements need not to be assigned contiguously. 
+		<li>Variable is declared as an array using one of the commands: 
+<pre>
+declare –a array_name
+local –a array_name
+readonly –a array_name
+</pre>
+		<li>Array variable can be initialized at the declaration time using syntax: 
+<pre class="language-bash"><code>
+		name=(value0 value1 … valueN)
+		where valueN is of form [[subscript]=]string. 
+</code></pre></li>
+        
+		<li>A particular element of an array can be assigned using expression: 
+<pre class="language-bash"><code>
+arrayName[subscript]=value
+</code></pre></li>
+
+		<li>An array element is referenced by using 
+<pre class="language-bash"><code>
+${arrayName[subscript]}
+</code></pre></li>
+        
+		<li>Example:
+<pre>
+fruit=(apple pear orange banana kiwi)
+echo ${fruit[2]}
+orange
+</pre></li>
+        
+		<li>The size (in bytes) of an array can be displayed using 
+		<pre class="brush: bash; highlight: [1];" title="">
+		${#arrayName[subscript]}
+		</pre></li>
+		<li>If no subscript is used, the size of the first element is displayed. 
+		<pre class="brush: bash; highlight: [1];" title="">
+		echo ${#arrayName}  
+		</pre></li>
+		<li>If * is used as a subscript, the number of array elements is displayed. 
+		<pre class="brush: bash; highlight: [1];" title="">
+		echo ${arrayName[*]}
+		</pre></li>
+		<li>To display the size of the first element in the fruit array (which is apple):
+		<pre class="brush: bash; highlight: [1];" title="">
+		echo ${#fruit}  	
+		</pre></li>	
+		<li>To display the first element of the fruit array (which is apple):
+		<pre class="brush: bash; highlight: [1];" title="">
+		echo ${#fruit[*]}
+		</pre></li>		
+		<li>To display the entire array fruit (which is apple pear orange banana kiwi)
+		<pre class="brush: bash; highlight: [1];" title="">
+		echo ${fruit[*]}
+		</pre></li>
+		</ul>
+  </div>
+</div>
+
+
+
+
+<div id="e01" class="flex justify-center mt-6 w-full">
+  <div class="block p-6 rounded-lg shadow-lg bg-white w-full">
+    <h5 class="text-2xl font-semibold sher-teal">Exercise 2: Database Table Manipulation</h5>
+		<ol>
+			<li>Review your knowledge of the SQL Language <a href="http://mobile.sheridanc.on.ca/~bajcar/syst10199/webtwo4.html#tab-4" target="_blank">See Web Dev 2 Notes</a></li>
+			<li>Log onto mobile.sheridanc.on.ca for this exercise and create the following script:
+			<pre class="brush: bash; highlight: [0];" title="Substitute your user ID for every userID in the script.">
+#!/bin/bash
+echo -n "Enter password for userID database: "
+stty -echo
+read pw
+stty echo
+echo
+echo
+mysql -u userID -p$pw userID &gt; /dev/null 2>&1 &lt; /dev/null
+if [ $? -ne 0 ]
+then
+        echo bad password
+        exit 1
+fi
+
+mysql -u userID -p$pw userID <<+
+SELECT DISTINCT player FROM scores GROUP BY player ORDER BY player;
++
+echo -n "Which player do you want to see?  "
+read plname
+echo
+storename=$(mysql -u userID -p$pw userID <<+
+SELECT * FROM scores WHERE scores.player = "$plname";
++
+)
+if [ "$storename" = "" ]
+then
+        echo "empty"
+        exit 1
+else
+        echo $storename;
+fi</pre>
+			</li>
+			<ul>
+				<li>Line 3: here we are suppressing the display of the password being typed.</li>
+				<li>Line 5: the display is returned to normal</li>
+				<li>Lines 8: test connecting to database; standard output is thrown away; standard input is null, no statements.</li>
+				<li>Lines 15-17: connection to database and executing SELECT statement; using the keyword DISTINCT, the standard output will list the names of players in the database (each name appearing only once).</li>
+				<li>Lines 21-24: connection to database and executing SELECT statement; note the entire statement is a command substitution and will be replaced with the standard output after execution</li>
+				<li>Lines 25-31: display the entire content of $storename variable</li>
+				<li>See Chapter 13 (The MySQL Database Management System) of Sobel's "A Practical Guide to Linux...".</li>
+			</ul>
+			<li>We can convert the string $storename into an array...
+			<pre class="brush: bash; highlight: [0];" title="both commands give same result.">
+			arr=($storename)</pre>
+			</li>
+			<li>...and display in a tabular format:
+			<pre class="brush: bash; highlight: [0];" title="create four columns:">
+j=0
+for i in ${arr[@]}
+do 
+	echo -n $i " "
+	j=$((j+1))
+	if [ $((j%4)) -eq 0 ] 
+	then 
+		echo " "
+	fi
+done</pre>
+			</li>			
+		</ol>
+		
+	<!-- example example example 1 
+	awk '{ for (abc=1; abc<29; abc+=4)  print  $(abc)," ",$(abc+1)," ",$(abc+2)," ",$(abc+3); }' scoreFile.data
+id   player   score   date
+2   Charlie   345   2014-07-04
+3   Charlie   300   2014-07-13
+4   Charlie   300   2014-07-13
+5   Charlie   300   2014-07-13
+awk '{ for (abc=1; abc<29; abc+=4)  print  $(abc),"\t",$(abc+1),"\t",$(abc+2),"\t",$(abc+3); }' scoreFile.data
+			read -a arr <<<$$storename
+  260  ar2=($A)
+  261  echo ${ar2[1]}
+j=0; for i in ${ar2[@]}; do echo -n $i " "; if [ $((j%4)) -eq 0 ] ; then echo " EOF $j "; fi; done
+id  player  score  date   EOF 24
+2  Charlie  345  2014-07-04   EOF 28
+3  Charlie  300  2014-07-13   EOF 32
+4  Charlie  300  2014-07-13   EOF 36
+5  Charlie  300  2014-07-13   EOF 40
+	-->		
+		
+  </div>
+</div>
+
+
+
+<div id="e01" class="flex justify-center mt-6 w-full">
+  <div class="block p-6 rounded-lg shadow-lg bg-white w-full">
+    <h5 class="text-2xl font-semibold sher-teal">Exercise 3: Working with real numbers, bc command, and here document</h5>
+<p class="highlight-3"><img src="../images/exclamation.png" alt="">&nbsp;<strong>Version A:</strong> Invoke bc using command substitution, backquotes, in combination with a here document.</p> 
+	<p> 
+	<pre class="brush: bash; highlight: [1];" title="Version A (bc1)">
+#!/bin/bash
+var1=`bc&lt;&lt;EOF
+18.33 * 19.78
+EOF
+`
+echo $var1</pre>
+
+We can use the echo and pipe combination before
+	<pre class="brush: bash; highlight: [1];" title=" ">
+echo $( echo 18.33*19.78 | bc )</pre>
+	</p>
+
+We can store calculations in a file
+	<pre class="brush: bash; highlight: [1];" title="cat bcstuff">
+7.3 + 4.9 - 2 * (4.3 / 2)</pre>
+then use the file as input to the bc command
+<pre class="brush: bash; highlight: [1];" title="">
+bc < bcstuff</pre>
+	</p>
+	
+	<p class="highlight-3"><img src="../images/exclamation.png" alt="">&nbsp;<strong>Version B:</strong> Invoke bc using command substitution, $() notation, in combination with a here document.</p> 
+	<pre class="brush: bash; highlight: [1];" title="Version B (bc2)">
+#!/bin/bash
+v1=24.34
+v2=17.881
+v3=83.501
+v4=171.63
+var1=$(bc&lt;&lt;EOF
+scale=4
+a=($v1+$v2)
+b=($v3*$v4)
+a*b+15.35
+EOF
+)
+echo $var1</pre>
+</p>
+
+<p class="highlight-3"><img src="../images/exclamation.png" alt="">&nbsp;<strong>Version C:</strong> Using bc math library with the -l option.</p> 
+	<pre class="brush: bash; highlight: [1];" title="Version C (bc3)">
+#!/bin/bash
+# return the sine in radians
+# -l option calls the bc math library
+var1=$(bc -l&lt;&lt;EOF
+scale=9
+s(1.7)
+EOF
+)
+echo $var1</pre>
+</p>
+
+<p class="highlight-3"><img src="../images/exclamation.png" alt="">&nbsp;<strong>Version D:</strong> Using user-defined function to calculate hypotenuse of a right triangle.</p> 
+	<pre class="brush: bash; highlight: [1];" title="Version D (bc4)">
+#!/bin/bash
+#using function
+#calculate hypotenuse of a right triangle
+hypotenuse()
+{
+	hyp=$(bc -l&lt;&lt;EOF
+	scale=9
+	sqrt( $1 * $1 + $2 * $2 )
+	EOF
+	)
+	#return floating point value by echo-and-capture
+	echo "$hyp"
+}
+hyp=$(hypotenuse 3.68 7.32)
+echo "hypotenuse is $hyp"</pre>
+</p>
   </div>
 </div>
 
@@ -216,7 +711,7 @@ figcaption {
         </div>
     </div>
   </footer> 
-</body>
+
 
 <script>
   // topnav

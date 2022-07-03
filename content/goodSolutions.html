@@ -5,11 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover"/>
 <title> SYST13416 </title>
 <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-<link rel="stylesheet" href="../css/styles.css"/> 
-<link rel="stylesheet" href="../css/prism_coy_dev.css"  />
+<link rel="stylesheet" href="css/styles.css"/> 
+<link rel="stylesheet" href="css/prism_coy_dev.css"  />
 <style>
 dl, ol {
   margin-bottom: 16px;
+}
+ol {
+  list-style-type: number;
 }
 h4, h3 {
   margin-top: 16px;
@@ -36,6 +39,8 @@ figcaption {
   color: #00b2ce;
   font-weight: 500;
 }
+
+
 </style>
 </head>
 
@@ -76,63 +81,74 @@ figcaption {
       </div>   
       <nav id="navList" class="min-h-screen hidden md:block sidebar-nav flex-grow px-1 lg:px-4 pb-4 md:pb-0 md:overflow-y-auto break-words">
 
-          <a href="module1.html">Worksheet 1</a>
-          <a href="module2.html">Worksheet 2</a>
-          <a href="module3.html">Worksheet 3</a>
-          <a href="module4.html">Worksheet 4</a>
-          <a href="module5.html">Worksheet 5</a>
-          <a href="module6.html">Worksheet 6</a>
-          <a href="module7.html">Worksheet 7</a>
-          <a href="module8.html">Worksheet 8</a>
-          <a class="bg-gray-200 text-gray-900" href="module9.html">Worksheet 9</a>
-          <a href="moduleA.html">Worksheet 10</a>
+          <a href="worksheets/module1.html">Worksheet 1</a>
+          <a href="worksheets/module2.html">Worksheet 2</a>
+          <a href="worksheets/module3.html">Worksheet 3</a>
+          <a href="worksheets/module4.html">Worksheet 4</a>
+          <a href="worksheets/module5.html">Worksheet 5</a>
+          <a href="worksheets/module6.html">Worksheet 6</a>
+          <a href="worksheets/module7.html">Worksheet 7</a>
+          <a href="worksheets/module8.html">Worksheet 8</a>
+          <a href="worksheets/module9.html">Worksheet 9</a>
+          <a href="worksheets/moduleA.html">Worksheet 10</a>
+          <br>
+          <a class="bg-gray-200 text-gray-900" href="module3.html">A Guideline for Implementing Good Solutions</a>
       </nav>
     </div>  
         
     <section class="pt-4 px-2 md:px-0 lg:px-4 pb-16 w-full overflow-hidden">
-        <h1 class="text-4xl font-medium leading-tight mt-0 mb-2 text-black-600">Worksheet 9</h1>
+        <h1 class="text-4xl font-medium leading-tight mt-0 mb-2 text-black-600">A Guideline for Implementing Good Solutions</h1>
 
 
-<!-- Learning Objectives-->
-<div class="my-5">
-  <div class="flex w-full mx-auto overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800">
-    <div class="flex items-center justify-center px-4 bg-sher-teal">
-        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="triangle-exclamation" class="w-6 h-6 text-white fill-current" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M506.3 417l-213.3-364c-16.33-28-57.54-28-73.98 0l-213.2 364C-10.59 444.9 9.849 480 42.74 480h426.6C502.1 480 522.6 445 506.3 417zM232 168c0-13.25 10.75-24 24-24S280 154.8 280 168v128c0 13.25-10.75 24-23.1 24S232 309.3 232 296V168zM256 416c-17.36 0-31.44-14.08-31.44-31.44c0-17.36 14.07-31.44 31.44-31.44s31.44 14.08 31.44 31.44C287.4 401.9 273.4 416 256 416z"></path></svg>     
-    </div>
-    <div class="px-4 py-2 -mx-3">
-      <div class="mx-3">
-        <h5 class="text-2xl font-semibold sher-teal">In this tutorial&hellip;</h5>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-<!-- >Exercise  -->
-<div id="e01" class="flex justify-center mt-6 w-full">
-  <div class="block p-6 rounded-lg shadow-lg bg-white w-full">
-    <h5 class="text-2xl font-semibold sher-teal">Exercise</h5>
-
-  </div>
-</div>
-
-
-
-<div id="e04" class="flex justify-center mt-6 w-full">
-  <div class="block p-6 rounded-lg shadow-lg bg-white w-full">
-    <h5 class="text-2xl font-semibold sher-teal">Exercise</h5>
-
-  </div>
-</div>
-
-<!-- >Exercise  -->
-<div id="e05" class="flex justify-center mt-6 w-full">
-  <div class="block p-6 rounded-lg shadow-lg bg-white w-full">
-    <h5 class="text-2xl font-semibold sher-teal">Exercise</h5>
-
-  </div>
-</div>
+	<p>
+		A program can compile (be interpreted) correctly, produce the correct output, and still have major problems. Here are some guidelines for the categories: 1) algorithm design, 2) program style, and 3) program correctness.
+	</p>
+	<p>
+		<strong>Algorithm Design.</strong> is a measure of how well the algorithm has been designed. For example, if the solution calls for a recursive algorithm to be implemented, it is considered to be poorly designed if iterative structures are used. Another example: if the algorithm contains a divide-by-zero instruction, has it been safeguarded against divide-by-zero errors? Consider the following questions:
+	</p>
+		<ul>
+			<li>Has the program been designed using the appropriate programming structures?</li>
+			<li>Is the program designed to work correctly for all input cases? What about error cases?</li>
+			<li>Is the program designed to give appropriate error messages for bad input data?</li>
+		</ul>
+	<p>
+		<strong>Program Style.</strong> Style consists of comments, mnemonic variable names, and indentation. Thee purpose of good style is to make the meaning of your program clear to someone who has never seen it before, cannot run it, and cannot talk to you. Consider the following questions:</strong> 
+	</p>
+		<ul>
+			<li>Are variable names well chosen?</li>
+			<li>Are functions used to partition the program appropriately?</li>
+			<li>Is there a clear distinction between variables and constants?</li>
+			<li>Is the program flow of control organized rather than just one big lump?</li>
+			<li>Are comments relevant rather than simple repetitions of the code?</li>
+			<li>Do comments point out key sections of code, indicate special cases, or do they make assertions?</li>			
+		</ul>	
+	<p class="dent">
+		 <strong>Comments.</strong> Use the appropriate comments for the language used. There should be a prologue (or <q>header</q>) specifying at minimum the program name, author(s), date created, date updated, and a short description.  Optionally, it may contain algorithm analysis (input, output), algorithm design (pseudocode) outlining the approach used by the program to solve the problem, and known bugs (if the program does not function correctly in some situations, describe the situations and problems).
+	</p>
+	<p class="dent">
+		<strong>Variable Names.</strong> Each variable name should indicate its meaning. Counters can be named i,j,k and a character can be named simply c, but constructs that are specific to the particular program should have specific, mnemonic names. Good examples: relativeError, speed, sum, temperature, windChill.
+	</p>
+	<p class="dent">
+		<strong>Readability and Indentation.</strong> Indentation should indicate the flow of control. Statements that are nested within a control statement, if, for, while, etc., should be indented a constant distance of at least four (4) spaces.  More deeply nested statements should be more deeply indented. The opening brace delimiting a compound statement should be on a line by itself following the control statement, and closing brace shold be on a line by itself. The indentation of the braces should match the contolling statement, such as in the case of the for statement or the if statement. For alternative acceptable styles, consult the conventions used for your current environment). In case of shell scripts, observe the same rules as the braces.
+	</p>
+	<p>
+		<strong>Program Correctness.</strong> consists of 1) ability to compile/interpret, 2) correct result. Consider the following:
+	</p>	
+		<ul>
+			<li>Does the program compile without any syntax errors or warnings?</li>
+			<li>Does the program work correctly for all input (both correct and erroneous)?</li>
+			<li>Does the program contain logic errors?</li>
+		</ul>		
+	<p class="dent">
+		<strong>Ability to Compile.</strong> The program should compile/interpret without any warnings or errors. Make sure you use the appropriate syntax when compiling/interpreting your program. The permissions on the script file should be set properly.
+	</p>
+	<p class="dent">
+		<strong>Correct Results.</strong> The program should be evaluated on whether it does exactly what the problem stipulates, not on efficiency or appropriateness of the code. Note that <q>exactly</q> implies that, if the desired output format has been specified explicitly, no deviation from that format is allowed. For example, if two numbers are to be printed on the same line, it would be an error if they are printed on two lines, no matter how certain you are that it would be better that way. Also consider:
+	</p>	
+    <ul>
+        <li>Does the program contain any logic errors? (infinite loops, mathematical errors,...)</li>
+        <li>Is the output self-explanatory and well formatted?</li>
+    </ul>	
 
 
 
@@ -206,6 +222,49 @@ figcaption {
     document.getElementById("topnavClosed").classList.toggle("hidden");
   });
 </script>
-<script src="../scripts/prism.js"></script>
+<script src="scripts/prism.js"></script>
+
+
+  <dialog class="dialog" id="modal">
+    <h3 class="title"><span>What do you already know? <br>What do you need to work on?</span>
+      </h3>
+	<ul class="dialog-par">
+			<li>What is a computing device? computer language? What types of computer languages are there?</li>
+			<li>How do you organize your files on your computer? What is a file? directory? folder?</li>
+			<li>What is frontend and backend development? What is programming? Development?</li>
+			<li>How does the Internet work?</li>
+			<li>What is Client/Server environment?</li>
+			<li>Why do we need to communicate effectively with both computing devices and human users?</li>
+			<li>What are standards? Why are they important?</li>
+		</ul>
+    <button id="modal-close">Close</button>
+  </dialog>
+<script>
+//-----------------------------------
+// Declare Variables
+//-----------------------------------
+
+// Modal
+var modalButton = document.getElementById('modal-button');
+var modal = document.getElementById('modal');
+var modalClose = document.getElementById('modal-close');
+
+//-----------------------------------
+// Button Actions
+//-----------------------------------
+
+// on click, show as a modal
+modalButton.addEventListener('click', function() {
+  modal.showModal();
+});
+
+// close modal on click
+modalClose.addEventListener('click', function() {
+  modal.close();
+});
+</script>
+
+
 </body>
+
 </html>

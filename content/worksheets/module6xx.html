@@ -36,50 +36,6 @@ figcaption {
   color: #00b2ce;
   font-weight: 500;
 }
-/* Table 
-td, th {
-padding: 4px 10px;
-border: 1px solid lightgray;
-}
-*/
-
-table {
-	border-collapse : collapse;
-	text-align:left;
-	margin : 0 0 20px 16px;
-	}
-	caption {
-		-moz-border-radius : 4px;
-		-webkit-border-radius : 4px;
-		background : #ff5000;
-		color : #FFF;
-		font-weight : bold;
-		}
-	tr:nth-child(odd) { 
-		background : #FFF;
-		}
-	tr:nth-child(even) {
-		background : #EEE;
-		}
-	tr:hover td {
-		color : #DB0202;
-		}
-	td, th {
-		min-width : 10px;
-		padding : 0 5px;
-		vertical-align:top;
-        font-size : 1em;
-		}
-	th {
-		background : #FFF;
-		border-bottom : 2px solid #DB0202;
-		color : #666;
-		font-size : 10px;
-		font-weight : bold;
-		}
-	td {
-		border-bottom : 1px solid #CCC;
-		}
 </style>
 </head>
 
@@ -220,51 +176,43 @@ echo “Congratulations!”
 	Use upper and lower letters, numbers (some symbols are safe to use). 
 	Generally, variable names begin with a letter but can contain numerals and the underscore. Avoid using keywords (Keep in mind: if you call your variable cat, it may prevent you from using the command cat). </p>
 	<p>	Shell variables are not typed: You do not need to declare variable type; all values are treated as strings by default. Use double quotes to treat spaces and other symbols as part of the string value.</p>
-    
-	<p>To create local variables at the command prompt, use variable assignment in the form of<code>variable=value</code></p>
-    <pre class="language-bash"><code>
-    # NOTE: there is no whitespace around the symbol 
+	
+	<p>To create local variables at the command prompt, use variable assignment in the form of<br>
+	variable=value</p>
+	<pre class="brush: bash;"title="NOTE: there is no whitespace around the symbol = ">
 	DOG="Barky"
 	PI=3.14159
-	CAT="Spot"
-    </code></pre>
+	CAT="Spot"</pre>
 	
 	<p>	All shell variables are initialized to null strings by default.  This means we do not need to declare variables like in Java.</p>
-	<pre class="language-bash"><code>
-    # • Explicit assignment of null strings is possible with:
+	
+	<pre class="brush: bash; first-line: 4;" title="• Explicit assignment of null strings is possible with:">
 	x=" "
 	x=' '
-	x=	
-    </code></pre>
-
-	<p>To display variable names and assigned values:"</p>
-    <pre class="language-bash"><code>
+	x=	</pre>
+	<p>
+	<pre class="brush: bash; first-line: 7;" title="• To display variable names and assigned values:">
 	echo “That DOG is called $DOG”
 	echo “The value of PI is $PI”
-	echo “My cat’s name is $CAT”
-    </code></pre>
-
-	<p>To delete or unset the variable, use the unset command</p>
-    <pre class="language-bash"><code>
-    unset DOG
-    </code></pre>
+	echo “My cat’s name is $CAT”</pre>
+	</p>
+	<p><pre class="brush: bash;  first-line: 10; highlight: [1];" title="To delete or unset the variable, use the unset command">unset DOG</pre>
+	</p>
+	<p><pre class="brush: bash;  first-line: 11; highlight: [1];" title="• You can also set a variable to read only">readonly DOG</pre>
+	</p>
+	<ol><strong>Try the following:</strong>
+	<li>At the prompt, create some variables, assigning different values, and display the assigned values.</li>
 	
-	<p>You can also set a variable to read only</p>
-    <pre class="language-bash"><code>
-    readonly DOG
-    </code></pre>
+	<li>Create the following variables and assign the corresponding values: x = 7, y = 13. Give the command to display the following<br>The value of x is 7 and the value of y is 13.</li>
 	
-    <p>Try the following:</p>
-	<ol>
-        <li>At the prompt, create some variables, assigning different values, and display the assigned values.</li>
-        <li>Create the following variables and assign the corresponding values: x = 7, y = 13. Give the command to display the following<br>The value of x is 7 and the value of y is 13.</li>
-        <li>Note the results after giving each of the following command.
-        <pre class="language-bash"><code>
-        z=x+y; echo "z equals $z"
-        z=$x+$y; echo  "z equals $z"</code></pre>
-        </li>
-        <li>Why are you getting those results? How would you fix the above commands to display the value 20 (result of actual addition)?</li>
-        <li>Check out Chapter 8 of Mark Sobell's book "A Practical Guide..."</li>
+	<li>Note the results after giving each of the following command.
+	<pre class="brush: bash;">
+	z=x+y; echo "z equals $z"
+	z=$x+$y; echo  "z equals $z"</pre>
+	</li>
+	
+	<li>Why are you getting those results? How would you fix the above commands to display the value 20 (result of actual addition)?</li>
+	<li>Check out Chapter 8 of Mark Sobell's book "A Practical Guide..."</li>
 	</ol>
   </div>
 </div>
@@ -300,7 +248,6 @@ echo “Congratulations!”
 	</ol>	
   </div>
 </div>
-
 
 
 <div id="e04" class="flex justify-center mt-6 w-full">
@@ -343,8 +290,6 @@ export PS1</pre>
   </div>
 </div>
 
- 
- 
 
 <div id="e05" class="flex justify-center mt-6 w-full">
   <div class="block p-6 rounded-lg shadow-lg bg-white w-full">
@@ -368,74 +313,73 @@ echo "$dirListing"   # quoted
 </div>
 
 
-
-
 <div id="e06" class="flex justify-center mt-6 w-full">
   <div class="block p-6 rounded-lg shadow-lg bg-white w-full">
     <h5 class="text-2xl font-semibold sher-teal">Exercise 6: Operators</h5>
-	<p>An operator is a type of function, just like in mathematics. An operator name or operator symbol is a notation which denotes a particular operator. Examples of operators are </p>
-	<ul>
-        <li>defining operators (assignment), </li>
+	<p>An operator is a type of function, just like in mathematics. An operator name or operator symbol is a notation which denotes a particular operator. Examples of operators are 
+	</p>
+	<ul><li>defining operators (assignment), </li>
 		<li>evaluating operators (math, conditional statements), and </li>
 		<li>redirecting and piping operators.</li>
 	</ul>
-
+	</section>
 	<h3>Arithmetic Evaluation</h3>
-	<p>The shell allows arithmetic expressions to be evaluated, under certain circumstances (see the let and declare built-in commands and Arithmetic Expansion). Evaluation is done in fixed-width integers with no check for overflow, though division by 0 is trapped and flagged as an error. The operators and their precedence, associativity, and values are the same as in the C language.</p>
+	<p>The shell allows arithmetic expressions to be evaluated, under certain circumstances (see the let and declare built-in commands and Arithmetic Expansion). Evaluation is done in fixed-width integers with no check for overflow, though division by 0 is trapped and flagged as an error. The operators and their precedence, associativity, and values are the same as in the C language. 
+	</p>
 	
 	<h3>Declare Command</h3>
-    <p>Declare variables and/or give them attributes. If no names are given then display the values of variables. The -p option will display the attributes and values of each name.</p>
-    <ul>
-        <li>-a&nbsp;&nbsp;&nbsp;Each name is an indexed array variable (see Arrays).</li> 
-        <li>-A&nbsp;&nbsp;&nbsp;Each name is an associative array variable (see Arrays).</li>
-        <li>-i&nbsp;&nbsp;&nbsp;The variable is treated as an integer; arithmetic evaluation is 
-        performed  when the variable is assigned a value.</li>
-        <li>Syntax:<br>
-        <code class="syntx">declare [-aAfFilrtux] [-p] [name[=value] ...]</code>
-        </li>
-    </ul>
+<p>Declare variables and/or give them attributes. If no names are given then display the values of variables. The -p option will display the attributes and values of each name.
+</p>
+<ul>
+	<li>-a&nbsp;&nbsp;&nbsp;Each name is an indexed array variable (see Arrays).</li> 
+	<li>-A&nbsp;&nbsp;&nbsp;Each name is an associative array variable (see Arrays).</li>
+	<li>-i&nbsp;&nbsp;&nbsp;The variable is treated as an integer; arithmetic evaluation is 	
+	performed  when the variable is assigned a value.</li>
+	<li>Syntax:<br>
+	<code class="syntx">declare [-aAfFilrtux] [-p] [name[=value] ...]</code>
+	</li>
+</ul>
 	<h3>Let Command</h3>
-    <ul>
-        <li>Syntax:<br>
-        <code class="syntx">let arg [arg ...]</code>
-        </li>
+<ul>
+	<li>Syntax:<br>
+	<code class="syntx">let arg [arg ...]</code>
+	</li>
 
-        <li>Each arg is an arithmetic expression to evaluate. If the last arg evaluates to 0, let returns 1; 0 is returned otherwise.	
-        </li>
-    </ul>	
+	<li>Each arg is an arithmetic expression to evaluate. If the last arg evaluates to 0, let returns 1; 0 is returned otherwise.	
+	</li>
+</ul>	
 	
 	<h3>Arithmetic Expansion</h3>
-    <ul>
-        <li>Arithmetic expansion allows the evaluation of an arithmetic expression and the substitution of the result. The format for arithmetic expansion is:
-        <br><code class="syntx">$((expression))</code> 
-    </li>
-    <li>The expression is treated as if it were within double quotes, but a double quote inside the parentheses is not treated specially. All tokens in the expression undergo parameter expansion, string expansion, command substitution, and quote removal. Arithmetic expansions may be nested.
-        </li>
-    </ul>	
+<ul>
+	<li>Arithmetic expansion allows the evaluation of an arithmetic expression and the substitution of the result. The format for arithmetic expansion is:
+    <br><code class="syntx">$((expression))</code> 
+</li>
+<li>The expression is treated as if it were within double quotes, but a double quote inside the parentheses is not treated specially. All tokens in the expression undergo parameter expansion, string expansion, command substitution, and quote removal. Arithmetic expansions may be nested.
+	</li>
+</ul>	
 	
-    <ol start="8"><strong>Try the following:</strong>
-        <li>At the prompt, display content of each variable. Are they the same? Why? Why not?
-    <pre class="brush: bash; first-line: 1; highlight: [0];" title="">
-    let x=14+5+4*8; echo $x
-    let y=(14+5)+4*8; echo $y
-    let z=(14+5+4)*8; echo $z
-    </pre>	
-        </li>
-        <li>Create the following script. What happens if you don’t use the let command?
-    <pre class="brush: bash; first-line: 1; highlight: [0];" title="">
-    #!/bin/sh
-    #Program name: add.sh
-    #Description: 
-    #  add 2 numbers and display each number and their sum
-    let A=1
-    let B=2
-    let sum=$A+$B 
-    echo "A=$A, B=$B, sum=$sum"
-    </pre>	
-        </li>
-    </ol>	
+<ol start="8"><strong>Try the following:</strong>
+	<li>At the prompt, display content of each variable. Are they the same? Why? Why not?
+<pre class="brush: bash; first-line: 1; highlight: [0];" title="">
+let x=14+5+4*8; echo $x
+let y=(14+5)+4*8; echo $y
+let z=(14+5+4)*8; echo $z
+</pre>	
+	</li>
+	<li>Create the following script. What happens if you don’t use the let command?
+<pre class="brush: bash; first-line: 1; highlight: [0];" title="">
+#!/bin/sh
+#Program name: add.sh
+#Description: 
+#  add 2 numbers and display each number and their sum
+let A=1
+let B=2
+let sum=$A+$B 
+echo "A=$A, B=$B, sum=$sum"
+</pre>	
+	</li>
+</ol>	
   </div>
-</div>
 
 
 <div id="e07" class="flex justify-center mt-6 w-full">
@@ -528,8 +472,9 @@ test -f testFile; echo $?
 <div id="e08" class="flex justify-center mt-6 w-full">
   <div class="block p-6 rounded-lg shadow-lg bg-white w-full">
     <h5 class="text-2xl font-semibold sher-teal">Exercise 8: Using expr to evaluate</h5>
-	<p>For each of the following commands, describe the output and explain what the command does. 	If you are getting an error, debug and note the corrections.</p> 
-	<pre>
+	<p>For each of the following commands, describe the output and explain what the command does. 
+	If you are getting an error, debug and note the corrections.</p> 
+	<pre class="brush: bash; highlight: [1];" title="">
 expr 7 + 3
 expr 7+3
 expr 7 * 3
@@ -541,19 +486,16 @@ expr 7 \* \( 3 + 1 \) \| 222
 expr 7 = 3 \| 222
 expr length "Linux is a great operating system"
 expr substr "Linux is a great operating system" 7 13
-expr index "Linux is a great operating system" "x"
-</pre>
-
+expr index "Linux is a great operating system" "x"</pre>
+</p>
   </div>
-</div>
-  
-  
+
+
 <div id="e09" class="flex justify-center mt-6 w-full">
   <div class="block p-6 rounded-lg shadow-lg bg-white w-full">
     <h5 class="text-2xl font-semibold sher-teal">Exercise 9: Shell Variables - positional parameters (Command-line Arguments)</h5>
-    
-<table style="margin: 5px 30px;border: 1px solid lightgray;">
-<tr><th style="min-width:120px">Variable	</th><th>Usage</th></tr>
+<table>
+<tr><th>Variable	</th><th>Usage</th></tr>
 <tr><td>$#	</td><td>Number of arguments on the command line (number of positional parameters)</td></tr>	
 <tr><td>$-	</td><td>Options supplied to the shell</td></tr>	
 <tr><td>$?	</td><td>Exit value of the last command executed</td></tr>	
@@ -564,10 +506,8 @@ expr index "Linux is a great operating system" "x"
 <tr><td>$*	</td><td>All arguments on the command line (“$1 $2 … $9”)</td></tr>	
 <tr><td>$@	</td><td>All arguments on the command line, each separately quoted (“$” “$2” … “$9”)</td></tr>	
 </table>	
-
-<p>Try the following:</p>
 	
-	<ul class="list-outside">
+	<ol start="5"><strong>Try the following:</strong>
 		<li>Enter at the bash command line (See manual pages for set and unset commands.). Note that the variable $1 holds the value A which is the first parameter in the set command, $2 holds the value B, and so on.
 set A B C
 	<pre class="brush: bash; highlight: [0];" title="">
@@ -577,22 +517,21 @@ echo $1 $2 $3
 		</li>	
 		<li>Create a script called args.sh. Enter the code, save it, and make it executable. 
 
-<pre class="language-bash"><code>
+	<pre class="brush: bash; highlight: [0];" title="">
 #!/bin/sh
 echo “the first argument is $1”
 echo “the second is $2”
-echo the number off arguments is $#
-</code></pre>		
-	<p>Try running the script by providing a variety of arguments.</p>
+echo the number off arguments is $#</pre>		
+	Try running the script by providing a variety of arguments.
 
 		</li>
-	</ul>	
+	</ol>	
   </div>
 </div>
 
 
-  
-  </section>
+
+</section>
   </main>
   
   <footer class="bg-dark-gray text-white"> 
