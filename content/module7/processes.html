@@ -4,7 +4,7 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover"/>
 <title> SYST13416 </title>
-<link rel="stylesheet" href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css">
+<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 <link rel="stylesheet" href="../css/styles.css"/> 
 <link rel="stylesheet" href="../css/prism_coy_dev.css"  />
 <style>
@@ -29,41 +29,10 @@ code {
 .sher-teal {
   color: #00b2ce;
 }
-.bg-sher-teal {
-  background-color: #00b2ce;
-}
 figcaption {
   color: #00b2ce;
   font-weight: 500;
 }
-
-* {
-  box-sizing: border-box;
-}
-
-span.template-3col {
-  background: #fff;
-  padding: 0.2rem;
-  border-radius: 7px;
-  box-shadow: 0 2px 6px -2px rgba(0, 0, 0, 0.42);
-  height: 20vh;
-  display: grid;
-  grid-gap: 0.5rem;
-}
-span b {
-  background-color: #333940;
-  border-radius: 4px;
-  padding: 0.2rem 1.5rem;
-  display: grid;
-  place-items: center;
-  color: #fff;
-  font-size: 1.5rem;
-}
-span.template-3col {
-  grid-template-columns: repeat(6, 1fr);
-}
-
-
 </style>
 </head>
 
@@ -104,110 +73,41 @@ span.template-3col {
       </div>   
       <nav id="navList" class="min-h-screen hidden md:block sidebar-nav flex-grow px-1 lg:px-4 pb-4 md:pb-0 md:overflow-y-auto break-words">
 
-          <div class="bg-gray-100 px-3 py-3"><small class="sher-teal">Module 7</small><br><span class="font-bold uppercase text-base">Linux Processes and Utilities</span></div>
-          <a href="processes.html">Processes</a>
+          <div class="bg-gray-100 px-3 py-3"><small class="sher-teal">Module 5</small><br><span class="font-bold uppercase text-base">Bash Script Programming</span></div>
+          <a href="regex.html">Regular expressions</a>
+          <a href="grep.html">Searching for patterns with grep</a>
+          <a href="sed.html">Using the stream editor</a>
+
       </nav>
-      </nav>
-      
     </div>  
         
     <section class="pt-4 px-2 md:px-0 lg:px-4 pb-16 w-full overflow-hidden">
+        <h1 class="text-4xl font-medium leading-tight mt-0 mb-2 text-black-600">Processes</h1>
 
-
-            <button title="7.&nbsp;&nbsp; Obtain information about other users and the user environment">Learning Outcome 7</button>&nbsp;&nbsp;
-			<button title="8. &nbsp;&nbsp; Customize individual user environments">Learning Outcome 8</button>&nbsp;&nbsp;
-			<button title="12. &nbsp;&nbsp;Monitor LINUX / UNIX processes">Learning Outcome 12</button>
-
+        
 
 <!-- Learning Objectives-->
-<div class="my-5">
-  <div class="flex w-full mx-auto overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800">
-    <div class="flex items-center justify-center px-4 bg-sher-teal">
-        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="triangle-exclamation" class="w-6 h-6 text-white fill-current" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M506.3 417l-213.3-364c-16.33-28-57.54-28-73.98 0l-213.2 364C-10.59 444.9 9.849 480 42.74 480h426.6C502.1 480 522.6 445 506.3 417zM232 168c0-13.25 10.75-24 24-24S280 154.8 280 168v128c0 13.25-10.75 24-23.1 24S232 309.3 232 296V168zM256 416c-17.36 0-31.44-14.08-31.44-31.44c0-17.36 14.07-31.44 31.44-31.44s31.44 14.08 31.44 31.44C287.4 401.9 273.4 416 256 416z"></path></svg>     
-    </div>
-    <div class="px-4 py-2 -mx-3">
-      <div class="mx-3">
-        <h5 class="text-2xl font-semibold sher-teal">In this module...</h5>
-        <ul class="list-outside">
-            <li>Understand and use Linux utilites.</li>
-            <li>Describe inter-process communication, process states, and process attributes.</li>
-            <li>Manage processes and control jobs.</li>
-            <li>Change process states.</li>
-            <li>Monitor disk and memory resources.</li>
-
-            <li>Understand and use the following commands:             
-            <span class="template-3col">
-                <b>ps</b>
-                <b>kill</b>
-                <b>top</b>
-                <b>bg</b>
-                <b>fg</b>
-                <b>jobs</b>
-                <b>df</b>
-                <b>du</b>
-                <b>free</b>
-                <b>top</b>
-                <b>ln</b>
-                <b>uptime</b>
-                <b>sleep</b>
-                <b>sftp</b>
-                <b>at</b>
-                <b>crontab</b>
-                </span>
-            </li>
-        </ul>
-        
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<!-- Concepts and Terminology -->
-<div class="my-5">
-  <div class="flex w-full mx-auto overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800">
-    <div class="flex items-center justify-center px-4 bg-sher-teal">
-        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="triangle-exclamation" class="w-6 h-6 text-white fill-current" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M506.3 417l-213.3-364c-16.33-28-57.54-28-73.98 0l-213.2 364C-10.59 444.9 9.849 480 42.74 480h426.6C502.1 480 522.6 445 506.3 417zM232 168c0-13.25 10.75-24 24-24S280 154.8 280 168v128c0 13.25-10.75 24-23.1 24S232 309.3 232 296V168zM256 416c-17.36 0-31.44-14.08-31.44-31.44c0-17.36 14.07-31.44 31.44-31.44s31.44 14.08 31.44 31.44C287.4 401.9 273.4 416 256 416z"></path></svg>     
-    </div>
-    <div class="px-4 py-2 -mx-3">
-      <div class="mx-3">
-        <h5 class="text-2xl font-semibold sher-teal">Concepts and Terminology</h5>
-        <ul class="list-outside">
-            <li>Processes and utilities</li>
-            <li>Monitor processes</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-
-<!-- videos -->
 <div class="flex justify-center mt-6 w-full">
   <div class="block p-6 rounded-lg shadow-lg bg-white w-full">
-    <h5 class="text-2xl font-semibold sher-teal">linkedin.com learning &mdash; videos</h5>
-    <ul>
-    <li>
-        <a href="https://www.linkedin.com/learning-login/share?account=2272289&forceAccount=false&redirect=https%3A%2F%2Fwww.linkedin.com%2Flearning%2Flearning-linux-shell-scripting-2018%3Ftrk%3Dshare_ent_url%26shareId%3D130ep9AUQUOLz8H2trn%252BaQ%253D%253D" target="_blank">
-            Learning Linux Shell Scripting
-            <ol>
-                <li>6. Sleep and process</li>
-            </ol>
-        </a>
-    </li>
-    </ul>
-    <h5 class="text-2xl font-semibold sher-teal">Suggested reading</h5>
-    <ul>
-    <li>
-    <strong>Chapter 3, Chapter 8, and Chapter 5</strong> of A Practical Guide to Linux Commands, Editors, and Shell Programming by Mark Sobell. (see home page for reference information and link to Sheridan Library)
-    <br>Also use as reference  Part VI: Command Reference 
-    </li>
-
-    </ul>
+    <h5 class="text-2xl font-semibold sher-teal">Learning Objectives</h5>
+	<ul class="list-outside">
+        <li></li>
+        <li></li>
+	</ul>
   </div>
 </div>
+
+
+
+<!-- slides -->
+<div class="flex justify-center mt-6 w-full">
+  <div class="block p-6 rounded-lg shadow-lg bg-white w-full">
+    <iframe src="../slides/m7-processes.html" height="600" width="1000"></iframe>
+    <a href="../slides/m7-processes.html" target="_blank">Open in new tab</a>
+  </div>
+</div>
+
+
 
 </section>
   </main>
