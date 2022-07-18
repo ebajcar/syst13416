@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover"/>
+<title> SYST13416 </title>
+<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css"/> 
+<link rel="stylesheet" href="../css/prism_coy_dev.css"  />
+<style>
+dl, ol {
+  margin-bottom: 16px;
+}
+h4, h3 {
+  margin-top: 16px;
+}
+.ordered-list {
+  list-style-type: decimal;
+}
+.text-danger {
+  color: red;
+}
+.bg-dark-gray  {
+  background-color: #333940;
+}
+code {
+  color: black !important;
+}
+.sher-teal {
+  color: #00b2ce;
+}
+.bg-sher-teal {
+  background-color: #00b2ce;
+}
+figcaption {
+  color: #00b2ce;
+  font-weight: 500;
+}
+</style>
+</head>
+
+<body>
+  <nav id="navTop" class="w-full z-30 top-0 text-white bg-dark-gray ">
+    <div class="w-full container max-w-screen-lg mx-auto flex flex-wrap sm:flex-nowrap items-center justify-between mt-0 py-2">
+      <div class="md:pl-4">
+        <a class="text-white hover:text-white no-underline hover:no-underline
+        font-bold text-2xl lg:text-4xl rounded-lg hover:bg-nwoods-secondary " href="../">
+          <h1 class="mb-0 p-1 ">SYST13416 <small>Linux/UNIX Operating Systems</small></h1>
+        </a>
+      </div>
+      <button id="topnavButton" class="rounded-lg sm:hidden focus:outline-none focus:ring" aria-label="Navigation">
+        <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+          <path id="topnavOpen" fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+          <path id="topnavClosed" class="hidden" fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+        </svg>
+      </button>      
+      <div id="topnavList" class="hidden sm:block items-center w-auto mt-0 text-white p-0 z-20">
+        <ul class="list-reset list-none font-semibold flex justify-end flex-wrap sm:flex-nowrap items-center px-0 pb-0">
+          <li class="p-1 sm:p-0"><a class="topnav-link" href="../index.html">Home</a></li>
+        </ul>
+      </div>
+    </div>
+    <hr class="border-b border-gray-600 opacity-50 my-0 py-0" />
+  </nav>
+    
+  <main class="md:flex flex-col md:flex-row md:min-h-screen w-full max-w-screen-xl mx-auto">
+      
+    <div id="navSide" class="flex flex-col w-full md:w-40 lg:w-48 text-gray-700 bg-white flex-shrink-0">
+      <div class="flex-shrink-0 px-8 py-4">
+        <button id="navButton" class="rounded-lg md:hidden focus:outline-none focus:ring" aria-label="Navigation">
+          <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+            <path id="navOpen" fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+            <path id="navClosed" class="hidden" fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+          </svg>   
+        </button>
+      </div>   
+      <nav id="navList" class="min-h-screen hidden md:block sidebar-nav flex-grow px-1 lg:px-4 pb-4 md:pb-0 md:overflow-y-auto break-words">
+
+          <a href="module1.html">Worksheet 1</a>
+          <a href="module2.html">Worksheet 2</a>
+          <a href="module3.html">Worksheet 3</a>
+          <a href="module4.html">Worksheet 4</a>
+          <a href="module5.html">Worksheet 5</a>
+          <a href="module6.html">Worksheet 6</a>
+          <a href="module7.html">Worksheet 7</a>
+          <a href="module8.html">Worksheet 8</a>
+          <a class="bg-gray-200 text-gray-900" href="module9.html">Worksheet 9</a>
+          <a href="moduleA.html">Worksheet 10</a>
+      </nav>
+    </div>  
+        
+    <section class="pt-4 px-2 md:px-0 lg:px-4 pb-16 w-full overflow-hidden">
+        <h1 class="text-4xl font-medium leading-tight mt-0 mb-2 text-black-600">Worksheet 9 <small>Example problem and solution: Canadian provinces</small></h1>
+
+
+<!-- Learning Objectives
+<div class="my-5">
+  <div class="flex w-full mx-auto overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800">
+    <div class="flex items-center justify-center px-4 bg-sher-teal">
+        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="triangle-exclamation" class="w-6 h-6 text-white fill-current" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M506.3 417l-213.3-364c-16.33-28-57.54-28-73.98 0l-213.2 364C-10.59 444.9 9.849 480 42.74 480h426.6C502.1 480 522.6 445 506.3 417zM232 168c0-13.25 10.75-24 24-24S280 154.8 280 168v128c0 13.25-10.75 24-23.1 24S232 309.3 232 296V168zM256 416c-17.36 0-31.44-14.08-31.44-31.44c0-17.36 14.07-31.44 31.44-31.44s31.44 14.08 31.44 31.44C287.4 401.9 273.4 416 256 416z"></path></svg>     
+    </div>
+    <div class="px-4 py-2 -mx-3">
+      <div class="mx-3">
+        <h5 class="text-2xl font-semibold sher-teal">Example problem and solution: Canadian provinces</h5>
+      </div>
+    </div>
+  </div>
+</div>
+-->
+
+
+<!-- Exercise  1 -->
+<div id="e01" class="flex justify-center mt-6 w-full">
+  <div class="block p-6 rounded-lg shadow-lg bg-white w-full">
+    <h5 class="text-2xl font-semibold sher-teal">Problem statement</h5>
+<table>
+	<tr>
+		<td style="padding:20px;">
+            <figure>
+                <figcaption>Original source of provinces.ca file</figcaption>
+                <img src="../images/Picture2.png" height="150" alt="provinces.ca">
+                </figcaption>
+        </td>
+		<td style="padding:20px;">
+            <figure>
+                <figcaption>Original source of capitals.ca file</figcaption>
+                <img src="../images/Picture3.png" width="500" alt="capitals.ca">
+        </td>
+	</tr>
+</table>
+<ul>
+	<li>Create a subdirectory in your ~/bin directory called example1. Place all files in this subdirectory. </li>
+	<li>Create a file using vi that contains all the provinces in Canada, as given in Figure 1 below. 
+		Each field should follow by a colon (:). There are no spaces around the colon. Name the file 
+		provinces.ca</li>
+	<li>Create a file using vi that contains all the capitals in Canada, as given in Figure 2 below. 
+		Each field should follow by a colon (:). There are no spaces around the colon. Name the file capitals.ca</li>
+	<li>Develop a script that provides a user with a menu of 6 choices:
+		<ol>
+			<li>List the capitals.ca file in alphabetical order by capital names, all fields separated by commas.</li>
+			<li>List the province names and their respective capital names.</li>
+			<li>Display the names of the capital name, followed by a comma and space, followed     
+				by the province name, in alphabetical order by province name.<br />
+				example:  Toronto, Ontario</li>
+			<li>Display the record with the smallest population. Output should look like this: <br />
+				Iqualuit is the capital of Nunavut. Nunavut has population of 29,300, area of 2,093,190 square kilometres, 
+				and entered confederation on April 1, 1999.</li>
+			<li>Display the names of the provinces with the smallest area, largest population, 
+				lowest and highest population density (population/area).</li> 
+			<li>Exit the menu.</li>
+		</ol>
+	</li>
+	<li>The menu loops until the user selects choice X. Call the script mainMenu.sh</li>
+</ul>
+<figure><img src="../images/Picture1.png" height="150px" alt="Map of Canada"></figure>
+  </div>
+</div>
+
+
+
+
+<!-- Exercise  1 -->
+<div id="e01" class="flex justify-center mt-6 w-full">
+  <div class="block p-6 rounded-lg shadow-lg bg-white w-full">
+    <h5 class="text-2xl font-semibold sher-teal">Solution</h5>
+	requires two (2) data files, capitals.ca and provinces.ca. Files are related by common information, id. 
+	For example, the first line in capitals.ca file and the ninth line in the provinces.ca file both have an id=6.  
+	Assuming all files are stored in the same directory.<p>
+	
+	Data file called capitals.ca (columns delimited by colon character). The common information is in the last field - column 6.
+	<pre class="brush: bash; highlight: [1];" title="FIELDS: city:population:area:federationEntry:id">
+Toronto:12439755:1076359:July 1, 1867:6
+Quebec City:7560592:1542056:July 1, 1867:5
+Halifax:938134:55284:July 1, 1867:4
+Fredericton:751400:72908:July 1, 1867:3
+Winnipeg:1170300:647797:July 15, 1870:7
+Victoria:4168123:944735:July 20, 1871:10
+Charlottetown:137900:5660:July 1, 1873:2
+Regina:996194:651036:September 1, 1905:8
+Edmonton:3183312:661848:September 1, 1905:9
+St.John's:517000:405212:March 31, 1949:1
+Yellowknife:42800:1346106:July 15, 1870:11
+Whitehorse:31200:482443:June 13, 1898:12
+Iqaluit:29300:2093190:April 1, 1999:13
+</pre>
+
+Data file called provinces.ca (columns delimited by colon character)
+
+	<pre class="brush: bash; highlight: [9];" title="FIELDS: province:id:postalAbreviation">
+Alberta:9:AB
+British Comumbia:10:BC
+Manitoba:7:MB
+New Brunswick:3:NB
+Newfoundland and Labrador:1:NL
+Northwest Territories:11:NT
+Nova Scotia:4:NS
+Nunavut:13:NU
+Ontario:6:ON
+Prince Edward Island:2:PE
+Quebec:5:QC
+Saskatchewan:8:SK
+Yukon Territories:12:YT
+</pre>
+Run the following set of commands, <strong>one at a time</strong>, and note the results. Explain what each does.
+<pre class="language-bash"><code>	
+#!/bin/sh
+./prepare.sh
+while [ $leave = no ]; do
+    sleep 1 
+    clear
+    tput cup 5 20; echo "$LOGNAME's Canadian Provinces" | tr [a-z] [A-Z]
+    tput cup 7 20; echo "a- List contents of capitals.ca file."
+    tput cup 8 20; echo "b- Display names of capitals and provinces."
+    tput cup 9 20; echo "c- List provinces.ca sorted by population."
+    tput cup 10 20; echo "d- Display record with smallest population."
+    tput cup 11 20; echo "e- List population density."
+    tput cup 12 20; echo "x- Exit."
+    tput cup 13 20; echo -n "Please enter your selection $LOGNAME: "
+    read selection
+    case $selection in
+        a|A)
+			clear; echo Capitals of Canadian provinces
+			echo sorted alphabetically by capital names; echo
+	    	./q1.sh
+			echo; echo Press Enter to continue; read dummy;;
+        b|B)
+			clear; echo Names of Capital names and Provinces	
+			echo
+		   	./q2.sh
+			echo; echo Press Enter to continue; read dummy;;
+        c|C)
+			clear; echo Provinces and population;echo
+		   	./q3.sh
+			echo; echo Press Enter to continue; read dummy;;
+        d|D)
+			clear; echo 
+		   	./q4.sh
+			echo; 	echo Press Enter to continue; read dummy;;
+        e|E)
+			clear; echo
+		   	./q5.sh
+			echo; echo Press Enter to continue; read dummy
+			rm temp*;;
+        x|X)
+            leave=yes;;
+        *)
+            echo "Invalid selection.  Try again!"
+        esac
+done
+rm c2 p1
+exit 0</code></pre>	
+	
+	
+<p class="highlight-4">
+a) List the capitals.ca file in alphabetical order by capital names, all fields separated by commas. 
+</p>
+
+<figure>
+<figcaption>prepare.sh</figcaption>
+<pre class="language-bash"><code>	
+#!/bin/sh
+#Program name: prepare.sh
+sort -n -t: -k 2 provinces.ca > p1
+sort -n -t: -k 5 capitals.ca > c2
+join -t: -2 2 -1 5  c2 p1  > a1	
+</code></pre>
+</figure>	
+
+	
+<p class="highlight-4">
+b) List the provinces.ca file in numerical order by population, all fields separated by commas.
+</p>
+
+<figure>
+<figcaption>q1.sh</figcaption>
+<pre class="language-bash"><code>	
+#!/bin/sh
+#Program name: q1.sh
+join -t: -1 5 -2 2 -o 1.2 2.1 2.2 2.3 c2 p1 | sort -t: -k 1	| tr : ,
+</code></pre>	
+</figure>
+	
+<p class="highlight-4">
+c) Display the names of the capital name, followed by a comma, followed     
+				by the province name, in alphabetical order by province name.<br />
+				example:  Toronto, Ontario
+</p>
+
+<figure>
+<figcaption>q2.sh</figcaption>
+<pre class="language-bash"><code>	
+#!/bin/sh
+#Program name: q2.sh
+join -t: -1 5 -2 2 c2 p1 | cut -d: -f2,6 | sort -t: -k 2 | sed 's/:/, /'	
+</code></pre>	
+
+
+	
+<p class="highlight-4">
+c- List provinces.ca sorted by population.
+</p>
+
+<figure>
+<figcaption>q3.sh</figcaption>
+<pre class="language-bash"><code>	
+#!/bin/sh
+#Program name: q3.sh
+join -t: -1 2 -2 5 -o 1.1 1.2 1.3 2.3 p1 c2 | sort -t: -k 4 -n -r | tr : ,	
+</code></pre>	
+</figure>
+
+	
+<p class="highlight-4">
+d) Display the record with the smallest population. Output should look like this: <br />
+				Iqualuit is the capital of Nunavut. Nunavut has population of 29,300, area of 2,093,190 square kilometres, 
+				and entered confederation on April 1, 1999.
+</p>
+
+<figure>
+<figcaption>q4.sh</figcaption>
+<pre class="language-bash"><code>	
+#!/bin/sh
+#Program name: q4.sh
+join -t: -1 2 -2 5 p1 c2 | sort -t: -k 5 -n | sed -n 1,1p > temp
+echo `cut -d: -f4 temp` is the capital of `cut -d: -f2 temp`.
+echo `cut -d: -f2 temp` has population of `cut -d: -f5 temp`,
+echo area of `cut -d: -f6 temp` square kilometers, and
+echo entered confederation on `cut -d: -f7 temp`.	
+</code></pre>	
+</figure>
+	
+<p class="highlight-4">
+e) Display the names of the provinces with the smallest area, largest population, 
+				lowest and highest population density (population/area).
+</p>
+
+<figure>
+<figcaption>q5.sh</figcaption>
+<pre class="language-bash"><code>	
+#!/bin/sh
+#Program name: q5.sh
+join -t: -1 2 -2 5 p1 c2 > temp0
+sort -t: -k 6 -n temp0 | sed -n 1,1p > temp
+echo `cut -d: -f2 temp` has the smallest area.
+sort -t: -k 5 -n -r temp0 | sed -n 1,1p > temp2
+echo `cut -d: -f2 temp2` has the largest population.
+awk -F: '{print $2","$5","$6","$5/$6}' temp0 > temp4
+echo
+sort -t, -n -k 4 temp4 > temp44
+awk -F, '{printf "%-30s %10.0f %10.0f %10.3f\n",$1, $2, $3, $4}' temp44
+echo 
+sort -t, -n -k 4 temp4 | sed -n 1,1p > temp5
+echo `cut -d, -f1 temp5` has the lowest population density.
+sort -t, -r -n -k 4 temp4 | sed -n 1,1p > temp6
+echo `cut -d, -f1 temp6` has the highest population density.	
+</code></pre>	
+</figure>
+  </div>
+</div>
+
+
+
+</section>
+  </main>
+  
+  <footer class="bg-dark-gray text-white"> 
+    <section class="max-w-screen-lg text-white container mx-auto py-2 px-12">  
+        <p id="version" class="leading-none mb-2 my-4">
+            &copy;  This work is the intellectual property of Sheridan College. 
+            Any further copying and distribution outside of class must be within 
+            the copyright law. Posting to commercial sites for profit is prohibited.
+        </p>
+        <p class="text-sm text-gray-100 md:mb-6">
+            <a class="text-white" href="">SYST13416 Linux/UNIX Operating Systems | Sheridan College</a>
+        </p>     
+    </section> 
+    <div class="container max-w-screen-lg mx-auto  px-8">   
+        <div class="max-w-screen-lg xl:max-w-screen-xl mx-auto px-4 sm:px-6 md:px-8">
+          <ul class="text-sm font-medium pb-14 sm:pb-20 grid grid-cols-1 sm:grid-cols-3 gap-y-10">
+            <li class="list-none row-span-2">
+              <h2 class="text-base font-semibold tracking-wide">Course Material</h2>
+              <ul class="list-none space-y-4 md:space-y-1 px-0">
+                <li><a href="https://ulysses.sheridanc.on.ca/coutline/coutlineview_sal.jsp?appver=sal&subjectCode=SYST&courseCode=13416&version=2021011800&sec=0&reload=true">Course Outline</a></li>      
+                <li><a href="https://notepad-plus-plus.org/">Notepad++ Text Editor</a></li>  
+                <li><a href="https://tldp.org/">The Linux Documentation Project</a></li>  
+                <li><a href="https://www.fsf.org/">Free Software Foundation</a></li>   
+              </ul>
+            </li>
+            <li class="list-none row-span-2">
+              <h2 class="text-base font-semibold tracking-wide">Resources</h2>
+              <ul class="list-none space-y-4 md:space-y-1 px-0">
+                <li><a href="https://www.gnu.org/">GNU Operating System</a></li>
+                <li><hr style="margin-top:10px;width:50%"></li>
+                <li><a href="https://linuxmint.com/">Linux Mint</a></li>
+                <li><a href="https://www.ubuntu.com/">Ubuntu</a> </li> 
+                <li><a href="http://www.debian.org/">Debian (formerly Debian GNU/Linux)</a> </li>  
+                <li><a href="https://distrowatch.com/dwres.php?resource=major">DistroWatch.com</a> </li><li><a href="https://www.tecmint.com/linux-distro-for-power-users/">tecmint.com</a> </li>                 
+              </ul>
+            </li>
+            <li class="list-none row-span-2">
+              <h2 class="text-base font-semibold tracking-wide">Sheridan College</h2>
+              <ul class="list-none space-y-4 md:space-y-1 px-0">
+                <li><a href="https://www.sheridancollege.ca/">Davis &mdash; HMC &mdash; Trafalgar</a></li>
+                 <li><a href="https://central.sheridancollege.ca/counselling-services">Wellness &amp; Counselling Services</a></li>   
+                 <li><a href="https://central.sheridancollege.ca/library-services">Library Services</a></li>  
+                 <li><a href="https://it.sheridancollege.ca/service-catalogue/tech-essentials/index.html">Tech Essentials</a></li>
+                <li>
+                  <a href="http://bajcar.dev.fast.sheridanc.on.ca/">Prof. Ellen Bajcar</a>
+                  <span style="color:gray"><br>Office hours (by appointment)</span>
+                </li>
+                <li><a href="https://slate.sheridancollege.ca/d2l/home">SLATE</a></li>  
+                <li><a href="http://tech.fast.sheridanc.on.ca/">Fast Tech (web server access)</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+    </div>
+  </footer> 
+</body>
+
+<script>
+  // topnav
+  var topButton = document.getElementById("topnavButton");
+  var topnavList = document.getElementById("topnavList");
+  topButton.addEventListener("click", function() {
+    this.classList.toggle("active");
+    topnavList.classList.toggle("hidden");
+    document.getElementById("topnavOpen").classList.toggle("hidden");
+    document.getElementById("topnavClosed").classList.toggle("hidden");
+  });
+</script>
+<script src="../scripts/prism.js"></script>
+</body>
+</html>
