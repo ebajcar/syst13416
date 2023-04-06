@@ -1,69 +1,81 @@
 
 <!DOCTYPE html>
 <html lang="en"><head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width">
-
-	<title>missing.css</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Computers</title>
 
 <link rel="stylesheet" href="../css/missing-css.css">
-<!--
-<link rel="stylesheet" href="../css/styles.css"/> 
--->
 <link rel="stylesheet" href="../css/prism_coy_dev.css"  />
-	<link href="https://fonts.bunny.net/css?family=source-sans-3:400,700|m-plus-code-latin:400,700" rel="stylesheet">
+<link href="https://fonts.bunny.net/css?family=source-sans-3:400,700|m-plus-code-latin:400,700" rel="stylesheet">
 
-	<style>
-		:root {
-			--main-font: "Source Sans 3", -apple-system, system-ui, sans-serif;
-		}
-		dfn > code {
-			font-style: normal;
-			text-decoration: 1px dashed var(--muted-fg) underline;
-		}
-		code a {
-			font-family: inherit;
-		}
-	</style>
+<style>
+    :root {
+        --main-font: "Source Sans 3", -apple-system, system-ui, sans-serif;
+    }
+    dfn > code {
+        font-style: normal;
+        text-decoration: 1px dashed var(--muted-fg) underline;
+    }
+    code a {
+        font-family: inherit;
+    }
+    details {
+      position:fixed;
+      top:60px;
+      left:150px;
+    }
+</style>
 </head>
 <body>
-<header>
-  <h1>
-    <span class="allcaps">syst<wbr>13416<v-h>:</v-h><small>Linux Operating System</small></span> 
-    <sub-title>1. The Essence of Unix</sub-title>
-  </h1>
-  <nav>
-    <p class="tool-bar">
-    <a href="../content/index.html">HOME</a>
-    <a href="">1. The Essence of Unix</a>
-    <a href="">2. Linux Command Line</a>
-    <a href="">3. Linux File System</a>
-    <a href="">4. Linux Files</a>
-    <a href="">5. Bash Programming</a>
-    <a href="">6. Filtering with Regex</a>
-    <a href="">7. Processes and Utilities</a>
-    </p>
-  </nav>
-</header>
+
+    <header class="navbar" data-overflow-nav="">
+        <nav class="contents">
+            <div>
+                <button hidden="" aria-hidden="true" type="button" data-nav-expander="" class="iconbutton">
+                    ☰
+                    <script src="overflow-nav.js" type="module"></script>
+                </button>
+            </div>
+            
+            <p><a href="/" class="allcaps">SYST13416</a></p>
+
+            <ul role="list">
+                <li><a href="" aria-current="page">1.Essence_of_Unix</a></li>
+                <li><a href="/docs/forms/">2.Command_line</a></li>
+                <li><a href="/docs/components/">3.File_system</a></li>
+                <li><a href="/docs/aria/">4.Linux_files</a></li>
+                <li><a href="/docs/colorways/">5.Bash_programming</a></li>
+                <li><a href="/docs/variables/">6.Filters_regex</a></li>
+                <li><a href="/docs/layout/">7.Processes+utilities</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+
 
 <main>
-
+<h1>1. The Essence of Unix</h1>
 <h3>Objectives</h3>
 <ul>
   <li>Discuss the background and philosophy of using computers</li>
   <li>Overview the basics of digital computer hardware (memory unit, control unit, ALU, Input/output unit, secondary storage) </li>
   <li>Discuss computer use</li>
 </ul>
-<h3>On this page&hellip;</h3>
+<details>
+<summary>On this page&hellip;</summary>
  <ol>
-    <li><a href="#computers">Computers</a></li>
-    <li><a href="#use">Computer Use</a></li>
+    <li><a href="#computers">Computers<small><br>Digital computers<br>Hardware<br>Computer Use</small></a>
+    </li>
     <li><a href="">Programming Languages</a></li>
     <li><a href="">Operating System</a></li>
     <li><a href="">Why Linux?</a></li>
     <li><a href="">Linux Components</a></li>
     <li><a href="">Standards</a></li>
+    <li><a href="">Exercises</a></li>
   </ol>
+  </details>
 <hr>
 <h2 id="computers">Computers</h2>
 <p>The word computer used to mean a person who computes. Now, a computer is any device used to process information according to a well-defined procedure. 
@@ -92,28 +104,18 @@ Originally, information processing was almost exclusively related to arithmetica
   <li>Monitor, control, and direct overall operation and sequencing of the system</li>
 </ul>
 <p>The physical components are collectively referred to as hardware.</p>
-
-<h3>Memory Unit</h3>
-<p>This unit stores information in a logically consistent format. Typically, both instructions and data are stored in memory, usually in separate and distinct areas. Each computer contains memory of two fundamental types: RAM and ROM</p>
+<p>The <strong>Memory Unit</strong> stores information in a logically consistent format. Typically, both instructions and data are stored in memory, usually in separate and distinct areas. Each computer contains memory of two fundamental types: RAM and ROM</p>
 <ul class="f-switch dense align-items:stretch" role="list">
-<li class="box"><strong>Random Access Memory (RAM)</strong> is usually volatile, which means that whatever is stored there is lost when the computer's power is turned off. Your programs and data are stored in RAM while you are using the computer. The size of a computer's RAM is usually specified in terms of how many bytes are available to the user. Personal computer memories currently consists of from 32 to 512 million bytes.</li>
-<li class="box"><strong>Read-only Memory (ROM) </strong>contains fundamental instructions that cannot be lost or changed by the casual computer user. These instructions include those necessary for loading anything else into the machine when it is first turned on and any other instructions the manufacturer requires to be permanently accessible when the computer is turned on. ROM is non-volatile; its contents are not lost when the power goes off.</li>
+    <li class="box"><strong>Random Access Memory (RAM)</strong> is usually volatile, which means that whatever is stored there is lost when the computer's power is turned off. Your programs and data are stored in RAM while you are using the computer. The size of a computer's RAM is usually specified in terms of how many bytes are available to the user. Personal computer memories currently consists of from 32 to 512 million bytes.</li>
+    <li class="box"><strong>Read-only Memory (ROM) </strong>contains fundamental instructions that cannot be lost or changed by the casual computer user. These instructions include those necessary for loading anything else into the machine when it is first turned on and any other instructions the manufacturer requires to be permanently accessible when the computer is turned on. ROM is non-volatile; its contents are not lost when the power goes off.</li>
 </ul>
-
-<h3>Control Unit</h3>
 <p>The control unit, <strong>Central Processing Unit (CPU)</strong>, directs and monitors the overall operation of the computer. It keeps track of where in memory the next instruction resides, issues the signals needed to both read data from and write data to other units in the system, and executes all instructions.</p>
-
-<h3>Arithmetic Logic Unit</h3>
 <p>The <strong>Arithmetic Logic Unit (ALU)</strong> performs all the arithmetic and logic functions, such as addition, subtraction, comparison, and so forth, provided</p>
-
-<h3>Input/Output Unit</h3>
 <p>The <strong>Input/Output Unit (I/O) </strong> provides access to and from the computer. It is the interface to which peripheral devices such as keyboard, cathode array screens, and printers are attached. Input devices (keyboard, mouse, scanner) trigger instructions to be processed. The most common output device is the <strong>video display terminal (VDT)</strong>, also called monitor.</p>
-
-<h3>Secondary Storage</h3>
-<p>Because <abbr title="Random Access Memory ">RAM</abbr> memory in large quantities is still relatively expensive and volatile, it is not practical as a permanent storage area for programs and data. Secondary or auxiliary storage devices are used for this purpose. Although data have been stored on punched cards, paper tape, and other media in the past, virtually all secondary storage is now done on magnetic tape, magnetic disks, and optical storage media</p>
+<p>Because <abbr title="Random Access Memory ">RAM</abbr> memory in large quantities is still relatively expensive and volatile, it is not practical as a permanent storage area for programs and data. <strong>Secondary storage</strong> (or auxiliary storage) devices are used for this purpose. Although data have been stored on punched cards, paper tape, and other media in the past, virtually all secondary storage is now done on magnetic tape, magnetic disks, and optical storage media</p>
 
 
-<h2 id="use">Computer Use</h2>
+<h3 id="use">Computer Use</h3>
 <p>Computers are tools that assist and ease cumbersome and seemingly impossible tasks. Not all tools are physical devices, some are instructions and methods, that instruct us how to accomplish a goal, such as solve mathematical problem. Many of these tasks require only a human brain, some paper, and a pencil. Without computers, many tasks would require countless hours of hand calculations. </p>
 <p>In any case, NO ONE should depend completely on computers. NEVER blindly trust a computer’s output. Always check your input. To check your computer software’s results, use traditional pencil-and-paper analysis. Always remember that computers are incredibly useful tools that require diligence and understanding.</p>
 
@@ -166,7 +168,6 @@ Originally, information processing was almost exclusively related to arithmetica
               </ul>
             </li>
           </ul>
-    
 </footer>
 	
 </body>
