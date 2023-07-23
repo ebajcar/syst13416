@@ -1,0 +1,71 @@
+Assignment 2 submission 
+Complete Exercise 6: Practise using grep and sed, found in Worksheet 9
+Create and use the file named "datebook" as provided in Exercise 6
+Add your successful command below, together with the output you obtained.
+Note the blank lines for readability! Marks will be deducted if the format is not followed
+---
+
+1. Print all lines that contain string De
+[paste your command question 1]
+
+[paste your output question 1]
+
+
+2. Print all lines where the person's first name starts with K.
+
+
+3. Print all lines with either CA or ca.
+
+
+4. Print all lines ending in 500 and the 2 lines before & after each matched line
+
+
+5. Print all the lines that do not contain 927.
+
+
+6. Print all the lines where birthdays are in April.
+
+
+7. Print all the lines where the phone number is in 832 area code.
+
+
+8. Print all lines containing an uppercase letter, followed by four lowercase letters, a comma, a space, and one uppercase letter.
+
+
+9.Print lines where the last name begins with S.
+
+
+10.Print lines proceeded by a line number where the salary is six figures.
+
+
+11.Print lines containing a 9 followed by a single dash & at least one other digit.
+
+
+12.Print lines containing James or Karen at the beginning of the line.
+
+
+13.Change name Fred to Frederick
+
+
+14.Delete the first four lines.
+
+
+15.Print lines 7 through 14.
+
+
+16.Delete lines containing Place.
+
+
+17.Print all lines where the birthdays are in January or September.
+
+
+18.Replace the line containing Barbara with "Barbara moved to Europe".
+
+
+19.Change norma's birthday to 6/6/56
+
+
+20.Exchange line containing Betty with line containing Lori
+
+
+

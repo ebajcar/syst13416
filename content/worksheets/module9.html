@@ -113,7 +113,16 @@ figcaption {
  	<ul>
 		<li><a href="module9canada.html">Problem: Canadian provinces</a></li>
 	</ul>    
-
+    <h4>Practice exercises</h4>
+ 	<ul>
+		<li><a href="#e01">Exercise 1: using the sed command </a></li>
+        <li><a href="#e02">Exercise 2: using sed with a database file </a></li>
+        <li><a href="#e03">Exercise 3: performing multiple operations with sed   </a></li>
+        <li><a href="#e04">Exercise 4: removing HTML tags with sed </a></li>
+        <li><a href="#e05">Exercise 5: global changes, conditional changes, prohibiting display   </a></li>
+        <li><a href="#e06">Exercise 6: Practise using grep and sed  </a></li>
+        <li><a href="#e07">Exercise 7: Get Comfortable with vi   </a></li>
+	</ul> 
       </div>
     </div>
   </div>
@@ -121,10 +130,10 @@ figcaption {
 
 
 
-<!-- Exercise  1 -->
+<!--  Exercise 1: using the sed command -->
 <div id="e01" class="flex justify-center mt-6 w-full">
   <div class="block p-6 rounded-lg shadow-lg bg-white w-full">
-    <h5 class="text-2xl font-semibold sher-teal">Example 1</h5>
+    <h5 class="text-2xl font-semibold sher-teal">Exercise 1: using the sed command</h5>
 	<p>Create a file named teaormilk that contains the following:</p>
 	<pre title="">
 India’s tea is good.
@@ -139,10 +148,10 @@ some tea is better than other tea.
 </div>
 
 
-<!-- Exercise  2 -->
+<!-- Exercise 2: using sed with a database file -->
 <div id="e02" class="flex justify-center mt-6 w-full">
   <div class="block p-6 rounded-lg shadow-lg bg-white w-full">
-    <h5 class="text-2xl font-semibold sher-teal">Example 2</h5>
+    <h5 class="text-2xl font-semibold sher-teal">Exercise 2: using sed with a database file</h5>
 	<P>the following command changes all incidents of a comma (,) into a comma followed by a space (, ). Use a database file that has fields delimited by a comma.</p>
 	<pre class="brush: bash; first-line: 1; highlight: [0];" title="">
 1234,Johnson,Bob
@@ -157,10 +166,10 @@ some tea is better than other tea.
 </div>
 
 
-<!-- >Exercise 3 -->
+<!-- >Exercise 3: performing multiple operations with sed -->
 <div id="e03" class="flex justify-center mt-6 w-full">
   <div class="block p-6 rounded-lg shadow-lg bg-white w-full">
-    <h5 class="text-2xl font-semibold sher-teal">Example 3</h5>
+    <h5 class="text-2xl font-semibold sher-teal">Exercise 3: performing multiple operations with sed</h5>
 	<p>Create a file that contains the following:</p>
 	<pre class="brush: bash; first-line: 1; highlight: [0];" title="">
 Memorandum
@@ -183,23 +192,21 @@ This is a reminder that the annual company picnic will be held this Sunday at Wo
 </div>
 
 
-
-<!-- >Exercise  -->
+<!-- >Exercise 4: removing HTML tags with sed  -->
 <div id="e04" class="flex justify-center mt-6 w-full">
   <div class="block p-6 rounded-lg shadow-lg bg-white w-full">
-    <h5 class="text-2xl font-semibold sher-teal">Example 4</h5>
+    <h5 class="text-2xl font-semibold sher-teal">Exercise 4: removing HTML tags with sed</h5>
 	<p>To remove HTML tags from a file, you can use the command:</p>
-	<pre class="language-bash"><code>sed -e 's/<[^>]*>//g' myfile.html</code></pre>
-	<p>a '<' character followed by any number of non-'>' characters, and ending with a >. This will have the effect of matching the shortest possible match, rather than the longest possible one.</p>
+	<pre class="language-bash"><code>sed -e 's/&lt;[^>]*>//g' myfile.html</code></pre>
+	<p>a &lt; character followed by any number of non-&gt; characters, and ending with a >. This will have the effect of matching the shortest possible match, rather than the longest possible one.</p>
   </div>
 </div>
 
 
-
-<!-- >Exercise  -->
+<!-- Exercise 5: global changes, conditional changes, prohibiting display -->
 <div id="e05" class="flex justify-center mt-6 w-full">
   <div class="block p-6 rounded-lg shadow-lg bg-white w-full">
-    <h5 class="text-2xl font-semibold sher-teal">Example 5</h5>
+    <h5 class="text-2xl font-semibold sher-teal">Exercise 5: global changes, conditional changes, prohibiting display</h5>
     <h4>Global changes</h4>
 	<p>Suppose the message that is to be changed contains more than one occurrence of the item to be changed. By default, the result can be different than what was expected, as the following illustrates: </p>
 	<pre class="language-bash"><code>echo The tiger cubs will meet this Tuesday at the same time as the meeting last Tuesday | sed 's/Tuesday/Thursday/'</code></pre>
@@ -270,13 +277,11 @@ two&nbsp;&nbsp;	1</pre>
 </div>
 
 
-
-
-<!-- >Exercise  -->
+<!-- Exercise 6: Practise using grep and sed  -->
 <div id="e06" class="flex justify-center mt-6 w-full">
   <div class="block p-6 rounded-lg shadow-lg bg-white w-full">
-    <h5 class="text-2xl font-semibold sher-teal">Practise using grep and sed</h5>
-	<p> The datebook file that ontains the following records:<p> 
+    <h5 class="text-2xl font-semibold sher-teal">Exercise 6: Practise using grep and sed</h5>
+	<p> The datebook file that ontains the following records:</p> 
 	<pre title="File name: datebook">
 Steve Blenheim:238-923-7366:95 Latham Lane, Easton, PA 83755:11/12/56:20300
 Betty Boop:245-836-8357:635 Cutesy Lane, Hollywood, CA 91464:6/23/23:14500
@@ -308,7 +313,7 @@ Vinh Tranh:438-910-7449:8235 Maple Street, Wilmington, VM 29085:9/23/63:68900
 </pre>
  
 	<p>Using <code>grep</code> or <code>egrep</code>, construct a regular expression to extract appropriate records: </p>
-		<ol start="">
+		<ol style="list-style:number;margin-left:15px;" start="1">
 			<li>Print all lines that contain string De.</li>
 			<li>Print all lines where the person's first name starts with K.</li>
 			<li>Print all lines with either CA or ca. </li>
@@ -323,7 +328,7 @@ Vinh Tranh:438-910-7449:8235 Maple Street, Wilmington, VM 29085:9/23/63:68900
 			<li>Print lines containing James or Karen at the beginning of the line.</li>
 		</ol>
 	<p>Using <code>sed</code>, construct a regular expression to extract or modify appropriate records: </p>
-		<ol start="13">
+		<ol style="list-style:number;margin-left:15px;" start="13">
 			<li>Change name Fred to Frederick</li>
 			<li>Delete the first four lines.</li>
 			<li>Print lines 7 through 14.</li>
@@ -332,20 +337,17 @@ Vinh Tranh:438-910-7449:8235 Maple Street, Wilmington, VM 29085:9/23/63:68900
 			<li>Replace the line containing Barbara with "Barbara moved to Europe".</li>
 			<li>Change norma's birthday to 6/6/56</li>
 			<li>Exchange line containing Betty with line containing Lori</li>
-			<li>Move the line beginning with Popeye to overwrite the last line of the file.</li>
+<!--			<li>Move the line beginning with Popeye to overwrite the last line of the file.</li> -->
 		</ol>
 
   </div>
 </div>
 
 
-
-
-
-<!-- >Exercise  -->
+<!-- >Exercise 7: Get Comfortable with vi  -->
 <div id="e07" class="flex justify-center mt-6 w-full">
   <div class="block p-6 rounded-lg shadow-lg bg-white w-full">
-    <h5 class="text-2xl font-semibold sher-teal">Get Comfortable with vi</h5>
+    <h5 class="text-2xl font-semibold sher-teal">Exercise 7: Get Comfortable with vi</h5>
 
 	<p>Use vi editor to create a document called <code>exercise</code> and enter the following text:	</p>
 <pre class="brush: html; first-line: 1; highlight: [0];" title="">
@@ -396,6 +398,9 @@ A blank5 to enjoy the process along the way.
 
 </section>
   </main>
+
+
+
   
   <footer class="bg-dark-gray text-white"> 
     <section class="max-w-screen-lg text-white container mx-auto py-2 px-12">  
