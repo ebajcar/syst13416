@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover"/>
+<title> SYST13416 </title>
+<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css"/> 
+<link rel="stylesheet" href="../css/prism_coy_dev.css"  />
+<style>
+dl, ol {
+  margin-bottom: 16px;
+}
+h4, h3 {
+  margin-top: 16px;
+}
+.ordered-list {
+  list-style-type: decimal;
+}
+.text-danger {
+  color: red;
+}
+.bg-dark-gray  {
+  background-color: #333940;
+}
+code {
+  color: black !important;
+}
+.sher-teal {
+  color: #00b2ce;
+}
+.bg-sher-teal {
+  background-color: #00b2ce;
+}
+figcaption {
+  color: #00b2ce;
+  font-weight: 500;
+}
+</style>
+</head>
+
+<body>
+  <nav id="navTop" class="w-full z-30 top-0 text-white bg-dark-gray ">
+    <div class="w-full container max-w-screen-lg mx-auto flex flex-wrap sm:flex-nowrap items-center justify-between mt-0 py-2">
+      <div class="md:pl-4">
+        <a class="text-white hover:text-white no-underline hover:no-underline
+        font-bold text-2xl lg:text-4xl rounded-lg hover:bg-nwoods-secondary " href="../">
+          <h1 class="mb-0 p-1 ">SYST13416 <small>Linux/UNIX Operating Systems</small></h1>
+        </a>
+      </div>
+      <button id="topnavButton" class="rounded-lg sm:hidden focus:outline-none focus:ring" aria-label="Navigation">
+        <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+          <path id="topnavOpen" fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+          <path id="topnavClosed" class="hidden" fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+        </svg>
+      </button>      
+      <div id="topnavList" class="hidden sm:block items-center w-auto mt-0 text-white p-0 z-20">
+        <ul class="list-reset list-none font-semibold flex justify-end flex-wrap sm:flex-nowrap items-center px-0 pb-0">
+          <li class="p-1 sm:p-0"><a class="topnav-link" href="../index.html">Home</a></li>
+        </ul>
+      </div>
+    </div>
+    <hr class="border-b border-gray-600 opacity-50 my-0 py-0" />
+  </nav>
+    
+  <main class="md:flex flex-col md:flex-row md:min-h-screen w-full max-w-screen-xl mx-auto">
+      
+    <div id="navSide" class="flex flex-col w-full md:w-40 lg:w-48 text-gray-700 bg-white flex-shrink-0">
+      <div class="flex-shrink-0 px-8 py-4">
+        <button id="navButton" class="rounded-lg md:hidden focus:outline-none focus:ring" aria-label="Navigation">
+          <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+            <path id="navOpen" fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+            <path id="navClosed" class="hidden" fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+          </svg>   
+        </button>
+      </div>   
+      <nav id="navList" class="min-h-screen hidden md:block sidebar-nav flex-grow px-1 lg:px-4 pb-4 md:pb-0 md:overflow-y-auto break-words">
+
+          <a href="module1.html">Worksheet 1</a>
+          <a href="module2.html">Worksheet 2</a>
+          <a href="module3.html">Worksheet 3</a>
+          <a href="module4.html">Worksheet 4</a>
+          <a href="module5.html">Worksheet 5</a>
+          <a href="module6.html">Worksheet 6</a>
+          <a href="module7.html">Worksheet 7</a>
+          <a href="module8.html">Worksheet 8</a>
+          <a href="module9.html">Worksheet 9</a>
+          <a class="bg-gray-200 text-gray-900" href="moduleA.html">Worksheet 10</a>
+      </nav>
+    </div>  
+        
+     <section class="pt-4 px-2 md:px-0 lg:px-4 pb-16 w-full overflow-hidden">
+        <h1 class="text-4xl font-medium leading-tight mt-0 mb-2 text-black-600">Worksheet 10</h1>
+
+
+<!-- Learning Objectives-->
+<div class="my-5">
+  <div class="flex w-full mx-auto overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800">
+    <div class="flex items-center justify-center px-4 bg-sher-teal">
+        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="triangle-exclamation" class="w-6 h-6 text-white fill-current" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M506.3 417l-213.3-364c-16.33-28-57.54-28-73.98 0l-213.2 364C-10.59 444.9 9.849 480 42.74 480h426.6C502.1 480 522.6 445 506.3 417zM232 168c0-13.25 10.75-24 24-24S280 154.8 280 168v128c0 13.25-10.75 24-23.1 24S232 309.3 232 296V168zM256 416c-17.36 0-31.44-14.08-31.44-31.44c0-17.36 14.07-31.44 31.44-31.44s31.44 14.08 31.44 31.44C287.4 401.9 273.4 416 256 416z"></path></svg>     
+    </div>
+    <div class="px-4 py-2 -mx-3">
+      <div class="mx-3">
+        <h5 class="text-2xl font-semibold sher-teal">In this tutorial&hellip;</h5>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- >Exercise  -->
+<div id="e01" class="flex justify-center mt-6 w-full">
+  <div class="block p-6 rounded-lg shadow-lg bg-white w-full">
+    <h5 class="text-2xl font-semibold sher-teal">Exercise 1</h5>
+	<h6 class="text-xl font-semibold"><strong>ps :</strong> report a snapshot of the current processes</h6> 
+		
+	<p>The command ps shows the processor status for the entire computer. Without any arguments, it shows the active or stopped programs associated with your terminal only. The flags vary with different flavours of Unix/Linux, so refer to the appropriate manual. PID is the process ID, TTY the associated terminal,  TIME of the CPU processing time so far, and the command name. Adding some flags can change the output of ps dramatically. Try:</p> 
+	<pre class="language-bash"><code>	
+		ps x
+	</code></pre>	
+	<p>Generally, to include the shell and automatic login processes. Note-on some systems you need the dash in front of the options. The added STAT information is the status value of each process. Use the manual page to determine the status values, such as R means the process is running. To see more about what is happening, try:</p> 
+	<pre class="language-bash"><code>		
+		ps xu
+	</code></pre>	
+	<p>The u option provides user-oriented output and includes the name of the user, process ID, percent of CPU used, percent of memory used, virtual and real memory usage. Now try</p>	
+    <pre class="language-bash"><code>		
+		ps aux | wc -l
+	</code></pre>	
+	<p>Examine the manual page for ps to learn more about the a option. You can also view the beginning of the output by issuing the command</p> 
+	</p>	
+	<pre class="language-bash"><code>		
+		ps aux | head
+	</code></pre>
+  </div>
+</div>
+
+
+
+
+<!-- >Exercise  -->
+<div id="e02" class="flex justify-center mt-6 w-full">
+  <div class="block p-6 rounded-lg shadow-lg bg-white w-full">
+    <h5 class="text-2xl font-semibold sher-teal">Exercise 2</h5>
+	<h6 class="text-xl font-semibold">
+		<strong>fg :</strong> send a job to the foreground<br />
+		<strong>bg :</strong> send a job to the background<br />
+		<strong>kill :</strong> send a signal to a process<br />
+		<strong>jobs :</strong> view running or stopped jobs associated with your terminal
+	</h6> 	
+    
+	<p>Make sure you are in the Bourne Again (bash) shell. Examine the manual for the command sort, go the third or fourth page.</p> 
+	<pre class="language-bash"><code>		
+man sort
+	</code></pre>	
+	
+	<p>Do not quit, but stop the job by pressing <code>Ctrl+Z</code>. You will find yourself at the command prompt. At this point, you can do whatever else. For example, run the following command: </p> 
+	<pre class="language-bash"><code>	
+ls -sF | sort -b | head -4
+	</code></pre>
+
+	<p>Note the output. To return to the sort manual page to look up the -b option, enter the command </p> 
+	<pre class="language-bash"><code>		
+fg
+	</code></pre>
+
+	<p>Press <code>Ctrl+Z</code> again to stop the process and look up the ls manual page: </p> 
+	<pre class="language-bash"><code>		
+man ls
+	</code></pre>
+
+	<p>After reading what the options are, press <code>Ctrl+Z</code>. Then Look up the head manual page </p> 
+	<pre class="language-bash"><code>			
+man head
+	</code></pre>	
+
+	<p>After reading some of the contents, press <code>Ctrl+Z</code>. The command jobs shows you what processes you've stopped and moved into the background in the shell. To see all the jobs you have currently running, enter the command:
+	</p> 
+	<pre class="language-bash"><code>		
+jobs
+	</code></pre>
+
+	<p>You can specify which job you wish to return to by specify the job number (in square brackets). For example, to return to viewing the ls manual page, which is the second job you've ran (note that this may change depending what else you may be running at time): </p> 
+	<pre class="language-bash"><code>		
+fg %2
+	</code></pre>
+
+	<p> You can terminate these processes using the command kill. For example, to terminate the first and the third job: </p> 
+	<pre class="language-bash"><code>		
+kill %1 %3
+	</code></pre>
+  </div>
+</div>
+
+
+
+
+<!-- >Exercise  -->
+<div id="e03" class="flex justify-center mt-6 w-full">
+  <div class="block p-6 rounded-lg shadow-lg bg-white w-full">
+    <h5 class="text-2xl font-semibold sher-teal">Exercise 3</h5>
+	<h6 class="text-xl font-semibold">
+		<strong>top :</strong> display Linux tasks<br />
+		<strong>df :</strong> report file system disk space usage<br />
+		<strong>du :</strong> estimate file space usage<br />
+		<strong>free :</strong> display amount of free and used memory in the system
+	</h6> 	
+	<p>Run the following commands, what do the commands do and note the resulting differences</p> 
+	<pre class="language-bash"><code>		
+df
+df  -t  reiserfs
+	</code></pre>
+
+	<p> If you get no results for the second command, try other format types, such as fat32 and ext3. You can run the mount command to see what file systems and their type are available. Run the following commands, what do the commands do and note the resulting differences after each one: </p> 
+	<pre class="language-bash"><code>		
+du
+du -cx
+	</code></pre>
+
+	<p>Run the following command and explain the output. For more details, examine the manual page: </p> 
+	<pre class="language-bash"><code>		
+free
+	</code></pre>
+
+	<p>Monitor real-time resource utilization. Use the key 'q' to quit. </p> 
+	<pre class="language-bash"><code>		
+top
+	</code></pre>
+  </div>
+</div>
+
+
+
+
+<!-- >Exercise  4-->
+<div id="e04" class="flex justify-center mt-6 w-full">
+  <div class="block p-6 rounded-lg shadow-lg bg-white w-full">
+    <h5 class="text-2xl font-semibold sher-teal">Exercise 4</h5>
+	<h6 class="text-xl font-semibold">
+		<strong>at :</strong> schedule a one-time job
+	</h6> 	
+
+	<p>Note that for this exercise you will need a file (it can be anywhere and substitute your name for somefile.txt if it is called something else) and a backups subdirectory in your user's home directory. Locate your document and check the current date as in the following: </p> 
+	<pre class="language-bash"><code>	
+ls
+date
+	</code></pre>
+
+	<p>Type the at command followed by the time you want the job to occur: </p> 
+	<pre class="language-bash"><code>	
+at 17:00</code></pre>
+<pre>at> </code></pre>
+
+	<p>Note that you are at a special shell prompt "at>". Type the copy command (cp), the name of file you want to copy, and the location of the file in which you want to place the backup copy on the file system, and then press Enter: </p> 
+	<pre class="language-bash"><code>	
+cp somefile.txt ~/backups
+	</code></pre>
+
+	<p>Press <code>Ctrl+D</code> to exit the at shell; you should see something akin to the following: </p> 
+	<pre>
+job 1 at 2004-12-10 17:00
+</pre>
+
+	<p>Use the atq command to double-check that the job has been scheduled. To delete a command before it has been executed, use the atrm command: </p> 
+	<pre class="language-bash"><code>	
+atq</code></pre>
+<pre>
+1       2004-12-10 17:00 a username
+</pre>
+
+	<p> To delete a command before it has been executed, use the atrm command: </p> 
+	<pre class="language-bash"><code>	
+atrm 1
+	</code></pre>
+  </div>
+</div>
+
+
+
+
+<!-- >Exercise  -->
+<div id="e05" class="flex justify-center mt-6 w-full">
+  <div class="block p-6 rounded-lg shadow-lg bg-white w-full">
+    <h5 class="text-2xl font-semibold sher-teal">Exercise 5</h5>
+	<h6 class="text-xl font-semibold">
+		<strong>cron :</strong> automate running scripts with cron<br />
+		<strong>crontab :</strong> cron configuration file
+	</h6> 
+	<ul>	
+		<li>The cron daemon runs user scripts at user defined times
+		<li>When cron starts, it reads all of its configuration files, stores them in memory, then goes to sleep</li>
+		<li>Once each minute, cron wakes up, checks the modification times on the crontab files, reloads any files that have changed and executes any tasks scheduled for that minute before returning to sleep</li>
+		<li>A cron configuration file is called a crontab (short for cron table) </li>
+		<li>Each user has a crontab, a file that contains entries</li>
+	</ul>
+	
+	<p>opens crontab file using vi </p> 
+	<pre class="language-bash"><code>	
+crontab -e
+	</code></pre>
+	<p>Example entries: </p>
+	<pre title="Executes myscript.sh at 5 mins past every hour">
+	5 * * * * myscript.sh
+</pre>
+	
+	<pre title="Executes myscript.pl at 2:15pm every day">
+	15 14 * * * myscript.pl
+</pre>	
+	
+	<pre title="Executes myscript.php at midnight on the 1st of each month">
+	0 0 1 * * wget http ://localhost/myscript.php
+</pre>	
+
+<p>Comments  start with pound sign (hash). Each line contains the following sequence of tokens:</p> 
+	<table id="cron">
+		<tr>
+			<td>minute</td><td>hour</td><td>day</td><td>month</td><td>weekday</td><td>[user] command</td>
+		</tr>
+		<tr>
+			<td>0-59</td><td>0-23</td><td>1-31</td><td>1-12</td><td>0-6</td><td>...</td>
+		</tr>		
+	</table>
+	<ul>	
+		<li>matches everything, which stands for "first-last"</li>
+		<li>0=sunday</li>
+		<li>single integer matches exactly</li>
+		<li>two integers separated by dash, matches the range of values (8-11 specifies execution at hours 8, 9, 10, and 11</li>
+		<li>a comma-separated series of integers or ranges, matching any listed values ("1,2,5,9", "0-4,8-12")</li>
+		<li>The last field (the rest of the line) specifies the command to run. The entire command portion of the line, up to a newline or % character.</li>
+	</ul>	
+	
+	<p>Explain what each of the following entries would do: </p>
+	<pre class="brush: bash; first-line: 4;" title="">
+	5 4 * * sun echo "What time is it?"
+	0 22 * * 1-5 mail -s "Good Evening"
+	1 1 1 1 * hello.pl > /dev/null
+</pre>	
+
+
+  </div>
+</div>
+
+
+
+
+<!-- >Exercise  -->
+<div id="e06" class="flex justify-center mt-6 w-full">
+  <div class="block p-6 rounded-lg shadow-lg bg-white w-full">
+    <h5 class="text-2xl font-semibold sher-teal">Exercise 6</h5>
+	<h6 class="text-xl font-semibold">
+		<strong>sftp :</strong> secure file transfer protocol 
+	</h6> 
+	<p>If you download putty.exe and psftp.exe  [ http://putty.very.rulez.org/download.html ] you can use psftp to transfer files between machines.</p>
+	<p>psftp.exe: Click on the executable. When the window opens, at the prompt, type:
+open dev.fast.sheridanc.on.ca
+When prompted, enter your userID.
+When prompted, enter your password 
+Once you get the prompt, you can use many of the Linux commands.
+(Refer to the download site for documentation.)
+ </p>
+	<p>sftp: Working at the command prompt, you can connect by giving the command: </p> 
+    	<pre class="language-bash"><code>	
+sftp userName@domain.name
+	</code></pre>
+	
+	<p>and provide your password when prompted. you will get a prompt on successful connection:sftp></p>
+
+	<p>Examples: </p> 
+	
+	<p class="highlight-4">	
+		sftp> ls<br />
+		sftp> cd public_html<br />
+		sftp> mkdir dirX<br />
+		sftp> mkdir myproject<br />
+		sftp> cd ..
+	</p>	
+    <h6>Some commonly used commands:</h6>
+	<pre class="language-bash"><code>	
+	# closes connection in psftp
+	close  
+	# working directory on remote server
+	pwd   
+	# working directory on local machine
+	lpwd    
+	# change directory on the client (local) machine
+	lcd C:\mysite
+	# change directory on the remote server
+	cd public_html
+	# put or upload one file to the server
+	put myfile.dat                               
+	# put or upload many files to the server
+	mput myfile.dat newname.dat
+	# upload entire directory recursively
+	mput -r mydir newname
+	# change permissions on the server
+	chmod 711 dirname
+	# get or download one file from the server
+	get somefile    
+	# get or download many files from the server	
+	mget file1.txt file2.txt file3.txt
+</code></pre>
+	<p>Note: make sure you are in the correct directory BOTH on the server AND your machine before uploading and downloading files and directories. </p> 
+	
+  </div>
+</div>
+
+
+
+
+<!-- >Exercise  -->
+<div id="e05" class="flex justify-center mt-6 w-full">
+  <div class="block p-6 rounded-lg shadow-lg bg-white w-full">
+    <h5 class="text-2xl font-semibold sher-teal">Additional utilities</h5>
+	<h6 class="text-xl font-semibold">ssh, ln, nohup, tty, stty, uptime, ifconfig, ping sleep</h6>	
+	
+	<table >
+		<tr>
+			<td style="min-width:120px">ssh</td><td>The telnet program and ssh program let you login to a remote computer where you have an established account</td>
+		</tr>
+		<tr>
+			<td>ln</td><td>make links between files</td>
+		</tr>	
+		<tr>
+			<td>nohup</td><td>run a command immune to hang-ups, with output to a non-tty</td>
+		</tr>	
+		<tr>
+			<td>tty</td><td>print the file name of the terminal connected to standard output</td>
+		</tr>	
+		<tr>
+			<td>stty</td><td>changes terminal settings</td>
+		</tr>	
+		<tr>
+			<td>uptime</td><td>display the status of the system, how long the system has been u</td>
+		</tr>	
+		<tr>
+			<td>sleep</td><td></td>
+		</tr>	
+		<tr>
+			<td>ifconfig</td><td>The IP address of a URL can be discovered with the host command and that of your own computer with ifconfig  (note that there is no spelling error: in windows it is ipconfig, in linux it is ifconfig)</td>
+		</tr>	
+		<tr>
+			<td>ping</td><td>A network connection can be tested with the ping command</td>
+		</tr>	
+		<tr>
+			<td>&nbsp;</td><td>Key combinations of Ctr+Alt+F1  to  Ctr+Alt+F7 switches among consoles
+</td>
+		</tr>	
+		<tr>
+			<td></td><td></td>
+		</tr>	
+		<tr>
+			<td></td><td></td>
+		</tr>			
+	</table>	
+	<!--
+	<p class="highlight-3">
+		<strong>write</strong> send a message 
+	</p> 
+	<p>The syntax of a write command line is </p>
+	<p class="highlight-4">		
+		~$ write userid [terminal]<br />
+		write your message here<br />
+		more here...
+	 </p> 
+	<p>The userid is the user name and the terminal is optional.  </p>
+	<p>The terminal is optional, but useful if the person is logged in several times and you want to target a specific terminal.</p>
+	<p>Each user has the option to deny or accept messages. To accept messages, run the command:</p>
+	<p class="highlight-4">		
+		~$ mesg y
+	 </p> 	
+	<p>To stop accepting messages, run the command:</p>
+	<p class="highlight-4">		
+		~$ mesg n
+	 </p>	
+	<p>To establish two-way communication with another user, </p>	
+	<ul> <li>you and the other user must each execute write, specifying the other's userid. The write utility then copies text, line by line, from one keyboard-display to the other. </li> <li> Sometimes it helps to establish a convention, such as typing o for "over" when you are ready for the other person to type and typing oo for "over and out" when you are ready to end the conversation. </li> <li> When you want to stop communicating with the other user, press <code>&nbsp;Control+D </code>&nbsp;at the beginning of a line, which tells the write to quit, displaying EOF on the other user's terminal, and returns you to the shell.  The other user must do the same. </li> </ul> 
+	
+	
+	<p> </p> 
+	<p class="highlight-4">		
+		~bin$ 
+	</p>	
+	
+	<p> </p> 
+	<pre class="brush: bash; highlight: [1];" title="">
+</pre>
+
+	<p class="highlight-4">		
+			~bin$ &square;<br />
+	</p>
+	
+-->
+
+
+  </div>
+</div>
+
+
+
+
+<!-- >Exercise  
+<div id="e05" class="flex justify-center mt-6 w-full">
+  <div class="block p-6 rounded-lg shadow-lg bg-white w-full">
+    <h5 class="text-2xl font-semibold sher-teal">Exercise</h5>
+
+  </div>
+</div>
+-->
+
+</section>
+  </main>
+  
+  <footer class="bg-dark-gray text-white"> 
+    <section class="max-w-screen-lg text-white container mx-auto py-2 px-12">  
+        <p id="version" class="leading-none mb-2 my-4">
+            &copy;  This work is the intellectual property of Sheridan College. 
+            Any further copying and distribution outside of class must be within 
+            the copyright law. Posting to commercial sites for profit is prohibited.
+        </p>
+        <p class="text-sm text-gray-100 md:mb-6">
+            <a class="text-white" href="">SYST13416 Linux/UNIX Operating Systems | Sheridan College</a>
+        </p>     
+    </section> 
+    <div class="container max-w-screen-lg mx-auto  px-8">   
+        <div class="max-w-screen-lg xl:max-w-screen-xl mx-auto px-4 sm:px-6 md:px-8">
+          <ul class="text-sm font-medium pb-14 sm:pb-20 grid grid-cols-1 sm:grid-cols-3 gap-y-10">
+            <li class="list-none row-span-2">
+              <h2 class="text-base font-semibold tracking-wide">Course Material</h2>
+              <ul class="list-none space-y-4 md:space-y-1 px-0">
+                <li><a href="https://ulysses.sheridanc.on.ca/coutline/coutlineview_sal.jsp?appver=sal&subjectCode=SYST&courseCode=13416&version=2021011800&sec=0&reload=true">Course Outline</a></li>      
+                <li><a href="https://notepad-plus-plus.org/">Notepad++ Text Editor</a></li>  
+                <li><a href="https://tldp.org/">The Linux Documentation Project</a></li>  
+                <li><a href="https://www.fsf.org/">Free Software Foundation</a></li>   
+              </ul>
+            </li>
+            <li class="list-none row-span-2">
+              <h2 class="text-base font-semibold tracking-wide">Resources</h2>
+              <ul class="list-none space-y-4 md:space-y-1 px-0">
+                <li><a href="https://www.gnu.org/">GNU Operating System</a></li>
+                <li><hr style="margin-top:10px;width:50%"></li>
+                <li><a href="https://linuxmint.com/">Linux Mint</a></li>
+                <li><a href="https://www.ubuntu.com/">Ubuntu</a> </li> 
+                <li><a href="http://www.debian.org/">Debian (formerly Debian GNU/Linux)</a> </li>  
+                <li><a href="https://distrowatch.com/dwres.php?resource=major">DistroWatch.com</a> </li><li><a href="https://www.tecmint.com/linux-distro-for-power-users/">tecmint.com</a> </li>                 
+              </ul>
+            </li>
+            <li class="list-none row-span-2">
+              <h2 class="text-base font-semibold tracking-wide">Sheridan College</h2>
+              <ul class="list-none space-y-4 md:space-y-1 px-0">
+                <li><a href="https://www.sheridancollege.ca/">Davis &mdash; HMC &mdash; Trafalgar</a></li>
+                 <li><a href="https://central.sheridancollege.ca/counselling-services">Wellness &amp; Counselling Services</a></li>   
+                 <li><a href="https://central.sheridancollege.ca/library-services">Library Services</a></li>  
+                 <li><a href="https://it.sheridancollege.ca/service-catalogue/tech-essentials/index.html">Tech Essentials</a></li>
+                <li>
+                  <a href="http://bajcar.dev.fast.sheridanc.on.ca/">Prof. Ellen Bajcar</a>
+                  <span style="color:gray"><br>Office hours (by appointment)</span>
+                </li>
+                <li><a href="https://slate.sheridancollege.ca/d2l/home">SLATE</a></li>  
+                <li><a href="http://tech.fast.sheridanc.on.ca/">Fast Tech (web server access)</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+    </div>
+  </footer> 
+</body>
+
+<script>
+  // topnav
+  var topButton = document.getElementById("topnavButton");
+  var topnavList = document.getElementById("topnavList");
+  topButton.addEventListener("click", function() {
+    this.classList.toggle("active");
+    topnavList.classList.toggle("hidden");
+    document.getElementById("topnavOpen").classList.toggle("hidden");
+    document.getElementById("topnavClosed").classList.toggle("hidden");
+  });
+</script>
+<script src="../scripts/prism.js"></script>
+</body>
+</html>

@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover"/>
+<title> SYST13416 </title>
+<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css"/> 
+<link rel="stylesheet" href="../css/prism_coy_dev.css"  />
+<style>
+dl, ol {
+  margin-bottom: 16px;
+}
+h4, h3 {
+  margin-top: 16px;
+}
+.ordered-list {
+  list-style-type: decimal;
+}
+.text-danger {
+  color: red;
+}
+.bg-dark-gray  {
+  background-color: #333940;
+}
+code {
+  color: black !important;
+}
+.sher-teal {
+  color: #00b2ce;
+}
+.bg-sher-teal {
+  background-color: #00b2ce;
+}
+figcaption {
+  color: #00b2ce;
+  font-weight: 500;
+}
+</style>
+</head>
+
+<body>
+  <nav id="navTop" class="w-full z-30 top-0 text-white bg-dark-gray ">
+    <div class="w-full container max-w-screen-lg mx-auto flex flex-wrap sm:flex-nowrap items-center justify-between mt-0 py-2">
+      <div class="md:pl-4">
+        <a class="text-white hover:text-white no-underline hover:no-underline
+        font-bold text-2xl lg:text-4xl rounded-lg hover:bg-nwoods-secondary " href="../">
+          <h1 class="mb-0 p-1 ">SYST13416 <small>Linux/UNIX Operating Systems</small></h1>
+        </a>
+      </div>
+      <button id="topnavButton" class="rounded-lg sm:hidden focus:outline-none focus:ring" aria-label="Navigation">
+        <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+          <path id="topnavOpen" fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+          <path id="topnavClosed" class="hidden" fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+        </svg>
+      </button>      
+      <div id="topnavList" class="hidden sm:block items-center w-auto mt-0 text-white p-0 z-20">
+        <ul class="list-reset list-none font-semibold flex justify-end flex-wrap sm:flex-nowrap items-center px-0 pb-0">
+          <li class="p-1 sm:p-0"><a class="topnav-link" href="../index.html">Home</a></li>
+        </ul>
+      </div>
+    </div>
+    <hr class="border-b border-gray-600 opacity-50 my-0 py-0" />
+  </nav>
+    
+  <main class="md:flex flex-col md:flex-row md:min-h-screen w-full max-w-screen-xl mx-auto">
+      
+    <div id="navSide" class="flex flex-col w-full md:w-40 lg:w-48 text-gray-700 bg-white flex-shrink-0">
+      <div class="flex-shrink-0 px-8 py-4">
+        <button id="navButton" class="rounded-lg md:hidden focus:outline-none focus:ring" aria-label="Navigation">
+          <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+            <path id="navOpen" fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+            <path id="navClosed" class="hidden" fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+          </svg>   
+        </button>
+      </div>   
+      <nav id="navList" class="min-h-screen hidden md:block sidebar-nav flex-grow px-1 lg:px-4 pb-4 md:pb-0 md:overflow-y-auto break-words">
+
+          <a href="module1.html">Worksheet 1</a>
+          <a class="bg-gray-200 text-gray-900" href="module2.html">Worksheet 2</a>
+          <a href="module3.html">Worksheet 3</a>
+          <a href="module4.html">Worksheet 4</a>
+          <a href="module5.html">Worksheet 5</a>
+          <a href="module6.html">Worksheet 6</a>
+          <a href="module7.html">Worksheet 7</a>
+          <a href="module8.html">Worksheet 8</a>
+          <a href="module9.html">Worksheet 9</a>
+          <a href="moduleA.html">Worksheet 10</a>
+      </nav>
+    </div>  
+        
+    <section class="pt-4 px-2 md:px-0 lg:px-4 pb-16 w-full overflow-hidden">
+        <h1 class="text-4xl font-medium leading-tight mt-0 mb-2 text-black-600">Worksheet 2</h1>
+
+<!-- Learning Objectives-->
+<div class="my-5">
+  <div class="flex w-full mx-auto overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800">
+    <div class="flex items-center justify-center px-4 bg-sher-teal">
+        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="triangle-exclamation" class="w-6 h-6 text-white fill-current" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M506.3 417l-213.3-364c-16.33-28-57.54-28-73.98 0l-213.2 364C-10.59 444.9 9.849 480 42.74 480h426.6C502.1 480 522.6 445 506.3 417zM232 168c0-13.25 10.75-24 24-24S280 154.8 280 168v128c0 13.25-10.75 24-23.1 24S232 309.3 232 296V168zM256 416c-17.36 0-31.44-14.08-31.44-31.44c0-17.36 14.07-31.44 31.44-31.44s31.44 14.08 31.44 31.44C287.4 401.9 273.4 416 256 416z"></path></svg>     
+    </div>
+    <div class="px-4 py-2 -mx-3">
+      <div class="mx-3">
+        <h5 class="text-2xl font-semibold sher-teal">In this tutorial&hellip;</h5>
+        <ul class="list-outside">
+		<li><a href="#e01">Exercise 1: Read and Reflect</a></li>
+		<li><a href="#e02">Exercise 2: View The Calendar</a></li>
+		<li><a href="#e03">Exercise 3: Work With The Date</a></li>
+		<li><a href="#e04">Exercise 4: View And Work With History</a></li>
+		<li><a href="#e05">Exercise 5: Redirect Output</a></li>
+		<li><a href="#e06">Exercise 6: Use Pipes and Pipelines</a></li>
+		<li><a href="#e07">Exercise 7: View Who is Logged On</a></li>
+		<li><a href="#e08">Exercise 8: Communicating with Others</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Exercie 1: Read and Reflect-->
+<div id="e01" class="flex justify-center mt-6 w-full">
+  <div class="block p-6 rounded-lg shadow-lg bg-white w-full">
+    <h5 class="text-2xl font-semibold sher-teal">Exercise 1: Read and Reflect</h5>
+    <p>To help you develop your critical thinking and system thinking, consider the following questions after reading the material for Module 2:</p>
+    <ol class="list-outside">
+        <li>What is the command syntax? Give examples.</li>
+        <li>What is a utility? How are utilities classified?</li>
+        <li>Using primary source only, what options and arguments are available for utilities: cal, date</li>
+        <li>What is a shell? What shells are available on Unix? Linux?</li>
+        <li>What is history? What does it allow you to do?</li>
+        <li>How are commands processed? What defaults are used for input and output? Can you have a process without an input? an output? What happens when you have an error? How do you identify and correct errors? Give an example of a syntactic error. Give an example of a semantic error.</li>
+        <li>What is a redirection? What is a pipeline?</li>
+    </ol>
+  </div>
+</div>
+
+<!-- Exercie  2: View The Calendar-->
+<div id="e02" class="flex justify-center mt-6 w-full">
+  <div class="block p-6 rounded-lg shadow-lg bg-white w-full">
+    <h5 class="text-2xl font-semibold sher-teal">Exercise  2: View The Calendar</h5>
+		<ol class="list-outside">
+			<li value="1">The cal command without any option or argument will output the current month's calendar. Try:<br><pre>~$  cal</pre></li>
+			<li value="2">You can specify the year as an argument. Try:<br><pre>~$  cal 1897</pre></li>
+			<li value="3">You can specify the month and year as arguments. Try:<br><pre>~$  cal 2 1991</pre></li>
+			<li value="4">To get information about other options and arguments for the command cal, examine its manual page:<br><pre>~$  man cal</pre></li>
+			<li value="5">How do you display the calendar for the current month?</li>
+			<li value="6">How do you display the calendar for the same month last year?</li>
+			<li value="7">How do you display the calendar for the year 1980?</li>
+		</ol>
+  </div>
+</div>
+
+<!-- Exercie 3: Work With The Date-->
+<div id="e03" class="flex justify-center mt-6 w-full">
+  <div class="block p-6 rounded-lg shadow-lg bg-white w-full">
+    <h5 class="text-2xl font-semibold sher-teal">Exercise 3: Work With The Date</h5>
+		<ol>
+			<li value="1"> Display the current time and date. Try:
+				<pre>~$ date </pre></li>
+                
+			<li value="2"> To get information about other options and arguments for the command date, examine its manual page:</li>
+				<pre>~$ man date </pre></li>
+                
+			<li value="3"> You can show formatted date and time. Check the manual page for the formatting options. Try:
+				<pre>~$ date +'Date: %m/%d/%Y%nTime: %r'  </pre></li>
+                
+			<li value="5">Display date in the following format: Today is Mon MM/DD/YY  (Note the command you used). ?</li>
+            
+			<li value="6">Display the date in three (3) other formats of your choosing. (Use a variety of available formats. Be creative. Note the commands you use) ?</li>
+		</ol>
+  </div>
+</div>
+
+<!-- Exercie 4: View And Work With History-->
+<div id="e04" class="flex justify-center mt-6 w-full">
+  <div class="block p-6 rounded-lg shadow-lg bg-white w-full">
+    <h5 class="text-2xl font-semibold sher-teal">Exercise 4: View And Work With History</h5>
+		<ol>
+			<li value="1">  List your history of commands. Try:</li>
+				<li class="highlight-4">~$ history </li>	
+			<li value="2"> Redo command line 10 assuming that history shows at least 10 commands. Try:</li>
+				<li class="highlight-4">~$ !10 </li>
+			<li value="3"> To get information about other options and arguments for the command history, examine its manual page. Try:</li>
+				<li class="highlight-4">~$ man history </li>
+			<li value="1"> Repeat last cal command but pipe it to the word count command to return the number of lines in the output. Try:</li>
+				<li class="highlight-4">~$ !cal | wc -l </li>
+			<li value="1"> Print without executing event number 6. Try:</li>
+				<li class="highlight-4">~$ !6:p </li>
+			<li value="1"> What will the following command do? Explain (H is capitalized) </li>
+				<li class="highlight-4">~$ History 5 </li>		
+			<li value="5"> What will the following command do?</li>
+				<li class="highlight-4">~$ history 7</li>
+			<li value="6"> What will the following command do (no spaces)?</li>
+				<li class="highlight-4">~$ !! </li>
+			<li value="7"> Give the command to redo line 21 of your history. View the command before you execute it. What are the two commands you used?</li>
+		</ol>
+  </div>
+</div>
+
+<!-- Exercie 5: Redirect Output-->
+<div id="e05" class="flex justify-center mt-6 w-full">
+  <div class="block p-6 rounded-lg shadow-lg bg-white w-full">
+    <h5 class="text-2xl font-semibold sher-teal">Exercise 5: Redirect Output</h5>
+		<ol>
+			<li value="1"> View the manual page for the cat command.  What does cat do?
+            <pre>~$ man cat </pre></li>	
+			<li value="2"> Now type the cat command and redirect its STDOUT to a file called "randomNames". Note that after you press enter, you are not presented with the command prompt (continue with the next exercises):
+            <pre>~$ cat > randomNames </pre></li>
+			<li value="3"> After pressing "Enter", your cursor will just sit there and wait for you to do something,  type the following names, pressing "Enter" after each one.
+            <pre>
+Marie Curie
+Albert Einstein
+Mark Twain
+Wolfgang Amadeus Mozart
+Stephen Hawking
+Isaac Newton</pre></li>
+			<li value="4">Finish the random names list and press CTRL+D to finish. What does the CTRL+D stand for?</li>
+			<li value="5"> Display the calendar for January 2014 and save the output in a file called  jan2014   What command did you use?</li>
+			<li value="6">  Append to your  jan2014  file the current date and time. Note the command(s) you used.</li>
+			<li value="7"> What is the difference between running the following two commands? (other then the year!)
+<pre>~$  cal 1 2011; cal 2 2011; cal 3 2011 >> winter.2011
+~$  (cal 1 2012; cal 2 2012; cal 3 2012) >> winter.2012</pre></li>
+			<li value="8"> To view winter.2011 and winter.2012, use the cat command.  Note the results and your observations after executing each command.</li>
+			<li value="9"> List your history of commands and save them in a file called tutorial2.txt (at the prompt, type the following line, followed by the <enter> key)
+            <pre>~$ history > tutorial2.txt  </pre></li>	
+		</ol>	
+  </div>
+</div>
+
+<!-- Exercie 6: Use Pipes and Pipelines-->
+<div id="e06" class="flex justify-center mt-6 w-full">
+  <div class="block p-6 rounded-lg shadow-lg bg-white w-full">
+    <h5 class="text-2xl font-semibold sher-teal">Exercise 6: Use Pipes and Pipelines</h5>
+		<ol>
+		<li value="1">  Use the online manual to explore what the following commands do and their syntax. Try:
+        <pre>~$ grep
+~$ wc </pre></li>		
+		<li value="2">  Not only do pipes save you time, but you’ll use different combinations of piped commands to tackle computing tasks particular to the way you work and the programs you run. At first your pipe commands may be simple, but as you gain confidence and understanding, you’ll be able to construct fairly complex pipelines. Describe the process and result when you run each of the following commands:
+			<pre>~$ cal | wc -l </pre>
+			<pre>~$ who > file1</pre>
+			<pre>~$ who | wc</pre>
+			<pre>~$ cat userlist | wc</pre>
+			<pre>~$ cat userlist | grep baj</pre>
+			<pre>~$ cat userlist | grep baj | wc -l </pre>
+			<pre>~$ cat userlist | grep smi | wc -l</pre></li>
+		<li value="3">  List all lines in userlist that contain the pattern "alex". What command did you use?</li>
+		<li value="4">Count all lines in userlist that contain the pattern "alex". What command did you use?</li>
+		<li value="5"> Save the results of the previous command in a file called "file2". What command did you use?</li>
+		<li value="6">Using redirection, add (append) the following  to file2: <pre>This is the number of lines that contain pattern Alex</pre></li>
+		<li value="7">View file2 to verify that you have a number on the first line, followed by the line of text above on the second line</li>
+		</ol>	
+  </div>
+</div>
+
+
+<!-- Exercie 7: View Who is Logged On-->
+<div id="e07" class="flex justify-center mt-6 w-full">
+  <div class="block p-6 rounded-lg shadow-lg bg-white w-full">
+    <h5 class="text-2xl font-semibold sher-teal">Exercise 7: View Who is Logged On</h5>
+		<ol>
+		<li value="1"> Examine the manual pages for the command who. What does the short description say?<pre>~$ man who  </li>
+		<li value="2"> What output do you see when you type the who command without any options and arguments? Explain.</li>
+				
+		<li value="3">  Type the following commands one at a time and note what each  does.  Compare.
+        <pre>~$ who am I 
+~$ Who am i 
+~$ who am i 
+~$ whoami 
+~$ whoamI 
+~$ WhoAmI </pre></li>
+		</ol>	
+  </div>
+</div>
+
+
+<!-- Exercie 8: Communicating with Others-->
+<div id="e08" class="flex justify-center mt-6 w-full">
+  <div class="block p-6 rounded-lg shadow-lg bg-white w-full">
+    <h5 class="text-2xl font-semibold sher-teal">Exercise 8: Communicating with Others</h5>
+		<ol>
+			<li value="1"> The mesg command determines whether other users can send messages to you--and the write command can send a message from you to another user.  Read the manual pages for mesg and write. Note the syntax of the command.  Find a partner and send each other a message using write. What options and arguments did you use? The syntax of a write command line is  
+<pre>~$ write userid [terminal]
+write your message here
+more here... </pre></li>	
+			<li value="2"> The userid is the user name and the terminal is optional. </li>
+			<li value="3"> The terminal is optional, but useful if the person is logged in several times and you want to target a specific terminal.</li>
+			<li value="4">Each user has the option to deny or accept messages. To accept messages, run the command:
+            <pre>~$ mesg y </pre></li>
+			<li value="5"> To stop accepting messages, run the command:
+            <pre>~$ mesg n </pre></li>
+			<li value="6"> To establish two-way communication with another user,
+				<ul> <li>you and the other user must each execute write, specifying the other's userid. The write utility then copies text, line by line, from one keyboard-display to the other. </li> <li> Sometimes it helps to establish a convention, such as typing o for "over" when you are ready for the other person to type and typing oo for "over and out" when you are ready to end the conversation. </li> <li> When you want to stop communicating with the other user, press <code>&nbsp;Control+D </code>&nbsp;at the beginning of a line, which tells the write to quit, displaying EOF on the other user's terminal, and returns you to the shell.  The other user must do the same. </li> </ul>
+			</li>
+			<li value="7"> The wall command allows you to send (broadcast) a message to everyone who is logged in on the system.  <br><strong style="color:red">	DO NOT USE the wall command on atlas (or any other production machine) - you may be disrupting or distracting users that are trying to do their work!! Reserve the use of the wall command for administrative tasks, such as informing users of upcoming maintenance, etc.</strong></li>
+			<li value="8"> The mail command allows you to send email.  Test it, by sending yourself an email to your Sheridan mail. Check your email to verify that it worked.</li>
+			<pre>~$ mail userid@sheridanc.on.ca
+Subject: type your subject here <code style="font-size:12px;color:yellow;padding:0px 5px;">Enter</code>
+Type your message here <code style="font-size:12px;color:yellow;padding:0px 5px;">Control+D</code>
+			</pre></li>
+		</ol>	
+  </div>
+</div>
+
+
+</section>
+  </main>
+  
+  <footer class="bg-dark-gray text-white"> 
+    <section class="max-w-screen-lg text-white container mx-auto py-2 px-12">  
+        <p id="version" class="leading-none mb-2 my-4">
+            &copy;  This work is the intellectual property of Sheridan College. 
+            Any further copying and distribution outside of class must be within 
+            the copyright law. Posting to commercial sites for profit is prohibited.
+        </p>
+        <p class="text-sm text-gray-100 md:mb-6">
+            <a class="text-white" href="">SYST13416 Linux/UNIX Operating Systems | Sheridan College</a>
+        </p>     
+    </section> 
+    <div class="container max-w-screen-lg mx-auto  px-8">   
+        <div class="max-w-screen-lg xl:max-w-screen-xl mx-auto px-4 sm:px-6 md:px-8">
+          <ul class="text-sm font-medium pb-14 sm:pb-20 grid grid-cols-1 sm:grid-cols-3 gap-y-10">
+            <li class="list-none row-span-2">
+              <h2 class="text-base font-semibold tracking-wide">Course Material</h2>
+              <ul class="list-none space-y-4 md:space-y-1 px-0">
+                <li><a href="https://ulysses.sheridanc.on.ca/coutline/coutlineview_sal.jsp?appver=sal&subjectCode=SYST&courseCode=13416&version=2021011800&sec=0&reload=true">Course Outline</a></li>      
+                <li><a href="https://notepad-plus-plus.org/">Notepad++ Text Editor</a></li>  
+                <li><a href="https://tldp.org/">The Linux Documentation Project</a></li>  
+                <li><a href="https://www.fsf.org/">Free Software Foundation</a></li>   
+              </ul>
+            </li>
+            <li class="list-none row-span-2">
+              <h2 class="text-base font-semibold tracking-wide">Resources</h2>
+              <ul class="list-none space-y-4 md:space-y-1 px-0">
+                <li><a href="https://www.gnu.org/">GNU Operating System</a></li>
+                <li><hr style="margin-top:10px;width:50%"></li>
+                <li><a href="https://linuxmint.com/">Linux Mint</a></li>
+                <li><a href="https://www.ubuntu.com/">Ubuntu</a> </li> 
+                <li><a href="http://www.debian.org/">Debian (formerly Debian GNU/Linux)</a> </li>  
+                <li><a href="https://distrowatch.com/dwres.php?resource=major">DistroWatch.com</a> </li><li><a href="https://www.tecmint.com/linux-distro-for-power-users/">tecmint.com</a> </li>                 
+              </ul>
+            </li>
+            <li class="list-none row-span-2">
+              <h2 class="text-base font-semibold tracking-wide">Sheridan College</h2>
+              <ul class="list-none space-y-4 md:space-y-1 px-0">
+                <li><a href="https://www.sheridancollege.ca/">Davis &mdash; HMC &mdash; Trafalgar</a></li>
+                 <li><a href="https://central.sheridancollege.ca/counselling-services">Wellness &amp; Counselling Services</a></li>   
+                 <li><a href="https://central.sheridancollege.ca/library-services">Library Services</a></li>  
+                 <li><a href="https://it.sheridancollege.ca/service-catalogue/tech-essentials/index.html">Tech Essentials</a></li>
+                <li>
+                  <a href="http://bajcar.dev.fast.sheridanc.on.ca/">Prof. Ellen Bajcar</a>
+                  <span style="color:gray"><br>Office hours (by appointment)</span>
+                </li>
+                <li><a href="https://slate.sheridancollege.ca/d2l/home">SLATE</a></li>  
+                <li><a href="http://tech.fast.sheridanc.on.ca/">Fast Tech (web server access)</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+    </div>
+  </footer> 
+</body>
+
+<script>
+  // topnav
+  var topButton = document.getElementById("topnavButton");
+  var topnavList = document.getElementById("topnavList");
+  topButton.addEventListener("click", function() {
+    this.classList.toggle("active");
+    topnavList.classList.toggle("hidden");
+    document.getElementById("topnavOpen").classList.toggle("hidden");
+    document.getElementById("topnavClosed").classList.toggle("hidden");
+  });
+</script>
+<script src="../scripts/prism.js"></script>
+</body>
+</html>

@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover"/>
+<title> SYST13416 </title>
+<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css"/> 
+<link rel="stylesheet" href="../css/prism_coy_dev.css"  />
+<style>
+dl, ol {
+  margin-bottom: 16px;
+}
+ol {
+  list-style-type: number;
+}
+h4, h3 {
+  margin-top: 16px;
+}
+.ordered-list {
+  list-style-type: decimal;
+}
+.text-danger {
+  color: red;
+}
+.bg-dark-gray  {
+  background-color: #333940;
+}
+code {
+  color: black !important;
+}
+.sher-teal {
+  color: #00b2ce;
+}
+.bg-sher-teal {
+  background-color: #00b2ce;
+}
+figcaption {
+  color: #00b2ce;
+  font-weight: 500;
+}
+input {outline:none;border:none;border-bottom: 1px dotted black;margin-bottom:2px;}
+input:valid:focus { background-color:lightgreen;}
+input:invalid:focus { background-color:red;}
+
+#e02 ol {
+  counter-reset: section;
+  list-style-type: none;  
+}
+#e02 li::before {
+  counter-increment: section;
+  content: "2." counters(section,".") " ";
+}
+
+#e03 ol {
+  counter-reset: section;
+  list-style-type: none;  
+}
+#e03 li::before {
+  counter-increment: section;
+  content: "3." counters(section,".") " ";
+}
+
+#e04 ol {
+  counter-reset: section;
+  list-style-type: none;  
+}
+#e04 li::before {
+  counter-increment: section;
+  content: "4." counters(section,".") " ";
+}
+
+#e05 ol {
+  counter-reset: section;
+  list-style-type: none;  
+}
+#e05 li::before {
+  counter-increment: section;
+  content: "5." counters(section,".") " ";
+}
+
+#e07 ol {
+  counter-reset: section;
+  list-style-type: none;  
+}
+#e07 li::before {
+  counter-increment: section;
+  content: "6." counters(section,".") " ";
+}
+li pre code {
+  margin-left: 25px;
+}
+</style>
+</head>
+
+<body>
+  <nav id="navTop" class="w-full z-30 top-0 text-white bg-dark-gray ">
+    <div class="w-full container max-w-screen-lg mx-auto flex flex-wrap sm:flex-nowrap items-center justify-between mt-0 py-2">
+      <div class="md:pl-4">
+        <a class="text-white hover:text-white no-underline hover:no-underline
+        font-bold text-2xl lg:text-4xl rounded-lg hover:bg-nwoods-secondary " href="../">
+          <h1 class="mb-0 p-1 ">SYST13416 <small>Linux/UNIX Operating Systems</small></h1>
+        </a>
+      </div>
+      <button id="topnavButton" class="rounded-lg sm:hidden focus:outline-none focus:ring" aria-label="Navigation">
+        <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+          <path id="topnavOpen" fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+          <path id="topnavClosed" class="hidden" fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+        </svg>
+      </button>      
+      <div id="topnavList" class="hidden sm:block items-center w-auto mt-0 text-white p-0 z-20">
+        <ul class="list-reset list-none font-semibold flex justify-end flex-wrap sm:flex-nowrap items-center px-0 pb-0">
+          <li class="p-1 sm:p-0"><a class="topnav-link" href="../index.html">Home</a></li>
+        </ul>
+      </div>
+    </div>
+    <hr class="border-b border-gray-600 opacity-50 my-0 py-0" />
+  </nav>
+    
+  <main class="md:flex flex-col md:flex-row md:min-h-screen w-full max-w-screen-xl mx-auto">
+      
+    <div id="navSide" class="flex flex-col w-full md:w-40 lg:w-48 text-gray-700 bg-white flex-shrink-0">
+      <div class="flex-shrink-0 px-8 py-4">
+        <button id="navButton" class="rounded-lg md:hidden focus:outline-none focus:ring" aria-label="Navigation">
+          <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+            <path id="navOpen" fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+            <path id="navClosed" class="hidden" fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+          </svg>   
+        </button>
+      </div>   
+      <nav id="navList" class="min-h-screen hidden md:block sidebar-nav flex-grow px-1 lg:px-4 pb-4 md:pb-0 md:overflow-y-auto break-words">
+
+          <a href="module1.html">Worksheet 1</a>
+          <a href="module2.html">Worksheet 2</a>
+          <a href="module3.html">Worksheet 3</a>
+          <a class="bg-gray-200 text-gray-900" href="module4.html">Worksheet 4</a>
+          <a href="module5.html">Worksheet 5</a>
+          <a href="module6.html">Worksheet 6</a>
+          <a href="module7.html">Worksheet 7</a>
+          <a href="module8.html">Worksheet 8</a>
+          <a href="module9.html">Worksheet 9</a>
+          <a href="moduleA.html">Worksheet 10</a>
+      </nav>
+    </div>  
+        
+    <section class="pt-4 px-2 md:px-0 lg:px-4 pb-16 w-full overflow-hidden">
+        <h1 class="text-4xl font-medium leading-tight mt-0 mb-2 text-black-600">Worksheet 4</h1>
+
+
+<!-- Learning Objectives-->
+<div class="my-5">
+  <div class="flex w-full mx-auto overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800">
+    <div class="flex items-center justify-center px-4 bg-sher-teal">
+        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="triangle-exclamation" class="w-6 h-6 text-white fill-current" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M506.3 417l-213.3-364c-16.33-28-57.54-28-73.98 0l-213.2 364C-10.59 444.9 9.849 480 42.74 480h426.6C502.1 480 522.6 445 506.3 417zM232 168c0-13.25 10.75-24 24-24S280 154.8 280 168v128c0 13.25-10.75 24-23.1 24S232 309.3 232 296V168zM256 416c-17.36 0-31.44-14.08-31.44-31.44c0-17.36 14.07-31.44 31.44-31.44s31.44 14.08 31.44 31.44C287.4 401.9 273.4 416 256 416z"></path></svg>     
+    </div>
+    <div class="px-4 py-2 -mx-3">
+      <div class="mx-3">
+        <h5 class="text-2xl font-semibold sher-teal">In this tutorial&hellip;</h5>
+        <ul class="list-outside">
+            <li><a href="#e01">Exercise 1: Read and Reflect</a></li>
+            <li><a href="#e02">Exercise 2: Explore File Attributes</a></li>
+            <li><a href="#e03">Exercise 3: Modify File Permissions</a></li>
+            <li><a href="#e04">Exercise 4: Copy Files</a></li>
+            <li><a href="#e05">Exercise 5: Move and Remove Files</a></li>
+            <!--li><a href="#e06">Exercise 6: Manipulate files using relative pathnames</a></li-->
+            <li><a href="#e07">Exercise 6: Finding and Locating Files</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Exercise 1: Read and Reflect  -->
+<div id="e01" class="flex justify-center mt-6 w-full">
+  <div class="block p-6 rounded-lg shadow-lg bg-white w-full">
+    <h5 class="text-2xl font-semibold sher-teal">Exercise 1: Read and Reflect </h5>
+		<p>To help you develop your critical thinking and system thinking, consider the following questions after reading the material for Module 2:</p>
+		<ol>
+			<li>What is a file? Give examples of a file. Give examples of what is not a file on a computing device.</li>
+			<li>What is a directory? Folder, although commonly used, is not a good metaphor for a directory. Why? Give a better metaphor.</li>
+		</ol>
+  </div>
+</div>
+
+
+
+<!-- Exercise 2: Explore File Attributes  -->
+<div id="e02" class="flex justify-center mt-6 w-full">
+  <div class="block p-6 rounded-lg shadow-lg bg-white w-full">
+    <h5 class="text-2xl font-semibold sher-teal">Exercise 2: Explore File Attributes</h5>
+	<ol class="list-outside">	
+		<li>Display long listing of your current directory
+            <pre class="language-bash"><code>~$</code></pre>
+        </li>
+		<li>Note each line and identify the following attributes. Which column contains 
+			<ol style="list-style:none">
+				<li><input type="text" min="1" max="9" size="1" pattern="^9$" required />&nbsp;name of the file or directory</li>
+				<li><input type="text" min="1" max="9" size="1" pattern="^6$" required  />&nbsp;date and time (last modification)</li>
+				<li><input type="text" min="1" max="9" size="1" pattern="^3$" required  />&nbsp;name (userID) of the owner (creator) of the object</li>
+				<li><input type="text" min="1" max="9" size="1" pattern="^4$" required  />&nbsp;default (aka primary) group of the owner</li>
+				<li><input type="text" min="1" max="9" size="1" pattern="^5$" required  />&nbsp;size of the file or directory</li>
+				<li><input type="text" min="1" max="9" size="1" pattern="^1$" required  />&nbsp;type of file [dlcbs-]</li>
+				<li><input type="text" min="1" max="9" size="1" pattern="^1$" required  />&nbsp;file permissions</li>
+			</ol>
+		</li>
+		<li>What does it mean when the first character on the line is a dash? </li> 
+		<li>What does it mean when the first character on the line is the letter d? </li>	
+		<li>Note the nine characters (2 to 10) in the first column. In the next exercise you will be changing these characters. 
+			<ol style="list-style:none">
+				<li>Whose permissions are affected when the first triplet is modified? &nbsp;<input type="text" size="30" placeholder=" user, group, or other?" pattern="user"> </li>
+				<li>Whose permissions are affected when the second triplet is modified? &nbsp;<input type="text" size="30" placeholder=" user, group, or other?" pattern="group"> </li>
+				<li>Whose permissions are affected when the third triplet is modified? &nbsp;<input type="text" size="30" placeholder=" user, group, or other?" pattern="other"> </li>	
+				<li>What permission is represented by the letter r? &nbsp;<input type="text" size="40" placeholder=" read, write, execute, or no permission?" pattern="read"> </li>				
+				<li>What permission is represented by the letter w? &nbsp;<input type="text" size="40" placeholder=" read, write, execute, or no permission?" pattern="write"> </li>
+				<li>What permission is represented by the letter x? &nbsp;<input type="text" size="40" placeholder=" read, write, execute, or no permission?" pattern="execute"> </li>
+				<li>What permission is represented by the symbol dash? &nbsp;<input type="text" size="40" placeholder=" read, write, execute, or no permission?" pattern="no permission|none"> </li>
+				</ol>		
+		</li>
+		<li>Run the following command and explain the output<pre class="language-bash"><code>$ ls -la</code></pre></li>
+		<li>Run the following command and explain the output<pre class="language-bash"><code>~$ ls -F</code></pre></li>
+		<li>Run the following command and explain the output<pre class="language-bash"><code>~$ ls -ul</code></pre></li>
+		<li>Run the following command and explain the output<pre class="language-bash"><code>~$ ls -il</code></pre></li>	
+		<li>Examine options h, R, o, and g.</li>  
+		
+	</ol>	
+  </div>
+</div>
+
+
+
+<!-- Exercise 3: Modify File Permissions  -->
+<div id="e03" class="flex justify-center mt-6 w-full">
+  <div class="block p-6 rounded-lg shadow-lg bg-white w-full">
+    <h5 class="text-2xl font-semibold sher-teal">Exercise 3: Modify File Permissions</h5>
+	<ol class="list-outside">	
+		<li value="1">There are two modes for modifying permissions 
+			<input type="text" pattern="symbolic"> and <input type="text">
+        </li> 
+			
+		<li>Navigate to your sub-directory labs under your docs directory. 
+			(If you don't have one, create it first.) In the <code>~/module4</code> sub-directory, create a file called todayinfo using redirection that includes the system date.
+            <pre class="language-shell"><code>~/docs/labs/module4$ </code></pre>
+        </li>
+			
+		<li>Note the permissions for the new file (HINT: use the long listing to view the permissions) 
+        </li> 
+			
+		<li>Give the following command and note the new permissions: 
+            <pre class="language-shell"><code>~/docs/labs/module4$ chmod 777 todayinfo</code></pre>
+        </li>	
+			
+		<li>Give the following command and note the new permissions: 
+            <pre class="language-shell"><code>~/docs/labs/module4$ chmod 000 todayinfo</code></pre>
+        </li>
+			
+		<li>Give the following command and note the new permissions: 
+            <pre class="language-shell"><code>~/docs/labs/module4$ chmod u+rwx,go+r todayinfo</code></pre>
+        </li>
+			
+		<li>Give the following command and note the new permissions: 
+            <pre class="language-shell"><code>~/docs/labs/module4$ chmod g+w,u-x todayinfo</code></pre>
+        </li>
+			
+		<li>Change the permissions to include the ability for the owner 
+			to execute the file. Use symbolic representation.
+            <pre class="language-shell"><code>~/docs/labs/module4$ </code></pre>
+        </li>
+			
+		<li>Change the permissions  absolutely, so that the owner 
+			can read and write, the group can read, write, and execute, 
+			and others have no permissions at all. Use symbolic representation
+            <pre class="language-shell"><code>~/docs/labs/module4$ </code></pre>
+        </li>
+			
+		<li>Change the permissions using octal representation so 
+			that the owner can write only, the group can read only, and others can execute only.
+            <pre class="language-shell"><code>~/docs/labs/module4$ </code></pre>
+        </li>
+			
+		<li>Restore the original permission, which you noted earlier. 
+			Save your history in file called Tutorial4.txt, exit, and close the application. Log out.
+            <pre class="language-shell"><code>~/docs/labs/module4$ </code></pre>
+        </li>
+	</ol>	
+
+  </div>
+</div>
+
+
+
+<!-- Exercise 4:  Copy Files  -->
+<div id="e04" class="flex justify-center mt-6 w-full">
+  <div class="block p-6 rounded-lg shadow-lg bg-white w-full">
+    <h5 class="text-2xl font-semibold sher-teal">Exercise 4:  Copy Files</h5>
+	<ol class="list-outside">	
+		<li">In your temp directory, create a directory called tutorial4
+           <pre class="language-shell"><code> ~/temp$ mkdir tutorial4</code></pre>
+            </li>
+		<li>Change to the sub-directory tutorial4
+           <pre class="language-shell"><code> ~/temp$ cd tutorial4</code></pre>
+            </li>
+		<li>Create a file called data using redirection
+            <pre class="language-shell"><code>~/temp/tutorial4$ man ls > data</code></pre>
+            </li>	
+		<li>Copy existing file data to a new file called extra
+           <pre class="language-shell"><code> ~/temp/tutorial4$ cp data extra</code></pre>
+            </li>		
+		<li>Copy the system file group in /etc sub-directory to your home directory, under the same name
+            <pre class="language-shell"><code>~/temp/tutorial4$ cp /etc/group ~/temp/tutorial4/group</code></pre>
+            </li>
+		<li>The option -i tells the cp command to ask you for permission to overwrite the existing file, 
+            if the file called mycopy already exists 
+            <pre class="language-shell"><code>~/temp/tutorial4$ cp -i data mycopy</code></pre>
+            </li>
+		<li>Still in the tutorial4 sub-directory, create a directory called backups
+            <pre class="language-shell"><code>~/temp/tutorial4 mkdir backups</code></pre>
+            </li>
+		<li>Copy existing file data to the directory named backups 
+            <pre class="language-shell"><code>~/temp/tutorial4$ cp data backups</code></pre>
+            </li>
+		<li>Copy existing files, data1, data2, and data3, to the directory named backups
+            <pre class="language-shell"><code>~/temp/tutorial4$ cp extra mycopy group backups</code></pre>
+            </li>	
+        <li>Still in the tutorial4 sub-directory, create a directory called documents 
+            <pre class="language-shell"><code>~/temp/tutorial4$ mkdir documents</code></pre>
+            </li>
+        <li>Copy the directory itself including all its files and subdirectories
+            <pre class="language-shell"><code>~/temp/tutorial4$ cp -r backups ../archive</code></pre>
+            </li>
+        <li>Copies all the files in a directory named backups to a directory named documents
+            <pre class="language-shell"><code>~/temp/tutorial4$ cp backups/* documents</code></pre>
+            </li>
+		<li>Navigate to the instructor's datafiles directory
+            <pre class="language-shell"><code>~/temp/tutorial4$ cd ~bajcar/public/datafiles</code></pre>
+            </li>
+		<li>Copy all files (that you have permission to copy) to your tutorial4 directory 
+            <pre class="language-shell"><code>~bajcar/public/datafiles$ cp ./* ~/temp/tutorial4</code></pre>
+            </li>
+	</ol>
+  </div>
+</div>
+
+
+
+<!-- Exercise 5:  Move and Remove Files  -->
+<div id="e05" class="flex justify-center mt-6 w-full">
+  <div class="block p-6 rounded-lg shadow-lg bg-white w-full">
+    <h5 class="text-2xl font-semibold sher-teal">Exercise 5: Move and Remove Files</h5>
+	<ol>	
+        <li>Still in the tutorial4 directory, create a directory called public
+            <pre class="language-shell"><code>~/temp/tutorial4$ mkdir public</code></pre>
+            </li>
+		<li>Move all files from the tuturial4 directory (where you currently are) to the archive sub-directory
+            <pre class="language-shell"><code>~/temp/tutorial4$ mv data extra mycopy public</code></pre>
+            </li>
+		<li>Now try the following command. Note what happens.
+            <pre class="language-shell"><code>~/temp/tutorial4$ mv -i backups/data public</code></pre>
+            </li>	
+		<li>Create the following file:
+            <pre class="language-shell"><code>~/temp/tutorial4$ man date > unimportant</code></pre>
+            </li>		
+		<li>Run the following command and note the results:
+            <pre class="language-shell"><code>~/temp/tutorial4$ mv unimportant important</code></pre>
+            </li>
+		<li>Create the following file:
+            <pre class="language-shell"><code>~/temp/tutorial4$ man mv > incomplete</code></pre>
+            </li>
+		<li>Run the following command and note the results:
+            <pre class="language-shell"><code>~/temp/tutorial4$ mv incomplete public/complete</code></pre>
+            </li>
+		<li>Note the structure and content of the tutorial4 directory. Navigate to your temp directory. 
+            <pre class="language-shell"><code>~/temp$</code></pre>
+            </li>
+		<li>Copy the tutorial4 directory to temp4
+        ~/temp$ </code></pre>
+        </li>
+        <li>Still in temp directory, give the following command:
+            <pre class="language-shell"><code>~/temp$ rm -r tutorial4</code></pre>
+            </li>	
+        <li>Move the entire temp4 directory to tutorial4 directory
+            <pre class="language-shell"><code>~/temp$ </code></pre>
+            </li>	
+        <li>Describe what is being removed with the following commands: 
+            <pre class="language-shell"><code>
+            rm data
+            rm ~/essay
+            rm bin/something
+            rm data[123]
+            rm -r dir{1,2,3}
+            </code></pre>
+            </li> 		
+	</ol>	
+  </div>
+</div>
+
+
+<!-- Exercise 6: Manipulate files using relative pathnames  
+<div id="e06" class="flex justify-center mt-6 w-full">
+  <div class="block p-6 rounded-lg shadow-lg bg-white w-full">
+    <h5 class="text-2xl font-semibold sher-teal">Exercise 6: Manipulate files using relative pathnames</h5>
+		<p>Download and complete <a href="../resources/tut04one.pdf" target="_blank">Manipulating Directories and Files</a>.  
+		 The questions in this exercise are examples of questions on the midterm. </p>
+  </div>
+</div>
+-->
+
+
+<!-- Exercise 7: Finding and Locating Files  -->
+<div id="e07" class="flex justify-center mt-6 w-full">
+  <div class="block p-6 rounded-lg shadow-lg bg-white w-full">
+    <h5 class="text-2xl font-semibold sher-teal">Exercise 6: Finding and Locating Files</h5>
+		<p><strong>Finding forgotten files with find command</strong>Sometimes finding a file requires more than cursing at your computer or listing directory contents with ls. Instead, you can use the find command which lets you search in dozens of ways, including through the entire directory tree or through directories you specify.</p>
+		<p><strong>Locating lost files with locate command</strong>If you're looking for a system file, a program or file that is part of the Unix system itself, rather than one of your own personal files in your home directory, try locate command to find it> You'll get more results than you can handle, but it's a quick and easy way to locate system files. It is not available on all Unix systems, but it is worth a try at any rate.</p>
+		<ol>
+		<li>Examine the following manual pages and note the description and browse the options
+            <pre class="language-shell"><code>~$ man find</code></pre>
+            </li>
+		<li>The find command allows you to search for files. To search for all regular files starting in the current directory and checking all its subdirectories
+           <pre class="language-shell"><code>~$ find . -type f</code></pre>
+            </li>
+		<li>How would you change the command to look for directories starting in the current directory? 
+            <pre class="language-shell"><code>~$ find . -type d</code></pre>
+            </li>
+		<li>What command would you give to find all files that have exactly 5 links, starting in the current directory?
+            <pre class="language-shell"><code>~$ find . -links 5</code></pre>
+            </li>
+		<li>Find all files that have at least 15 links in your home directory. (Try it in instructor's home directory, or change the number to generate output).
+            <pre class="language-shell"><code>~$ find ~ -links +15</code></pre>
+            </li>
+		<li>Find all empty files, either regular or directory, in the /etc directory and its subdirectories. 
+            <pre class="language-shell"><code>~$ find /etc -empty</code></pre>
+            </li>
+		<li>Find all files that have been changed within the last 48 hours.
+            <pre class="language-shell"><code>~$ find / -ctime -2</code></pre>
+            </li>
+		<li>Find all files in your home directory that you accessed more than 24 hours ago.
+            <pre class="language-shell"><code>~$ find ~ -atime +1</code></pre>
+            </li>
+		<li>Find the file called music.data starting in your home directory.
+            <pre class="language-shell"><code>~$ find  ~  -name  music.data</code></pre>
+            </li>
+		<li>The locate command allows you to search for system files. (NOTE: The locate command may not be available on atlas.)
+            <pre class="language-shell"><code>~$ locate chmod</code></pre>
+            </li>
+		</ol>
+  </div>
+</div>
+
+
+</section>
+  </main>
+  
+  <footer class="bg-dark-gray text-white"> 
+    <section class="max-w-screen-lg text-white container mx-auto py-2 px-12">  
+        <p id="version" class="leading-none mb-2 my-4">
+            &copy;  This work is the intellectual property of Sheridan College. 
+            Any further copying and distribution outside of class must be within 
+            the copyright law. Posting to commercial sites for profit is prohibited.
+        </p>
+        <p class="text-sm text-gray-100 md:mb-6">
+            <a class="text-white" href="">SYST13416 Linux/UNIX Operating Systems | Sheridan College</a>
+        </p>     
+    </section> 
+    <div class="container max-w-screen-lg mx-auto  px-8">   
+        <div class="max-w-screen-lg xl:max-w-screen-xl mx-auto px-4 sm:px-6 md:px-8">
+          <ul class="text-sm font-medium pb-14 sm:pb-20 grid grid-cols-1 sm:grid-cols-3 gap-y-10">
+            <li class="list-none row-span-2">
+              <h2 class="text-base font-semibold tracking-wide">Course Material</h2>
+              <ul class="list-none space-y-4 md:space-y-1 px-0">
+                <li><a href="https://ulysses.sheridanc.on.ca/coutline/coutlineview_sal.jsp?appver=sal&subjectCode=SYST&courseCode=13416&version=2021011800&sec=0&reload=true">Course Outline</a></li>      
+                <li><a href="https://notepad-plus-plus.org/">Notepad++ Text Editor</a></li>  
+                <li><a href="https://tldp.org/">The Linux Documentation Project</a></li>  
+                <li><a href="https://www.fsf.org/">Free Software Foundation</a></li>   
+              </ul>
+            </li>
+            <li class="list-none row-span-2">
+              <h2 class="text-base font-semibold tracking-wide">Resources</h2>
+              <ul class="list-none space-y-4 md:space-y-1 px-0">
+                <li><a href="https://www.gnu.org/">GNU Operating System</a></li>
+                <li><hr style="margin-top:10px;width:50%"></li>
+                <li><a href="https://linuxmint.com/">Linux Mint</a></li>
+                <li><a href="https://www.ubuntu.com/">Ubuntu</a> </li> 
+                <li><a href="http://www.debian.org/">Debian (formerly Debian GNU/Linux)</a> </li>  
+                <li><a href="https://distrowatch.com/dwres.php?resource=major">DistroWatch.com</a> </li><li><a href="https://www.tecmint.com/linux-distro-for-power-users/">tecmint.com</a> </li>                 
+              </ul>
+            </li>
+            <li class="list-none row-span-2">
+              <h2 class="text-base font-semibold tracking-wide">Sheridan College</h2>
+              <ul class="list-none space-y-4 md:space-y-1 px-0">
+                <li><a href="https://www.sheridancollege.ca/">Davis &mdash; HMC &mdash; Trafalgar</a></li>
+                 <li><a href="https://central.sheridancollege.ca/counselling-services">Wellness &amp; Counselling Services</a></li>   
+                 <li><a href="https://central.sheridancollege.ca/library-services">Library Services</a></li>  
+                 <li><a href="https://it.sheridancollege.ca/service-catalogue/tech-essentials/index.html">Tech Essentials</a></li>
+                <li>
+                  <a href="http://bajcar.dev.fast.sheridanc.on.ca/">Prof. Ellen Bajcar</a>
+                  <span style="color:gray"><br>Office hours (by appointment)</span>
+                </li>
+                <li><a href="https://slate.sheridancollege.ca/d2l/home">SLATE</a></li>  
+                <li><a href="http://tech.fast.sheridanc.on.ca/">Fast Tech (web server access)</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+    </div>
+  </footer> 
+</body>
+
+<script>
+  // topnav
+  var topButton = document.getElementById("topnavButton");
+  var topnavList = document.getElementById("topnavList");
+  topButton.addEventListener("click", function() {
+    this.classList.toggle("active");
+    topnavList.classList.toggle("hidden");
+    document.getElementById("topnavOpen").classList.toggle("hidden");
+    document.getElementById("topnavClosed").classList.toggle("hidden");
+  });
+</script>
+<script src="../scripts/prism.js"></script>
+</body>
+</html>

@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover"/>
+<title> SYST13416 </title>
+<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css"/> 
+<link rel="stylesheet" href="../css/prism_coy_dev.css"  />
+<style>
+dl, ol {
+  margin-bottom: 16px;
+}
+h4, h3 {
+  margin-top: 16px;
+}
+.ordered-list {
+  list-style-type: decimal;
+}
+.text-danger {
+  color: red;
+}
+.bg-dark-gray  {
+  background-color: #333940;
+}
+code {
+  color: black !important;
+}
+.sher-teal {
+  color: #00b2ce;
+}
+.bg-sher-teal {
+  background-color: #00b2ce;
+}
+figcaption {
+  color: #00b2ce;
+  font-weight: 500;
+}
+</style>
+</head>
+
+<body>
+  <nav id="navTop" class="w-full z-30 top-0 text-white bg-dark-gray ">
+    <div class="w-full container max-w-screen-lg mx-auto flex flex-wrap sm:flex-nowrap items-center justify-between mt-0 py-2">
+      <div class="md:pl-4">
+        <a class="text-white hover:text-white no-underline hover:no-underline
+        font-bold text-2xl lg:text-4xl rounded-lg hover:bg-nwoods-secondary " href="../">
+          <h1 class="mb-0 p-1 ">SYST13416 <small>Linux/UNIX Operating Systems</small></h1>
+        </a>
+      </div>
+      <button id="topnavButton" class="rounded-lg sm:hidden focus:outline-none focus:ring" aria-label="Navigation">
+        <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+          <path id="topnavOpen" fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+          <path id="topnavClosed" class="hidden" fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+        </svg>
+      </button>      
+      <div id="topnavList" class="hidden sm:block items-center w-auto mt-0 text-white p-0 z-20">
+        <ul class="list-reset list-none font-semibold flex justify-end flex-wrap sm:flex-nowrap items-center px-0 pb-0">
+          <li class="p-1 sm:p-0"><a class="topnav-link" href="../index.html">Home</a></li>
+        </ul>
+      </div>
+    </div>
+    <hr class="border-b border-gray-600 opacity-50 my-0 py-0" />
+  </nav>
+    
+  <main class="md:flex flex-col md:flex-row md:min-h-screen w-full max-w-screen-xl mx-auto">
+      
+    <div id="navSide" class="flex flex-col w-full md:w-40 lg:w-48 text-gray-700 bg-white flex-shrink-0">
+      <div class="flex-shrink-0 px-8 py-4">
+        <button id="navButton" class="rounded-lg md:hidden focus:outline-none focus:ring" aria-label="Navigation">
+          <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+            <path id="navOpen" fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+            <path id="navClosed" class="hidden" fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+          </svg>   
+        </button>
+      </div>   
+      <nav id="navList" class="min-h-screen hidden md:block sidebar-nav flex-grow px-1 lg:px-4 pb-4 md:pb-0 md:overflow-y-auto break-words">
+
+          <a href="module1.html">Worksheet 1</a>
+          <a href="module2.html">Worksheet 2</a>
+          <a href="module3.html">Worksheet 3</a>
+          <a href="module4.html">Worksheet 4</a>
+          <a href="module5.html">Worksheet 5</a>
+          <a href="module6.html">Worksheet 6</a>
+          <a href="module7.html">Worksheet 7</a>
+          <a href="module8.html">Worksheet 8</a>
+          <a class="bg-gray-200 text-gray-900" href="module9.html">Worksheet 9</a>
+          <a href="moduleA.html">Worksheet 10</a>
+      </nav>
+    </div>  
+        
+    <section class="pt-4 px-2 md:px-0 lg:px-4 pb-16 w-full overflow-hidden">
+        <h1 class="text-4xl font-medium leading-tight mt-0 mb-2 text-black-600">Worksheet 9</h1>
+
+
+<!-- Learning Objectives-->
+<div class="my-5">
+  <div class="flex w-full mx-auto overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800">
+    <div class="flex items-center justify-center px-4 bg-sher-teal">
+        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="triangle-exclamation" class="w-6 h-6 text-white fill-current" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M506.3 417l-213.3-364c-16.33-28-57.54-28-73.98 0l-213.2 364C-10.59 444.9 9.849 480 42.74 480h426.6C502.1 480 522.6 445 506.3 417zM232 168c0-13.25 10.75-24 24-24S280 154.8 280 168v128c0 13.25-10.75 24-23.1 24S232 309.3 232 296V168zM256 416c-17.36 0-31.44-14.08-31.44-31.44c0-17.36 14.07-31.44 31.44-31.44s31.44 14.08 31.44 31.44C287.4 401.9 273.4 416 256 416z"></path></svg>     
+    </div>
+    <div class="px-4 py-2 -mx-3">
+      <div class="mx-3">
+        <h5 class="text-2xl font-semibold sher-teal">In this tutorial&hellip;</h5>
+        <h4>A few simple examples</h4>
+ 	<ul>
+		<li><a href="http://en.wikipedia.org/wiki/Sed" target="_blank">Link:  en.wikipedia.org/wiki/Sed</a></li>
+		<li><a href="http://www.gnu.org/software/sed/manual/sed.html" target="_blank">Link:  www.gnu.org/software/sed/manual/sed.html</a></li>
+        <li>Examine the  manual pages  for the command sed, 
+		and note the description of any options used in these exercises. Examine the  s/// command.</li>
+	</ul>
+    <h4>A more complex example</h4>
+ 	<ul>
+		<li><a href="module9canada.html">Problem: Canadian provinces</a></li>
+	</ul>    
+    <h4>Practice exercises</h4>
+ 	<ul>
+		<li><a href="#e01">Exercise 1: using the sed command </a></li>
+        <li><a href="#e02">Exercise 2: using sed with a database file </a></li>
+        <li><a href="#e03">Exercise 3: performing multiple operations with sed   </a></li>
+        <li><a href="#e04">Exercise 4: removing HTML tags with sed </a></li>
+        <li><a href="#e05">Exercise 5: global changes, conditional changes, prohibiting display   </a></li>
+        <li><a href="#e06">Exercise 6: Practise using grep and sed  </a></li>
+        <li><a href="#e07">Exercise 7: Get Comfortable with vi   </a></li>
+	</ul> 
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!--  Exercise 1: using the sed command -->
+<div id="e01" class="flex justify-center mt-6 w-full">
+  <div class="block p-6 rounded-lg shadow-lg bg-white w-full">
+    <h5 class="text-2xl font-semibold sher-teal">Exercise 1: using the sed command</h5>
+	<p>Create a file named teaormilk that contains the following:</p>
+	<pre title="">
+India’s tea is good.
+tea Red-Label is good.
+tea is better than the coffee.
+some tea is better than other tea.
+</pre>	
+	<p>At the command prompt, execute the following command:</p>
+<pre class="language-bash"><code>sed ‘/tea/s//milk/g’ teaormilk</code></pre>		
+	<p>Note the results. Examine the manual page for sed and explain the results in your own words. There is also a manual available on the GNU site <a href="http://www.gnu.org/software/sed/manual/sed.html" target="_blank">  www.gnu.org/software/sed/manual/sed.html</a></p>
+  </div>
+</div>
+
+
+<!-- Exercise 2: using sed with a database file -->
+<div id="e02" class="flex justify-center mt-6 w-full">
+  <div class="block p-6 rounded-lg shadow-lg bg-white w-full">
+    <h5 class="text-2xl font-semibold sher-teal">Exercise 2: using sed with a database file</h5>
+	<P>the following command changes all incidents of a comma (,) into a comma followed by a space (, ). Use a database file that has fields delimited by a comma.</p>
+	<pre class="brush: bash; first-line: 1; highlight: [0];" title="">
+1234,Johnson,Bob
+4321,Jones,Jim
+5678,Smith,Dave
+7777,Brown,Tim
+8765,Martin,Peter	
+</pre>
+<pre class="language-bash"><code>sed s/,/,\ /g</code></pre>			
+	<p>Note the results. Enclose the pattern in single quotes and run it again.  Is there a difference? Why or why not? Examine the manual page for sed and explain the results in your own words.</p>
+  </div>
+</div>
+
+
+<!-- >Exercise 3: performing multiple operations with sed -->
+<div id="e03" class="flex justify-center mt-6 w-full">
+  <div class="block p-6 rounded-lg shadow-lg bg-white w-full">
+    <h5 class="text-2xl font-semibold sher-teal">Exercise 3: performing multiple operations with sed</h5>
+	<p>Create a file that contains the following:</p>
+	<pre class="brush: bash; first-line: 1; highlight: [0];" title="">
+Memorandum
+Date: September 15, 2006
+To: All Staff
+From: John Smith
+Re: Company Picnic
+This is a reminder that the annual company picnic will be held this Sunday at Wonderland.
+</pre>
+	<p>To perform multiple operations on the input precede each operation with the –e (edit) option and quote the strings. For example, to filter for lines containing “Date: “ and “From: “ and replace these without the colon (:), try:</p>
+    <pre class="language-bash"><code>sed –e ‘s/Date: /Date /’  -e ‘s/From: /From /’</code></pre>
+    <p>To print only the first 10 lines of the input (a replacement for head):</p>
+    <pre class="language-bash"><code>sed –n 1,10p</code></pre>
+
+    <h4>The / operator</h4>
+	<p>A nice thing about the s/// command is that we have a lot of options when it comes to those / operators. If we are performing string substitution and the regex or replacement string has a lot of slashes in it, we can change the separator by specifying a different character after the "s". For example this will replace all occurances of /usr/local with /usr</p>
+	<pre class="language-bash"><code>sed -e 's:/usr/local:/usr:g' mylist.txt</code></pre>
+
+  </div>
+</div>
+
+
+<!-- >Exercise 4: removing HTML tags with sed  -->
+<div id="e04" class="flex justify-center mt-6 w-full">
+  <div class="block p-6 rounded-lg shadow-lg bg-white w-full">
+    <h5 class="text-2xl font-semibold sher-teal">Exercise 4: removing HTML tags with sed</h5>
+	<p>To remove HTML tags from a file, you can use the command:</p>
+	<pre class="language-bash"><code>sed -e 's/&lt;[^>]*>//g' myfile.html</code></pre>
+	<p>a &lt; character followed by any number of non-&gt; characters, and ending with a >. This will have the effect of matching the shortest possible match, rather than the longest possible one.</p>
+  </div>
+</div>
+
+
+<!-- Exercise 5: global changes, conditional changes, prohibiting display -->
+<div id="e05" class="flex justify-center mt-6 w-full">
+  <div class="block p-6 rounded-lg shadow-lg bg-white w-full">
+    <h5 class="text-2xl font-semibold sher-teal">Exercise 5: global changes, conditional changes, prohibiting display</h5>
+    <h4>Global changes</h4>
+	<p>Suppose the message that is to be changed contains more than one occurrence of the item to be changed. By default, the result can be different than what was expected, as the following illustrates: </p>
+	<pre class="language-bash"><code>echo The tiger cubs will meet this Tuesday at the same time as the meeting last Tuesday | sed 's/Tuesday/Thursday/'</code></pre>
+	<pre>The tiger cubs will meet this <span style="color:yellow">Thursday</span> at the same time as the meeting last <span style="color:yellow">Tuesday</span><br />  
+	</pre>
+	<p>Instead of changing every occurrence of "Tuesday" for "Thursday," the sed editor moves on after finding a change and making it, without reading the whole line. The majority of sed commands function like this. </p>
+	<p>In order for every occurrence to be substituted, in the event that more than one occurrence appears on the same line, you specify the action to take place globally: </p>
+	<pre class="language-bash"><code>echo The tiger cubs will meet this Tuesday at the same time as the meeting last Tuesday | sed 's/Tuesday/Thursday/g'</code></pre>
+	<pre>The tiger cubs will meet this <span style="color:yellow">Thursday</span> at the same time as the meeting last <span style="color:yellow">Thursday</span>
+	</pre>
+    
+    <h4>Conditional changes</h4>
+	<p>When you want to make a change if certain conditions are met—for example, following a match of some other data, consider the following text file (sample1): </p>
+	<pre title="">
+one     1
+two     1
+three   1
+one     1
+two     1
+two     1
+three   1
+</pre>
+
+<p>Suppose that it would be desirable for "1" to be substituted with "2," but only after the word "two" and not throughout every line. This can be accomplished by specifying that a match is to be found before giving the substitute command: </p>
+<pre class="language-bash"><code>sed '/two/ s/1/2/' sample1</code></pre>
+<pre>
+one&nbsp;&nbsp;   1
+two&nbsp;&nbsp;	2
+three	1 
+one&nbsp;&nbsp;	1
+two&nbsp;&nbsp;	2
+two&nbsp;&nbsp;	2
+three	1</pre>
+
+<p>And now, to make it even more accurate:</p>
+<pre class="language-bash"><code>sed '
+/two/ s/1/2/<br />
+/three/ s/1/3/' sample1</code></pre>
+<pre>
+one&nbsp;&nbsp;	1
+two&nbsp;&nbsp;	2
+three	3
+one&nbsp;&nbsp;	1
+two&nbsp;&nbsp;	2
+two&nbsp;&nbsp;	2
+three	3</pre>
+
+<p>The following saves the changed output to a new file: </p>
+<pre class="language-bash"><code>sed '
+/two/ s/1/2/
+/three/ s/1/3/' sample1 > sample2</code></pre>
+
+
+<p>The output file has all the changes incorporated in it that would normally appear on the screen. It can now be viewed with head, cat, or any other similar utility. </p>
+<p>Bear in mind once again that the only thing changed is the display. If you look at the original file, it is the same as it always was. You must save the output to another file to create permanence. It is worth repeating that the fact that changes are not made to the original file is a true blessing in disguise—it lets you experiment with the file without causing any real harm, until you get the right commands working exactly the way you expect and want them to. </p>
+
+<h4>Prohibiting the Display </h4>
+<p>The default is for sed to display on the screen (or to a file, if so redirected) every line from the original file, whether it is affected by an edit operation or not; the "-n" parameter overrides this action. "-n" overrides all printing and displays no lines whatsoever, whether they were changed by the edit or not.</p> 
+<p>For example, to print only lines two through six while making no other editing changes:</p>
+<pre class="language-bash"><code>sed -n '2,6p' sample</code></pre>
+<pre>
+two&nbsp;&nbsp;	1
+three	1
+one&nbsp;&nbsp;	1
+two&nbsp;&nbsp;	1
+two&nbsp;&nbsp;	1</pre>   
+  </div>
+</div>
+
+
+<!-- Exercise 6: Practise using grep and sed  -->
+<div id="e06" class="flex justify-center mt-6 w-full">
+  <div class="block p-6 rounded-lg shadow-lg bg-white w-full">
+    <h5 class="text-2xl font-semibold sher-teal">Exercise 6: Practise using grep and sed</h5>
+	<p> The datebook file that ontains the following records:</p> 
+	<pre title="File name: datebook">
+Steve Blenheim:238-923-7366:95 Latham Lane, Easton, PA 83755:11/12/56:20300
+Betty Boop:245-836-8357:635 Cutesy Lane, Hollywood, CA 91464:6/23/23:14500
+Igor Chevsky:385-375-8395:3567 Populus Place, Caldwell, NJ 23875:6/18/68:23400
+Norma Corder:397-857-2735:74 Pine Street, Dearborn, MI 23874:3/28/45:245700
+Jennifer Cowan:548-834-2348:583 Laurel Ave., Kingsville, TX 83745:10/1/35:58900
+Jon DeLoach:408-253-3122:123 Park St., San Jose, CA 04086:7/25/53:85100
+Karen Evich:284-758-2857:23 Edgecliff Place, Lincoln, NB 92743:7/25/53:85100
+Karen Evich:284-758-2867:23 Edgecliff Place, Lincoln, NB 92743:11/3/35:58200
+Karen Evich:284-758-2867:23 Edgecliff Place, Lincoln, NB 92743:11/3/35:58200
+Fred Fardbarkle:674-843-1385:20 Parak Lane, DeLuth, MN 23850:4/12/23:780900
+Fred Fardbarkle:674-843-1385:20 Parak Lane, DeLuth, MN 23850:4/12/23:780900
+Lori Gortz:327-832-5728:3465 Mirlo Street, Peabody, MA 34756:10/2/65:35200
+Paco Gutierrez:835-365-1284:454 Easy Street, Decatur, IL 75732:2/28/53:123500
+Ephram Hardy:293-259-5395:235 CarltonLane, Joliet, IL 73858:8/12/20:56700
+James Ikeda:834-938-8376:23445 Aster Ave., Allentown, NJ 83745:12/1/38:45000
+Barbara Kertz:385-573-8326:832 Ponce Drive, Gary, IN 83756:12/1/46:268500
+Lesley Kirstin:408-456-1234:4 Harvard Square, Boston, MA 02133:4/22/62:52600
+William Kopf:846-836-2837:6937 Ware Road, Milton, PA 93756:9/21/46:43500
+Sir Lancelot:837-835-8257:474 Camelot Boulevard, Bath, WY 28356:5/13/69:24500
+Jesse Neal:408-233-8971:45 Rose Terrace, San Francisco, CA 92303:2/3/36:25000
+Zippy Pinhead:834-823-8319:2356 Bizarro Ave., Farmount, IL 84357:1/1/67:89500
+Arthur Putie:923-835-8745:23 Wimp Lane, Kensington, DL 38758:8/31/69:126000
+Popeye Sailor:156-454-3322:945 Bluto Street, Anywhere, USA 29358:3/19/35:22350
+Jose Santiago:385-898-8357:38 Fife Way, Abilene, TX 39673:1/5/58:95600
+Tommy Savage:408-724-0140:1222 Oxbow Court, Sunnyvale, CA 94087:5/19/66:34200
+Yukio Takeshida:387-827-1095:13 Uno Lane, Ashville, NC 23556:7/1/29:5700
+Vinh Tranh:438-910-7449:8235 Maple Street, Wilmington, VM 29085:9/23/63:68900
+</pre>
+ 
+	<p>Using <code>grep</code> or <code>egrep</code>, construct a regular expression to extract appropriate records: </p>
+		<ol style="list-style:number;margin-left:15px;" start="1">
+			<li>Print all lines that contain string De.</li>
+			<li>Print all lines where the person's first name starts with K.</li>
+			<li>Print all lines with either CA or ca. </li>
+			<li>Print all lines ending in 500 and the 2 lines before & after each matched line.</li>
+			<li>Print all the lines that do not contain 927.</li>
+			<li>Print all the lines where birthdays are in April.</li>
+			<li>Print all the lines where the phone number is in 832 area code.</li>
+			<li>Print all lines containing an uppercase letter, followed by four lowercase letters, a comma, a space, and one uppercase letter.</li>
+			<li>Print lines where the last name begins with S. </li>
+			<li>Print lines proceeded by a line number where the salary is six figures.</li>
+			<li>Print lines containing a 9 followed by a single dash & at least one other digit.</li>
+			<li>Print lines containing James or Karen at the beginning of the line.</li>
+		</ol>
+	<p>Using <code>sed</code>, construct a regular expression to extract or modify appropriate records: </p>
+		<ol style="list-style:number;margin-left:15px;" start="13">
+			<li>Change name Fred to Frederick</li>
+			<li>Delete the first four lines.</li>
+			<li>Print lines 7 through 14.</li>
+			<li>Delete lines containing Place.</li>
+			<li>Print all lines where the birthdays are in January or September.</li>
+			<li>Replace the line containing Barbara with "Barbara moved to Europe".</li>
+			<li>Change norma's birthday to 6/6/56</li>
+			<li>Exchange line containing Betty with line containing Lori</li>
+<!--			<li>Move the line beginning with Popeye to overwrite the last line of the file.</li> -->
+		</ol>
+
+  </div>
+</div>
+
+
+<!-- >Exercise 7: Get Comfortable with vi  -->
+<div id="e07" class="flex justify-center mt-6 w-full">
+  <div class="block p-6 rounded-lg shadow-lg bg-white w-full">
+    <h5 class="text-2xl font-semibold sher-teal">Exercise 7: Get Comfortable with vi</h5>
+
+	<p>Use vi editor to create a document called <code>exercise</code> and enter the following text:	</p>
+<pre class="brush: html; first-line: 1; highlight: [0];" title="">
+To be blank1, you need
+A conception of what you want,
+A blank2 of high quality,
+A confidence to see you through,
+A blank3 on what it takes,
+A consistency in what you do,
+A blank4 of emotional energy, and
+A blank5 to enjoy the process along the way.
+(Source: T. Morris)</pre>
+<ol>
+	<li>Change your display to show line numbering:	
+    <pre class="language-bash"><code>:set number</code></pre>
+	</li>		
+	<li>Save the file as <code>success</code> and exit.</li>
+	<li>Load the original file <code>exercise</code> into vi editor.	</li>
+	<li>Copy the third line starting with 'a blank2 and restore it before the line starting with 'a blank5', using yank (yy) and paste (p)</li>	
+	<li>Delete the last three lines of the file <code>exercise</code> by typing
+        <pre class="language-bash"><code>:s7,9d</code></pre>
+    </li>
+	<li>Note the results. Undo the change.</li>
+	<li>Place your cursor on the first line and run the command
+		<pre class="language-bash"><code>:4,$s/blank2/character/g</code></pre>
+     </li>
+	<li>       
+        Examine the content of the file. What did the command do?
+	</li>
+	<li>Place your cursor on the first line and find a string of text "blank". Make sure you are in command mode:
+	
+		<pre class="language-bash"><code>:/blank</code></pre>
+    </li>
+	<li>        Save the file <code>exercise10</code> and exit.
+	</li>
+	<li>Load the file success into the vi editor. Change the words, using regex, <br>	
+        <span style="padding-left:40px">'blank1' to 'successful',</span><br>
+        <span style="padding-left:40px">'blank2' to 'character',</span><br>
+        <span style="padding-left:40px">'blank3' to 'concentration',</span><br>
+        <span style="padding-left:40px">'blank4' to 'commitment',</span><br>
+        <span style="padding-left:40px">'blank5' to 'capacity'.</span></li>
+</ol>
+  </div>
+</div>
+
+
+
+
+</section>
+  </main>
+
+
+
+  
+  <footer class="bg-dark-gray text-white"> 
+    <section class="max-w-screen-lg text-white container mx-auto py-2 px-12">  
+        <p id="version" class="leading-none mb-2 my-4">
+            &copy;  This work is the intellectual property of Sheridan College. 
+            Any further copying and distribution outside of class must be within 
+            the copyright law. Posting to commercial sites for profit is prohibited.
+        </p>
+        <p class="text-sm text-gray-100 md:mb-6">
+            <a class="text-white" href="">SYST13416 Linux/UNIX Operating Systems | Sheridan College</a>
+        </p>     
+    </section> 
+    <div class="container max-w-screen-lg mx-auto  px-8">   
+        <div class="max-w-screen-lg xl:max-w-screen-xl mx-auto px-4 sm:px-6 md:px-8">
+          <ul class="text-sm font-medium pb-14 sm:pb-20 grid grid-cols-1 sm:grid-cols-3 gap-y-10">
+            <li class="list-none row-span-2">
+              <h2 class="text-base font-semibold tracking-wide">Course Material</h2>
+              <ul class="list-none space-y-4 md:space-y-1 px-0">
+                <li><a href="https://ulysses.sheridanc.on.ca/coutline/coutlineview_sal.jsp?appver=sal&subjectCode=SYST&courseCode=13416&version=2021011800&sec=0&reload=true">Course Outline</a></li>      
+                <li><a href="https://notepad-plus-plus.org/">Notepad++ Text Editor</a></li>  
+                <li><a href="https://tldp.org/">The Linux Documentation Project</a></li>  
+                <li><a href="https://www.fsf.org/">Free Software Foundation</a></li>   
+              </ul>
+            </li>
+            <li class="list-none row-span-2">
+              <h2 class="text-base font-semibold tracking-wide">Resources</h2>
+              <ul class="list-none space-y-4 md:space-y-1 px-0">
+                <li><a href="https://www.gnu.org/">GNU Operating System</a></li>
+                <li><hr style="margin-top:10px;width:50%"></li>
+                <li><a href="https://linuxmint.com/">Linux Mint</a></li>
+                <li><a href="https://www.ubuntu.com/">Ubuntu</a> </li> 
+                <li><a href="http://www.debian.org/">Debian (formerly Debian GNU/Linux)</a> </li>  
+                <li><a href="https://distrowatch.com/dwres.php?resource=major">DistroWatch.com</a> </li><li><a href="https://www.tecmint.com/linux-distro-for-power-users/">tecmint.com</a> </li>                 
+              </ul>
+            </li>
+            <li class="list-none row-span-2">
+              <h2 class="text-base font-semibold tracking-wide">Sheridan College</h2>
+              <ul class="list-none space-y-4 md:space-y-1 px-0">
+                <li><a href="https://www.sheridancollege.ca/">Davis &mdash; HMC &mdash; Trafalgar</a></li>
+                 <li><a href="https://central.sheridancollege.ca/counselling-services">Wellness &amp; Counselling Services</a></li>   
+                 <li><a href="https://central.sheridancollege.ca/library-services">Library Services</a></li>  
+                 <li><a href="https://it.sheridancollege.ca/service-catalogue/tech-essentials/index.html">Tech Essentials</a></li>
+                <li>
+                  <a href="http://bajcar.dev.fast.sheridanc.on.ca/">Prof. Ellen Bajcar</a>
+                  <span style="color:gray"><br>Office hours (by appointment)</span>
+                </li>
+                <li><a href="https://slate.sheridancollege.ca/d2l/home">SLATE</a></li>  
+                <li><a href="http://tech.fast.sheridanc.on.ca/">Fast Tech (web server access)</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+    </div>
+  </footer> 
+</body>
+
+<script>
+  // topnav
+  var topButton = document.getElementById("topnavButton");
+  var topnavList = document.getElementById("topnavList");
+  topButton.addEventListener("click", function() {
+    this.classList.toggle("active");
+    topnavList.classList.toggle("hidden");
+    document.getElementById("topnavOpen").classList.toggle("hidden");
+    document.getElementById("topnavClosed").classList.toggle("hidden");
+  });
+</script>
+<script src="../scripts/prism.js"></script>
+</body>
+</html>

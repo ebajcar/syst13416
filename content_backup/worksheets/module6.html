@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover"/>
+<title> SYST13416 </title>
+<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css"/> 
+<link rel="stylesheet" href="../css/prism_coy_dev.css"  />
+<style>
+dl, ol {
+  margin-bottom: 16px;
+}
+h4, h3 {
+  margin-top: 16px;
+}
+.ordered-list {
+  list-style-type: decimal;
+}
+.text-danger {
+  color: red;
+}
+.bg-dark-gray  {
+  background-color: #333940;
+}
+code {
+  color: black !important;
+}
+.sher-teal {
+  color: #00b2ce;
+}
+.bg-sher-teal {
+  background-color: #00b2ce;
+}
+figcaption {
+  color: #00b2ce;
+  font-weight: 500;
+}
+/* Table 
+td, th {
+padding: 4px 10px;
+border: 1px solid lightgray;
+}
+*/
+
+table {
+	border-collapse : collapse;
+	text-align:left;
+	margin : 0 0 20px 16px;
+	}
+	caption {
+		-moz-border-radius : 4px;
+		-webkit-border-radius : 4px;
+		background : #ff5000;
+		color : #FFF;
+		font-weight : bold;
+		}
+	tr:nth-child(odd) { 
+		background : #FFF;
+		}
+	tr:nth-child(even) {
+		background : #EEE;
+		}
+	tr:hover td {
+		color : #DB0202;
+		}
+	td, th {
+		min-width : 10px;
+		padding : 0 5px;
+		vertical-align:top;
+        font-size : 1em;
+		}
+	th {
+		background : #FFF;
+		border-bottom : 2px solid #DB0202;
+		color : #666;
+		font-size : 10px;
+		font-weight : bold;
+		}
+	td {
+		border-bottom : 1px solid #CCC;
+		}
+</style>
+</head>
+
+<body>
+  <nav id="navTop" class="w-full z-30 top-0 text-white bg-dark-gray ">
+    <div class="w-full container max-w-screen-lg mx-auto flex flex-wrap sm:flex-nowrap items-center justify-between mt-0 py-2">
+      <div class="md:pl-4">
+        <a class="text-white hover:text-white no-underline hover:no-underline
+        font-bold text-2xl lg:text-4xl rounded-lg hover:bg-nwoods-secondary " href="../">
+          <h1 class="mb-0 p-1 ">SYST13416 <small>Linux/UNIX Operating Systems</small></h1>
+        </a>
+      </div>
+      <button id="topnavButton" class="rounded-lg sm:hidden focus:outline-none focus:ring" aria-label="Navigation">
+        <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+          <path id="topnavOpen" fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+          <path id="topnavClosed" class="hidden" fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+        </svg>
+      </button>      
+      <div id="topnavList" class="hidden sm:block items-center w-auto mt-0 text-white p-0 z-20">
+        <ul class="list-reset list-none font-semibold flex justify-end flex-wrap sm:flex-nowrap items-center px-0 pb-0">
+          <li class="p-1 sm:p-0"><a class="topnav-link" href="../index.html">Home</a></li>
+        </ul>
+      </div>
+    </div>
+    <hr class="border-b border-gray-600 opacity-50 my-0 py-0" />
+  </nav>
+    
+  <main class="md:flex flex-col md:flex-row md:min-h-screen w-full max-w-screen-xl mx-auto">
+      
+    <div id="navSide" class="flex flex-col w-full md:w-40 lg:w-48 text-gray-700 bg-white flex-shrink-0">
+      <div class="flex-shrink-0 px-8 py-4">
+        <button id="navButton" class="rounded-lg md:hidden focus:outline-none focus:ring" aria-label="Navigation">
+          <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+            <path id="navOpen" fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+            <path id="navClosed" class="hidden" fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+          </svg>   
+        </button>
+      </div>   
+      <nav id="navList" class="min-h-screen hidden md:block sidebar-nav flex-grow px-1 lg:px-4 pb-4 md:pb-0 md:overflow-y-auto break-words">
+
+          <a href="module1.html">Worksheet 1</a>
+          <a href="module2.html">Worksheet 2</a>
+          <a href="module3.html">Worksheet 3</a>
+          <a href="module4.html">Worksheet 4</a>
+          <a href="module5.html">Worksheet 5</a>
+          <a class="bg-gray-200 text-gray-900" href="module6.html">Worksheet 6</a>
+          <a href="module7.html">Worksheet 7</a>
+          <a href="module8.html">Worksheet 8</a>
+          <a href="module9.html">Worksheet 9</a>
+          <a href="moduleA.html">Worksheet 10</a>
+      </nav>
+    </div>  
+        
+    <section class="pt-4 px-2 md:px-0 lg:px-4 pb-16 w-full overflow-hidden">
+        <h1 class="text-4xl font-medium leading-tight mt-0 mb-2 text-black-600">Worksheet 6</h1>
+
+
+<!-- Learning Objectives-->
+<div class="my-5">
+  <div class="flex w-full mx-auto overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800">
+    <div class="flex items-center justify-center px-4 bg-sher-teal">
+        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="triangle-exclamation" class="w-6 h-6 text-white fill-current" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M506.3 417l-213.3-364c-16.33-28-57.54-28-73.98 0l-213.2 364C-10.59 444.9 9.849 480 42.74 480h426.6C502.1 480 522.6 445 506.3 417zM232 168c0-13.25 10.75-24 24-24S280 154.8 280 168v128c0 13.25-10.75 24-23.1 24S232 309.3 232 296V168zM256 416c-17.36 0-31.44-14.08-31.44-31.44c0-17.36 14.07-31.44 31.44-31.44s31.44 14.08 31.44 31.44C287.4 401.9 273.4 416 256 416z"></path></svg>     
+    </div>
+    <div class="px-4 py-2 -mx-3">
+      <div class="mx-3">
+        <h5 class="text-2xl font-semibold sher-teal">In this tutorial&hellip;</h5>
+        <ul class="list-outside">
+		<li><a href="#e01">Exercise 1: Programming with bash Shell</a></li>
+		<li><a href="#e02">Exercise 2: Working With Variables</a></li>
+		<li><a href="#e03">Exercise 3: Explore Environment Variables</a></li>
+		<li><a href="#e04">Exercise 4: Personalize your prompt</a></li>
+		<li><a href="#e05">Exercise 5: Working with Quotes</a></li>
+		<li><a href="#e06">Exercise 6: Operators</a></li>
+		<li><a href="#e07">Exercise 7: Conditional statements and test Command </a></li>
+		<li><a href="#e08">Exercise 8: Using expr Command to evaluate  </a></li>
+		<li><a href="#e09">Exercise 9:  Shell Variables - positional parameters (Command-line Arguments) </a></li>
+        </ul>	
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- >Exercise  -->
+<div id="e01" class="flex justify-center mt-6 w-full">
+  <div class="block p-6 rounded-lg shadow-lg bg-white w-full">
+    <h5 class="text-2xl font-semibold sher-teal">Exercise 1: Programming with bash Shell</h5>
+	<p>Shell scripts are programs written as plain ASCII text files, using the syntax and semantics of the appropriate shell. There are syntax differences among the shell families, therefore it is important to specify and use a particular shell set of rules. Scripts are executed like other programs, but are not compiled. Each shell has its own interpreter that understands the particular shell language. Generally, shell families share the same syntax and semantics. The following example script demonstrated the use of sha-bang, prologue, and use of comments:</p> 
+	<!-- The sha-bang line, prologue, and inline documentation"-->
+<pre class="language-bash"><code>
+#!/bin/sh
+# Program name: myVeryFirst.sh
+# Author name: Put your name here
+# Date created: Date the file was first created
+# Date updated: Date the file was last modified
+# Description: 
+#	A short description of what the purpose of 	
+#	the program is. This script print a couple 
+#	of strings to the terminal window.
+echo “Hello, you have successfully run your first script.”
+echo “Congratulations!”
+</code></pre>
+    <h5 class="text-xl font-semibold">Start off with a SHA-BANG (#!)</h5>
+	<p>The sha-bang at the head of a script tells your system that this file contains set of commands to be fed to the command interpreter. Immediately following it, is an absolute path name where the program that interprets the commands in your script resides.</p>
+    <pre class="language-bash"><code
+>#!/bin/bash
+// sha-bang line specifies which interpreter is to be used to run this file
+</code></pre>
+	<p>Document your code using inline comments, even when your code is short.</p>
+	<pre class="language-bash"><code>
+# this is a comment on line 42 of the code
+</code></pre>
+	<p>Once you’ve finished entering the content, save the file and exit vi. You can test running your script:</p>
+	<pre>bash ./myFirstScript.sh</pre>
+	<p>If the script executed without a problem, you can change the permissions appropriately and you are ready to give it to another person to use. </p>
+	<pre>chmod 751 myFirstScript.sh</pre>
+    <p>	Otherwise, go back and check that you have entered everything properly. Once you make the file executable, you can run it like other commands:</p>
+	<pre>myFirstScript.sh</pre>
+    <p>Or if the directory is not in the PATH variable:</p>
+	<pre>./myFirstScript.sh</pre>
+	<p>The development process using shell scripts is the same as for any other programming language! Before you start designing a solution, make sure you understand the problem - a process called <strong>analysing</strong>.</p>	
+	<p>	The purpose of programming exercises and assignments, regardless of the language, is to learn:</p>
+    <ul class="list-outside">
+        <li>how to correctly formulate algorithms to solve specific problems - a process called <strong>designing</strong></li>
+        <li>how to write those algorithms as programs in the given programming language - a process called <strong>coding</strong> (or sometimes <strong>constructing</strong>)</li>
+        <li>how to test a program to provide convincing evidence that it solves the right problem correctly - a process called <strong>testing</strong></li>
+        <li>how to provide a clear, concise explanation of the problem that the program is intended to solve, and how it workds - a process called <strong>documenting</strong></li>
+    </ul>
+  </div>
+</div>
+
+
+<div id="e02" class="flex justify-center mt-6 w-full">
+  <div class="block p-6 rounded-lg shadow-lg bg-white w-full">
+    <h5 class="text-2xl font-semibold sher-teal">Exercise 2: Working With Variables</h5>
+	<p>To assign a value to a variable, choose a name for your variable. 
+	<mark>Remember that the Linux namespace is case-sensitive.</mark> 
+	Use upper and lower letters, numbers (some symbols are safe to use). 
+	Generally, variable names begin with a letter but can contain numerals and the underscore. Avoid using keywords (Keep in mind: if you call your variable cat, it may prevent you from using the command cat). </p>
+	<p>	Shell variables are not typed: You do not need to declare variable type; all values are treated as strings by default. Use double quotes to treat spaces and other symbols as part of the string value.</p>
+    
+	<p>To create local variables at the command prompt, use variable assignment in the form of<code>variable=value</code></p>
+    <pre class="language-bash"><code>
+    # NOTE: there is no whitespace around the symbol 
+	DOG="Barky"
+	PI=3.14159
+	CAT="Spot"
+    </code></pre>
+	
+	<p>	All shell variables are initialized to null strings by default.  This means we do not need to declare variables like in Java.</p>
+	<pre class="language-bash"><code>
+    # • Explicit assignment of null strings is possible with:
+	x=" "
+	x=' '
+	x=	
+    </code></pre>
+
+	<p>To display variable names and assigned values:"</p>
+    <pre class="language-bash"><code>
+	echo “That DOG is called $DOG”
+	echo “The value of PI is $PI”
+	echo “My cat’s name is $CAT”
+    </code></pre>
+
+	<p>To delete or unset the variable, use the unset command</p>
+    <pre class="language-bash"><code>
+    unset DOG
+    </code></pre>
+	
+	<p>You can also set a variable to read only</p>
+    <pre class="language-bash"><code>
+    readonly DOG
+    </code></pre>
+	
+    <p>Try the following:</p>
+	<ol>
+        <li>At the prompt, create some variables, assigning different values, and display the assigned values.</li>
+        <li>Create the following variables and assign the corresponding values: x = 7, y = 13. Give the command to display the following<br>The value of x is 7 and the value of y is 13.</li>
+        <li>Note the results after giving each of the following command.
+        <pre class="language-bash"><code>
+        z=x+y; echo "z equals $z"
+        z=$x+$y; echo  "z equals $z"</code></pre>
+        </li>
+        <li>Why are you getting those results? How would you fix the above commands to display the value 20 (result of actual addition)?</li>
+        <li>Check out Chapter 8 of Mark Sobell's book "A Practical Guide..."</li>
+	</ol>
+  </div>
+</div>
+
+
+<div id="e03" class="flex justify-center mt-6 w-full">
+  <div class="block p-6 rounded-lg shadow-lg bg-white w-full">
+    <h5 class="text-2xl font-semibold sher-teal">Exercise 3: Explore Environment Variables</h5>
+	<p>Environment variables are used to provide information to the program you use. Global environment variables are set by your login shell and other programs. Local shell variables are used only by the current shell session and are not passed on to other programs. 
+	<pre class="brush: bash; highlight: [1,2];" title=" To list environment variables, use either">
+	env
+	printenv</pre>
+	</p>
+	<p>To view the environment variables, use the echo command followed by the name of the variable preceded by the $ symbol. For example:
+		<pre class="brush: bash; first-line: 3" title="View the TERM variable, use">echo $TERM</pre>
+		<pre class="brush: bash; first-line: 4" title="View your login shell variable SHELL:">echo $SHELL</pre>
+		<pre class="brush: bash; first-line: 5" title="View your login shell variable PATH:">echo $PATH</pre>	
+		<pre class="brush: bash; first-line: 6" title="Add a directory to the PATH and make it global:">export PATH=$PATH:/new/dir</pre>	
+	Note there are no spaces around the equal sign and no spaces in the value being assigned. 
+	Also note, this assignment will be effective only for the duration of the session even though it is global. 
+	Later you will be including these in a script to make it available on every login.
+		
+	</p>
+
+	<ol start="5"><strong>Try the following:</strong>
+		<li>Include the current directory in your PATH variable (note this may already be included)
+		<pre class="brush: bash;">export PATH=$PATH:.</pre>	</li>
+		<li>Add your home directory to the PATH variable (note this most likely is already included)
+		<pre class="brush: bash;">export PATH=$PATH:$HOME</pre>	</li>	
+		<li>Write the command to view the valued assigned to the environment variable HOME.</li>	
+		<li>Write the command to add the subdirectory bin in your home directory in your PATH.</li>
+		<li>Check out Chapter 8 of Mark Sobell's book "A Practical Guide..."</li>
+	</ol>	
+  </div>
+</div>
+
+
+
+<div id="e04" class="flex justify-center mt-6 w-full">
+  <div class="block p-6 rounded-lg shadow-lg bg-white w-full">
+    <h5 class="text-2xl font-semibold sher-teal">Exercise 4:  Personalize your prompt</h5>
+	<p>  Before you begin, save your current prompt in another environment variable:
+	<pre class="brush: bash; highlight: [1,2];" title=" To list environment variables, use either">
+MYPROMPT=$PS1
+echo $MYPROMPT	</pre>
+It will return with a string such as:
+<pre class="brush: bash; first-line: 3">[\u@\h \W]\$</pre>
+	</p>
+	<p>When you change the prompt now, you can always get our original prompt back with the 
+		command PS1=$MYPROMPT. You will, of course, also get it back when you reconnect, as long  as you
+		just fiddle with the prompt on the command line and avoid putting it in a shell configuration file.
+		To understand these prompts and the escape sequences used, refer to the Bash info or man pages.	
+	<pre class="brush: bash; first-line: 2" title="Issue the commands and note the results: ">
+PS1="->"
+echo $PS1</pre>
+		<pre class="brush: bash; first-line: 3" title="Display time of day and number of running jobs">export PS1="[\t \j] "</pre>
+		<pre class="brush: bash; first-line: 4" 
+			title="Display date, user name, host name and current working directory. Note that \W displays only base names of the present working directory.">
+			export PS1="[\d][\u@\h \w] : "</pre>	
+		<pre class="brush: bash; first-line: 5" title=" Display history number for each command.">export PS1="{\!} "</pre>	
+		<pre class="brush: bash; first-line: 6" title="Display user@host in pink. ">export PS1="\[\033[1;35m\]\u@\h\[\033[0m\] " </pre>	
+		<pre class="brush: bash; first-line: 7" title="Sets the user name in pink and the present working directory in blue.">
+PS1="\[\033[1;35m\]\u\[\033[0m\] \[\033[1;34m\]\w\[\033[0m\] "
+export PS1</pre>
+	
+<pre class="brush: bash; first-line: 8" title="Prompt for people who have difficulties seeing the difference between the prompt and what they type. ">export PS1="\[\033[1;44m\]$USER is in \w\[\033[0m\] "
+ </pre>		
+	</p>
+	
+<ol start="5"><strong>Try the following:</strong>
+	<li>Customize your prompt your way. Experiment. Remember if you get into trouble, you can just close the session and login anew.</li>
+	<li>Check out Chapter 8 of Mark Sobell's book "A Practical Guide..."</li>
+	<li>You can find more information on ANSI Color Sequences in Wicked Cool Shell Scripts: 101 Scripts for Linux, Mac OS X, and Unix Systems, by Dave Taylor (available on Books 24x7)</li>
+</ol>	
+
+  </div>
+</div>
+
+ 
+ 
+
+<div id="e05" class="flex justify-center mt-6 w-full">
+  <div class="block p-6 rounded-lg shadow-lg bg-white w-full">
+    <h5 class="text-2xl font-semibold sher-teal">Exercise 5: Working with Quotes</h5>
+	<p>For each of the following commands, describe the output and explain what the command does. If you are getting an error, debug and note the corrections.</p> 
+	<pre class="brush: bash; highlight: [1];" title="">
+echo “The average pay is $1000”
+echo The average pay is \$1000
+echo ‘The average pay is $1000’
+echo “The PATH is $PATH. The current directory is `pwd`”
+mydir=`pwd`; echo $mydir
+size=`wc –c &lt; foo.txt`; echo $size
+message=You\ didn’t\ enter\ the\ filename.; echo $message
+dirListing=`ls -l`
+echo $dirListing     # unquoted
+echo "$dirListing"   # quoted
+</pre>
+<p>Compare the results of lines 1, 2, and 3. What is happening here?</p>
+<p>Compare the results of lines 9 and 10. Note • Using echo to output an unquoted variable set with command substitution removes trailing newlines characters from the output of the reassigned command.</p>
+  </div>
+</div>
+
+
+
+
+<div id="e06" class="flex justify-center mt-6 w-full">
+  <div class="block p-6 rounded-lg shadow-lg bg-white w-full">
+    <h5 class="text-2xl font-semibold sher-teal">Exercise 6: Operators</h5>
+	<p>An operator is a type of function, just like in mathematics. An operator name or operator symbol is a notation which denotes a particular operator. Examples of operators are </p>
+	<ul>
+        <li>defining operators (assignment), </li>
+		<li>evaluating operators (math, conditional statements), and </li>
+		<li>redirecting and piping operators.</li>
+	</ul>
+
+	<h3>Arithmetic Evaluation</h3>
+	<p>The shell allows arithmetic expressions to be evaluated, under certain circumstances (see the let and declare built-in commands and Arithmetic Expansion). Evaluation is done in fixed-width integers with no check for overflow, though division by 0 is trapped and flagged as an error. The operators and their precedence, associativity, and values are the same as in the C language.</p>
+	
+	<h3>Declare Command</h3>
+    <p>Declare variables and/or give them attributes. If no names are given then display the values of variables. The -p option will display the attributes and values of each name.</p>
+    <ul>
+        <li>-a&nbsp;&nbsp;&nbsp;Each name is an indexed array variable (see Arrays).</li> 
+        <li>-A&nbsp;&nbsp;&nbsp;Each name is an associative array variable (see Arrays).</li>
+        <li>-i&nbsp;&nbsp;&nbsp;The variable is treated as an integer; arithmetic evaluation is 
+        performed  when the variable is assigned a value.</li>
+        <li>Syntax:<br>
+        <code class="syntx">declare [-aAfFilrtux] [-p] [name[=value] ...]</code>
+        </li>
+    </ul>
+	<h3>Let Command</h3>
+    <ul>
+        <li>Syntax:<br>
+        <code class="syntx">let arg [arg ...]</code>
+        </li>
+
+        <li>Each arg is an arithmetic expression to evaluate. If the last arg evaluates to 0, let returns 1; 0 is returned otherwise.	
+        </li>
+    </ul>	
+	
+	<h3>Arithmetic Expansion</h3>
+    <ul>
+        <li>Arithmetic expansion allows the evaluation of an arithmetic expression and the substitution of the result. The format for arithmetic expansion is:
+        <br><code class="syntx">$((expression))</code> 
+    </li>
+    <li>The expression is treated as if it were within double quotes, but a double quote inside the parentheses is not treated specially. All tokens in the expression undergo parameter expansion, string expansion, command substitution, and quote removal. Arithmetic expansions may be nested.
+        </li>
+    </ul>	
+	
+    <ol start="8"><strong>Try the following:</strong>
+        <li>At the prompt, display content of each variable. Are they the same? Why? Why not?
+    <pre class="brush: bash; first-line: 1; highlight: [0];" title="">
+    let x=14+5+4*8; echo $x
+    let y=(14+5)+4*8; echo $y
+    let z=(14+5+4)*8; echo $z
+    </pre>	
+        </li>
+        <li>Create the following script. What happens if you don’t use the let command?
+    <pre class="brush: bash; first-line: 1; highlight: [0];" title="">
+    #!/bin/sh
+    #Program name: add.sh
+    #Description: 
+    #  add 2 numbers and display each number and their sum
+    let A=1
+    let B=2
+    let sum=$A+$B 
+    echo "A=$A, B=$B, sum=$sum"
+    </pre>	
+        </li>
+    </ol>	
+  </div>
+</div>
+
+
+<div id="e07" class="flex justify-center mt-6 w-full">
+  <div class="block p-6 rounded-lg shadow-lg bg-white w-full">
+    <h5 class="text-2xl font-semibold sher-teal">Exercise 7: Conditional statements and test Command</h5>
+	<h6>Conditional Statements</h6>
+    <ul>
+        <li>Conditional statements are evaluated for true or false values.</li>
+        <li>This is done with the test, or its equivalent, the [] operators.</li>
+        <li>It the condition evaluates to true, a zero (TRUE) exit status is set,
+        <br>otherwise a non-zero (FALSE) exit status is set.</li>
+        <li>If there are no arguments a non-zero exit status is set. </li>
+    </ul>	
+
+    <h6>Tests for strings:</h6>
+    <table>
+        <tr><th>Test	</th><th>Meaning</th></tr>
+        <tr><td>-z string	</td><td>true if the string length is zero</td></tr>
+        <tr><td>-n string	</td><td>true if the string length is non-zero</td></tr>
+        <tr><td>string1 = string2	</td><td>true if string1 is identical to string2</td></tr>
+        <tr><td>string1 != string2	</td><td>true if string1 is non identical to string2</td></tr>
+        <tr><td>string 	</td><td>true if string is not NULL</td></tr>
+    </table>
+	
+    <h6>Integer comparisons</h6>
+    <table>
+        <tr><th>Test	</th><th>Meaning</th></tr>
+        <tr><td>n1 -eq n2	</td><td>true if integers n1 and n2 are equal</td></tr>
+        <tr><td>n1 -ne n2	</td><td>true if integers n1 and n2 are not equal</td></tr>
+        <tr><td>n1 -gt n2	</td><td>true if integer n1 is greater than integer n2</td></tr>
+        <tr><td>n1 -ge n2	</td><td>true if integer n1 is greater than or equal to integer n2</td></tr>
+        <tr><td>n1 -lt n2	</td><td>true if integer n1 is less than integer n2</td></tr>
+        <tr><td>n1 -le n2	</td><td>true if integer n1 is less than or equal to integer n2</td></tr>
+    </table>	
+
+    <h6>Test for file attributes </h6>  
+    <p>For filenames, the options to test are given with the syntax:<br>
+    <code class="syntx">[ -option filename ]</code> </p>
+    <table>
+        <tr><th>Test	</th><th>Meaning</th></tr>
+        <tr><td>-r 	</td><td>true if it exists and is readable</td></tr>
+        <tr><td>-w	</td><td>true if it exists and is writable</td></tr>
+        <tr><td>-x 	</td><td>true if it exists and is executable</td></tr>
+        <tr><td>-f 	</td><td>true if it exists and is a regular file</td></tr> 
+        <tr><td>-d 	</td><td>true if it exists and is a directory</td></tr>
+        <tr><td>-h or -L 	</td><td>true if it exists and is a symbolic link</td></tr>
+        <tr><td>-c 	</td><td>true if it exists and is a character special file (i.e. the special device is accessed one character at a time)</td></tr>
+        <tr><td>-b 	</td><td>true if it exists and is a block special file (i.e. the device is accessed in blocks of data)</td></tr>
+        <tr><td>-p 	</td><td>true if it exists and is a named pipe (fifo)</td></tr>
+        <tr><td>-u 	</td><td>true if it exists and is setuid (i.e. has the set-user-id bit set, s or S in the third bit)</td></tr>
+        <tr><td>-g 	</td><td>true if it exists and is setgid (i.e. has the set-group-id bit set, s or S in the sixth bit)</td></tr>
+        <tr><td>-k 	</td><td>true if it exists and the sticky bit is set (a t in bit 9)</td></tr>
+        <tr><td>-s 	</td><td>true if it exists and is greater than zero in size</td></tr>
+    </table>
+
+
+	<h6>test Command</h6>
+	<p>The test command makes preliminary checks of the Linux internal environment and other useful comparisons beyond those that the if command alone can perform.  You can place the test command inside your shell script or execute it directly fromt he command line. </p>
+	<p>The test command uses operators expressed as options to perform the evaluation. It can be used to</p>
+	<ul>
+		<li>perform relational test with integers (equality, greater, less than,...)</li>
+		<li>test strings</li>
+		<li>determine if a file exists and what type of file it is</li>
+		<li>perform Boolean tests</li>
+	</ul>
+	<p>The test command returns a value known as an exit status. An exit status is a numerical value that the command returns to the operating system when it finishes.  The value of the test command's exit status indicates the result of the test performed. If the exit status is 0 (zero), the test result is true. An exit status of 1 (one) indicates the test result is false.	</p>
+	
+
+<pre class="brush: bash; first-line: 1; highlight: [0];" title="The exit status is normally detected in a script by the if statement or loop structure. You can view the last command's exit status by typing the command">
+echo $?
+</pre>
+<pre class="brush: bash; first-line: 1; highlight: [1,6];" title="Try the following:">
+number=20; value=10; name="Linux"
+test $number -eq 20; echo $?
+test $number -lt $value; echo $?
+test $name = "Linux"; echo $?
+test $name = "linux"; echo $?
+touch testFile
+test -x testFile; echo $?
+test -r testFile; echo $?
+test -d testFile; echo $?
+test -s testFile; echo $?
+test -w testFile; echo $?
+test -f testFile; echo $?
+</pre>
+  </div>
+</div>
+
+
+<div id="e08" class="flex justify-center mt-6 w-full">
+  <div class="block p-6 rounded-lg shadow-lg bg-white w-full">
+    <h5 class="text-2xl font-semibold sher-teal">Exercise 8: Using expr to evaluate</h5>
+	<p>For each of the following commands, describe the output and explain what the command does. 	If you are getting an error, debug and note the corrections.</p> 
+	<pre>
+expr 7 + 3
+expr 7+3
+expr 7 * 3
+expr 7\*3
+expr 7 \* 3
+expr 7 \* \( 3 + 1 \)
+expr 7 = 3
+expr 7 \* \( 3 + 1 \) \| 222
+expr 7 = 3 \| 222
+expr length "Linux is a great operating system"
+expr substr "Linux is a great operating system" 7 13
+expr index "Linux is a great operating system" "x"
+</pre>
+
+  </div>
+</div>
+  
+  
+<div id="e09" class="flex justify-center mt-6 w-full">
+  <div class="block p-6 rounded-lg shadow-lg bg-white w-full">
+    <h5 class="text-2xl font-semibold sher-teal">Exercise 9: Shell Variables - positional parameters (Command-line Arguments)</h5>
+    
+<table style="margin: 5px 30px;border: 1px solid lightgray;">
+<tr><th style="min-width:120px">Variable	</th><th>Usage</th></tr>
+<tr><td>$#	</td><td>Number of arguments on the command line (number of positional parameters)</td></tr>	
+<tr><td>$-	</td><td>Options supplied to the shell</td></tr>	
+<tr><td>$?	</td><td>Exit value of the last command executed</td></tr>	
+<tr><td>$$	</td><td>Process number of the current process</td></tr>
+<tr><td>$!	</td><td>Process number of the last command done in background</td></tr>	
+<tr><td>$n	</td><td>Argument on the command line, where n is from 1 through 9, reading left to right, that is $1, $2, $3, $4, $5, $6, $7, $8, and $9, holding the value of the 1st, 2nd, 3rd, 4th, 5th, 6th, 7th, 8th, and 9th argument, respectively.</td></tr>
+<tr><td>$0	</td><td>The name of the current shell or program (the first token)</td></tr>
+<tr><td>$*	</td><td>All arguments on the command line (“$1 $2 … $9”)</td></tr>	
+<tr><td>$@	</td><td>All arguments on the command line, each separately quoted (“$” “$2” … “$9”)</td></tr>	
+</table>	
+
+<p>Try the following:</p>
+	
+	<ul class="list-outside">
+		<li>Enter at the bash command line (See manual pages for set and unset commands.). Note that the variable $1 holds the value A which is the first parameter in the set command, $2 holds the value B, and so on.
+set A B C
+	<pre class="brush: bash; highlight: [0];" title="">
+set A B C
+echo $1 $2 $3
+</pre>		
+		</li>	
+		<li>Create a script called args.sh. Enter the code, save it, and make it executable. 
+
+<pre class="language-bash"><code>
+#!/bin/sh
+echo “the first argument is $1”
+echo “the second is $2”
+echo the number off arguments is $#
+</code></pre>		
+	<p>Try running the script by providing a variety of arguments.</p>
+
+		</li>
+	</ul>	
+  </div>
+</div>
+
+
+  
+  </section>
+  </main>
+  
+  <footer class="bg-dark-gray text-white"> 
+    <section class="max-w-screen-lg text-white container mx-auto py-2 px-12">  
+        <p id="version" class="leading-none mb-2 my-4">
+            &copy;  This work is the intellectual property of Sheridan College. 
+            Any further copying and distribution outside of class must be within 
+            the copyright law. Posting to commercial sites for profit is prohibited.
+        </p>
+        <p class="text-sm text-gray-100 md:mb-6">
+            <a class="text-white" href="">SYST13416 Linux/UNIX Operating Systems | Sheridan College</a>
+        </p>     
+    </section> 
+    <div class="container max-w-screen-lg mx-auto  px-8">   
+        <div class="max-w-screen-lg xl:max-w-screen-xl mx-auto px-4 sm:px-6 md:px-8">
+          <ul class="text-sm font-medium pb-14 sm:pb-20 grid grid-cols-1 sm:grid-cols-3 gap-y-10">
+            <li class="list-none row-span-2">
+              <h2 class="text-base font-semibold tracking-wide">Course Material</h2>
+              <ul class="list-none space-y-4 md:space-y-1 px-0">
+                <li><a href="https://ulysses.sheridanc.on.ca/coutline/coutlineview_sal.jsp?appver=sal&subjectCode=SYST&courseCode=13416&version=2021011800&sec=0&reload=true">Course Outline</a></li>      
+                <li><a href="https://notepad-plus-plus.org/">Notepad++ Text Editor</a></li>  
+                <li><a href="https://tldp.org/">The Linux Documentation Project</a></li>  
+                <li><a href="https://www.fsf.org/">Free Software Foundation</a></li>   
+              </ul>
+            </li>
+            <li class="list-none row-span-2">
+              <h2 class="text-base font-semibold tracking-wide">Resources</h2>
+              <ul class="list-none space-y-4 md:space-y-1 px-0">
+                <li><a href="https://www.gnu.org/">GNU Operating System</a></li>
+                <li><hr style="margin-top:10px;width:50%"></li>
+                <li><a href="https://linuxmint.com/">Linux Mint</a></li>
+                <li><a href="https://www.ubuntu.com/">Ubuntu</a> </li> 
+                <li><a href="http://www.debian.org/">Debian (formerly Debian GNU/Linux)</a> </li>  
+                <li><a href="https://distrowatch.com/dwres.php?resource=major">DistroWatch.com</a> </li><li><a href="https://www.tecmint.com/linux-distro-for-power-users/">tecmint.com</a> </li>                 
+              </ul>
+            </li>
+            <li class="list-none row-span-2">
+              <h2 class="text-base font-semibold tracking-wide">Sheridan College</h2>
+              <ul class="list-none space-y-4 md:space-y-1 px-0">
+                <li><a href="https://www.sheridancollege.ca/">Davis &mdash; HMC &mdash; Trafalgar</a></li>
+                 <li><a href="https://central.sheridancollege.ca/counselling-services">Wellness &amp; Counselling Services</a></li>   
+                 <li><a href="https://central.sheridancollege.ca/library-services">Library Services</a></li>  
+                 <li><a href="https://it.sheridancollege.ca/service-catalogue/tech-essentials/index.html">Tech Essentials</a></li>
+                <li>
+                  <a href="http://bajcar.dev.fast.sheridanc.on.ca/">Prof. Ellen Bajcar</a>
+                  <span style="color:gray"><br>Office hours (by appointment)</span>
+                </li>
+                <li><a href="https://slate.sheridancollege.ca/d2l/home">SLATE</a></li>  
+                <li><a href="http://tech.fast.sheridanc.on.ca/">Fast Tech (web server access)</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+    </div>
+  </footer> 
+
+
+<script>
+  // topnav
+  var topButton = document.getElementById("topnavButton");
+  var topnavList = document.getElementById("topnavList");
+  topButton.addEventListener("click", function() {
+    this.classList.toggle("active");
+    topnavList.classList.toggle("hidden");
+    document.getElementById("topnavOpen").classList.toggle("hidden");
+    document.getElementById("topnavClosed").classList.toggle("hidden");
+  });
+</script>
+<script src="../scripts/prism.js"></script>
+</body>
+</html>
