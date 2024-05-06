@@ -1,0 +1,220 @@
+body {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #464646;
+	text-decoration: none;
+	background-color: #00b2ce;
+	/* background : url(../images/Sheridan-Pattern-02-lightblue.jpg); */
+	margin:0;
+	padding:0;
+	width:739px;
+	margin:5px auto;
+	border-radius: 19px;
+}
+#main-inner {
+	padding:0 17px 27px 27px;
+	min-height:200px;
+	background-color: #FFFFFF;
+}
+article {
+	width: 700px;
+	display:block;
+	float:left;
+	line-height:18px;
+/*	height:500px;
+	overflow:auto; */
+}
+aside {
+	position: fixed;
+	top: 103px;
+	right: 0px;
+	width: 173px;
+	display:block;
+	float:right;
+	border-left:1px solid #C8C8C8;
+	text-align:right;
+	padding-top:10px;
+	padding: 10px;
+	background-color: white;
+	border-radius: 19px 0 0 19px;
+	z-index: -5;
+}
+.clear {
+	clear:both;
+}
+footer {
+	clear:both;
+	font-size: 12px;
+	color: #ff5000;
+	text-align:center;
+	padding:12px;
+	line-height:18px;
+font-family: 'Carme', sans-serif;
+	border-bottom-left-radius:19px;
+	border-bottom-right-radius:19px;
+	background: -webkit-linear-gradient(white, lightgrey); /* For Safari */
+	background: -o-linear-gradient(white, lightgrey); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(white, lightgrey); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(white, lightgrey); /* Standard syntax (must be last) */	
+}
+
+aside li, span.bolded {
+	color:#164365;
+	list-style: none;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	padding-right:0px;
+	padding-bottom: 7px;
+}
+a {
+	font-weight:bold;
+	font-size: 11px;
+}
+#logo {
+	width:739px;
+	height:97px;
+	background-color: #FFFFFF;
+	background-image: url(../images/photoMain.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	border-bottom:1px solid #C8C8C8;
+	border-top-right-radius:19px;
+	border-top-left-radius:19px;
+}
+#poslogo {
+	padding: 35px 0 0 30px;
+}
+#mainphoto {
+	height:100px;
+	background-color: #FFFFFF;
+	border-bottom:1px solid #C8C8C8;
+	padding:3px 0 3px 0;
+}
+
+h1 {
+	margin : 10px 0 10px;
+	padding : 0;
+	font-family: Allan, helvetica, arial, sans-serif;
+	font-size: 34px;
+	color: #003767;
+	font-weight: bold;
+
+	line-height: 34px;
+	/* border-top: 1px solid #ddd;	*/
+}
+h2 {
+	font-family: Allan, helvetica, arial, sans-serif;
+	color: #003767;
+	margin: 15px 0; 
+	padding: 10px 0 0 0;
+	font-size:20px;
+	text-shadow: 1px 1px 1px gray;
+}
+/*
+h2 { 
+	font-family: Allan, helvetica, arial, sans-serif;
+	color: #ff5000; /*#00b2ce;
+	margin: 15px 0; 
+	padding: 10px 0 0 0;
+	font-size:20px;
+	border-top: #00b2ce 1px solid;
+	background: linear-gradient(#f3f3f3, white);
+	text-shadow: 1px 1px 1px gray;
+}
+*/
+h3 { margin: 1px 0;
+padding : 0 0 0 16px;
+	background : url(../images/ai00.jpg) no-repeat 0 12px; } 
+h4 {
+	margin : 25px 0 0 0 ;
+	padding : 5px 2px 2px 2px;
+	font-family: Allan, helvetica, arial, sans-serif;
+	font-size: 16px;
+	color: #003767;
+	border: 1px #ddd solid;
+	width: 80px;
+	background-color: #f9f9f9;
+	border-radius: 10px 10px 0 0;
+	text-align: center;
+	background: linear-gradient(#eeeeee, white);
+}
+h5 {
+	margin: 0;
+	padding: 30px 18px 0 0 ;
+	font-family: 'Carme', sans-serif;
+	color: #ff5000;
+	font-size: 57px;
+	line-height: 40px;
+	font-weight: 800;
+	text-align: right;
+	text-shadow: 1px 1px 8px #003767;
+}
+h6 {
+	margin: 0;
+	padding: 0 24px 0 0 ;
+	color: #003767;
+	font-size: 42px;
+	font-family: 'Herr Von Muellerhoff', cursive;
+	/*font-family: 'Allura', cursive;*/
+	line-height: 11px;
+	text-align: right;
+    font-weight: bold;
+	}
+p, ul, ol { margin: 5px 0; }
+iframe {
+	background: transparent; 
+	margin: 1px 5px 0px 10px;
+	seamless: seamless;
+	border: 0px;
+ }
+
+#footer a:link, #footer a:visited {
+	color:#FFFFFF;
+	text-decoration:none;
+
+}
+#footer a:hover {
+	color:#ff5000;
+	text-decoration:underline;
+
+}
+.highlight {
+	color:#164365;
+	text-decoration:none;
+	font-size:11px;
+	font-weight:bold;
+}
+.highlight a, .highlight a:visited {
+	color:#164365;
+	text-decoration:none;
+	text-indent:20px;
+}
+.highlight a:hover {
+	color:#6F6F6F;
+	text-decoration:underline;
+	text-indent:20px;
+}
+a, a:visited {
+	color:#164365;
+	text-decoration:none;
+}
+a:hover {
+	color:#6F6F6F;
+	text-decoration:none;
+}
+mark {
+	background-color: #00b2ce;
+	color: white;
+	font-weight: bold;
+}
+	/* Gradient transparent - color - transparent */
+hr.style-two {
+	border: 0;
+    padding: 0 auto;
+    margin: 3px auto;
+	height: 1px;
+	background-image: -webkit-linear-gradient(left, rgba(190,190,190,0), rgba(190,190,190,0.75), rgba(190,190,190,0)); 
+	background-image:    -moz-linear-gradient(left, rgba(190,190,190,0), rgba(190,190,190,0.75), rgba(190,190,190,0));
+	background-image:     -ms-linear-gradient(left, rgba(190,190,190,0), rgba(190,190,190,0.75), rgba(190,190,190,0));
+	background-image:      -o-linear-gradient(left, rgba(190,190,190,0), rgba(190,190,190,0.75), rgba(190,190,190,0));
+}

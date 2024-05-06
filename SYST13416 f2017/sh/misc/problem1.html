@@ -1,0 +1,156 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Tutorial Set 1</title>
+	
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"> 
+
+ 	<link rel="stylesheet" type="text/css" href="../css/icons.css" /> 
+<link type="text/css" rel="Stylesheet" href="tutorials.css"/>    
+	<link type="text/css" rel="Stylesheet" href="styles/shCoreDefault.css"/>
+	<link type="text/css" rel="Stylesheet" href="styles/shThemeDefault.css"/>	
+	<script type="text/javascript" src="scripts/shCore.js"></script>
+	<script type="text/javascript" src="scripts/shBrushJScript.js"></script>
+	<script type="text/javascript" src="scripts/shBrushXml.js"></script>
+	<script type="text/javascript" src="scripts/shBrushCss.js"></script>
+	<script type="text/javascript" src="scripts/shBrushBash.js"></script>
+    <script type="text/javascript" src="scripts/shBrushPlain.js"></script>
+	<script type="text/javascript">SyntaxHighlighter.all();</script>
+
+	<style type="text/css">
+    :invalid { 
+          border-color: #e88;
+          -webkit-box-shadow: 0 0 5px rgba(255, 0, 0, .8);
+          -moz-box-shadow: 0 0 5px rbba(255, 0, 0, .8);
+          -o-box-shadow: 0 0 5px rbba(255, 0, 0, .8);
+          -ms-box-shadow: 0 0 5px rbba(255, 0, 0, .8);
+          box-shadow:0 0 5px rgba(255, 0, 0, .8);
+	</style>	
+</head>
+
+<body>
+<section class="container">
+		<p>&nbsp;</p>
+		<h1>Class Problem 1: Solving A Simple Problem</h1>
+	<p>Even a simple problem needs to be planned, analysed, designed, constructed, and tested before it is implemented. Complex problems can be broken down into a set of simple problems. 
+	Let's consider a simple problem: </p>
+	<p class="highlight-1"><strong>Problem:</strong> How do you copy a file? </p>
+	<p>Analyze the problem and consider alternate solutions:</p>
+	<ul>
+		<li>Objective: reproduce a file.</li>
+		<li>Elements: (output) newfile, (input) oldfile</li>
+		<li>Relations: copy,reproduce, create a copy, photocopy, ...</li>
+		<li>Algorithm: 
+			<pre class="brush: plain;">
+determine which file to copy from
+find the oldfile
+if cannot find oldfile, ???? else continue
+determine which file to copy to
+find the newfile
+if newfile exists, ????? else continue
+prepare (open) oldfile
+prepare (open) newfile
+transfer data from oldfile to newfile
+put away (close) oldfile
+put away (close) newfile
+display the outcome
+</pre>
+		</li>
+	</ul>
+	<p>Note that our pseudocode is generic enough to follow a manual or a computerized process.</p>
+	<p>To construct a solution in the bash environment, we need to do some preparations:</p>
+	<p>1. Create a file for each script (do not get into the habit of just adding to the same file - one solution, one file). For each variation (version), copy the current file to a file that identifies the version. For example:</p>
+	<p class="highlight-4">
+		~$ mkdir bin<br />
+		~$ cd bin<br />		
+		~/bin$ vi copy<br />
+		.<br />.<br />.<br />
+		~/bin$ cp copy copy.verA<br />
+		~/bin$ vi copy<br />
+		.<br />.<br />.<br />
+		~/bin$ cp copy copy.verB<br />
+	</p>
+	<p>...and so on.</p>
+	<p>2. In your ~/bin directory (as demonstrated above), create a file called "copy", enter the code 
+	as shown below, save the file and change the permissions so that you can execute the file.</p>
+	<p class="highlight-4">~/bin$ vi copy<br />~/bin$ chmod 705 copy</p>	
+	<p>3. Learn more about bash shell by examining the manual page:  <code>&nbsp;man bash&nbsp;</code></p>
+	<p>Let's return to the problem. From modelling example solutions, a number of questions should come to mind, such as </p>
+	<ul>
+		<li>What is a file? regular file? directory? special file?</li>
+		<li>Where do these values come from? are they chosen arbitrarily, by the user, by another program?</li>
+		<li>Identify other relevant information.</li>
+		<li>Identify and describe uncertainties about the interpretation of the problem. </li>
+	</ul>
+	<p>Let's examine what happens to our solution as we make different assumptions about the problem</p>
+		
+
+	<!-- e -->
+	<p class="highlight-3"><img src="../images/exclamation.png" alt="">&nbsp;<strong>Version A:</strong> ....the first version is incomplete, yet provides a wealth of information that we address one step at a time.</p>
+	<pre class="brush: bash; first-line: 1; highlight: [0]" title="">
+#!/bin/bash
+# Author: Ellen Bajcar
+# Program name: copy
+# Date created: June 13, 2014
+# Date modified:
+# Problem:
+#       copy a file
+# Solution:
+#1. determine what source file we need to copy
+#2. find the source file
+#3. if source file does not exist, ????
+#4. if yes, determine what the destination file is
+#5. Does the destination file exist?
+#6. if yes, ????
+#7. open the source file
+#8. open the destination file
+#9. transfer data from source to destination
+#10. close the source file
+#11. close the destination file
+#TODO: provide user help
+
+#1. determine what source file we need to copy
+#TODO: what about multiple files??
+#TODO: what about directories and other types of files?
+clear
+echo -n "Enter the source file name: "
+read sourc
+
+#1a. check if the user input is valid
+#2. find the source file
+#3. if source file does not exist, present the user
+#+ with another chance????
+
+#4. if yes, determine what the destination file is
+echo -n "Enter the destination file name: "
+read destin
+
+#5. Does the destination file exist?
+#6. if yes, ????
+
+#7-10 open, transfer data, close files
+cp $sourc $destin
+echo "copies $source to $destin"
+echo "contents of $destin is:"
+cat $destin
+</pre>	
+	<p class="highlight-4">~/bin$ copy<br /> </p>
+	<p>Stop and analyze:</p>
+	<ul>
+		<li>Explore other alternatives and related assumptions.</li>
+		<li>Explore the implications of ambiguities when analysing a problem.</li>
+		<li>Consider the impact of alternative solutions on various types of users.</li>
+		<li>Plan and document how to test potential solutions.</li>
+		<li>Recognize and control your own biases when choosing a solution.</li>
+	</ul>	
+
+<p>&nbsp;</p>	
+<p class="highlight-2"><img src="../images/new.gif" alt="">&nbsp;<strong>Version B:</strong>....future versions will be added here as we develop them in class.</p> 
+<p>&nbsp;</p>
+</section>
+</body>
+</html>

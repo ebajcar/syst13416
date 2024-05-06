@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>SYST13416</title>
+    <meta charset="utf-8">
+	<link rel="icon" href="https://www.sheridancollege.ca/SheridanCollege/img/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">	
+	<link type="text/css" rel="Stylesheet" href="../js/syntax/styles/shCoreDefault.css"/>
+	<link type="text/css" rel="Stylesheet" href="../js/syntax/styles/shThemeDefault.css"/>
+	<link type="text/css" rel="Stylesheet" href="css/imgTransforms.css"/>
+<style>
+body {
+  background-image: url('images/Sheridan-lBlue.jpg');
+  background-color: #0e8ea4;
+  background-repeat: repeat-x;
+  background-attachment: fixed;
+}
+
+[data-toggle=popover] {
+  color: orange;
+  font-weight: bold;
+}
+
+object, iframe {
+  height: 640px;
+  width: 90%;
+  overflow: initial;
+  overflow-x: hidden;
+}
+iframe {
+	border: 0px solid white;
+    margin-bottom: 15px;
+
+			width: 100%;
+			height: 570px;
+		}
+/*
+#evaluation-plan {
+    -webkit-column-count: 2; /* Chrome, Safari, Opera */
+    -moz-column-count: 2; /* Firefox */
+    column-count: 2;
+}
+
+        .imgp { width: 100% }
+		@media screen {
+			#outcomes, #prof-details,#textbook, #evaluation-plan, #topical-schedule { min-height: 690px }
+			}
+		.change {
+			text-decoration: line-through;
+		}
+		*/
+</style>
+</head>
+    
+<body>
+<header> 
+    &nbsp;
+</header> 
+<div class="container">  
+<div class="panel" style="background-image:url(images/logo3.gif);background-repeat: no-repeat; background-size: 160px;background-origin: content-box;">
+	<div class="panel-body">  
+		<p class="text-right"><a href="index.html" target="_parent">Go to Course Material</a>&nbsp;&nbsp;</p>
+		<h1 style="border-bottom:1px solid #0e8ea4;">Linux Files <small>&nbsp; Module 4 </small></h1>	
+		<div class="row">
+			<div class="col-xs-12 col-md-4 imgview ">	
+				<div id="all">
+					<h4>What is this module about?</h4>
+					<div class="view view-tenth">
+						<img src="images/wordcloud1.png"  />
+						<div class="mask">
+							<h2>What is this module about?</h2>
+							<p>Reference the Course Plan. Plan your studies related to the learning objectives...</p>
+							<!-- provide a modal with information what to do for course-ralted material -->
+							<a  data-toggle="modal" data-target="#objectives" class="info">Read More</a>
+						</div>
+					</div>	
+					<h4>Explore related material</h4>
+					<div class="view view-tenth">
+						<img src="images/book1w.png"  />
+						<div class="mask">
+							<h2>Explore related material</h2>
+							<p>Make hand-written notes as you explore the material. Read through the selected slides. Read and practise the suggested material...</p>
+							<!-- provide a modal with information what to do for taking notes -->
+							<a  data-toggle="modal" data-target="#resources" class="info">Read More</a>
+						</div>
+					</div>
+				</div> <!-- end of all --> 
+			</div>									
+			<div class="col-xs-12 col-md-8">
+				<h4 style="text-align:center">Selected Slides</h4>
+				<iframe  src="content/m4slides.html"></iframe>	                                
+			</div>	
+		</div>		<!-- end of row --> 			
+	
+		
+		<hr>
+		<footer class="panel-footer panel-primary"> 
+			<div class="small fa fa-copyright">
+				<em>This work is the intellectual property of Sheridan College. Any further copying and distribution outside of class must be within the  copyright law. Posting to commercial sites for profit is prohibited.</em>
+				<address class="row">
+					<div  class="col-md-8 text-left">
+					<img src="images/fast.jpg" style="height:24px;vertical-align:text-bottom" alt="Sheridan College logo"/>
+					<span style="margin-left:6px;padding-left:6px;font-size: 1em;font-family:Arial;border-left:1px solid gray;display:inline-block;height:24px;vertical-align:text-bottom">&nbsp;</span>SYST13416 Intro to Linux Operating System, 
+					<a href="http://www-acad.sheridanc.on.ca/~bajcar/">Ellen Bajcar, et al</a>  
+					</div>              
+					<div  class="col-md-4 text-right">
+						<a href="https://login.sheridanc.on.ca/idp/Authn/UserPassword" target="_blank">
+							<img src="images/slate-logo.png"  alt="Slate" title="Slate" /></a>&nbsp;
+						<a href="http://piazza.com/sheridancollege.ca/winter2016/syst10049/home" target="_blank">
+							<img src="images/piazza_logo.png"  alt="Piazza" title="Piazza" /></a>&nbsp;    
+						<a href="https://www.facebook.com/syst10049/" target="_blank">
+							<img src="images/facebook.gif"  alt="Facebook" title="Facebook" /></a>&nbsp;
+						<a href="https://twitter.com/EllenBajcar" data-via="EllenBajcar">
+							<img src="images/twitter.gif" alt="Contact Us" /></a>
+					</div>
+				</address> 
+			</div>
+		</footer>
+   
+   </div>  <!-- class="panel-body" --> 
+</div> <!-- /panel -->
+</div> <!-- /container -->
+
+<!-- 1. Modal for taking notes -->
+<div class="modal fade bs-example-modal-lg" id="objectives" tabindex="-1" role="dialog" aria-labelledby="objectivesLabel">
+  <div class="modal-dialog  modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h2 class="modal-title" id="objectivesLabel">Plan Your Studies.</h2>
+      </div>
+      <div class="modal-body">
+	  <!-- content starts -->
+			<!--
+			  ** TODO: create a new page dedicated to taking notes **
+			<object height="400" style="width:99%;" data="../tut/steps99.html"></object>
+			-->
+			<iframe  src="data/m4o.html" seamless></iframe>
+		<!-- content ends -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 2. Modal for course related resources -->
+<div class="modal fade bs-example-modal-lg" id="resources" tabindex="-1" role="dialog" aria-labelledby="courseMatLabel">
+  <div class="modal-dialog  modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h2 class="modal-title" id="courseMatLabel">Explore Course-related Resources</h2>
+      </div>
+      <div class="modal-body">
+	  <!-- content starts -->
+			<!--
+			  ** TODO: create a new page dedicated to course related resources **
+			<object height="400" style="width:99%;" data="../tut/steps99.html"></object>
+			-->
+			<iframe  src="data/m4content.html"seamless></iframe>
+		<!-- content ends -->
+      </div>
+    </div>
+  </div>
+</div>
+
+	
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>		
+
+<script type="text/javascript" src="../js/syntax/scripts/shCore.js"></script>
+<script type="text/javascript" src="../js/syntax/scripts/shBrushJScript.js"></script>
+<script type="text/javascript" src="../js/syntax/scripts/shBrushXml.js"></script>
+<script type="text/javascript" src="../js/syntax/scripts/shBrushCss.js"></script>
+<script type="text/javascript" src="../js/syntax/scripts/shBrushBash.js"></script>
+<script type="text/javascript" src="../js/syntax/scripts/shBrushPlain.js"></script>
+<script type="text/javascript">SyntaxHighlighter.all();   
+    $('#myTabs a').click(function (e) {
+      e.preventDefault()
+      $(this).tab('show')
+    })
+    $(function () {
+      $('[data-toggle="popover"]').popover()
+    })
+	
+$(function () {
+   var activeTab = $('[href=' + location.hash.split('#')[1] + ']');
+   activeTab && activeTab.tab('show');
+});	
+ // Javascript to enable link to tab
+//var url = document.location.toString();
+//if (url.match('#')) {
+//    $('.nav-tabs a[href="#'+url.split('#')[1]+'"]').tab('show') ;
+//} 
+
+// With HTML5 history API, we can easily prevent scrolling!
+//$('.nav-tabs a').on('shown.bs.tab', function (e) {
+//    if(history.pushState) {
+//        history.pushState(null, null, e.target.hash); 
+//    } else {
+//        window.location.hash = e.target.hash; //Polyfill for old browsers
+//    }
+//});	 
+</script>   
+</body>
+</html>

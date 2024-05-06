@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Tutorial Set 2</title>
+	
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"> 
+
+ 	<link rel="stylesheet" type="text/css" href="../css/icons.css" />   
+    <link type="text/css" rel="Stylesheet" href="tutorials.css"/>
+	<link type="text/css" rel="Stylesheet" href="styles/shCoreDefault.css"/>
+	<link type="text/css" rel="Stylesheet" href="styles/shThemeDefault.css"/>	
+	<script type="text/javascript" src="scripts/shCore.js"></script>
+	<script type="text/javascript" src="scripts/shBrushJScript.js"></script>
+	<script type="text/javascript" src="scripts/shBrushXml.js"></script>
+	<script type="text/javascript" src="scripts/shBrushCss.js"></script>
+	<script type="text/javascript" src="scripts/shBrushBash.js"></script>
+	<script type="text/javascript">SyntaxHighlighter.all();</script>
+
+	<style type="text/css">
+    :invalid { 
+          border-color: #e88;
+          -webkit-box-shadow: 0 0 5px rgba(255, 0, 0, .8);
+          -moz-box-shadow: 0 0 5px rbba(255, 0, 0, .8);
+          -o-box-shadow: 0 0 5px rbba(255, 0, 0, .8);
+          -ms-box-shadow: 0 0 5px rbba(255, 0, 0, .8);
+          box-shadow:0 0 5px rgba(255, 0, 0, .8);
+	</style>	
+</head>
+
+<body>
+<section class="container">
+	<!-- part 1 -->
+	<h1>Tutorial Set 2</h1>
+	<p class="dent"><strong>In this tutorial...</strong></p>
+	<ul>
+		<li><a href="#e01">2.1. Read and Reflect</a></li>
+		<li><a href="#e02">2.2. View The Calendar</a></li>
+		<li><a href="#e03">2.3. Work With The Date</a></li>
+		<li><a href="#e04">2.4. View And Work With History</a></li>
+		<li><a href="#e05">2.5. Redirect Output</a></li>
+		<li><a href="#e06">2.6. Use Pipes and Pipelines</a></li>
+		<li><a href="#e07">2.7. View Who is Logged On</a></li>
+		<li><a href="#e08">2.8. Communicating with Others</a></li>
+	</ul>	
+	<p>&nbsp;</p>
+
+	
+	<section id="e01">
+		<h2>2.1. Read and Reflect
+		&nbsp;&nbsp; <a href="#top"><img src="../images/uiTabsArrow.png" /></a></h2>
+		<p>To help you develop your critical thinking and system thinking, consider the following questions after reading the material for Module 2:</p>
+		<ol>
+			<li>What is the command syntax? Give examples.</li>
+			<li>What is a utility? How are utilities classified?</li>
+			<li>Using primary source only, what options and arguments are available for utilities: cal, date</li>
+			<li>What is a shell? What shells are available on Unix? Linux?</li>
+			<li>What is history? What does it allow you to do?</li>
+			<li>How are commands processed? What defaults are used for input and output? Can you have a process without an input? an output? What happens when you have an error? How do you identify and correct errors? Give an example of a syntactic error. Give an example of a semantic error.</li>
+			<li>What is a redirection? What is a pipeline?</li>
+		</ol>
+		<p>&nbsp;</p>
+	</section>
+	
+	
+	<section id="e02">
+		<h2>2.2. View The Calendar
+		&nbsp;&nbsp; <a href="#top"><img src="../images/uiTabsArrow.png" /></a></h2>
+		<ol>
+			<li value="1">The cal command without any option or argument will output the current month's calendar. Try:</li>
+				<li class="highlight-4">~$  cal</li>	
+			<li value="2">You can specify the year as an argument. Try:</li>
+				<li class="highlight-4">~$  cal 1897</li>
+			<li value="3">You can specify the month and year as arguments. Try:</li>
+				<li class="highlight-4">~$  cal 2 1991</li>
+			<li value="4">To get information about other options and arguments for the command cal, examine its manual page:</li>
+				<li class="highlight-4">~$  man cal</li>
+			<li value="5">How do you display the calendar for the current month?</li>
+			<li value="6">How do you display the calendar for the same month last year?</li>
+			<li value="7">How do you display the calendar for the year 1980?</li>
+		</ol>
+		<p>&nbsp;</p>
+	</section>
+	
+	
+	<section id="e03">
+		<h2>2.3.  Work With The Date
+			&nbsp;&nbsp; <a href="#top"><img src="../images/uiTabsArrow.png" /></a> </h2>	
+		<ol>
+			<li value="1"> Display the current time and date. Try:</li>
+				<li class="highlight-4">~$ date </li>	
+			<li value="2"> To get information about other options and arguments for the command date, examine its manual page:</li>
+				<li class="highlight-4">~$ man date </li>
+			<li value="3"> You can show formatted date and time. Check the manual page for the formatting options. Try:</li>
+				<li class="highlight-4">~$ date +'Date: %m/%d/%Y%nTime: %r'  </li>
+			<li value="4">Display date in the following format: Today is Mon MM/DD/YY  (Note the command you used). ?</li>
+			<li value="5">Display the date in three (3) other formats of your choosing. (Use a variety of available formats. Be creative. Note the commands you use) ?</li>
+		</ol>
+		<p>&nbsp;</p>
+	</section>
+	
+	
+	<section id="e04">	
+		<h2>2.4.  View And Work With History
+			&nbsp;&nbsp; <a href="#top"><img src="../images/uiTabsArrow.png" /></a> </h2>	
+		<ol>
+			<li value="1">  List your history of commands. Try:</li>
+				<li class="highlight-4">~$ history </li>	
+			<li value="2"> Redo command line 10 assuming that history shows at least 10 commands. Try:</li>
+				<li class="highlight-4">~$ !10 </li>
+			<li value="3"> To get information about other options and arguments for the command history, examine its manual page. Try:</li>
+				<li class="highlight-4">~$ man history </li>
+			<li value="4"> Repeat last cal command but pipe it to the word count command to return the number of lines in the output. Try:</li>
+				<li class="highlight-4">~$ !cal | wc -l </li>
+			<li value="5"> Print without executing event number 6. Try:</li>
+				<li class="highlight-4">~$ !6:p </li>
+			<li value="6"> What will the following command do? Explain (H is capitalized) </li>
+				<li class="highlight-4">~$ History 5 </li>		
+			<li value="7"> What will the following command do?</li>
+				<li class="highlight-4">~$ history 7</li>
+			<li value="8"> What will the following command do (no spaces)?</li>
+				<li class="highlight-4">~$ !! </li>
+			<li value="9"> Give the command to redo line 21 of your history. View the command before you execute it. What are the two commands you used?</li>
+		</ol>
+		<p>&nbsp;</p>
+	</section>
+	
+	
+	<section id="e05">
+		<h2>2.5.  Redirect Output
+			&nbsp;&nbsp; <a href="#top"><img src="../images/uiTabsArrow.png" /></a> </h2>	
+		<ol>
+			<li value="1"> View the manual page for the cat command.  What does cat do?</li>
+				<li class="highlight-4">~$ man cat </li>	
+			<li value="2"> Now type the cat command and redirect its STDOUT to a file called "randomNames". Note that after you press enter, you are not presented with the command prompt (continue with the next exercises):</li>
+				<li class="highlight-4">~$ cat > randomNames </li>
+			<li value="3"> After pressing "Enter", your cursor will just sit there and wait for you to do something,  type the following names, pressing "Enter" after each one.</li>
+				<li class="highlight-4">Marie Curie<br>
+Albert Einstein<br>
+Mark Twain<br>
+Wolfgang Amadeus Mozart<br>
+Stephen Hawking<br>
+Isaac Newton</li>
+			<li value="4">Finish the random names list and press CTRL+D to finish. What does the CTRL+D stand for?</li>
+			<li value="5"> Display the calendar for January 2014 and save the output in a file called  jan2014   What command did you use?</li>
+			<li value="6">  Append to your  jan2014  file the current date and time. Note the command(s) you used.</li>
+			<li value="7"> What is the difference between running the following two commands? (other then the year!)</li>
+			<li class="highlight-4">~$  cal 1 2011; cal 2 2011; cal 3 2011 >> winter.2011</li>
+			<li class="highlight-4">~$  (cal 1 2012; cal 2 2012; cal 3 2012) >> winter.2012</li>
+			<li value="8"> To view winter.2011 and winter.2012, use the cat command.  Note the results and your observations after executing each command.</li>
+			<li value="9"> List your history of commands and save them in a file called tutorial2.txt (at the prompt, type the following line, followed by the <enter> key)</li>
+			<li class="highlight-4">~$ history > tutorial2.txt  </li>	
+		</ol>	
+		<p>&nbsp;</p>
+	</section>
+	
+	
+	<section id="e06">		
+		<h2>2.6.  Use Pipes and Pipelines
+			&nbsp;&nbsp; <a href="#top"><img src="../images/uiTabsArrow.png" /></a> </h2>	
+		<ol>
+		<li value="1">  Use the online manual to explore what the following commands do and their syntax. Try:</li>
+			<li class="highlight-4">~$ grep </li>
+			<li class="highlight-4">~$ wc </li>		
+		<li value="2">  Not only do pipes save you time, but you’ll use different combinations of piped commands to tackle computing tasks particular to the way you work and the programs you run. At first your pipe commands may be simple, but as you gain confidence and understanding, you’ll be able to construct fairly complex pipelines. Describe the process and result when you run each of the following commands:</li>
+			<li class="highlight-4">~$ cal | wc -l </li>
+			<li class="highlight-4">~$ who > file1</li>
+			<li class="highlight-4">~$ who | wc</li>
+			<li class="highlight-4">~$ cat userlist | wc</li>
+			<li class="highlight-4">~$ cat userlist | grep baj</li>
+			<li class="highlight-4">~$ cat userlist | grep baj | wc -l </li>
+			<li class="highlight-4">~$ cat userlist | grep smi | wc -l</li>
+		<li value="3">  List all lines in userlist that contain the pattern "alex". What command did you use?</li>
+		<li value="4">Count all lines in userlist that contain the pattern "alex". What command did you use?</li>
+		<li value="5"> Save the results of the previous command in a file called "file2". What command did you use?</li>
+		<li value="6">Using redirection, add (append) the following  to file2:</li>
+		<li class="highlight-4">This is the number of lines that contain pattern Alex</li>
+		<li value="7">View file2 to verify that you have a number on the first line, followed by the line of text above on the second line</li>
+		</ol>	
+		<p>&nbsp;</p>
+	</section>
+	
+	
+	<section id="e07">
+		<h2>2.7.  View Who is Logged On
+			&nbsp;&nbsp; <a href="#top"><img src="../images/uiTabsArrow.png" /></a> </h2>	
+		<ol>
+		<li value="1"> Examine the manual pages for the command who. What does the short description say?</li>
+			<li class="highlight-4">~$ man who  </li>
+		<li value="2"> What output do you see when you type the who command without any options and arguments? Explain.</li>
+				
+		<li value="3">  Type the following commands one at a time and note what each  does.  Compare.</li>
+			<li class="highlight-4">~$ who am I </li>
+			<li class="highlight-4">~$ Who am i </li>
+			<li class="highlight-4">~$ who am i </li>
+			<li class="highlight-4">~$ whoami </li>
+			<li class="highlight-4">~$ whoamI </li>
+			<li class="highlight-4">~$ WhoAmI </li>
+		</ol>	
+		<p>&nbsp;</p>
+	</section>
+	
+	
+	<section id="e08">	
+		<h2>2.8. Communicating with Others
+			&nbsp;&nbsp; <a href="#top"><img src="../images/uiTabsArrow.png" /></a> </h2>	
+		<ol>
+			<li value="1"> The mesg command determines whether other users can send messages to you--and the write command can send a message from you to another user.  Read the manual pages for mesg and write. Note the syntax of the command.  Find a partner and send each other a message using write. What options and arguments did you use? The syntax of a write command line is </li>
+				<li class="highlight-4">~$ write userid [terminal]<br />
+				write your message here<br />
+				more here... </li>	
+			<li value="2"> The userid is the user name and the terminal is optional. </li>
+			<li value="3"> The terminal is optional, but useful if the person is logged in several times and you want to target a specific terminal.</li>
+			<li value="4">Each user has the option to deny or accept messages. To accept messages, run the command:</li>
+				<li class="highlight-4">~$ mesg y </li>
+			<li value="5"> To stop accepting messages, run the command:</li>
+			<li class="highlight-4">~$ mesg n </li>
+			<li value="6"> To establish two-way communication with another user,
+				<ul> <li>you and the other user must each execute write, specifying the other's userid. The write utility then copies text, line by line, from one keyboard-display to the other. </li> <li> Sometimes it helps to establish a convention, such as typing o for "over" when you are ready for the other person to type and typing oo for "over and out" when you are ready to end the conversation. </li> <li> When you want to stop communicating with the other user, press <code>&nbsp;Control+D </code>&nbsp;at the beginning of a line, which tells the write to quit, displaying EOF on the other user's terminal, and returns you to the shell.  The other user must do the same. </li> </ul>
+			</li>
+			<li value="7"> The wall command allows you to send (broadcast) a message to everyone who is logged in on the system.  <br><strong style="color:red">	DO NOT USE the wall command on atlas (or any other production machine) - you may be disrupting or distracting users that are trying to do their work!! Reserve the use of the wall command for administrative tasks, such as informing users of upcoming maintenance, etc.</strong></li>
+			<li value="8"> The mail command allows you to send email.  Test it, by sending yourself an email to your Sheridan mail. Check your email to verify that it worked.</li>
+			<li class="highlight-4">~$ mail userid@sheridanc.on.ca<br>
+			Subject: type your subject here <code style="font-size:10px;color:black;padding:0px 5px;">Enter</code><br>
+			Type your message here <code style="font-size:10px;color:black;padding:0px 5px;">Control+D</code>
+			<li value="9">How would you attach a file to the email? (hint: what option will allow you to specify attachments?)</li>
+			<li value="10">Create some history snapshots and email them to your own Sheridan email.</li>
+			</li>
+		</ol>	
+	</section>	
+	<footer>
+		<hr>
+		<p id="back-top" style="text-align:right;padding-right:12px;"> <a href="#top"> <em>Back to top</em> </a> </p>
+	</footer>
+</section>    
+</body>
+</html>

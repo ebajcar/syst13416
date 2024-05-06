@@ -1,0 +1,27 @@
+/* Add additional stylesheets below
+-------------------------------------------------- */
+/*
+  Bootstrap's documentation styles
+  Special styles for presenting Bootstrap's documentation and examples
+*/
+
+
+
+/* Body and structure
+-------------------------------------------------- */
+
+		body { 
+			background-color: #00b2ce;
+			background-image : url(../images/Sheridan-Pattern-02-LightBlue.jpg);
+		}
+		.textbg {
+			background-color: #FFFFFF;			
+		}
+        .centr {
+            width: 99%;
+            margin: 0 auto;
+        }
+        iframe {
+            seamless: seamless;
+            border: 0;
+        }

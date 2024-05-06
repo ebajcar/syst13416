@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Tutorial Set 8</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"> 
+
+ 	<link rel="stylesheet" type="text/css" href="../css/icons.css" />   
+    <link type="text/css" rel="Stylesheet" href="tutorials.css"/>
+	<link type="text/css" rel="Stylesheet" href="styles/shCoreDefault.css"/>
+	<link type="text/css" rel="Stylesheet" href="styles/shThemeDefault.css"/>	
+	<script type="text/javascript" src="scripts/shCore.js"></script>
+	<script type="text/javascript" src="scripts/shBrushJScript.js"></script>
+	<script type="text/javascript" src="scripts/shBrushXml.js"></script>
+	<script type="text/javascript" src="scripts/shBrushCss.js"></script>
+	<script type="text/javascript" src="scripts/shBrushBash.js"></script>
+	<script type="text/javascript">SyntaxHighlighter.all();</script>
+
+	<style type="text/css">
+    :invalid { 
+          border-color: #e88;
+          -webkit-box-shadow: 0 0 5px rgba(255, 0, 0, .8);
+          -moz-box-shadow: 0 0 5px rbba(255, 0, 0, .8);
+          -o-box-shadow: 0 0 5px rbba(255, 0, 0, .8);
+          -ms-box-shadow: 0 0 5px rbba(255, 0, 0, .8);
+          box-shadow:0 0 5px rgba(255, 0, 0, .8);
+	</style>	
+</head>
+
+<body>
+<section class="container">
+<!-- part 1 -->
+	<h1>Tutorial Set 8</h1>
+
+	<p class="dent"><strong>In this tutorial...</strong></p>
+	<ul>
+		<li><strong>Data Structures</strong>
+			<ul>
+				<li>Arrays
+					<ul>
+						<li><a href="#e01">Exercise 1: Arrays </a></li>
+					</ul>
+				</li>
+				<li>Databases
+					<ul>
+						<li><a href="#e02">Exercise 2: Database Table Manipulation</a></li>
+					</ul>
+				</li>
+				<li>User-defined Functions, and more...
+					<ul>
+						<li><a href="#e03">Exercise 3: Working with real numbers, bc command, and here document</a></li>
+						<li><a href="#e04">Exercise 4: convert number to other base systems</a></li>
+					</ul>
+				</li>
+			</ul>
+		</li>	
+	</ul>	
+	<p>&nbsp;</p>
+
+	<!-- example example example 1 -->
+	<section>
+		<h2 id="e01">Exercise 1: Arrays<a href="#top"><img src="../images/uiTabsArrow.png" /></a></h2>
+		<ul>
+			<li>Arrays are variables that store an ordered list of scalar values that are accessed with numeric subscripts</li>
+			<li>Korn and Bash support one-dimensional arrays; the first element has index 0.</li>
+			<li>Bash supports very, very large arrays. Korn arrays hold up to 1024 elements.</li>
+		</ul>
+		<h3>Processing Arrays</h3>
+		<ul>
+			<li>Array elements need not to be assigned contiguously. 
+		<li>Variable is declared as an array using one of the commands: 
+		<pre class="brush: bash; highlight: [0];" title="">
+		declare –a array_name
+		local –a array_name
+		readonly –a array_name
+		</pre>
+		<li>Array variable can be initialized at the declaration time using syntax: 
+		<pre class="brush: bash; highlight: [0];" title="">
+		name=(value0 value1 … valueN)
+		where valueN is of form [[subscript]=]string. 
+		</pre></li>
+		<li>A particular element of an array can be assigned using expression: 
+		<pre class="brush: bash; highlight: [1];" title="">
+		arrayName[subscript]=value
+		</pre></li>
+		<li>An array element is referenced by using 
+		<pre class="brush: bash; highlight: [1];" title="">
+		${arrayName[subscript]}
+		</pre></li>
+		<li>Example:
+		<pre class="brush: bash; highlight: [0];" title="">
+		fruit=(apple pear orange banana kiwi)
+		echo ${fruit[2]}
+		orange
+		</pre></li>
+		<li>The size (in bytes) of an array can be displayed using 
+		<pre class="brush: bash; highlight: [1];" title="">
+		${#arrayName[subscript]}
+		</pre></li>
+		<li>If no subscript is used, the size of the first element is displayed. 
+		<pre class="brush: bash; highlight: [1];" title="">
+		echo ${#arrayName}  
+		</pre></li>
+		<li>If * is used as a subscript, the number of array elements is displayed. 
+		<pre class="brush: bash; highlight: [1];" title="">
+		echo ${arrayName[*]}
+		</pre></li>
+		<li>To display the size of the first element in the fruit array (which is apple):
+		<pre class="brush: bash; highlight: [1];" title="">
+		echo ${#fruit}  	
+		</pre></li>	
+		<li>To display the first element of the fruit array (which is apple):
+		<pre class="brush: bash; highlight: [1];" title="">
+		echo ${#fruit[*]}
+		</pre></li>		
+		<li>To display the entire array fruit (which is apple pear orange banana kiwi)
+		<pre class="brush: bash; highlight: [1];" title="">
+		echo ${fruit[*]}
+		</pre></li>
+		</ul>
+	</section>
+	
+
+	
+
+	<section>
+		<h2 id="e02">Exercise 2: Database Table Manipulation<a href="#top"><img src="../images/uiTabsArrow.png" /></a></h2>
+		<ol>
+			<li>Review your knowledge of the SQL Language <a href="http://mobile.sheridanc.on.ca/~bajcar/syst10199/webtwo4.html#tab-4" target="_blank">See Web Dev 2 Notes</a></li>
+			<li>Log onto mobile.sheridanc.on.ca for this exercise and create the following script:
+			<pre class="brush: bash; highlight: [0];" title="Substitute your user ID for every userID in the script.">
+#!/bin/bash
+echo -n "Enter password for userID database: "
+stty -echo
+read pw
+stty echo
+echo
+echo
+mysql -u userID -p$pw userID &gt; /dev/null 2>&1 &lt; /dev/null
+if [ $? -ne 0 ]
+then
+        echo bad password
+        exit 1
+fi
+
+mysql -u userID -p$pw userID <<+
+SELECT DISTINCT player FROM scores GROUP BY player ORDER BY player;
++
+echo -n "Which player do you want to see?  "
+read plname
+echo
+storename=$(mysql -u userID -p$pw userID <<+
+SELECT * FROM scores WHERE scores.player = "$plname";
++
+)
+if [ "$storename" = "" ]
+then
+        echo "empty"
+        exit 1
+else
+        echo $storename;
+fi</pre>
+			</li>
+			<ul>
+				<li>Line 3: here we are suppressing the display of the password being typed.</li>
+				<li>Line 5: the display is returned to normal</li>
+				<li>Lines 8: test connecting to database; standard output is thrown away; standard input is null, no statements.</li>
+				<li>Lines 15-17: connection to database and executing SELECT statement; using the keyword DISTINCT, the standard output will list the names of players in the database (each name appearing only once).</li>
+				<li>Lines 21-24: connection to database and executing SELECT statement; note the entire statement is a command substitution and will be replaced with the standard output after execution</li>
+				<li>Lines 25-31: display the entire content of $storename variable</li>
+				<li>See Chapter 13 (The MySQL Database Management System) of Sobel's "A Practical Guide to Linux...".</li>
+				<li>Line 8: Redirection operators (see Table 8-2 of Sobel's book
+					<table>
+						<tr><td>&gt; filename</td><td>Redirects standard output to filename.</td></tr>
+						<tr><td>&lt; filename</td><td>Redirects standard input from filename.</td></tr>
+						<tr><td>[n]&gt;&m</td><td>Duplicates standard output or file description n if specified from file descriptor m</td></tr>
+					</table>
+				</li>
+			</ul>
+			<li>We can convert the string $storename into an array...
+			<pre class="brush: bash; highlight: [0];" title="both commands give same result.">
+			arr=($storename)</pre>
+			</li>
+			<li>...and display in a tabular format:
+			<pre class="brush: bash; highlight: [0];" title="create four columns:">
+j=0
+for i in ${arr[@]}
+do 
+	echo -n $i " "
+	j=$((j+1))
+	if [ $((j%4)) -eq 0 ] 
+	then 
+		echo " "
+	fi
+done</pre>
+			</li>			
+		</ol>
+		
+	<!-- example example example 1 
+	awk '{ for (abc=1; abc<29; abc+=4)  print  $(abc)," ",$(abc+1)," ",$(abc+2)," ",$(abc+3); }' scoreFile.data
+id   player   score   date
+2   Charlie   345   2014-07-04
+3   Charlie   300   2014-07-13
+4   Charlie   300   2014-07-13
+5   Charlie   300   2014-07-13
+awk '{ for (abc=1; abc<29; abc+=4)  print  $(abc),"\t",$(abc+1),"\t",$(abc+2),"\t",$(abc+3); }' scoreFile.data
+			read -a arr <<<$$storename
+  260  ar2=($A)
+  261  echo ${ar2[1]}
+j=0; for i in ${ar2[@]}; do echo -n $i " "; if [ $((j%4)) -eq 0 ] ; then echo " EOF $j "; fi; done
+id  player  score  date   EOF 24
+2  Charlie  345  2014-07-04   EOF 28
+3  Charlie  300  2014-07-13   EOF 32
+4  Charlie  300  2014-07-13   EOF 36
+5  Charlie  300  2014-07-13   EOF 40
+	-->		
+		
+	</section>
+
+
+	<!-- example example example 1 -->
+	<section>
+		<h2 id="e03">Exercise 3: Working with real numbers, bc command, and here document<a href="#top"><img src="../images/uiTabsArrow.png" /></a></h2>
+<p class="highlight-3"><img src="../images/exclamation.png" alt="">&nbsp;<strong>Version A:</strong> Invoke bc using command substitution, backquotes, in combination with a here document.</p> 
+	<p> 
+	<pre class="brush: bash; highlight: [1];" title="Version A (bc1)">
+#!/bin/bash
+var1=`bc&lt;&lt;EOF
+18.33 * 19.78
+EOF
+`
+echo $var1</pre>
+
+We can use the echo and pipe combination before
+	<pre class="brush: bash; highlight: [1];" title=" ">
+echo $( echo 18.33*19.78 | bc )</pre>
+	</p>
+
+We can store calculations in a file
+	<pre class="brush: bash; highlight: [1];" title="cat bcstuff">
+7.3 + 4.9 - 2 * (4.3 / 2)</pre>
+then use the file as input to the bc command
+<pre class="brush: bash; highlight: [1];" title="">
+bc < bcstuff</pre>
+	</p>
+	
+	<p class="highlight-3"><img src="../images/exclamation.png" alt="">&nbsp;<strong>Version B:</strong> Invoke bc using command substitution, $() notation, in combination with a here document.</p> 
+	<pre class="brush: bash; highlight: [1];" title="Version B (bc2)">
+#!/bin/bash
+v1=24.34
+v2=17.881
+v3=83.501
+v4=171.63
+var1=$(bc&lt;&lt;EOF
+scale=4
+a=($v1+$v2)
+b=($v3*$v4)
+a*b+15.35
+EOF
+)
+echo $var1</pre>
+</p>
+
+<p class="highlight-3"><img src="../images/exclamation.png" alt="">&nbsp;<strong>Version C:</strong> Using bc math library with the -l option.</p> 
+	<pre class="brush: bash; highlight: [1];" title="Version C (bc3)">
+#!/bin/bash
+# return the sine in radians
+# -l option calls the bc math library
+var1=$(bc -l&lt;&lt;EOF
+scale=9
+s(1.7)
+EOF
+)
+echo $var1</pre>
+</p>
+
+<p class="highlight-3"><img src="../images/exclamation.png" alt="">&nbsp;<strong>Version D:</strong> Using user-defined function to calculate hypotenuse of a right triangle.</p> 
+	<pre class="brush: bash; highlight: [1];" title="Version D (bc4)">
+#!/bin/bash
+#using function
+#calculate hypotenuse of a right triangle
+hypotenuse()
+{
+	hyp=$(bc -l&lt;&lt;EOF
+	scale=9
+	sqrt( $1 * $1 + $2 * $2 )
+	EOF
+	)
+	#return floating point value by echo-and-capture
+	echo "$hyp"
+}
+hyp=$(hypotenuse 3.68 7.32)
+echo "hypotenuse is $hyp"</pre>
+</p>
+		<p>&nbsp;</p>
+		<section class="highlight-2"><img src="../images/books.png" alt="">&nbsp;<a href="https://www.gnu.org/software/bash/manual/html_node/Redirections.html" target="_blank">...from bash manual</a>
+		<h3>3.6.6 Here Documents </h3>
+		<p>This type of redirection instructs the shell to read input from the current source until a line containing only word (with no trailing blanks) is seen. All of the lines read up to that point are then used as the standard input for a command.</p>
+		<p>The format of here-documents is:
+		<pre class="brush: bash; highlight: [0];" title="">
+		&lt;&lt;[-]word
+				here-document
+		delimiter</pre>
+		No parameter expansion, command substitution, arithmetic expansion, or filename expansion is performed on word. If any characters in word are quoted, the delimiter is the result of quote removal on word, and the lines in the here-document are not expanded. If word is unquoted, all lines of the here-document are subjected to parameter expansion, command substitution, and arithmetic expansion. In the latter case, the character sequence \newline is ignored, and '\' must be used to quote the characters '\', '$', and '`'.</p>
+		<p>If the redirection operator is '&lt;&lt;-', then all leading tab characters are stripped from input lines and the line containing delimiter. This allows here-documents within shell scripts to be indented in a natural fashion.</p>
+		<h3>3.6.7 Here Strings</h3>
+		<p>A variant of here documents, the format is:
+		<pre class="brush: bash; highlight: [0];" title="">
+		&lt;&lt;&lt; word</pre>
+		The word is expanded and supplied to the command on its standard input.</p>
+		</section>
+	</section>
+	
+
+	
+	<section>
+		<p>&nbsp;</p>
+		<h2 id="e04">Exercise 4: convert number to other base systems<a href="#top"><img src="../images/uiTabsArrow.png" /></a></h2>
+		<ul>
+			<li>The bc calculator can convert numbers to other base systems.  In the following example, note the use of positional parameters and bc command.</li>
+			<li>The example also demonstrates the use of the shift command (shifting by twos), and the use of options and option arguments:
+		<pre class="brush: bash; highlight: [0];" title="program name: convert">
+#!/bin/bash
+while [ "$1" ]; do
+	if [ "$1" = "-b" ]; then
+		ob="$2"
+		case $ob in
+			16) basesystem="Hex";;
+			 8) basesystem="Oct";;
+			 2) basesystem="bin";;
+			 *) basesystem="Unknown";;
+		esac
+		shift 2
+	elif [ "$1" = "-n" ]; then
+		num="$2"
+		shift 2
+	else
+		echo "Program $0 does not recognize $1"
+		echo "Usage: $0 -n NUMBER -b BASE "
+		echo "where NUMBER is the number you wish to convert"
+		echo "where BASE is 16, 8, or 2"
+		exit 1
+	fi
+done
+output=`echo "obase=$ob;ibase=10; $num; " | bc`
+echo "$num Decimal number = $output in $basesystem number system(base=$ob)"
+</pre></li>
+		<li>Test the program with <br>
+			convert -b 16 -n 23456 <br>
+			convert -n 111 -b 8 <br>
+			or your own numbers (base 16, 8, or 2)</li>
+		</ul>
+	</section>
+	
+</section>    
+</body>
+</html>

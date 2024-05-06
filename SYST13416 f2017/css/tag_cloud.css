@@ -1,0 +1,41 @@
+/* Tag Cloud */
+#tagcloud {
+	overflow : hidden;
+	width : 480px;
+	font-family: "Lucida Console";
+	line-height: 38px;
+	}
+	#tagcloud li {
+	display : inline;
+	margin : 0 20px 0 0;
+	}
+		.tagcloudsize-3 a {
+			font-size : 18px;
+			color: white;
+			background-color: darkblue;
+			padding: 3px 15px;
+			border: white 2px solid;
+			box-shadow: 2px 2px 3px lightgrey;
+			margin: 1px;
+			border-radius: 7px;
+		}
+		.tagcloudsize-2 a {
+			font-size : 18px;
+			color: white;
+			background-color: #ff5000;
+			padding: 3px 15px;
+			border: white 2px solid;
+			box-shadow: 2px 2px 3px lightgrey;
+			margin: 1px;
+			border-radius: 7px;			
+		}
+		.tagcloudsize-1 a {
+			font-size : 18px;
+			color: darkblue;
+			background-color: #eee;
+			padding: 3px 15px;
+			border: white 2px solid;
+			box-shadow: 2px 2px 3px lightgrey;
+			margin: 1px;
+			border-radius: 7px;				
+		}

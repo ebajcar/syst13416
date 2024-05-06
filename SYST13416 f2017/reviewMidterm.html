@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Review (Mid-W2017)</title>
+	<link href='http://fonts.googleapis.com/css?family=Allan:700' rel='stylesheet' type='text/css'>
+	<style>
+		body {
+			background-color: rgba(255, 255, 255, 0.2);
+			width: 66%;
+			height: 100%;
+			max-width: 800px;
+			font-family: helvetica, arial, sans-serif;
+			margin: 0 auto;
+			border-top : 5px solid orange;
+		}
+		footer {
+			text-align: center;
+			background-color: #efefef;
+			border-radius: 0 0 15px 15px;
+			padding: 10px 0 5px 0;
+		}
+		h1 {
+			margin-bottom: 2px;
+			padding-bottom: 2px;
+		}
+		h2,h3 {
+			margin : 0px 0 10px;
+			padding : 10px 0 0 0;
+			font-family: Allan, helvetica, arial, sans-serif;
+			font-size: 24px;
+			color: #003767;
+			font-weight: bold;
+			line-height: 20px;
+			border: none;
+			background: rgba(255, 255, 255, 0.1);
+		}
+		h3 {
+			padding : 0;
+			margin: 0;
+			font-size: 14px;
+			color: #ff5000;
+		}	
+		h4 {
+			margin-top: 0;
+			padding-top: 0;
+			font-size: 20px;
+		}		
+		ol {
+			padding: 5px 30px;
+			list-style-type: lower-alpha;
+		}	
+/* Highlighted Paragraphs */
+.highlight-1, .highlight-2, .highlight-3 {
+	-moz-border-radius : 4px;
+	-webkit-border-radius : 4px;
+	padding : 5px 10px;
+}
+	.highlight-1 {
+		background : #0e8ea4; /* #ffb699; */
+		border : 1px dotted #FF9966;	
+	}
+	.highlight-2 {
+		background : orange; /* #FFFF99; */
+		color: black;
+		border : 1px dotted #FFCC33;	
+	}
+	.highlight-3 {
+		background : #0e8ea4; /* #CCFF99; */
+		color: black;
+		border : 1px dotted #CCCC33;
+	}
+	img.disp {
+		height: 400px;
+	}
+	mark {
+		padding: 0 4px;
+	}
+	li {
+		margin-bottom: 4px;
+	}
+	.optns {
+		margin: 0;
+		padding-bottom: 10px;
+	}
+	.optns li {
+		float: left;
+		min-width: 120px;
+		font-family: "Courier new";
+	}
+	.clear {
+		clear: both;
+	}
+	code {
+		font-size: 1.1em;
+		font-family: "Courier new";
+	}
+	.coding li {
+		font-family: "Courier new";
+		line-height: 11px;
+	}	
+	blockquote {
+		font-style: italic;
+		text-align: right;
+		padding: 0;
+		margin: 1px 0 5px 50%;;
+	}
+	</style>
+
+</head>
+
+<body>
+	<blockquote>"Free software" is a matter of liberty, not price. To understand the concept, you should think of "free" as in "free speech", not as in "free beer".&nbsp;&nbsp;&mdash;GNU</blockquote>
+	<h1>Midterm Review</h1> 
+	<h4>&mdash; SYST13416 Introduction to Linux Operating System &mdash;</h4>
+	<h2 class="highlight-2">Exam Information</h2>
+	<section>
+		<ul>
+			<li>The midterm exam covers the covered material to date, specifically, 
+			<ul>
+				<li>Module 1: The Essence of Unix</li>
+				<li>Module 2: Linux Command Line </li>
+				<li>Module 3: Linux File System</li> 
+				<li>Module 4: Linux Files</li>
+				<li>Module 5: Processes and Utilities</li>
+			</ul>
+			</li>
+			<li>All questions are answered on test paper. Write clearly and submit ALL papers provided.</li>
+			<li>The midterm exam is a closed book test and therefore you have no access to your computer or any on-line material.</li>
+			<li>You are permitted to use your handwritten, original notes! (no reproductions, no printouts, no images, no photocopies). YOU KEEP YOUR NOTES, DO NOT SUBMIT with your exam.</li>
+			<li>If you are caught with any reproduced material, ALL notes will be taken away and your exam mark may be a subject to penalty! (review Academic Honesty policies)</li>
+			<li>The length of the exam is 90 minutes. The maximum number of marks is 50. Breakdown: 
+				<ol>
+					<li>about 1/3 multiple choice and true-false questions, </li>
+					<li>about 1/3 short answers and </li>
+					<li>about 1/3 writing code.</li>
+				</ol>
+			</li>
+		</ul>
+	</section>
+	<p>&nbsp;</p>
+
+	<h2 class="highlight-3">Computing Environment (from Module 1)</h2>
+	<section>
+		<ul>
+			<li>What is CLI?</li>
+			<li>What is kernel? Shell? Why is Linux called "layered"?</li>
+			<li>Which shells are available in Unix? Linux?</li>
+			<li>What are the components - CPU? ALU? Input/output devices? Memory? Motherboard? Bus?</li>
+			<li>What is the difference between Unix and Linux?</li>
+			<li>Who is Ken Thompson? Linus Torwalds? Korn? Bourne? What contributions have they made?</li>
+			<li>What is Open Source? Free software? POSIX? OSI?</li>
+			<li>Name five (5) things you get when a Linux account is created for you.</li>
+			<li>What is special about Linux development?</li>
+			<li>What characteristics can be attributed to Unix and Linux operating systems? portable? open? multi-user? multi-tasking? small kernel? prevalence?</li>
+			<li>What dates (year) are significant in the evolution of Linux? Why?</li>
+			<li>What is a terminal window? Console? Why is keyboard referred to as TTY?</li>
+			<li>Getting help with the man and info command</li>
+			<li>Getting command summaries with whatis and apropos command</li>
+		</ul>
+		<h3>Sample Questions:</h3>
+		<ol>		
+			<li>Give command to view a one-line description of the command to view the calendar.</li>
+			<li>Give command to view the manual page for the echo command. </li>
+			<li>Describe the format and sections of a manual page.</li>
+			<li>True or false? The Free Software Foundation is the principal
+				organizational sponsor of the GNU Project. GNU developed many of the
+				tools, including the C compiler, that are part of the Linux operating
+				system. Linux is the name of the operating system kernel developed by Linus
+				Torvalds, which has since been expanded and improved by thousands of
+				people on the Internet. Torvalds’ kernel and GNU’s tools work together as the Linux operating system.</li>
+			<li>True or false? Linux is the newest evolution of Unix.</li>
+		</ol>
+	</section>
+	<p>&nbsp;</p>	
+
+	<h2 class="highlight-3">Shell Environment (from Module 2)</h2>
+	<section>
+		<ul>
+			<li>What is a command?</li>
+			<li>What is the syntax of any command? what is an option? what is an argument?</li>
+			<li>There are seven broad classes of commands. What are they?</li>
+			<li>Create a command nickname using alias command</li>
+			<li>How do you access or enter previous commands?</li>
+			<li>What is tokenizing? What separates each token on the command line?</li>
+			<li>How do you redirect output? What is the default input and output?</li>
+			<li>What is the difference in using > and >> as redirection?</li>
+			<li>How do you combine command lines?</li>
+			<li>What happens when you give the command alias myDate=`date`</li>
+			<li>What is a pipe? Give examples.</li>
+		</ul>
+		<h3>Sample Questions:</h3>
+		<ol>
+			<li>Assume that a file called apples contains 6 lines of text and a file called bananas  contains 3 lines of text. Also you can assume that there are no objects called fruit1, fruit2, fruit3, and fruit4. You give the following sequence of commands:<br>
+			<code> cat apples bananas > fruit1; cat fruit1 >> fruit2<br>
+			cat apples fruit1 >> fruit3 | tail -5<br>
+			cp fruit3 apples; mv bananas fruit1 <br>
+			cat bananas apples > fruit4 </code><br>
+			How many lines of text will be in each of the following files: fruit1:___  fruit2:___  fruit3:___  fruit4:___ 
+			</li>
+			<li>Rewrite the following command correctly (use all given tokens):
+			<ol class="coding">
+				<li>dir/file?  ,, uw+  gx- g-w gr- -R chmod ,</li>
+				<li>/etc –hog ls-li</li>
+				<li>cp ../dirx afile,bfile</li>
+			</ol>			
+			</li>
+			<li>Which of the following commands will result in error?
+			<ol class="coding">
+				<li>date +Date: %m/%d/%Y%nTime: %r;</li>
+				<li>cal february 215</li>
+				<li>cal 1 2011 cal 2 2011 cal 3 2011 >> winter.2015;</li>
+				<li>cal 1 2011; cal 2 2011; cal 3 2011 >> winter.2015;</li>
+				<li>(cal 1 2012; cal 2 2012; cal 3 2012) >> winter.2015;</li>
+			</ol>			
+			</li>			
+		</ol>
+	</section>
+	<p>&nbsp;</p>
+	
+	<h2 class="highlight-3">Navigating and searching the File System (from Module 3)</h2>
+	<section>
+		<ul>
+			<li>What is a file system?</li>
+			<li>What is a device file system?</li>
+			<li>What is NTFS? fat32? ext3? reiserfs?</li>
+			<li>What is a partition?</li>
+			<li>What is FHS (Filesystem Hierarchy Standard)? What does it specify?</li>
+			<li>Why is the Linux file system referred to as hierarchical?</li>
+			<li>What is the root FS in Windows? In Unix? In Linux?</li>
+			<li>What is stored in /bin? /etc? /home? /sbin? /dev?</li>
+			<li>Move to different directories with the cd command</li>
+			<li>Know where you are with the pwd command</li>
+			<li>Search directories for matching files with the find command</li>
+			<li>Locate files with the locate command</li>
+		</ul>
+		<h3>Sample Questions:</h3>
+		<ol>		
+			<li>You issued a command that yielded the following output. What command did you give?<br>
+			<code>/home/oa-homer1/130/yourName/stuff/bin</code></li>
+			<li>In what directory would you find the executable files for ls and cd? Give absolute pathname.</li>
+		</ol>		
+	</section>
+	<p>&nbsp;</p>
+
+
+	<h2 class="highlight-3">Working with File Attributes (from Module 3)</h2>
+	<section>
+		<ul>
+			<li>What is a file?</li>
+			<li>Special files for hardware, terminals, and pseudo-devices</li>
+			<li>What is /dev/hda1? /dev/sdb7? /dev/null? /dev/tty?</li>
+			<li>Types of files: executable, object, binary, text, multimedia,</li>
+			<li>Describe the columns of a long listing</li>
+			<li>What are the rules for naming files and directories?</li>
+			<li>What are meta-characters *, ?, and [ ] (sometimes called wildcards)</li>
+			<li>Change file or directory access permissions with chmod command</li>
+			<li>Symbolic: chmod augo+-=rwx arguments</li>
+			<li>Octal: chmod NNN arguments where N is integer 0 to 7</li>
+		</ul>
+		<h3>Sample Questions:</h3>
+		<ol>		
+			<li>Given the following partial directory listing
+<pre>-rw-------     1 smith    teacher     1232 Dec  6  1:23 project1
+-rwx------     1 cassy    staff        532 Jul  3  2:23 project2</pre>
+				to add read permissions for the files project1 and project2 to the group staff, you would execute the following:
+				<ol class="coding">
+					<li>chmod og+r project?</li>
+					<li>chmod o+r project1; chmod g+r project2</li>
+					<li>chmod g+r project1 o+r project2</li>
+					<li>chmod 704  project1; 740 project2</li>
+					<li>chmod o+r,g+r project1 project2</li>
+				</ol>
+			</li>
+		</ol>		
+	</section>
+	<p>&nbsp;</p>
+	
+	<h2 class="highlight-3">Manipulating files or directories (from Modules 3 and 4)</h2>
+	<section>
+		<ul>
+			<li>What is ASCII code?</li>
+			<li>Create text files using a line editor ( cat > filename )</li>
+			<li>Create text files using the full text editor vi</li>			
+			<li>List and combine files with the cat command</li>
+			<li>Read files with the more command.</li>
+			<li>Browse files with the less command</li>
+			<li>Read the beginning or end of files with the head and tail commands</li>
+			<li>Create files with the touch command [ -ma ]</li>
+			<li>Delete files with the rm command [ -ri ]</li>
+			<li>Display binary files with od command</li>
+			<li>Display readable portion of files with strings command</li>			
+			<li>List directories with the ls command [ -lhuRgo ]</li>
+			<li>Create directories with the mkdir command. </li>
+			<li>What can you use to reduce the amount of typing and repetition, when creating multiple objects? </li>
+			<li>Remove directories with the rmdir command. Remove directories with the rm -r command. Note the differences.</li>
+			<li>Rename and move files with the mv command. Note the differences.</li>
+			<li>Copying with the cp command [ -ri ]</li>
+			<li>Compress and uncompress files with gzip, zip, and unzip commands.</li>	
+			<li>Manipulate files with sort, join, cut, and paste.</li>
+			<li>Compare files with diff and comm commands.</li>			
+		</ul>
+		<h3>Sample Questions:</h3>
+		<ol>
+			<li>True or False? The following command will rename a file called "a" to "b" and place it in the current directory; unless the object called "b" is a directory, in which case, the file will be moved to directory "b", where it will be save with the file name "a"<br>
+				<code>mv a b</code> 
+			</li>
+			<li class="clear">To remove myFile (ordinary file) from the parent directory of the current working directory, use the command:
+			<ol class="coding">
+				<li>rm  /myFile</li>
+				<li>rm  myFile</li>
+				<li>rm  ../myFile</li>
+				<li>rmdir  /myFile</li>
+			</ol>			
+			</li>
+		</ol>		
+	</section>
+	<p>&nbsp;</p>
+
+	<h2 class="highlight-3">Processes and Utilities (from Module 5)</h2>
+	<section>
+		<ul>
+			<li>What is a process? job? service? daemon?</li>
+			<li>What is the difference between a foreground and background process?</li>
+			<li>How do you create a report,a snapshot, of the current processes? ps</li>
+			<li>How do you send a job to the foreground? fg</li>
+			<li>How do you send a job to the background? bg</li>
+			<li>How do you send a signal to a process to terminate it? kill</li>
+			<li>How do you view running or stopped jobs associated with your terminal? jobs</li>
+			<li>How do you display Linux tasks? top</li>
+			<li>How do you create a report of file system disk space usage? top</li>
+			<li>How do you estimate file space usage? du</li>
+			<li>How do you display amount of free and used memory in the system? free</li>
+			<li>How can you change terminal settings? stty</li>
+		</ul>
+		<h3>Sample Questions:</h3>
+		<ol>
+			<li>True or False?  A process is the operating system execution of a program. When you log in, the process running is normally a shell, called a login shell. When you enter a command at the prompt, the shell has the responsibility of finding the command and arranging for the command to be executed. This is done with system calls. A system call is a request for kernel services.</li>
+			<li>True or False?  A utility performs a task that is frequently related to the operating system. A utility is simpler than an application program, although no clear line separates the two. Linux
+distributions include many utilities. You can also download many utilities
+from the Internet. Examples of utilities are cp (copies a file), ls (lists information about files), and ssh (securely connects to a remote computer).</li>
+			<li class="clear">This command displays all processes you have currently running, or stopped, which are associated with your terminal:
+				<ol class="optns">
+					<li>fg</li>
+					<li>bg</li>
+					<li>jobs</li>
+					<li>top </li>
+					<li>free </li>
+				</ol>			
+			</li>
+		</ol>		
+	</section>
+	<p>&nbsp;</p>
+
+	<footer>
+		<address>2012-2015&copy;Sheridan College | SYST13416 Introduction to Linux Operating System | Midterm Review</address>
+		 <p id="back-top"><a href="#top"><em>Back to top</em></a></p>
+	</footer>		
+</body>
+</html>

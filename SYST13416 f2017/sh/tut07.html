@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Tutorial Set 7</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"> 
+
+ 	<link rel="stylesheet" type="text/css" href="../css/icons.css" />   
+    <link type="text/css" rel="Stylesheet" href="tutorials.css"/>
+	<link type="text/css" rel="Stylesheet" href="styles/shCoreDefault.css"/>
+	<link type="text/css" rel="Stylesheet" href="styles/shThemeDefault.css"/>	
+	<script type="text/javascript" src="scripts/shCore.js"></script>
+	<script type="text/javascript" src="scripts/shBrushJScript.js"></script>
+	<script type="text/javascript" src="scripts/shBrushXml.js"></script>
+	<script type="text/javascript" src="scripts/shBrushCss.js"></script>
+	<script type="text/javascript" src="scripts/shBrushBash.js"></script>
+	<script type="text/javascript">SyntaxHighlighter.all();</script>
+
+	<style type="text/css">
+    :invalid { 
+          border-color: #e88;
+          -webkit-box-shadow: 0 0 5px rgba(255, 0, 0, .8);
+          -moz-box-shadow: 0 0 5px rbba(255, 0, 0, .8);
+          -o-box-shadow: 0 0 5px rbba(255, 0, 0, .8);
+          -ms-box-shadow: 0 0 5px rbba(255, 0, 0, .8);
+          box-shadow:0 0 5px rgba(255, 0, 0, .8);
+	</style>	
+</head>
+
+<body>
+<section class="container">
+<!-- part 1 -->
+	<h1>Tutorial Set 7</h1>
+
+	<p class="dent"><strong>In this tutorial...</strong></p>
+	<ul>
+		<li><a href="problem1.html" target="_blank">link to Class Problem 1</a></li>
+		<li><a href="problem2.html" target="_blank">link to Class Problem 2</a><br></li>
+		<li><a href="#e01">Exercise 1: A simple if statement (decision control structure)</a></li>
+		<li><a href="#e02">Exercise 2: Nested if statements (decision control structure)</a></li>
+		<li><a href="#e07">Exercise 3: A case statement (decision control structure)</a></li>
+		<li><a href="#e03">Exercise 4: A for..in statements  (iteration control structure) </a></li>
+		<li><a href="#e04">Exercise 5: C-like for loops (iteration control structure)</a></li>
+		<li><a href="#e05">Exercise 6: A while loop with nested if statements (continue, break) (iteration control structure)</a></li>	
+	</ul>	
+	<p>&nbsp;</p>
+
+<h2>Control Structures</h2>
+	
+	<p>Reference the bash manual page for description for the following:</p> 
+<pre class="brush: bash; highlight: [1,2,3,4,5,6,7];" title="">
+for name [ in word ] ; do list ; done
+for (( expr1 ; expr2 ; expr3 )) ; do list ; done
+select name [ in word ] ; do list ; done
+case word in [ [(] pattern [ | pattern ] 
+if list; then list;[ elif list; then list; ] ... [ else list; ] fi
+while list; do list; done
+until list; do list; done
+</pre>
+	</p>
+	<p class="highlight-3"><strong>Sequence </strong>
+	•	Most commands are executed in a sequence, usually each line contains a single command. When you enter more than one command, separated by semi-colons, the process is still the same, a single command is executed at a time. The interpreter execute the command, when it finishes, goes to the next line, and executes the next command. If you want to put more than one command on a single line, you need to separate the commands with a semi-colon (;). The execution is exactly the same. Usually we do this to save space, but keep in mind that readability of the code decreases.</p>
+	<p class="highlight-3"><strong>Decision </strong>
+	•	Sometimes, we need to make a decision or ask a question, and depending on the answer, we take a different path. All decisions are binary using the if...then...else...fi structure. When you making more than one decision, you nest the decision, creating a unique path for each combination of choices using nested if or case.</p>
+	
+	<!-- example example example 1 -->
+	<section>
+		<h3 id="e01">Exercise 1: A simple if statement <a href="#top"><img src="../images/uiTabsArrow.png" /></a></h3>
+		<ol>
+			<li>Create a script that will find out whether the user is a full time student.  If the user enters 'Y', direct them to go to building J, otherwise send them to building A. Which control structure is most suitable to use for this problem? 
+			<pre class="brush: bash; highlight: [1];" title="">
+		#!/bin/bash
+		echo -n "Are you a full-time student?"
+		read choice
+		if [ $choice = Y ]
+		then
+			echo "Please go to Building J"
+		else
+			echo "Please go to Building A"
+		fi
+		</pre>
+			</li>
+		</ol>
+	</section>
+	
+	<!-- example example example 2 -->
+	<section>	
+		<h3 id="e02">Exercise 2:  Nested if statements<a href="#top"><img src="../images/uiTabsArrow.png" /></a>		</h3>
+		<ol>	
+			<li>IF...THEN...ELSE Control Structure: Write a shell script whose single command line argument is a file. If you run the program with an ordinary file, the program displays the owner’s name and last update time for the file. If the program is run with more than one argument, it generates meaningful error messages. 
+			<pre class="brush: bash; highlight: [1];" title="">
+		#!/bin/bash
+		if [ $# = 1 ]
+		then
+		   if [ -f  $1 ]
+		   then
+				echo –n “The owner and last update time for $1 is “
+				ls -l $1 | tr –s ’ ’ | cut –d’ ’ -f3,8
+		   else
+				echo “$1 is not an ordinary file”
+		   fi
+		else
+		   echo “Please enter one argument, a file name.”
+		fi </pre>
+			</li>	
+		</ol>
+	</section>
+	
+	<!-- example example example 3 -->
+	<section>	
+<h3 id="e03">Exercise 3: case statements <a href="#top"><img src="../images/uiTabsArrow.png" /></a>		</h3>
+<ol>	
+	<li>Create a file called case1 in our bin directory. Note the syntax: the value stored in $letter is compared to the pattern A, B, and C; if one of them matches, the corresponding block is executed; the double semi-colon indicates the end of the block. If there is no match found, the default (or catchall) block is executed; note the catchall pattern is an asterisk and is listed last. 
+		<pre class="brush: bash; highlight: [1];" title="">
+#!/bin/bash
+read -p "Enter A, B, or C: " letter
+case $letter in
+	A)
+		echo "You entered A"
+		;;
+	B)
+		echo "You entered B"
+		;;
+	C)
+		echo "You entered C"
+		;;
+	*)
+		echo "You did not enter A, B, or C"
+		;;
+esac</pre>
+		<p>Recall that Linux is case-sensitive:</p>	
+		<p class="highlight-4">~/bin$ ./case1<br />Enter A, B, or C: b<br />You did not enter A, B, or C<br />
+		</p>
+		<p></p>
+	</li>
+</ol>	
+	</section>
+	
+	
+
+	
+	<p class="highlight-3"><strong>Iteration </strong>
+	•	Often, we need to repeat the same set of commands a number of times, which we do by putting the block of code inside a loop. The control structures for loops to examine in the following examples are while, for, and foreach.</p>
+	
+	
+	<!-- example example example  13 -->
+	<section>	
+<h2 id="e04">Exercise 4: for..in statements  <a href="#top"><img src="../images/uiTabsArrow.png" /></a>		</h2>
+<ol>	
+	<li>Create  and examine the following script . Note the use of the for control structure. 
+		<pre class="brush: bash; highlight: [1];" title="">
+#!/bin/bash
+echo “You can see the following animals in our zoo: “
+for animal in `cat animalList`
+do
+   echo $animal
+done</pre>
+		<p>In order to run the above above script, create the data file called animalList</p>	
+		<p class="highlight-4">~/bin$ cat > animalList<br />lion<br />monkey<br />tiger<br /></p><p>...and so one, one animal per line. End the input using <code>&nbsp;Control+D </code>&nbsp;key combination.</p>
+	</li>
+</ol>	
+	
+<ol>	
+	<li>The list membership can come from an array or a text file. In the following example, create a text file that contains a number of lines, each line consisting of a name of an animal and name the file animalList. 
+	<pre class="brush: bash; highlight: [1];" title="">
+#!/bin/bash
+echo “The things I like to do include:”
+for myHobbies in read, ski, “collect stamps”, run
+do
+     echo $myHobbies
+done </pre>
+	</li>		
+</ol>
+	</section>	
+	
+<h2 id="e05">Exercise 5: C-like for loops <a href="#top"><img src="../images/uiTabsArrow.png" /></a>		</h2>
+<ol>	
+	<li>Create a script to illustrate the C-style for loop. Example 1 initializes the variable x to 0 (arithmetic expression), the arithmetic expression $x<5 (condition: Is value of x less than 5?) is then evaluated repeatedly until it evaluates to zero. Each time it evaluates to a non-zero value, the do-done block is executed and the arithmetic expression x=$x+1  is evaluated (in other words, the value of x is incremented, or changed, each time the body of the loop is executed. This is equivalent to a while loop as demonstrated in Example 2.
+	<pre class="brush: bash; highlight: [1,3,9,17,23];" title="">
+#!/bin/bash
+# Examples using the C-style for loop
+echo; echo Example 1
+for (( x=0; $x<5; x=$x+1 ))
+do
+    echo -n $x" "
+done
+
+echo; echo Example 2
+let x=0
+while [ $x < 5 ]; then
+do
+	echo –n $x” “
+	let x=$x+1
+done
+
+echo; echo Example 3
+for (( y=25; $y > 0; y-- ))
+do
+    echo -n $y" "
+done
+
+echo; echo Example 4
+for (( z=23; $z >= 0; z=$z-2 ))
+do
+    echo -n $z" "
+done
+
+</pre>
+	</li>	
+</ol>	
+	
+	
+	
+<h2 id="e06">Exercise 6: while loops with nested if statements <a href="#top"><img src="../images/uiTabsArrow.png" /></a>		</h2>
+<ol>	
+	<li>The first alternative demonstrates the use of the or operator and nesting decision structure in a loop.:  
+	<pre class="brush: bash; highlight: [1];" title="">
+#!/bin/bash
+# Purpose: Demonstrate the OR operator
+repeat=yes
+input=yes
+while [ $repeat = yes ]
+do
+	echo "What is your name?"
+	read name
+	if [ $name = "Ellen" -o $name = "ellen" -o $name = "ELLEN" ]
+	then
+		echo "Hello, $name"
+	else
+		echo "Hello, $name. You are not Ellen"
+	fi
+	echo "Again? (To stop, type: no)  "
+	read input
+	if [ $input = no ]
+	then
+		repeat=no
+	fi
+done</pre>
+	</li> 	
+	<li>This alternative demonstrates the utilization of continue and break statements:  
+	<pre class="brush: bash; highlight: [2,3,4, 15,16,17,20,22];" title="">
+#!/bin/bash
+# since we are making an assignment which will always 
+# evaluate to true, we have created an endless loop
+while [ repeat=y ]
+do
+	echo "What is your name?"
+	read name
+	if [ $name = "Ellen" -o $name = "ellen" -o $name = "ELLEN" ]
+	then
+		echo "Hello, $name"
+	else
+		echo "Hello, $name. You are not Ellen"
+	fi
+	read -p "Again? (Type c to continue, followed by Enter)  " input
+# when the user selects c to continue, the continue command will
+# start the next iteration of the loop. Otherwise, the break command
+# will execute and exit the loop.
+	if [ $input = c ]
+	then
+		continue
+	fi
+	break
+done</pre>
+	</li> 	
+
+
+	
+
+
+
+
+	
+</section>
+
+</body>
+</html>

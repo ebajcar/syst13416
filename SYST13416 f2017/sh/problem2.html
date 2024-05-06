@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Inclass Problem 2</title>
+	
+	<link href='http://fonts.googleapis.com/css?family=Allan:700' rel='stylesheet' type='text/css'>
+	<link type="text/css" rel="Stylesheet" href="../css/new.css"/>
+	<link type="text/css" rel="Stylesheet" href="styles/shCoreDefault.css"/>
+	<link type="text/css" rel="Stylesheet" href="styles/shThemeDefault.css"/>
+	
+	<script type="text/javascript" src="scripts/shCore.js"></script>
+	<script type="text/javascript" src="scripts/shBrushJScript.js"></script>
+	<script type="text/javascript" src="scripts/shBrushXml.js"></script>
+	<script type="text/javascript" src="scripts/shBrushCss.js"></script>
+	<script type="text/javascript" src="scripts/shBrushBash.js"></script>
+
+	<script type="text/javascript">SyntaxHighlighter.all();</script>
+	<style>
+	body {
+		width: 580px;
+		margin: auto;
+		padding-left: 10px;
+		background-color: rgba(255, 255, 255, 0.5);
+		}
+		h2 {
+			margin : 0px 0 10px;
+			padding : 0;
+			font-family: Allan, helvetica, arial, sans-serif;
+			font-size: 16px;
+			color: #003767;
+			font-weight: bold;
+			line-height: 25px;
+			border: none;
+			background: rgba(255, 255, 255, 0.1);
+		}
+		ol {
+			padding: 0px 30px;
+			list-style-type: lower-alpha;
+		}	
+		code {
+			font-size: 16px;
+			border: 1px gray solid;
+			border-radius: 5px;
+			}
+			p.dent {
+				padding-right: 25px;
+				padding-left: 25px;
+			}
+		/* Highlighted Paragraphs */
+.highlight-1, .highlight-2, .highlight-3 {
+	-moz-border-radius : 4px;
+	-webkit-border-radius : 4px;
+	padding : 5px 10px;
+}
+	.highlight-1 {
+		background : #ffb699;
+		border : 1px dotted #FF9966;	
+	}
+	.highlight-2 {
+		background : #FFFF99;
+		border : 1px dotted #FFCC33;	
+	}
+	.highlight-3 {
+		background : #CCFF99;
+		border : 1px dotted #CCCC33;
+		margin-top: 24px;
+	}	
+	.highlight-4 {
+		background : black;
+		border : 1px dotted gray;
+		font-family: "Lucida Console" "Courier New" ;
+		color: white;
+		font-size: 14px;
+		padding: 5px 15px;
+		margin: 2px 10px;
+	}	
+	img.disp, figcaption {
+		width: 600px;
+		padding-bottom: 5px;
+	}
+	</style>
+
+</head>
+
+<body>
+		<p>&nbsp;</p>
+		<h1>Class Problem 2: Solving A Simple Problem</h1>
+	<p>Even a simple problem needs to be planned, analysed, designed, constructed, and tested before it is implemented.
+	Let's consider a simple problem: </p>
+	<p class="highlight-1"><strong>Problem:</strong> What is the result of adding two numbers? </p>
+	<p>Analyze the problem and consider alternate solutions:</p>
+	<ul>
+		<li>Objective: Goal is to find the sum of two numbers.</li>
+		<li>Elements: (output) sum, (input) num1, num2</li>
+		<li>Relations: assignment, addition</li>
+		<li>Algorithm: num1 + num2 = sum</li>
+		<li>Model the system:
+			<pre class="brush: bash;">
+			2 + 3 = 5
+			2.8 + 2.9 = 5.7
+			( 2 + i ) + ( 2 + 2i ) = 4 + 3i
+			0101 + 1001	= 1110
+			2a + b1 = db</pre>
+		</li>
+	</ul>
+	<p>To construct a solution in the bash environment, we need to do some preparations:</p>
+	<p>1. Create a file for each script (do not get into the habit of just adding to the same file - one solution, one file). For each variation (version), copy the current file to a file that identifies the version. For example:</p>
+	<p class="highlight-4">
+		~$ mkdir bin<br />
+		~$ cd bin<br />		
+		~/bin$ vi add<br />
+		.<br />.<br />.<br />
+		~/bin$ cp add add.verA<br />
+		~/bin$ vi add<br />
+		.<br />.<br />.<br />
+		~/bin$ cp add add.verB<br />
+	</p>
+	<p>...and so on.</p>
+	<p>2. In your ~/bin directory (as demonstrated above), create a file called "add", enter the code 
+	as shown below, save the file and change the permissions so that you can execute the file.</p>
+	<p class="highlight-4">~/bin$ vi add<br />~/bin$ chmod 705 add</p>	
+	<p>3. Learn more about bash shell by examining the manual page:  <code>&nbsp;man bash&nbsp;</code></p>
+	<p>Let's return to the problem. From modelling example solutions, a number of questions should come to mind, such as </p>
+	<ul>
+		<li>What is meant by a number? For example, <a href="http://en.wikipedia.org/wiki/Number" target="_blank">Wikipedia defines a number</a> as <q>a mathematical object used to count, label, and measure. In mathematics, the definition of number has been extended over the years to include such numbers as 0, negative numbers, rational numbers, irrational 
+		numbers, and complex numbers.</q></li>
+		<li>Where do these values come from? are they chosen arbitrarily, by the user, by another program?</li>
+		<li>Identify other relevant information.</li>
+		<li>Identify and describe uncertainties about the interpretation of the problem. </li>
+	</ul>
+	<p>Let's examine what happens to our solution as we make different assumptions about the problem</p>
+	
+	
+	<!-- a -->
+	<p class="highlight-3"><img src="../images/exclamation.png" alt="">&nbsp;<strong>Version A:</strong> 
+	Let's constrain the model to the first line for the moment. In other words, we assume that both numbers
+	are integers. A possible solution will be as follows:</p>
+	<pre class="brush: bash; first-line: 1;" title="• Figure A: hard-coded value assignments, addition operator,  let and echo commands.">
+	#!/bin/bash
+	num1=2
+	num2=3
+	let sum=$num1+$num2
+	echo "Sum of $num1 + $num2 is $sum"</pre>	
+	<p>Test your script by running it and validating that the output is as expected. If you encounter errors, debug and change your code, then run and test again, until all errors have been corrected.</p>
+	<p class="highlight-4">~/bin$ add<br />Sum of 2 + 3 is 5</p>
+	<p>Stop and analyze:</p>
+	<ul>
+		<li>Why is there no whitespace around the = operator?</li>
+		<li>Why did we need to use the let operator?</li>
+		<li>What is an alternate way to evaluate an arithmetic expression?</li>
+		<li>What would the effect be if we used the single quotes around the string for the echo command?</li>
+		<li>What would you have to do if you wanted to assign different values to num1 and num2?</li>
+	</ul>
+	
+	
+	<!-- b -->
+	<p class="highlight-3"><img src="../images/exclamation.png" alt="">&nbsp;<strong>Version B:</strong> 
+	Maintaining the same constraint (integers only), improve the solution to replace the hard-coded assignments by prompting the user for the two values. Modify your code as in Figure B.</p>
+	<pre class="brush: bash; first-line: 1;" title="• Figure B: prompting user for input and using read command to capture the input">
+#!/bin/bash
+echo -n "Enter the first integer value and press Enter "
+read num1
+echo -n "Enter the second integer value and press Enter "
+read num2
+let sum=$num1+$num2
+echo "Sum of $num1 + $num2 is $sum"</pre>	
+	<p>Test your script by running it and validating that the output is as expected. If you encounter errors, debug and change your code, then run and test again, until all errors have been corrected.</p>
+	<p class="highlight-4">
+		~/bin$ add<br />
+		Enter the first integer value and press Enter 2<br />
+		Enter the second integer value and press Enter 3<br />
+		Sum of 2 + 3 is 5</p>
+	<p>Stop and analyze:</p>
+	<ul>
+		<li>How does the -n option modify the echo command?</li>
+		<li>What happens if the user does not press Enter?</li>
+		<li>What happens if the user enters any non-numeric characters? 
+		Write out pseudo-code how you could handle such situation.</li>
+	</ul>	
+	
+	
+		<!-- b2 -->
+	<p class="highlight-3"><img src="../images/exclamation.png" alt="">&nbsp;<strong>Version B:</strong> Alternative 2.</p>
+	<pre class="brush: bash; first-line: 1;" title="• Figure B2: prompting with single echo and capturing both values with read">
+	#!/bin/bash
+	echo -n "Enter two (2) numbers, then press Enter "
+	read num1 num2
+	let sum=$num1+$num2
+	echo "Sum of $num1 + $num2 is $sum"</pre>	
+	<p>Test your script by running it and validating that the output is as expected. 
+	If you encounter errors, debug and change your code, then run and test again, until all errors have been corrected.</p>
+	<p class="highlight-4">
+		~/bin$ add<br />
+		Enter two (2) integer numbers, then press Enter  2 3<br />
+		Sum of 2 + 3 is 5
+	</p>
+	<p>Stop and analyze:</p>
+	<ul>
+		<li>Which of the prior two alternative solutions is more user-friendly?</li>
+		<li>What happens if the user enters more than two numbers?</li>
+	</ul>
+
+		<!-- b3 -->
+	<p class="highlight-3"><img src="../images/exclamation.png" alt="">&nbsp;<strong>Version B:</strong> Alternative 3.</p>
+	<pre class="brush: bash; first-line: 1;" title="• Figure B3: exploring echo options to drop the use of read command, using mathematical expansion">
+#!/bin/bash
+read -p "Enter the first integer value and press Enter " num1
+read -p "Enter the second integer value and press Enter " num2
+sum=$(( $num1 + $num2 ))
+echo "Sum of $num1 + $num2 is $sum"</pre>	
+	<p>Test your script by running it and validating that the output is as expected. 
+	If you encounter errors, debug and change your code, then run and test again, until all errors have been corrected.</p>
+	<p class="highlight-4">
+		~/bin$ add<br />
+		Enter the first integer value and press Enter 2<br />
+		Enter the second integer value and press Enter 3<br />
+		Sum of 2 + 3 is 5</p>
+	<p>Stop and analyze:</p>
+	<ul>
+		<li>Compare this version with the previous two variations. Is one variation better than an another? Why or why not?</li>
+		<li>Learn more about let, echo and read commands. Examine the manual pages for these commands.</li>
+		<li>Learn more about arithmetic expansion. Examine the manual page for bash<br />
+		<code>&nbsp;man bash&nbsp;</code></li>
+	</ul>	
+	
+	
+	
+	<!-- c -->
+	<p class="highlight-3"><img src="../images/exclamation.png" alt="">&nbsp;<strong>Version C:</strong> Maintaining the same constraint (integers only), modify the solution to read the values from the command line. Modify your code as in Figure C.</p>
+	<pre class="brush: bash; first-line: 1;" title="• Figure C: passing values as arguments">
+#!/bin/bash
+let sum=$1+$2
+echo "Sum of $1 + $2 is $sum"</pre>	
+	<p>or using arithmetic expansion</p>
+	<pre class="brush: bash; first-line: 1;" title="• Figure C: passing values as arguments; using arithmetic expansion when we do not need to save the calculated value.">
+#!/bin/bash
+echo "Sum of $1 + $2 is $(( $1 + $2 ))"</pre>		
+	<p>Test your script by running it and validating that the output is as expected. 
+	If you encounter errors, debug and change your code, then run and test again, until all errors have been corrected.</p>
+	<p class="highlight-4">
+		~/bin$ add 2 3<br />
+		Sum of 2 + 3 is 5</p>	
+	<p>Stop and analyze:</p>
+	<ul>
+		<li>What are positional parameters?</li>
+		<li>Explain what the following represent: $0 through $9 $_ $# $? </li>
+		<li>What happens if you specify less than two, or more than two, parameters? Write out pseudo-code how you could handle such situation.</li>
+	</ul>		
+
+	
+	
+	<!-- d -->
+	<p class="highlight-3"><img src="../images/exclamation.png" alt="">&nbsp;<strong>Version D:</strong> Maintaining the same constraint (integers only), improve the Version C to test that there are exactly two arguments.</p>
+	<pre class="brush: bash; first-line: 1; highlight: [2,3,6,7,8]" title="• Figure D: checking how many arguments are being passed and using decision control structure to take different actions">
+	#!/bin/bash
+	if [ $# -eq 2 ] 
+	then
+		let sum=$1+$2
+		echo "Sum of $1 + $2 is $sum"
+	else
+		echo "Incorrect number of values given"
+	fi</pre>	
+	<p>Test your script by running it and validating that the output is as expected. 
+	If you encounter errors, debug and change your code, then run and test again, until all errors have been corrected.</p>
+	<p class="highlight-4">
+		~/bin$ add <br />
+		Incorrect number of values given<br />
+		~/bin$ add 30<br />
+		Incorrect number of values given<br />
+		~/bin$ add 3 6 8<br />
+		Incorrect number of values given<br />
+		~/bin$ add 7 13<br />
+		Sum of 7 + 13 is 20</pre>
+	<p>Stop and analyze:</p>
+	<ul>
+		<li>Note how indentation is used to make the code easier to read.</li>
+		<li>What are conditional statements? numerical, strings, file?</li>
+		<li>Modify the code to accept any number of integer arguments and add them all.</li>
+	</ul>	
+
+		<!-- e -->
+	<p class="highlight-3"><img src="../images/exclamation.png" alt="">&nbsp;<strong>Version E:</strong> Maintaining the same constraint (integers only). For this version, we assume that we have more than two (2) numbers to add, to introduce iteration control structure and the shift operator. Note that we are still using the same algorithm (sum = num1 + num2) specified in our model!</p>
+	<pre class="brush: bash; first-line: 1;" title="• Figure E: while loop reading in any number of values ">
+#!/bin/sh
+while [ $# -gt 0 ]
+do
+   let sum=$sum+$1
+   shift
+done	
+echo "Sum is $sum"</pre>	
+
+	<p class="highlight-4">~/bin$ add 1 2 3 4 5 6 7 8 9 10 11 12 13 99<br />Sum is 190</p>
+	<p>Stop and analyze:</p>
+	<ul>
+		<li>Explore other alternatives and related assumptions.</li>
+		<li>Explore the implications of ambiguities when analysing a problem.</li>
+		<li>Consider the impact of alternative solutions on various types of users.</li>
+		<li>Recognize and control your own biases when choosing a solution.</li>
+	</ul>	
+
+<p>&nbsp;</p>	
+<p class="highlight-2"><img src="../images/new.gif" alt="">&nbsp;<strong>Version F:</strong> Enhance the solution (A-E) so that it can handle real number calculation....expand the model to handle real numbers as well as integers; expand the problem to handle other operations, such as subtract, multiply, divide, and so on....</p> 
+<p>&nbsp;</p>
+</body>
+</html>

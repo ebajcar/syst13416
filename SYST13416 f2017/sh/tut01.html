@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Tutorial Set 1</title>
+	
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"> 
+
+ 	<link rel="stylesheet" type="text/css" href="../css/icons.css" /> 
+<link type="text/css" rel="Stylesheet" href="misc/tutorials.css"/>    
+	<link type="text/css" rel="Stylesheet" href="styles/shCoreDefault.css"/>
+	<link type="text/css" rel="Stylesheet" href="styles/shThemeDefault.css"/>	
+	<script type="text/javascript" src="scripts/shCore.js"></script>
+	<script type="text/javascript" src="scripts/shBrushJScript.js"></script>
+	<script type="text/javascript" src="scripts/shBrushXml.js"></script>
+	<script type="text/javascript" src="scripts/shBrushCss.js"></script>
+	<script type="text/javascript" src="scripts/shBrushBash.js"></script>
+    <script type="text/javascript" src="scripts/shBrushPlain.js"></script>
+	<script type="text/javascript">SyntaxHighlighter.all();</script>
+
+	<style type="text/css">
+    :invalid { 
+          border-color: #e88;
+          -webkit-box-shadow: 0 0 5px rgba(255, 0, 0, .8);
+          -moz-box-shadow: 0 0 5px rbba(255, 0, 0, .8);
+          -o-box-shadow: 0 0 5px rbba(255, 0, 0, .8);
+          -ms-box-shadow: 0 0 5px rbba(255, 0, 0, .8);
+          box-shadow:0 0 5px rgba(255, 0, 0, .8);
+	</style>	
+</head>
+
+<body>
+<section class="container">
+	<!-- part 1 -->
+	<h1>Tutorial Set 1</h1>
+	<p class="dent"><strong>In this tutorial...</strong></p>
+	<ul>
+		<li><a href="#e02">1.1. Install Remote Access Tool</a></li>
+		<li><a href="#e03">1.2. Log On to Linux Remotely</a></li>
+		<li><a href="#e04">1.3. Get Online Help</a></li>
+        
+	</ul>	
+	<p>&nbsp;</p>
+       
+    
+    <!-- =========  1.1. Install Remote Access Tool ========= -->
+	<h2 id="e02">1.1. Install Remote Access Tool 
+		&nbsp;&nbsp; <a href="#top"><img src="../images/uiTabsArrow.png" /></a>		</h2>
+		<p>Note you need only one of the following tools</p>
+		<p><strong>Choice 1 (Windows)</strong></p>
+		<ol>
+			<li>Log in to AccessSheridan.</li>
+			<li>Go to the Software Installation link.</li>
+			<li>In the list of applications, find SSH Secure Shell 3 application link.</li>
+			<li>Click on the link and let the application install. NOTE: your laptop must be registered on the Sheridan network. If you are having difficulty, please see ITSC for help.</li>
+			<li>After successful install, find the SSH Secure Shell application. Click on the [start] button in the lower left-hand corner of your monitor. Select [Programs].
+			In the list, find the menu for [SSH Secure Shell].</li>
+			<li>You will see two choices,  [Secure Shell Client] and [File Transfer ]<br>OR<br>you may find two icons on your desktop, File Transfer and Shell Client .
+		</ol>
+		<p><strong>Choice 2 (Windows)</strong></p>
+		<ol>
+			<li>Alternate free application is putty. You can google it and follow their instructions to download and install.   Or use this link:  http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html</li>
+			<li>8. You will need to download:<br>
+			For Windows on Intel x86<br>
+			<strong>putty.exe</strong>  &nbsp;&mdash;PuTTY (the Telnet and SSH client itself)<br>
+			<strong>psftp.exe</strong>  &nbsp;&mdash;PSFTP (an SFTP client, i.e. general file transfer sessions much like FTP)
+			</li>
+			<li>The download should be straight forward.  The site has good documentation as well, so have a look at it. Note that if you are having access problems with any of these tools, check your firewall and virus tool setting, or check with ITSC.</li>
+		</ol>	
+		<p><strong>Choice 3 (Mac)</strong></p>
+		<ol>
+			<li>Find the "Terminal" or "Console"  app on your system.  Running this app will automatically give you access to your local Linux  environment and you can do lot of the work locally.  
+			</li>
+			<li>You can connect to atlas with the ssh command. Have a look at the manual page for the ssh command and talk to me for additional instructions.</li>
+		</ol>	
+		<p><strong>Network Logon Information (for any tool)</strong></p>	
+		<p class="dent">host name:  atlas.sheridanc.on.ca<br>
+		user name:  your Sheridan ID<br>
+		Use default port:  22<br>
+		Use default authentication:  password<br>
+		Password:  your Sheridan password</p>
+		<p>&nbsp;</p>
+
+    <!-- =========  1.2. Log On to Linux Remotely ========= -->    
+	<h2 id="e03">1.2. Log On to Linux Remotely&nbsp;&nbsp; <a href="#top"><img src="../images/uiTabsArrow.png" /></a>		 </h2>		
+	<p class="dent">
+		<strong>NOTE:  on a Linux system, when you type a password, you do not see any stars, it looks like nothing is happening! This is a security feature! Your typing is being received and interpreted, so make sure you do not make any errors! Remember that Linux is CASE-SENSITIVE!</strong>
+	</p>
+	<p>&nbsp;</p>
+	<p><strong>Using Secure Shell SSH tool</strong></p>
+	<ul>
+		<li>In Windows, select [Secure Shell Client].</li> 
+		<li>When the application opens, you will see the login window.  </li>
+		<li>Click on the [Quick Connect] or the [Connect] menu item. </li>
+		<li>When prompted, enter:<br>
+	Host: atlas.sheridanc.on.ca<br>
+	Username: <Your Sheridan Username><br>
+	Press [Connect]. For everything else, leave the defaults. </li>
+		<li>If you are logging in for the first time, authentication dialogue box will appear, accept it. </li>
+		<li>Next you will be prompted for your password.<br>
+	Password: <Your Sheridan Password></li>
+		<li>IUpon successful login, the grayed area, becomes active, you will see the current message from the system administrator, followed by the shell prompt with the cursor flashing (note that the prompt may vary from system to system and shell to shell-more on this subject later. </li>
+		<li>For the purpose of this tutorial, you may see the command prompt  represented as ">" at the beginning of a line, which will be followed by your blinking cursor.</li>
+		<li>Now you are ready to explore the command line interface (CLI)!	</li>
+	</ul>
+	<p>&nbsp;</p>
+	<p><strong>Using putty tool</strong></p>
+	<ul>
+		<li>In Windows, run putty.exe application, either by clicking on the icon or from the start menu. </li>
+		<li>When the application opens, you will see the configuration window.  </li>
+		<li>Use the same information as above.  The main difference you will find is that you will be prompted for your login after the connection and you will see the command prompt upon successful logon.  </li>
+	</ul>
+	<p>&nbsp;</p>
+	<p><strong>Check out:</strong> <a target="_blank" href="https://chrome.google.com/webstore/detail/secure-shell/pnhechapfaindjhompbnflcldabbghjo?hl=en">Chrome extension SSH (beta)</a></p>	
+	<p>&nbsp;</p>
+	
+	
+	<p><strong>Logging in and out; choosing the correct shell</strong></p>
+	<p>Start a bash shell session by typing bash, followed by the Enter key:</p>
+	<p class="highlight-4">&gt; bash</p>
+	
+	<p>Note the change. On our server, currently the login shell is tcsh, which uses the &gt; symbol as the prompt character. Type the command exit followed by the Enter key:</p>
+	<p class="highlight-4">~$  exit</p>
+	
+	<p>Note that you are back to the original prompt. Again, type exit command followed by the Enter key:</p>
+	<p class="highlight-4">&gt; exit</p>
+	
+	<p>Note that since you were at the login shell (the one that was presented to you upon login), this time the exit command logged you out.</p>
+	<p>You can type "exit" or "logout" at the command prompt <strong>regardless</strong> of what tool you use.<br> or <br>You can use the Icon shortcut or Menu items to disconnect <strong>depending</strong> on the tool you use. </p>
+	<p>&nbsp;</p>
+	
+	
+	
+	
+	<h2 id="e04">1.3. Get Online Help&nbsp;&nbsp; <a href="#top"><img src="../images/uiTabsArrow.png" /></a>		</h2>
+	<p><strong>The best resource, the primary source, is the online manual that comes with the distribution or version you are using.</strong></p>	
+	<p>Remember that Linux is open source, which means that you, or anyone, can change and recompile the kernel.  Such changes are (or should be) then reflected in the documentation. </p>	
+	<p>Therefore, first try using the man (manual page) command that comes with your installed system. </p>	
+	<p>The general syntax for all commands:
+<pre class="brush: bash; highlight: [0]; first-line: 1" title="">command [-options] [arguments]</pre> 
+Note the square brackets denote that options and arguments are optional. Most options start with a dash. You always start with the command. You always end with pressing the Enter key.
+	</p>
+		<p>The following command displays information about the online manual itself:
+<pre class="brush: bash; highlight: [0]; first-line: 1" title="">man man</pre> 
+Pressing Enter at the end, starts processing of the command. Note the first token (word) is the name of the command, the second token is an argument.  There are no options specified.
+	</p>
+	<p>Once you press Enter, the manual page will display.  Note the way it displays, what sections it lists and what information it provides. To get around the manual page, use:</p>	
+	<ul>
+		<li>Use the <strong>SPACE BAR</strong> to move one page (screen) forward.</li>
+		<li>Use the <strong>b</strong> key to move one page back.</li>
+		<li>Use the <strong>q</strong> key to quit (exit) the displaying of the manual page.</li>
+	</ul>
+		<p>Another important thing to remember:  Linux is CASE-SENSITIVE! try
+<pre class="brush: bash; highlight: [0]; first-line: 1" title="">Man mAn</pre> 
+or some other variation of upper and lower case characters.	Spend some time perusing the online manual pages. 
+You do not have to read it all, but familiarize yourself with it sufficiently to get your bearings.  </p>
+	<p><strong>Make it a habit to view the manual page for each new command you work with.</strong></p>
+	
+	
+	<p>Peruse the following pages:</p>	
+	<ul>
+		<li>man</li>
+		<li>bash</li>
+		<li>ls</li>
+		<li>pwd</li>
+		<li>cd</li>
+		<li>chmod</li>
+	</ul>
+	
+	<p>Keep a notebook and note your observations. </p>	
+	<ul>
+		<li>What kinds of errors are you encountering?</li>
+		<li>What questions come to mind when you are working in this environment?</li>
+		<li>When you encounter an error or problem, note the solution and how you found the solution.</li>
+	</ul>	
+		<!--p>The material in this section is a natural extension if you already have some experience with Unix/Linux, have fundamental knowledge and skill working with CLI, and wish to explore the environment beyond the scope of this course.</p-->
+	
+</section>
+</body>
+</html>

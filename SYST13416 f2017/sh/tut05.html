@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Tutorial Set 5</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"> 
+
+ 	<link rel="stylesheet" type="text/css" href="../css/icons.css" />   
+    <link type="text/css" rel="Stylesheet" href="tutorials.css"/>
+	<link type="text/css" rel="Stylesheet" href="styles/shCoreDefault.css"/>
+	<link type="text/css" rel="Stylesheet" href="styles/shThemeDefault.css"/>	
+	<script type="text/javascript" src="scripts/shCore.js"></script>
+	<script type="text/javascript" src="scripts/shBrushJScript.js"></script>
+	<script type="text/javascript" src="scripts/shBrushXml.js"></script>
+	<script type="text/javascript" src="scripts/shBrushCss.js"></script>
+	<script type="text/javascript" src="scripts/shBrushBash.js"></script>
+	<script type="text/javascript">SyntaxHighlighter.all();</script>
+
+	<style type="text/css">
+    :invalid { 
+          border-color: #e88;
+          -webkit-box-shadow: 0 0 5px rgba(255, 0, 0, .8);
+          -moz-box-shadow: 0 0 5px rbba(255, 0, 0, .8);
+          -o-box-shadow: 0 0 5px rbba(255, 0, 0, .8);
+          -ms-box-shadow: 0 0 5px rbba(255, 0, 0, .8);
+          box-shadow:0 0 5px rgba(255, 0, 0, .8);
+	}
+	section {
+		padding-bottom: 30px;
+	}
+	</style>	
+</head>
+
+<body>
+<section class="container">
+
+	<h1>Tutorial Set 5</h1>
+	<p class="dent"><strong>In this tutorial...</strong></p>
+	<ul>
+		<li><a href="#exer1">5.1. Show processor status with ps</a></li>
+		<li><a href="#exer2">5.2. Manage jobs with fg, bg, kill, jobs</a></li>
+		<li><a href="#exer3">5.3. Manage resources with top, df, du, free</a></li>
+		<li><a href="#exer4">5.4. Schedule jobs with at </a></li>
+		<li><a href="#exer5">5.5. Schedule jobs with cron, crontab </a></li>
+		<li><a href="#exer6">5.6: Use secure ftp to transfer files</a></li>
+		<li><a href="#exer7">5.7. Other utilities: ssh, ln, nohup, tty, stty, uptime, ifconfig, ping, sleep, write, mesg </a></li>
+	</ul>
+	<p>&nbsp;</p>	
+	
+	<section id="exer1"> 
+		<h2>5.1. Show processor status with ps</h2>
+		<p class="highlight-3"><img src="../images/exclamation.png" alt="">&nbsp;<strong>ps :</strong> report a snapshot of the current processes</p> 	
+		<p>The command ps shows the processor status for the entire computer. Without any arguments, it shows the active or stopped programs associated with your terminal only. The flags vary with different flavours of Unix/Linux, so refer to the appropriate manual. PID is the process ID, TTY the associated terminal,  TIME of the CPU processing time so far, and the command name. Adding some flags can change the output of ps dramatically. Try:</p> 
+		<p class="highlight-4">		
+			~bin$ ps x
+		</p>	
+		<p>Generally, to include the shell and automatic login processes. Note-on some systems you need the dash in front of the options. The added STAT information is the status value of each process. Use the manual page to determine the status values, such as R means the process is running. To see more about what is happening, try:</p> 
+		<p class="highlight-4">		
+			~bin$ ps xu
+		</p>	
+		<p>The u option provides user-oriented output and includes the name of the user, process ID, percent of CPU used, percent of memory used, virtual and real memory usage. Now try</p>	
+		<p class="highlight-4">		
+			~bin$ ps aux | wc -l
+		</p> 	
+		<p>Examine the manual page for ps to learn more about the a option. You can also view the beginning of the output by issuing the command</p> 	
+		<p class="highlight-4">		
+			~bin$ ps aux | head
+		</p>
+	</section>
+
+	
+	<section id="exer2">
+		<h2>5.2 Managing jobs</h2>
+		<p class="highlight-3">
+			<strong>fg :</strong> send a job to the foreground<br />
+			<strong>bg :</strong> send a job to the background<br />
+			<strong>kill :</strong> send a signal to a process<br />
+			<strong>jobs :</strong> view running or stopped jobs associated with your terminal
+		</p> 	
+		<p>Make sure you are in the Bourne Again (bash) shell. Examine the manual for the command sort, go the third or fourth page.</p> 
+		<p class="highlight-4">		
+			~bin$ man sort
+		</p>			
+		<p>Do not quit, but stop the job by pressing <code>Ctrl+Z</code>. You will find yourself at the command prompt. At this point, you can do whatever else. For example, run the following command: </p> 
+		<p class="highlight-4">		
+			~bin$ ls -sF | sort -b | head -4
+		</p>
+		<p>Note the output. To return to the sort manual page to look up the -b option, enter the command </p> 
+		<p class="highlight-4">		
+			~bin$ fg
+		</p>
+		<p>Press <code>Ctrl+Z</code> again to stop the process and look up the ls manual page: </p> 
+		<p class="highlight-4">		
+			~bin$ man ls
+		</p>
+		<p>After reading what the options are, press <code>Ctrl+Z</code>. Then Look up the head manual page </p> 
+		<p class="highlight-4">		
+			~bin$ man head
+		</p>	
+		<p>After reading some of the contents, press <code>Ctrl+Z</code>. The command jobs shows you what processes you've stopped and moved into the background in the shell. To see all the jobs you have currently running, enter the command:
+		</p> 
+		<p class="highlight-4">		
+			~bin$ jobs
+		</p>
+		<p>You can specify which job you wish to return to by specify the job number (in square brackets). For example, to return to viewing the ls manual page, which is the second job you've ran (note that this may change depending what else you may be running at time): </p> 
+		<p class="highlight-4">		
+			~bin$ fg %2
+		</p>
+		<p> You can terminate these processes using the command kill. For example, to terminate the first and the third job: </p> 
+		<p class="highlight-4">		
+			~bin$ kill %1 %3
+		</p>
+	</section>
+	
+	<section id="exer3">
+		<h2>5.3 Managing resources with top, df, du, and free</h2>
+		<p class="highlight-3">
+			<strong>top :</strong> display Linux tasks<br />
+			<strong>df :</strong> report file system disk space usage<br />
+			<strong>du :</strong> estimate file space usage<br />
+			<strong>free :</strong> display amount of free and used memory in the system
+		</p> 	
+		<p>Run the following commands, what do the commands do and note the resulting differences</p> 
+		<p class="highlight-4">		
+			~bin$ df<br />
+			~bin$ df  -t  reiserfs
+		</p>
+		<p> If you get no results for the second command, try other format types, such as fat32 and ext3. You can run the mount command to see what file systems and their type are available. Run the following commands, what do the commands do and note the resulting differences after each one: </p> 
+		<p class="highlight-4">		
+			~bin$ du<br />
+			~bin$ du -cx
+		</p>
+		<p>Run the following command and explain the output. For more details, examine the manual page: </p> 
+		<p class="highlight-4">		
+			~bin$ free
+		</p>
+		<p>Monitor real-time resource utilization. Use the key 'q' to quit. </p> 
+		<p class="highlight-4">		
+			~bin$ top
+		</p>
+	</section>
+	
+	
+	<section id="exer4">
+		<h2>5.4. Schedule jobs with at </h2>
+		<p class="highlight-3">
+			<strong>at :</strong> schedule a one-time job
+		</p> 	
+		<p>Note that for this exercise you will need a file (it can be anywhere and substitute your name for somefile.txt if it is called something else) and a backups subdirectory in your user's home directory. Locate your document and check the current date as in the following: </p> 
+		<p class="highlight-4">		
+			~bin$ ls<br />
+			~bin$ date
+		</p>
+		<p>Type the at command followed by the time you want the job to occur: </p> 
+		<p class="highlight-4">		
+			~bin$ at 17:00<br />
+			at> &square;
+		</p>
+		<p>Note that you are at a special shell prompt "at>". Type the copy command (cp), the name of file you want to copy, and the location of the file in which you want to place the backup copy on the file system, and then press Enter: </p> 
+		<p class="highlight-4">		
+			at> cp somefile.txt ~/backups
+		</p>
+		<p>Press <code>Ctrl+D</code> to exit the at shell; you should see something akin to the following: </p> 
+		<p class="highlight-4">	
+			job 1 at 2004-12-10 17:00<br />	
+			~bin$ &square;
+		</p>
+		<p>Use the atq command to double-check that the job has been scheduled. To delete a command before it has been executed, use the atrm command: </p> 
+		<p class="highlight-4">		
+			~bin$ atq<br />	
+			1       2004-12-10 17:00 a username
+		</p>
+		<p> To delete a command before it has been executed, use the atrm command: </p> 
+		<p class="highlight-4">		
+			~bin$ atrm 1
+		</p>
+	</section>
+	
+	
+	<section id="exer5">
+		<h2>5.5. Schedule jobs with cron, crontab </h2>
+		<p class="highlight-3">
+			<strong>cron :</strong> automate running scripts with cron<br />
+			<strong>crontab :</strong> cron configuration file
+		</p> 
+		<ul>	
+			<li>The cron daemon runs user scripts at user defined times</li>
+			<li>When cron starts, it reads all of its configuration files, stores them in memory, then goes to sleep</li>
+			<li>Once each minute, cron wakes up, checks the modification times on the crontab files, reloads any files that have changed and executes any tasks scheduled for that minute before returning to sleep</li>
+			<li>A cron configuration file is called a crontab (short for cron table) </li>
+			<li>Each user has a crontab, a file that contains entries</li>
+		</ul>		
+		<p>opens crontab file using vi </p> 
+		<p class="highlight-4">		
+			~bin$ crontab -e
+		</p>	
+		<p>Example entries: </p>
+		<pre class="brush: bash; highlight: [1];" title="Executes myscript.sh at 5 mins past every hour">
+		5 * * * * myscript.sh</pre>		
+		<pre class="brush: bash;  first-line: 2; highlight: [2];" title="Executes myscript.pl at 2:15pm every day">
+		15 14 * * * myscript.pl</pre>			
+		<pre class="brush: bash;  first-line: 3; highlight: [3];" title="Executes myscript.php at midnight on the 1st of each month">
+		0 0 1 * * wget http ://localhost/myscript.php</pre>	
+		<p>Comments  start with pound sign (hash). Each line contains the following sequence of tokens:</p> 
+		<table id="cron">
+			<tr>
+				<td>minute</td><td>hour</td><td>day</td><td>month</td><td>weekday</td><td>[user] command</td>
+			</tr>
+			<tr>
+				<td>0-59</td><td>0-23</td><td>1-31</td><td>1-12</td><td>0-6</td><td>...</td>
+			</tr>		
+		</table>
+		<ul>	
+			<li>matches everything, which stands for "first-last"</li>
+			<li>0=sunday</li>
+			<li>single integer matches exactly</li>
+			<li>two integers separated by dash, matches the range of values (8-11 specifies execution at hours 8, 9, 10, and 11</li>
+			<li>a comma-separated series of integers or ranges, matching any listed values ("1,2,5,9", "0-4,8-12")</li>
+			<li>The last field (the rest of the line) specifies the command to run. The entire command portion of the line, up to a newline or % character.</li>
+		</ul>		
+		<p>Explain what each of the following entries would do: </p>
+		<pre class="brush: bash; first-line: 4;" title="">
+		5 4 * * sun echo "What time is it?"
+		0 22 * * 1-5 mail -s "Good Evening"
+		1 1 1 1 * hello.pl > /dev/null</pre>	
+	</section>
+
+	<section id="exer6">
+		<h2>5.6: Use secure ftp to transfer files</h2>
+		<p class="highlight-3">
+			<strong>sftp:</strong>secure file transfer protocol 
+		</p> 
+		<p>If you download putty.exe and psftp.exe  [ http://putty.very.rulez.org/download.html ] you can use psftp to transfer files between machines. It works like sftp on atlas or mac environment. </p>
+		<p>psftp.exe: Click on the executable. When the window opens, at the prompt, type:
+			open mobile.sheridanc.on.ca
+			When prompted, enter your userID.
+			When prompted, enter your password 
+			Once you get the prompt, you can use many of the Linux commands.
+			(Refer to the download site for documentation.)
+		</p>
+		<p>sftp: Working at the command prompt, you can connect by giving the command: </p> 
+		<p class="highlight-4">		
+			~bin$ sftp userName@domain.name
+		 </p> 	
+		<p>and provide your password when prompted. you will get a prompt on successful connection:sftp></p>
+		<h6>Examples: </h6> 		
+		<p class="highlight-4">	
+			sftp> ls<br />
+			sftp> cd public_html<br />
+			sftp> mkdir dirX<br />
+			sftp> mkdir myproject<br />
+			sftp> cd ..
+		</p>	
+		<pre class="brush: bash; highlight: [1];" title="Some commonly used commands:">
+		# closes connection in psftp
+		close  
+		# working directory on remote server
+		pwd   
+		# working directory on local machine
+		lpwd    
+		# change directory on the client (local) machine
+		lcd C:\mysite
+		# change directory on the remote server
+		cd public_html
+		# put or upload one file to the server
+		put myfile.dat                               
+		# put or upload many files to the server
+		mput myfile.dat newname.dat
+		# upload entire directory recursively
+		mput -r mydir newname
+		# change permissions on the server
+		chmod 711 dirname
+		# get or download one file from the server
+		get somefile    
+		# get or download many files from the server	
+		mget file1.txt file2.txt file3.txt</pre>
+		<p>Note: make sure you are in the correct directory BOTH on the server AND your machine before uploading and downloading files and directories. </p> 
+	</section>	
+
+	
+	<section id="exer7">	
+		<h2>5.7. Other utilities: ssh, ln, nohup, tty, stty, uptime, ifconfig, ping sleep</h2>		
+		<table class="table">
+			<tr>
+				<th>ssh</th><td>The telnet program and ssh program let you login to a remote computer where you have an established account</td>
+			</tr>
+			<tr>
+				<th>ln</th><td>make links between files</td>
+			</tr>	
+			<tr>
+				<th>nohup</th><td>run a command immune to hang-ups, with output to a non-tty</td>
+			</tr>	
+			<tr>
+				<th>tty</th><td>print the file name of the terminal connected to standard output</td>
+			</tr>	
+			<tr>
+				<th>stty</th><td>changes terminal settings</td>
+			</tr>	
+			<tr>
+				<th>uptime</th><td>display the status of the system, how long the system has been u</td>
+			</tr>	
+			<tr>
+				<th>sleep</th><td></td>
+			</tr>	
+			<tr>
+				<th>ifconfig</th><td>The IP address of a URL can be discovered with the host command and that of your own computer with ifconfig  (note that there is no spelling error: in windows it is ipconfig, in linux it is ifconfig)</td>
+			</tr>	
+			<tr>
+				<th>ping</th><td>A network connection can be tested with the ping command</td>
+			</tr>	
+			<tr>
+				<th>&nbsp;</th><td>Key combinations of Ctr+Alt+F1  to  Ctr+Alt+F7 switches among consoles
+			</td>
+			</tr>				
+		</table>	
+	</section>
+	
+	
+	
+</section>
+</body>
+</html>

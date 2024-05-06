@@ -1,0 +1,31 @@
+body {
+	text-align: top;
+	padding: 0px 0px 0px 0px;
+	margin: 0px 0px 0px 0px;
+	border: 0px;
+	border: 0px solid #111111;
+	border-collapse: collapse;
+	min-height: 545px;
+	position: relative;
+
+}
+
+.left {
+	width: 38px;
+	background-image: url('../images/background2.gif');
+	background-repeat: repeat-y;
+	background-position:left; 
+	
+}
+.mid {
+	width: 570px;
+	background-image: url('../images/background3.gif');
+			align-content: flex-start;
+			align-self: flex-start;
+}
+.right {
+	width: 40px;
+	background-image: url('../images/b-rightside.gif');
+	background-repeat: repeat-y;
+	background-position:right; 
+}

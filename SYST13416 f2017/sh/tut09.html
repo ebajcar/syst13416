@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Tutorial Set 9</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"> 
+
+ 	<link rel="stylesheet" type="text/css" href="../css/icons.css" />   
+    <link type="text/css" rel="Stylesheet" href="tutorials.css"/>
+	<link type="text/css" rel="Stylesheet" href="styles/shCoreDefault.css"/>
+	<link type="text/css" rel="Stylesheet" href="styles/shThemeDefault.css"/>	
+	<script type="text/javascript" src="scripts/shCore.js"></script>
+	<script type="text/javascript" src="scripts/shBrushJScript.js"></script>
+	<script type="text/javascript" src="scripts/shBrushXml.js"></script>
+	<script type="text/javascript" src="scripts/shBrushCss.js"></script>
+	<script type="text/javascript" src="scripts/shBrushBash.js"></script>
+	<script type="text/javascript">SyntaxHighlighter.all();</script>
+
+	<style type="text/css">
+    :invalid { 
+          border-color: #e88;
+          -webkit-box-shadow: 0 0 5px rgba(255, 0, 0, .8);
+          -moz-box-shadow: 0 0 5px rbba(255, 0, 0, .8);
+          -o-box-shadow: 0 0 5px rbba(255, 0, 0, .8);
+          -ms-box-shadow: 0 0 5px rbba(255, 0, 0, .8);
+          box-shadow:0 0 5px rgba(255, 0, 0, .8);
+	</style>	
+</head>
+
+<body>
+<section class="container">
+	
+	<h1>Tutorial Set 9</h1>
+	<p class="dent"><strong>In this tutorial...</strong></p>
+	<ul>
+		<li>Matching Lines and Words</li>
+		<li>Using Anchors</li>
+		<li>Character Sets and Repetition</li>
+	</ul>
+	<p>	Examine the  manual pages  for the commands grep, egrep, and fgrep, 
+		and note the description of any options used in these exercises.</p>
+		
+		
+	<h2 id="e01">Matching Lines and Words</h2>
+	<p>• Regular expression is a compact way of specifying a pattern of characters. </p>
+	<p>• To create a regular expression, you put together ordinary characters and meta-characters according to certain rules, which are used to search within text files. </p>
+	<p>• When a regex corresponds to a particular string of characters, we say that it matches the string.</p>
+	<p>• RULE: All ordinary characters, such as letters and numbers, match themselves.</p>
+
+	
+	<h2 id="e02">Using Anchors</h2>
+	
+	<p class="highlight-3"><img src="../images/exclamation.png" alt="">&nbsp;<strong>Example 1</strong> • You can use anchors to specify the location of the pattern on the line.</p>
+	<p>Given the following file named data that contains the following:</p>
+<pre class="brush: css; first-line: 1; highlight: [0];" title="file named data">
+Harry is smart
+Harry
+His name is Harry
+His name is Harry Potter.
+The mellow dog likes bones.
+I know who you are and I saw what you did.
+Who knows what evil lurks in the hearts of men?
+color
+colour
+colouur
+</pre>	
+	<p>When we run the following command, we get the given output; using <code>&nbsp;grep&nbsp;</code> command to search for
+	pattern <code>&nbsp;Harry&nbsp;</code>, in the file called <code>&nbsp;data&nbsp;</code>
+	Note that all lines containing the word (pattern) Harry have been printed.</p>
+	<p class="highlight-4">	
+			~/bin$ grep Harry data<br />
+			Harry is smart<br />
+			Harry<br />
+			His name is Harry<br />
+			His name is Harry Potter.<br />
+			~/bin$ &square;</p>
+			
+	<p>The ^ (circumflex or hat) meta-character is an anchor that matches the beginning of a line. Only those
+	lines have been printed that start with the word Harry.</p>
+	<p class="highlight-4">	
+			~/bin$ grep ‘^Harry’ data<br />
+			Harry is smart<br />
+			Harry<br />
+			~/bin$ &square;</p>		
+			
+	<p>The anchor that matches the end of a line is the $ (dollar) meta-character. Only those lines ending 
+	with the word Harry have been printed.</p>
+	<p class="highlight-4">	
+			~/bin$ grep ‘Harry$’ data<br />
+			His name is Harry<br />
+			~/bin$ &square;</p>		
+			
+	<p>To find lines that contain only the word ‘Harry’, combine both anchors:</p>
+	<p class="highlight-4">	
+			~/bin$ grep ‘^Harry$’ data<br />
+			Harry<br />
+			~/bin$ &square;</p>	
+
+	<p>Using both anchors with nothing in between is an easy way to look for empty lines:</p>
+	<p class="highlight-4">	
+			~/bin$ grep ‘^$’ data<br />
+			</p>	
+
+	<p>The anchors to match the beginning or end of the word is the two-character combination \< and \> respectively.</p>
+	<p>To find all lines that contain the word starting with ”kn”, use</p>
+	<p class="highlight-4">	
+			~/bin$ grep ‘\&lt;kn’ data<br />
+			 I know who you are and I saw what you did.<br />
+			Who knows what evil lurks in the hearts of men?<br />
+			~/bin$ &square;</p>	
+			
+	<p>To find all lines that contain the word ending with ”ow”, use</p>
+	<p class="highlight-4">	
+			~/bin$ grep ‘ow\&gt;’ data<br />
+			 The mellow dog likes bones.<br />
+			 I know who you are and I saw what you did.<br />
+			~/bin$ &square;</p>	
+			
+	<p>You want to find all the lines in the file data that contain the word “color” (American spelling) or “colour” (British spelling):</p>
+	<p class="highlight-4">	
+			~/bin$ grep ‘colou*r’ data<br />
+			 color<br />	
+			 colour<br />
+			 colouur<br />			 
+			~/bin$ egrep ‘colou?r’ data<br />
+			 color<br />	
+			 colour<br />				 
+			~/bin$ &square;</p>				
+	
+	
+	
+		<h2 id="e03">Character Sets and Repetition</h2>
+	<p class="highlight-3"><img src="../images/exclamation.png" alt="">&nbsp;<strong>Example 2</strong> </p>
+	<p>1. Using the file called dictionary (available in the instructor's public/datafiles subdirectory), run the following commands at the command prompt, one at a time, noting the result.</p>
+<pre class="brush: bash; first-line: 101; highlight: [0];" title="">
+grep '^q[a-z]y$' dictionary
+grep '^q[a-z]*y$' dictionary
+grep '^qu[a-z][a-z]y$' dictionary
+grep '^qu[a-z][a-z][a-z]y$' dictionary
+grep '^qu[a-z][a-z][a-z][a-z]y$' dictionary
+grep '^qu[a-z]{1,3}y$' dictionary
+egrep -n '^qu[a-z]{1,4}y$' dictionary
+egrep -n '^qu[a-z]{4}y$' dictionary
+grep -e '^qu[a-z]{1,3}y$' dictionary
+grep -e '^qu[a-z]{1,5}y$' dictionary
+egrep '^qu[a-z]{1,5}y$' dictionary
+grep -E '^qu[a-z]{1,5}y$' dictionary
+grep -E '\&lt;qu[a-z]{1,5}y\&gt;' dictionary
+grep -E '\&lt;qu[a-z]{1,2}y\&lt;' dictionary
+grep -E 'qu[a-z]{2}y' dictionary
+</pre>
+	<ol>
+	<li>Explain each command (how it works) and the result.</li>
+	<li>If the result was empty (no output), how do you verify that the result is valid and there were no matches?</li>
+	</ol>
+	<p>&nbsp;</p>
+	<p>2. Compare the following variations of the command. To see the actual list, omit the pipe to wc. To see the line numbers, use the -n option.</p>
+<pre class="brush: bash; first-line: 201; highlight: [0];" title="">
+egrep 'qu[a-z]{2}y' dictionary | wc
+egrep 'qu[a-z]{3}y' dictionary | wc
+egrep 'qu[a-z]{4}y' dictionary | wc
+egrep 'qu[a-z]{5}y' dictionary | wc
+egrep 'qu[a-z]{6}y' dictionary | wc
+egrep 'qu[a-z]{7}y' dictionary | wc
+egrep 'qu[a-z]{8}y' dictionary | wc
+egrep 'qu[a-z]{9}y' dictionary | wc
+egrep 'qu[a-z]{10}y' dictionary | wc
+egrep 'qu[a-z]{11}y' dictionary | wc
+egrep 'qu[a-z]{12}y' dictionary | wc
+egrep 'qu[a-z]{13}y' dictionary | wc
+egrep 'qu[a-z]{1,13}y' dictionary | wc
+egrep 'qu[a-z]{1,}y' dictionary | wc
+</pre>  
+	<p>&nbsp;</p>
+	<p>3. Compare the following variations of the command. To see the actual list, omit the pipe to wc. To see the line numbers, use the -n option.</p>
+</pre> 	
+<pre class="brush: bash; first-line: 301; highlight: [0];" title="">
+  603  egrep '^qu[a-z]{4}y$' dictionary | wc
+  604  egrep '^qu[a-z]{4,}y$' dictionary | wc
+  605  egrep '^qu[a-z]{,4}y$' dictionary | wc
+  </pre> 
+	<p>&nbsp;</p>
+	<p>4. Compare the following variations of the command. To see the actual list, omit the pipe to wc.  To see the line numbers, use the -n option.</p>
+</pre> 
+<pre class="brush: bash; first-line: 401; highlight: [0];" title="">  
+  607  egrep '^qu[a-z]{1,13}y$' dictionary | wc
+  608  egrep '^qu[a-z]{1,13}y' dictionary | wc
+  609  egrep 'qu[a-z]{1,13}y$' dictionary | wc
+  610  egrep 'qu[a-z]{1,13}y' dictionary | wc	
+  </pre>
+	
+	<p class="highlight-3"><img src="../images/exclamation.png" alt="">&nbsp;<strong>Example 3</strong> </p>
+	<P>Use the num.list  (you may have created already or downloaded from instructors ~bajcar/public/datafiles 
+	subdirectory. <mark>Note that the fields are separated by a tab and there is a leading space on 
+	lines 1 through 9.</mark> If not, you will not be able to see the intended result.
+	<figure><img src="numList.png" alt="" height="180px"></figure>
+
+	<P>Test the following commands and analyse the results. Describe the effect of the options.</P>
+<pre class="brush: bash; first-line: 1; highlight: [0];" title="">
+	grep '15' num.list
+	grep -c '15' num.list
+	grep '1[125]' num.list
+	grep '^ ' num.list
+	grep '^[^ ]' num.list
+	grep –v '^ ' num.list
+	grep '^[1-9]' num.list
+	grep 'te*' num.list
+	grep 'tee*' num.list
+</pre>
+
+	<p class="highlight-3"><img src="../images/exclamation.png" alt="">&nbsp;<strong>Example 4</strong> </p>
+	<P>You can copy the file wordlist.txt from the instructor’s directory (ask for instructions) 
+or create it and include the lines listed below among others. To indicate zero or more occurrences 
+of any character, you can use the period and the asterisk together (.*), as in this example:</p>
+<pre class="brush: bash; first-line: 1; highlight: [0];" title="">
+grep 'dog.*bone' wordlist.txt
+</pre>
+<p>Explain why the highlighted lines were matched with the above command, but the last two (not highlighted) did not match:
+<pre class="brush: bash; first-line: 24; highlight: [24,25,26,27,28];" title="Part of wordlist.txt file">
+dogbone
+dog-bone
+doggy bone
+My dog has a bone.
+My dog is named Rover. Please add a soup bone to the grocery list.
+what about bone for my dog?
+Are bones good for dogs?</pre>
+
+	
+</section>
+ 
+</body>
+</html>

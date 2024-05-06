@@ -1,0 +1,30 @@
+		#posts-list {
+			width:100%;
+		}
+		code {
+			font-size:20px;
+		}
+		.commands {
+			padding: 2px 30px;
+		}	
+		li {
+			line-height: 18px;
+			font-size: 12px;
+			}
+		.h7 {
+			font-family: 'Allan', sans-serif;
+			color: #ff5000;
+			font-size: 22px;
+			line-height: 30px;
+			font-weight: 800;
+			text-align: left;
+			text-shadow: 1px 1px 3px #003767;
+			padding-top: 10px;
+		}
+		.myback {
+			width: 540px;
+			background-color: rgba(255, 255, 255, 0);
+			padding: 0px 40px;
+			margin: 0px 0px 0px 0px;
+		}			
+		

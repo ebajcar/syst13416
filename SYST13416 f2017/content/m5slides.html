@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>SYST13416 Module 1</title>
+	<link rel="stylesheet" href="../css/cycleslides.css"> 
+
+</head>
+
+<body>
+<div id=no-template-pager class="cycle-pager external">
+    <!-- using thumbnail image files would be even better! -->
+    <img src="m0/syst13416main/Slide8b.jpg" width=40 height=30>
+	<img src="m5/slide7-1.png" width=40 height=30>
+	<img src="m5/slide7-3.png" width=40 height=30>
+	<img src="m5/slide7-4.png" width=40 height=30>
+	<img src="m5/slide7-5.png" width=40 height=30>
+	<img src="m5/slide7-6.png" width=40 height=30>
+</div>	
+<div class="cycle-slideshow" 
+    data-cycle-fx=scrollHorz
+    data-cycle-timeout=300000
+	data-cycle-caption="#custom-caption"
+    data-cycle-caption-template="Slide {{slideNum}} of {{slideCount}}"
+    data-cycle-pager="#no-template-pager"
+    data-cycle-pager-template=""
+    >
+				<img src="m0/syst13416main/Slide8b.jpg"  data-cycle-title="Introduction">
+				<img src="m5/slide7-1.png"  data-cycle-title="Unix Processes">
+				<img src="m5/slide7-3.png"  data-cycle-title="Process states">
+				<img src="m5/slide7-4.png"  data-cycle-title="Inter-process communication">
+				<img src="m5/slide7-5.png"  data-cycle-title="Job control">
+				<img src="m5/slide7-6.png"  data-cycle-title="commands to manage processes">				
+		</div>
+ 
+		<!-- empty element for caption -->
+		<div id="adv-custom-caption" class="center"></div>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	<script src="http://malsup.github.com/jquery.cycle2.js"></script>       
+</body>
+</html>
+

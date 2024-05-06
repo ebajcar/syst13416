@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Tutorial Set 4</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"> 
+
+ 	<link rel="stylesheet" type="text/css" href="../css/icons.css" />   
+    <link type="text/css" rel="Stylesheet" href="tutorials.css"/>
+	<link type="text/css" rel="Stylesheet" href="styles/shCoreDefault.css"/>
+	<link type="text/css" rel="Stylesheet" href="styles/shThemeDefault.css"/>	
+	<script type="text/javascript" src="scripts/shCore.js"></script>
+	<script type="text/javascript" src="scripts/shBrushJScript.js"></script>
+	<script type="text/javascript" src="scripts/shBrushXml.js"></script>
+	<script type="text/javascript" src="scripts/shBrushCss.js"></script>
+	<script type="text/javascript" src="scripts/shBrushBash.js"></script>
+	<script type="text/javascript">SyntaxHighlighter.all();</script>
+
+	<style type="text/css">
+    :invalid { 
+          border-color: #e88;
+          -webkit-box-shadow: 0 0 5px rgba(255, 0, 0, .8);
+          -moz-box-shadow: 0 0 5px rbba(255, 0, 0, .8);
+          -o-box-shadow: 0 0 5px rbba(255, 0, 0, .8);
+          -ms-box-shadow: 0 0 5px rbba(255, 0, 0, .8);
+          box-shadow:0 0 5px rgba(255, 0, 0, .8);
+	</style>	
+</head>
+
+<body>
+<section class="container">
+	<!-- part 1 -->
+	<h1>Tutorial Set 4</h1>
+	<p class="dent"><strong>In this tutorial...</strong></p>
+	<ul>
+		<!--li><a href="#e01">Exercise 1: Read and Reflect</a></li-->
+		<li><a href="#e02">Exercise 2: Create Text Files With Redirection</a></li>
+		<li><a href="#e03">Exercise 3: Display Contents of ASCII Text Files</a></li>
+		<li><a href="#e04">Exercise 4: Create Text Files with vi(m) Editor</a></li>
+		<li><a href="#e05">Exercise 5: Create Text Files with touch</a></li>
+		<li><a href="#e06">Exercise 6: Sort, Cut, and Paste Text Files</a></li>
+		<li><a href="#e07">Exercise 7: Compare Text Files</a></li>
+		<li><a href="#e08">Exercise 8: Working with Relational Tables</a></li>
+		<!--li><a href="#e09">Exercise 9: Working with MySQL</a></li-->
+	</ul>	
+	<p>&nbsp;</p>
+	
+	
+	<!--section id="e01">
+		<h2>Exercise 1: Read and Reflect
+		&nbsp;&nbsp; <a href="#top"><img src="../images/uiTabsArrow.png" /></a></h2>
+		<p>To help you develop your critical thinking and system thinking, consider the following questions after reading the material for Module 2:</p>
+		<ol>
+			<li></li>
+			<li></li>
+		</ol>
+		<p>&nbsp;</p>
+	</section-->		
+	
+	
+	<section id="e02">
+		<h2>Exercise 2:  Create Text Files With Redirection
+		&nbsp;&nbsp; <a href="#top"><img src="../images/uiTabsArrow.png" /></a> </h2>	
+		<ol>	
+			<li value="1">Create A HTML5 Web Page</li> 
+			<li class="highlight-4">
+~/lab5$ cat > index.html<br>
+&lt;!DOCTYPE html><br>
+&lt;html><br>
+&lt;head><br><code>Tab</code>
+&lt;title>Home Page&lt;title><br><code>Tab</code>
+&lt;meta charset=""><br>
+&lt;/head&gt;<br>
+&lt;body><br><code>Tab</code>
+&lt;p>Content goes here.&lt;/p><br>
+&lt;/body&gt;<br>
+&lt;/html><br>
+<code>Control+D</code><br>
+~/lab5$			
+			</li>
+			<li value="2">List the contents of the file to verify that it is intact: </li> <li class="highlight-4">~$ cat index.html</li>
+			<li value="3">Create a simple script</li> <li class="highlight-4">~/lab5$ cat > script1<br>#!/bin/bash
+			<br># this is a comment
+			<br>clear
+			<br>echo "This is my first script"
+			<br>date
+			<br>cal
+			<br>ls -l
+			<br><code style="font-size:10px;color:yellow;padding:0px 5px;">Control+D</code>
+			<br>~/lab5$</li>	
+			<li value="4">View the content of your script file: </li> <li class="highlight-4">~/lab5$  cat script1</li>		
+			<li value="5">Test your script: </li> <li class="highlight-4">~/lab5$ bash script1</li>
+			<li value="6">Make the file executable </li> <li class="highlight-4">~/lab5$ chmod 705 script1</li>
+			<li value="7">Run (execute) your script: </li> <li class="highlight-4">~/lab5$ script1</li>
+			<li value="8">Sometimes we need to specify the current directory to run a program </li> <li class="highlight-4">~/lab5$ ./script1</li>
+			<li value="9">Make a copy of your script in your bin directory </li> <li class="highlight-4">~/lab5$ cp script1 ../../bin</li>		
+		</ol>	
+		<p>&nbsp;</p>
+	</section>
+
+
+	
+	<section id="e03">
+		<h2>Exercise 3: Display Contents of ASCII Text Files 
+		&nbsp;&nbsp; <a href="#top"><img src="../images/uiTabsArrow.png" /></a> </h2>	
+		<p class="highlight-3"><img src="../images/exclamation.png" alt="">&nbsp;<strong>Display files: concatenate</strong> You have already been using the cat command to display the content of text files. </p>		
+		<ol>	
+			<li value="1">Try the following: </li>	<li class="highlight-4">~/lab5$ date > file1
+			<br>~/lab5$ cal > file2<br>~/lab5$ pwd > file3<br>~/lab5$ ls > file4<br>~/lab5$ cat file1 file2 file3 file4 </li>
+			<li value="2">How is the last output different from the following? Examine the manual page for the cat command, read the description and browse through the available options.</li> <li class="highlight-4">~/lab5$ cat file4 file3 file2 file1</li>
+			<li value="3">You can also save the result into yet another file, giving the order of concatenation: </li> <li class="highlight-4">~/lab5$ cat file3 file2 file4 file1 > file5</li>		
+		</ol>	
+		
+		<p class="highlight-3"><img src="../images/exclamation.png" alt="">&nbsp;<strong>Display Text Files -- heads or tails? :</strong> cat, more, less, head, tail. for non-ASCII files, see od, strings</p>
+		<ol>	
+			<li value="4">Create the following file: </li> <li class="highlight-4">~/lab5$ man bash > mpbash</li>	
+			<li value="5">mpbash is a very large file, therefore using cat command is not practical to display its content. There are view choices we have </li> <li class="highlight-4">~/lab5$ </li>		
+			<li value="6">To view the first ten lines of a file: </li> <li class="highlight-4">~/lab5$ head mpbash</li>
+			<li value="7">To view the last ten lines of a file: </li> <li class="highlight-4">~/lab5$ tail mpbash</li>
+			<li value="8"> By default, the command displays 10 lines. To specify the number of lines you wish to display, use the –N option, where N is replaced by the number of lines to display. Examine the manual pages for the commands head and tail, read the description and browse through the available options.</li>
+			<li class="highlight-4">~/lab5$ head -25 mpbash<br>~/lab5$ tail -100 mpbash</li>	
+		</ol>	
+		
+		<p class="highlight-3"><img src="../images/exclamation.png" alt="">&nbsp;<strong>Display non-Text Files:</strong>file,  od, strings</p>
+		<ol>			
+			<li value="9">To examine what the file type is use the command file: </li> <li class="highlight-4">~/lab5$ file mpbash file1 file2 file5</li>
+			<li value="10">Copy the files from ~bajcar/public/datafiles to your current directory. Examine the file types.</li> 
+			<li value="11">Examine the files with the od command. Reference the manual page for more details.  </li> <li class="highlight-4">~/lab5$ od file1<br>~/lab5$  od -x file1<br>~/lab5$  od -b file1<br>~/lab5$  od -x /bin/ls</li>
+			<li value="12">Examine files with the strings command. Reference the manual page for more details. </li> <li class="highlight-4">~/lab5$ strings file1<br>~/lab5$  strings book14.gif<br>~/lab5$  strings /bin/chmod</li>	
+		</ol>			
+		<p>&nbsp;</p>
+	</section>
+
+	
+	<section id="e04">
+		<h2>Exercise 4: Create and modify text files with vi(m) Editor 
+		&nbsp;&nbsp; <a href="#top"><img src="../images/uiTabsArrow.png" /></a> </h2>	
+		<p class="highlight-3"><img src="../images/exclamation.png" alt="">&nbsp;<strong>Two Modes:</strong> command and insert</p>
+		<p><img src="../images/exclamation.png" alt="">&nbsp;<strong>Complete the Tutorial: Using vim to Create and Edit a File</strong> (Chapter 6 of "A Practical Guide to Linux Commands, Editors, and Shell Programming" by Mark G. Sobell, Third Edition, available on Safari Books, Library Services - ISBN: 0-13-308504-X)</p>
+		<ol>	
+			<li value="1">To start the vi editor, give the command vi followed by the file name you wish to edit. If the file exists, it will open it, if it does not exist, it will create a new file for you. </li> <li class="highlight-4">~/lab5$ vi filename</li>
+			<li value="2">When you enter the editor, you always start in the command mode. If you just created a new file, it will display as follows. Note the cursor sits on the first character on the first line, there is nothing following it (the tildas indicate no lines.  </li>	<li class="highlight-4"><span style="color:lightgreen;background-color:lightblue;">&#9646;</span>
+			<br>~
+			<br>~
+			<br>~
+			<br>~
+			<br>"filename" [New File]
+			</li>
+			<li value="3">If you start typing text, it appears that nothing is happening. With the exceptions of certain characters being commands, and since you are in the command mode, these characters will be interpreted as commands. Try i, I, a, A, o, O. Any one of these puts you into the insert mode and it will tell you at the bottom that you are in insert mode. </li> <li class="highlight-4"><span style="color:lightgreen;background-color:lightblue;">&#9646;</span>
+			<br>~
+			<br>~
+			<br>~
+			<br>~ 
+			<br>-- INSERT --			 
+			</li>
+				
+			<li value="4">In the insert mode, you can type content of the document: </li> <li class="highlight-4">Hello World!
+			<br>Today is a great day.
+			<br>one more line<span style="color:lightgreen;background-color:lightblue;">&#9646;</span>
+			<br>~
+			<br>~
+			<br>~
+			<br>~ 
+			<br>			
+			</li>		
+			<li value="5">When you finish you input and want to save the file, you need to first exit the insert mode with the <code style="font-size:14px;color:black;padding:0px 5px;font-weight:bold">ESC</code> key and then use a last line command <code style="font-size:14px;color:black;padding:0px 5px;font-weight:bold">:w</code> </li> <li class="highlight-4">Hello World!
+			<br>Today is a great day.
+			<br>one more line<span style="color:lightgreen;background-color:lightblue;">&#9646;</span>
+			<br>~
+			<br>~
+			<br>~
+			<br>~ 
+			<br>:w
+
+			</li>
+			<li value="6">After the file is saved, the information shows at the bottom. You need to enter the insert mode (i,I,a,A,o,O...) to continue entering content. </li> <li class="highlight-4">Hello World!
+			<br>Today is a great day.
+			<br>one more line<span style="color:lightgreen;background-color:lightblue;">&#9646;</span>
+			<br>~
+			<br>~
+			<br>~
+			<br>~ 
+			<br>"filename" 3L, 56C written </li>
+			<li value="7">To modify content, stay in the command mode, and use the commands here. See "A Practical Guide ..." </li> 
+			<li value="8">How do you change a single character under the cursor? </li> 
+			<li value="9">How do you delete a single character under the cursor? </li>
+			<li value="10">How do you delete a word? two words? five words?</li>
+			<li value="11">How do you delete a single line? two lines? ten lines?</li>
+			<li value="12">How do you quit? save and quit? quit without saving?</li>
+			<li value="13">How do you join two lines into one? </li> 
+			<li value="14">How do you copy a line? a whole block of lines?</li> 
+			<li value="15">How do you move a line? a whole block of lines?</li> 
+			<li value="16">Use <code>vi list1</code> to create a file with the following content:</li> 
+				<li class="highlight-4">Steven Spielberg
+					<br>Dean Martin
+					<br>Michael Keaton
+					<br>Judith Light
+					<br>Peter Jackson
+				</li>
+			<li value="17">Use <code>vi list2</code> to create a file with the following content:</li>
+				<li class="highlight-4">Jessie Massie
+					<br>Susan Harris
+					<br>David Isham
+					<br>Timothy O'Neil
+				</li>			
+			<li value="18">Use <code>vi cust.data</code> to create a file with the following content:</li>
+				<li class="highlight-4">Susan Cumming:46:27503:paint:24:428.90
+					<br>Carolyn Isham:372:48297:brushes:426:302.05
+					<br>Rick Miller:434:60943:paint:121:269.50
+				</li>				
+			<li value="19">Use <code>vi name.data</code> to create a file with the following content:</li>
+				<li class="highlight-4">1234:Johnson:Bob
+					<br>4321:Jones:Jim
+					<br>5678:Smith:Dave
+					<br>7777:Brown:Tim
+					<br>8765:Martin:Peter
+				</li>			
+			<li value="20">Use <code>vi prod.data</code> to create a file with the following content:</li>
+				<li class="highlight-4">4321:whatchymacallits:200
+					<br>4321:gizmos:500
+					<br>5678:thingamagigs:150
+					<br>5678:widgets:2000
+					<br>8765:thingees:3500
+				</li>			
+		</ol>	
+		<p>&nbsp;</p>
+	</section>
+
+	
+	<section id="e05">
+		<h2>Exercise 5: Create Text Files with touch 
+		&nbsp;&nbsp; <a href="#top"><img src="../images/uiTabsArrow.png" /></a> </h2>	
+		<p class="highlight-3"><img src="../images/exclamation.png" alt="">&nbsp;<strong>touch command:</strong> allows you to change last access and last modification dates. without any options, you can create an empty file. If the file exists, only the dates will be "touched".</p>		
+		<ol>	
+			<li value="1">Change to /etc directory and try to create a new file. What happened?  Were you able to create the file? Why or why not? </li>	<li class="highlight-4">~/lab5$ cd /etc<br>/etc$ touch file5</li>
+			<li value="2">Although you can use touch to create empty files, what is the main function of the touch command?  </li>
+			<li value="3">Scenario: you are preparing to distribute a set of files-music, software, whatever-and you want them to all have the same time and date; change to the directory that holds the files and enter:
+ </li> <li class="highlight-4">~/lab5$ touch *</li>
+			<li value="4">All the files matched by the * wildcard now have the same modification time and access time. To change the modification time only, use the -m option. To change the access time only, use -a option. To use a specific time and date instead of the current time, use -t followed by the format [[YY]YY]MMDDhhmm[.ss]. See manual page for more details. </li> <!--li class="highlight-4">touch -m -t 08311729 file1
+						<br>touch -a -t 200910021030 file2</li-->		
+			<li value="5">By default, ls command displays the modificatin time.  How can you view the access date and time? </li>
+			<li value="6">You can create more than one new file at a time
+ </li> <li class="highlight-4">~/lab5$ touch data1 data2 data3 temp extra</li>
+			<li value="7">When you are updating date and time for a number of files, and you don't want touch to create any new files, use the -c (no create) option: </li> <li class="highlight-4">~/lab5$ touch -c backup1 backup2 backup3 backup4</li>		
+		</ol>	
+		<p>&nbsp;</p>
+	</section>	
+
+	
+	<section id="e06">
+		<h2>Exercise 6: Sort, Cut, and Paste Text Files
+		&nbsp;&nbsp; <a href="#top"><img src="../images/uiTabsArrow.png" /></a> </h2>	
+		<p class="highlight-3"><img src="../images/exclamation.png" alt="">&nbsp;<strong>sort command:</strong> Examine the manual pages for cut, sort, and paste, and note their descriptions and what the various options used in these exercises do for more details.</p>		
+		<ol>	
+			<li value="1">Copy the music.data from ~bajcar/public/datafiles. Data has the following sequence of fields, separated by colon (delimiter)<br><strong>Reference Number:Performer Name:Song Title:CD Title:Genre:Year Of Release</strong>.</li>	
+			<li value="2">Sorting files with no options. Note that the sort is alphabetical, starting with the first column of characters. </li> <li class="highlight-4">~/lab5$ sort music.data </li>
+			<li value="3">Extract the second, fourth, fifth, and sixth column from the file only. (this concept is similar to <mark>&nbsp;projection&nbsp;</mark> in database design. Note the file is delimited by colons: </li> <li class="highlight-4">~/lab5$ cut  -d:  -f2-4,6  music.data</li>	
+			<li value="4">Extract the first field:
+ </li> <li class="highlight-4">~/lab5$ cut  -d:  -f1  music.data</li>		
+			<li value="5">Display the third column: </li> <li class="highlight-4">~/lab5$ cut  -d:  -f3  music.data</li>
+			<li value="6">What are the results of the following commands? </li> <li class="highlight-4">~/lab5$ cut  -d:  -f2-3  music.data<br>~/lab5$ cut  -d:  -f1,2-3  music.data</li>
+			<li value="7">Sort the file alphabetically starting at the beginning of each line and save the result to  a file called music.new:
+ </li> <li class="highlight-4">~/lab5$ sort   -t:  -o  music.new  music.data</li>
+			<li value="8">Sort the file on the fourth file and redirect the results to file called music.sorted </li> <li class="highlight-4">~/lab5$ sort   -t:  -k  4  music.data  >  music.sorted</li>
+			<li value="9">Display the files music.new and music.sorted. Verify the sort results for each file. </li> 
+			<li value="10">9. What if you wanted to sort numerically? Consult the manual page. </li> 	
+			<li value="11">Find the files list1 and list2 that you created earlier.  Now try the following commands and note the results: </li> <li class="highlight-4">~/lab5$ paste  list1  list2
+								  <br>~/lab5$ paste  paste  -s  list2
+								  <br>~/lab5$ paste  -s  -d'\t\n'  list1
+			</li>	
+			<li value="12">Combine files using the cat command: </li> <li class="highlight-4">~/lab5$ cat  list1  list2  >  list3li>	
+			<li value="13">Combine files using the paste command </li> <li class="highlight-4">~/lab5$ paste  list1  list2  >  list4</li>	
+			<li value="14">Examine the results and compare. What is the difference between list3 and list4 (if any)? </li> <li class="highlight-4">~/lab5$ cat list3<br>~/lab5$ cat list4</li>
+			<li value="1">12.  Using the cust.data you created earlier , execute the following set of commands and note the results after each. What results did you observe with names, prices, and orders? </li>	<li class="highlight-4">~/lab5$ cut -d: -f1 customer.data > names
+			<br>~/lab5$ cat names
+			<br>~/lab5$ cut -d: -f6 customer.data > prices
+			<br>~/lab5$ cat prices
+			<br>~/lab5$ cut -d' ' -f2 names | paste - prices > orders
+			<br>~/lab5$ cat orders</li>
+		</ol>	
+		<p>&nbsp;</p>
+	</section>
+	
+	
+	<section id="e07">
+		<h2>Exercise 7: Compare Text Files
+		&nbsp;&nbsp; <a href="#top"><img src="../images/uiTabsArrow.png" /></a> </h2>	
+		<p class="highlight-3"><img src="../images/exclamation.png" alt="">&nbsp;<strong>Compare files:</strong> 7 Compare Text Files1. List some reasons why you, or a programmer or an end user, would need to compare  the content of two or more files.</p>		
+		<ol>	
+			<li value="1">Create files called exercise and success </li>	
+			<li value="2">Sort the file exercise and name the new file exer </li> 
+			<li value="3">Sort the file success and name the new file succ  </li> 
+			<li value="4">Compare the files exercise and success using the command comm. What did you find? Read the manual page for comm and explain your results.  </li> <li class="highlight-4">~/lab5$ comm  exercise  success
+				<br>~/lab5$ comm  -12  exercise  success
+				<br>~/lab5$ comm  -13  exercise  success
+				<br>~/lab5$ comm  -23  exercise  success
+			</li>		
+			<li value="5">Compare the sorted files exer and succ using the command comm. What did you find? How do these results differ from the results of the previous question? </li> 
+			<li class="highlight-4">~/lab5$ comm  exer succ
+			<br>~/lab5$ comm  -12  exer succ
+			<br>~/lab5$ comm  -13  exer succ
+			<br>~/lab5$ comm  -23  exer succ		
+			</li>
+			<li value="6">Read the diff manual page. Examine the results and explain. How is this useful to a Computer Programmer working with various versions of the same code? </li> <li class="highlight-4">
+			~/lab5$ diff  exercise  success
+			<br>~/lab5$ diff  -ibw  exercise  success
+			<br>~/lab5$ diff  -u  exercise  success
+			</li>
+			<li value="7">
+When you use diff without any options, it produces a series of lines containing Add (a), Delete (d), and Change (c) instructions. Each of these lines is followed by the lines from the file you need to add to, delete from, or change, respectively, to make the files the same. A less than symbol (<) precedes lines from file1. A greater than symbol (>) precedes lines from file2. The diff output appears in the format shown in Table VI-14. A pair of line numbers separated by a comma represents a range of lines; a single line number represents a single line. <a href="http://proquestcombo.safaribooksonline.com.library.sheridanc.on.ca/book/operating-systems-and-server-administration/linux/9780133085129/diff-displays-the-differences-between-two-text-files/ch18lev2sec92" target="_blank">p.778 of A Practical Guide, Sobell</a> </li> 
+
+			<!--li value="8"> </li> <li class="highlight-4">~/lab5$ </li>
+			<li value="9"> </li> <li class="highlight-4">~/lab5$ </li-->		
+		</ol>	
+		<p>&nbsp;</p>
+	</section>
+
+	
+	<section id="e08">
+		<h2>Exercise 8: Working with Relational Tables &nbsp;&nbsp; <a href="#top"><img src="../images/uiTabsArrow.png" /></a> </h2>
+		<ol>
+			<li>Examine the manual page for join and pr. You may wish to review the commands sort, cut, and paste as well, since they also may help in manipulating tables.
+		</li>
+			<li>Also, review the exercises with cat, sort, cut, and paste. These are related to manipulating files.</li>
+			<li>Filter is a class of commands that take advantage of the shell's redirection feature.</li>
+		</ol>
+
+		<p class="highlight-3"><img src="../images/exclamation.png" alt="">&nbsp;<strong>Example A:</strong> 
+		requires two (2) data files, birthdays and gifts. (don’t need to specify the –t option) and the first field in both files is common:
+		Assuming all files are stored in the same directory.</p>
+		<pre class="brush: bash; highlight: [6];" title="Data file called birthdays (columns delimited by tab character)">
+		Al        May-10-1987
+		Barbara   Feb-2-1992
+		Dave      Apr-8-1990
+		Frances   Oct-15-1991
+		George    Jan-17-1992</pre>
+		and
+		<pre class="brush: bash; highlight: [6];" title="Data file called gifts (columns delimited by tab character)">
+		Al        books
+		Barbara   music
+		Dave      chocolate
+		Frances   camera
+		George    money</pre>
+		<p>Run the following set of commands, <strong>one at a time</strong>, and note the results. Explain what each does.</p>
+		<pre class="brush: bash; highlight: [1,2,3,4,5,6,7,8,9];" title="">
+		join birthdays gifts
+		join –a1 birthdays gifts
+		join –a2 birthdays gifts
+		join –a1 –a2 birthdays gifts
+		join –v1 birthdays gifts
+		join –v2 birthdays gifts
+		join –v1 –v2 birthdays gifts
+		join birthdays gifts > shopList
+		pr –h ‘MY SHOPPING LIST FOR BIRTHDAY GIFTS’ -e:11 shopList</pre>
+				
+		<p class="highlight-3"><img src="../images/exclamation.png" alt="">&nbsp;<strong>Example B:</strong> 
+		Create the files names.data and products.data with the given content. If you already have them, you can use the existing files. 
+		<pre class="brush: bash; highlight: [6];" title="Data file called names.data (columns delimited by tab character)">
+		1234:Johnson:Bob
+		4321:Jones:Jim
+		5678:Smith:Dave
+		7777:Brown:Tim
+		8765:Martin:Peter</pre>
+		 and
+		<pre class="brush: bash; highlight: [6];" title="Data file called products.data (columns delimited by colon character)">
+		4321:whatchymacallits:200
+		4321:gizmos:500
+		5678:thingamagigs:150
+		5678:widgets:2000
+		8765:thingees:3500</pre>
+		<p>Note that the first field contains the same information in both tables, which can be used as a common field. Run the following set of commands, one at a time, note the results and explain what each does. Refer to manual pages for join and pr as appropriate.</p>
+		<pre class="brush: bash; first-line: 13; highlight: [13,14,15,16,17,18,19,20];" title="">
+		join names.data products.data
+		join –t: names.data products.data
+		join –t: products.data names.data
+		join –t: -o 1.2 2.3 2.2 names.data products.data > file6
+		join –t: names.data products.data > file7
+		pr –d –h ‘Products Purchased’ file6
+		pr –h ‘CUSTOMER REPORT’ -e:11 file7</pre>
+		<p>&nbsp;</p>
+	</section>
+
+	
+	<!--section id="e09">
+		<h2>Exercise 9: Working with MySQL
+		&nbsp;&nbsp; <a href="#top"><img src="../images/uiTabsArrow.png" /></a></h2>
+		<p  class="highlight-1">under construction</p>
+		<p>&nbsp;</p>
+	</section-->		
+	
+</section>	
+</body>
+</html>

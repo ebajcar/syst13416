@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Review</title>
+<style type="text/css">
+@import url(http://fonts.googleapis.com/css?family=Allan:700);
+body {
+	background : url(../images/Sheridan-Pattern-02-lightblue.jpg);
+	margin: 0 auto;
+	font-size: 16px;
+	width: 96%;
+}
+div {
+	border: 1px silver dotted;
+}
+
+/* grid */
+.row {
+  margin: 0 -10px;
+  margin-bottom: 10px;
+}
+.row:last-child {
+  margin-bottom: 0;
+}
+[class*="col-"] {
+  padding: 10px;
+ 	background-color: white;
+	border-radius: 10px; 
+}
+	header h1, header h2 {
+		font-size: 6em;
+		margin: 0;
+		color: orange;
+		text-align: center;
+		text-shadow: 1px 1px 1px black, 4px 4px 6px lightgray;
+		font-weight: bold;
+	}	
+	header h2 {
+		font-size: 3em;
+	}		
+		h2,h3 {
+		margin : 0px 0 10px;
+		padding : 10px 0 0 0;
+		font-family: Allan, helvetica, arial, sans-serif;
+		font-size: 2em;
+		color: #003767;
+		font-weight: bold;
+		line-height: 20px;
+		border: none;
+		background: rgba(255, 255, 255, 0.2);
+	}
+	h3 {
+		padding : 0;
+		margin: 0;
+		font-size: 1.4em;
+	}
+	h4 {
+		font-size: 1.2em;
+	}
+	li, p {
+		font-size: 1.2em;
+	}	
+	ol {
+    -webkit-column-count: 2; /* Chrome, Safari, Opera */
+    -moz-column-count: 2; /* Firefox */
+    column-count: 2;
+
+    -webkit-column-gap: 40px; /* Chrome, Safari, Opera */
+    -moz-column-gap: 40px; /* Firefox */
+    column-gap: 40px;
+
+    -webkit-column-rule: 2px outset #FFCC33; /* Chrome, Safari, Opera */
+    -moz-column-rule: 2px outset #FFCC33; /* Firefox */
+    column-rule: 2px outset #FFCC33;
+	} 
+@media all and ( min-device-width: 800px ) and ( min-width: 800px ){	
+
+	
+		figure {
+			padding: 0;
+			margin: 0;
+		}	
+	  .row {
+		display: table;
+		table-layout: fixed;
+		width: 100%;
+	  }
+	  [class*="col-"] {
+		display: table-cell;
+	  }
+	 
+	  /* set col widths */
+	  .col-2-3 {
+		width: 66.66%;
+	  }
+	  .col-1-2 {
+		width: 50%;
+	  }
+	  .col-1-3 {
+		width: 33.33%;
+	  }
+	  .col-1-4 {
+		width: 25%;
+	  }
+	  .col-1-8 {
+		width: 12.5%;
+	  }	
+	  .col-2-5 {
+		width: 40%;
+	  }
+	  .col-1-5 {
+		width: 20%;
+	  }		  
+	/* Highlighted Paragraphs */
+	.highlight-1, .highlight-2, .highlight-3 {
+		-moz-border-radius : 4px;
+		-webkit-border-radius : 4px;
+		padding : 5px 10px;
+	}
+		.highlight-3 {
+			background : #ffb699;
+			border : 1px dotted #FF9966;	
+		}
+		.highlight-2 {
+			background : #FFFF99;
+			border : 1px dotted #FFCC33;	
+		}
+		.highlight-1 {
+			background : #CCFF99;
+			border : 1px dotted #CCCC33;
+		}		  
+		h3:hover {
+			background-color:#EEE8AA;
+		}
+		a:after {
+			content: " ( " attr(href) " ) ";
+		}			
+	}
+	img {
+		width: 100%;
+	}
+	</style>
+</head>
+<body onload="displayCD()">
+	<header>
+		<h1>Final Exam Review<h1>
+		<h2>SYST13416 Introduction to Linux Operating System - Winter 2015<h2>
+	</header> 
+	<h1>Final Exam Information</h1>
+	<div class="row">
+		<div class="col-1-8">
+			<h2>Date, Time, Place</h2><h4>Week 14 (April 22 and 24)</h4><h4>Regular classroom</h4><h4>Length: 70 minutes</h4>
+		</div>
+		<div class="col-1-8">
+			<h2>Question Types</h2><h4>~ 50% multiple choice and true/false</h4><h4>~ 50% short answers and coding</h4>
+		</div>		
+		<div class="col-1-4">
+			<h2>Content</h2><h4 class="highlight-2">The final exam covers the entire course, with focus on the second half.</h4>
+			<h4 class="highlight-3" onmouseover="highlight(1,9)" onmouseout="highlight(0,9)">Reminder: by the end of this course, you need to be able to demonstrate the learning outcomes</h4>
+		</div>
+	  <div class="col-1-8">
+			<h2>Test Format</h2><h4>All questions are answered on test paper.Write clearly and submit ALL papers provided.</h4><h4>Bring lots of writing material&mdash;pens, pencils, erasers, ruler... </h4>    
+	  </div>		
+		<div class="col-1-8">
+			<h2>Closed Book</h2><h4>The final exam is a closed book test and therefore you have NO ACCESS to computers, phones, books, printed material, and online material.</h4>
+		</div>
+		<div class="col-1-8">
+			<h2>Hand-written Notes</h2><h4>You are permitted to use your handwritten, original notes! (no reproductions, no printouts). YOU KEEP YOUR NOTES, DO NOT SUBMIT.</h4>
+		</div>
+
+	  <div class="col-1-8"><h2>Academic honesty</h2>
+				<h4>If you are caught with any photocopied or printed material, ALL notes will be taken away and your exam mark may be a subject to penalty!</h4>
+	  </div>
+	</div><!-- /.row -->
+	
+	<div class="row">
+	
+		
+
+		
+		<div class="col-2-3" id="m9">
+			<h2 class="highlight-3">Course Learning Outcomes</h2>
+				<ol start="1" type="1">
+					<li>1. Summarize the history of the UNIX Operating System</li>
+					<li>2. Compare characteristics of UNIX with other operating systems</li>
+					<li>3. Use command-line and GUI tools to interact with the OS</li>
+					<li>4. Illustrate how UNIX manages files and directories</li>
+					<li>5. Restate main differences between major popular shells</li>
+					<li>6. Use file system tools</li>
+					<li>7. <strong>Obtain information about other users and the user environment</strong></li>
+					<li>8. <strong>Customize individual user environments</strong></li>
+					<li>9. Use ASCII text editors to create data file and scripts</li>
+					<li>10. <strong>Use redirection, pipes and filters to make commands more efficient</strong></li>
+					<li>11. <strong>Solve simple problems by programming in shell scripting languages</strong></li>
+					<li>12. <strong>Monitor LINUX / UNIX processes</strong></li>
+				</ol>
+	
+		</div>
+		
+
+		<div class="col-1-3">
+			<h2>Table of Contents</h2>
+			<h3 onmouseover="highlight(1,1)" onmouseout="highlight(0,1)">1. The Essence of Unix</h3>
+			<h3 onmouseover="highlight(1,2)" onmouseout="highlight(0,2)">2. Linux Command Line</h3>
+			<h3 onmouseover="highlight(1,3)" onmouseout="highlight(0,3)">3. Linux File System</h3>
+			<h3 onmouseover="highlight(1,4)" onmouseout="highlight(0,4)">4. Linux Files</h3>
+			<h3 onmouseover="highlight(1,5)" onmouseout="highlight(0,5)" id="toc4">5. Processes and Utilities</h3>
+			<h3 onmouseover="highlight(1,6)" onmouseout="highlight(0,6)" id="toc5">6. Bash Programming</h3>
+			<h3 onmouseover="highlight(1,7)" onmouseout="highlight(0,7)" id="toc5">7. Filtering with Regular Expressions</h3>
+		</div>
+	</div><!-- /.row -->
+
+	<div class="row">
+	  <div class="col-1-4">
+		<h2 class="highlight-1">1. The Essence of Unix</h2>
+		<ul id="m1">
+			<li><a href="reviewMidterm.html" target="_blank">Same as midterm review</a></li>
+		</ul>	
+		<h2 class="highlight-1">2. Linux Command Line</h2>
+		<ul id="m2">
+			<li><a href="reviewMidterm.html" target="_blank">Same as midterm review</a></li>
+		</ul>		
+		<h2 class="highlight-1">3. Linux File System</h2>
+		<ul id="m3">
+			<li><a href="reviewMidterm.html" target="_blank">Same as midterm review</a></li>
+		</ul>	  
+		<h2 class="highlight-1">4. Linux Files</h2>
+		<ul id="m4">
+			<li><a href="reviewMidterm.html" target="_blank">Same as midterm review</a></li>
+		</ul>	  
+		<h2 class="highlight-2">5. Processes and Utilities</h2>
+		<ul id="m5">
+			<li><a href="reviewMidterm.html" target="_blank">Same as midterm review</a></li>
+		</ul>	  
+	  </div>	  
+		<div class="col-1-3" id="m6">
+			<h2 class="highlight-2">6. Bash Programming</h2>
+				<h4>Complete tutorials</h4>
+				<ul>
+					<li><a href="tut07.html" target="_blank">Tutorial 7</a></li>
+					<li><a href="tut08.html" target="_blank">Tutorial 8</a></li>
+					<li><a href="tut09.html" target="_blank">Tutorial 9</a></li>
+					<li><a href="problem1.html" target="_blank">Problem 1 - copying a file.</a></li>
+					<li><a href="problem2.html" target="_blank">Problem 2 - adding two numbers.</a></li>
+				</ul>
+				<h4>Concepts and anatomy of ...</h4>
+				<ul>
+					<li>Shell Scripting (sha-bang, comments, script files vs. command line)</li>
+					<li><strong>Common Shell Features </strong>(history, tokenizing, quoting, aliases, redirection, pipes, processing, variables, command substitution, sequences, ...)</li>
+					<li>What is a <strong>variable</strong>? How do you create variables in bash? positional parameters: $#, $0, $1,... environment variables: PS1, PATH,...;</li>
+					<li>What functions are available in the <strong>shell library</strong>? </li>
+					<li>What is an <strong>operator</strong>? what operators are available? math, logical, assignment, redirect, pipe, arithmetic, conditional (string, number, file, ...)</li>
+					<li>What is a <strong>control structure</strong>? ,  control structures:while, for...in, case, if;</li>
+					
+					
+					<li>Review the following commands: <strong>let, bc, touch, chmod, test, echo, alias, expr, let, read, bash, find, bash, sed, grep, egrep, jobs, ps, df, du, free</strong> </li>
+					<li>Can you figure out what the following commands do? (in some there are intentional errors; if you fix something, note what it was!)
+<pre>
+for name in 1 2 3 4 5; do; echo -n name; done
+alias dir="ls -lia"
+find ~ -name file?
+echo 'The average pay is $100'
+a=0; while [ $a &lt; 5 ]; do echo $a; let a=$a+1; done					
+<pre></li>				
+</ul>	
+		</div>
+	  <div class="col-1-3" id="m7">
+			<h2 class="highlight-2">7. Filtering with Regular Expressions</h2>
+			<h4>Complete tutorials</h4>
+				<ul>
+					<li><a href="tut10.html" target="_blank">Tutorial 10</a></li>
+					<li><a href="tut11.html" target="_blank">Tutorial 11</a></li>
+				</ul>
+				<h4>Concepts and anatomy of ...</h4>
+				<ul>
+					<li>What is a <strong>regular expression</strong>? (BRE:basic regex, ERE:extended regex)</li>
+					<li>What are the major components? <strong>anchors</strong>? <strong>character sets</strong>? <strong>modifiers?</strong></li>
+					<li>Can you figure out what the following commands do? (in some there are intentional errors; if you fix something, note what it was!)
+<pre>
+sed s/,/,\ /g
+sed 2,5d somefile
+grep -v abc databook
+sed 's/march/april/g' filex
+sed 's/\/usr\/local\/bin/\/common\/bin/' &lt;old >new
+grep '[a-zA-Z][0-9]\{3\}' somefile
+egrep '^le[a-z]{1,13}ng$' somefile				
+<pre></li>					
+				</ul>		  
+	  </div>	  
+	</div><!-- /.row -->
+
+	
+	
+	<footer><address>Your name &copy; | SYST13416 Introduction to Linux Operating System | Sheridan College</address></footer>
+	
+	
+  
+  <script type="text/javascript"> 
+
+  var _plm = _plm || [];
+  _plm.push(['_btn', 3518]); 
+  _plm.push(['_loc','caon0493']);
+  _plm.push(['location', document.location.host ]);
+
+  (function(d,e,i) {
+  if (d.getElementById(i)) return;
+  var px = d.createElement(e);
+  px.type = 'text/javascript';
+  px.async = true;
+  px.id = i;
+  px.src = ('https:' == d.location.protocol ? 'https:' : 'http:') + '//widget.twnmm.com/js/btn/pelm.js?orig=en_ca';
+  var s = d.getElementsByTagName('script')[0];
+
+  var py = d.createElement('link');
+  py.rel = 'stylesheet'
+  py.href = ('https:' == d.location.protocol ? 'https:' : 'http:') + '//widget.twnmm.com/styles/btn/styles.css'
+
+  s.parentNode.insertBefore(px, s);
+  s.parentNode.insertBefore(py, s);
+})(document, 'script', 'plmxbtn');</script>
+
+<script type="text/javascript">
+	function highlight(hov,val) {
+		document.getElementById('m'+val).style.backgroundColor = (hov) ? '#FAFAD2' : '';
+		document.getElementById('m'+val).style.borderWidth =  (hov) ? '3px' : '';
+		document.getElementById('m'+val).style.borderStyle =  (hov) ? 'solid' : '';
+		document.getElementById('m'+val).style.borderColor =  (hov) ? 'orange' : '';
+	}
+</script>
+
+<script>
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.open("GET","cdcat.xml",false);
+xmlhttp.send();
+xmlDoc=xmlhttp.responseXML; 
+
+x=xmlDoc.getElementsByTagName("CD");
+i=0;
+
+function displayCD()
+{
+artist=(x[i].getElementsByTagName("ARTIST")[0].childNodes[0].nodeValue);
+title=(x[i].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue);
+year=(x[i].getElementsByTagName("YEAR")[0].childNodes[0].nodeValue);
+txt="Artist: " + artist + "<br>Title: " + title + "<br>Year: "+ year;
+document.getElementById("showCD").innerHTML=txt;
+}
+
+function next()
+{
+if (i<x.length-1)
+  {
+  i++;
+  displayCD();
+  }
+}
+
+function previous()
+{
+if (i>0)
+  {
+  i--;
+  displayCD();
+  }
+}
+</script>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Assignment 3</title>
+	
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"> 
+    <link href='https://fonts.googleapis.com/css?family=Ubuntu+Mono' rel='stylesheet' type='text/css'>
+ 	<link rel="stylesheet" type="text/css" href="../css/icons.css" />   
+    <link type="text/css" rel="Stylesheet" href="tutorials.css"/>
+	<link type="text/css" rel="Stylesheet" href="styles/shCoreDefault.css"/>
+	<link type="text/css" rel="Stylesheet" href="styles/shThemeDefault.css"/>	
+	<script type="text/javascript" src="scripts/shCore.js"></script>
+	<script type="text/javascript" src="scripts/shBrushJScript.js"></script>
+	<script type="text/javascript" src="scripts/shBrushXml.js"></script>
+	<script type="text/javascript" src="scripts/shBrushCss.js"></script>
+	<script type="text/javascript" src="scripts/shBrushBash.js"></script>
+	<script type="text/javascript">SyntaxHighlighter.all();</script>
+    <style>
+	
+    </style>
+</head>
+
+<body>
+<section class="container">
+	<!-- part 1 -->
+	<h1>Assignment 3 <small>SYST13416 Introduction to Linux Operating System</small></h1>
+	<hr>
+
+
+    <p><span class="lead">Write a bash script called rmv (no extension) that</span> will provide users with a safe way to delete files and directories by mimicking the trashcan in Windows. The user can run the utility with the following options:</p>
+    <pre class="brush: bash;">
+rmv -d[elete] -e[mpty] -h[elp] -l[ist] file1 [file2 [file3 [file4]]]</pre>
+
+    <p>In other words, the user can delete up to four (4) objects, empty the trashcan, get help, and display the listing of trashcan. Examples of how the user would run the command:</p>
+<pre class="brush: bash;">
+rmv –d  some/path/file1  file2  ../another/path/file3
+rmv –e 
+rmv –h
+rmv -l</pre>
+    <p>&nbsp;</p>
+    <p>Your utility should create a hidden directory called trash, if it does not exist, in the user’s home directory.
+
+    <p>You may wish to use the bash shell getopts comments to look at the command line for any options. If a matching letter is found by a case statement, the script commands up to the two semi-colons are executed.
+
+    <p><span class="btn btn-primary">Option <kbd>d[elete]</kbd></span>: When the user selects to delete up to four files, your utility will move those files from their current locations to the trashcan. Allow the user to provide pathnames to each file (in other words, the files do not need to be from the same directory). If your utility allows the user to specify regular files only, the maximum grade for the assignment can be 80%. If your utility handles the removal of directories in addition to regular files, the maximum grade can be 100% or higher.
+
+    <p><span class="btn btn-primary">Option <kbd>e[mpty]</kbd></span>: when the user selects to empty the trashcan, prompt the user with three (3) options:<p>
+	<p class="highlight-4">
+		Do you wish to empty the trashcan?<br>
+        f) empty the trash<br>
+        y) empty the trash inter-actively<br>
+        n) abort emptying trash<br>        
+	</p>
+    <p>Then your utility will empty the entire content of the trashcan, when user selects the option f; when the user selects option  y, your utility will prompt the user for each file (and directory) and delete only those the user selects to delete; and abort the removal process when the user selects the option n.</p>
+
+    <p><span class="btn btn-primary">Option <kbd>l[ist]</kbd></span>: When the user selects to list the content of the trashcan, provide the long listing of the trashcan. (If your utility handles directories, then your listing should include content of subdirectories). BONUS (5%): have your utility determine the length of the listing, it is longer than what fits on one screen, allow the user to page through the listing (back and forth).</p>
+    <p><span class="btn btn-primary">Option <kbd>h[elp]</kbd></span>: When the user selects help option, or the user does not provide valid option or incorrect number of arguments, display message that contains information about the program, including name, author, version, short description, and instructions how to use the utility.  Make it user friendly.</p>
+
+    <p>Consider when it is appropriate to clear the screen in your utility.  This is part of making the utility easy to use. </p>
+
+    <p>Consider carefully what names you choose based on the Linux namespace and naming conventions.</p>
+
+    <p>In addition to the help documentation, make sure you document your code well, don’t forget to include prolog (header) and inline comments explaining how your code works.
+    <p>Use proper indentation to make your code easy to read.</p>
+    <hr>
+        <h4>When you are ready to submit:</h4>
+    <dl class="dl-horizontal">
+        <dt class="btn btn-warning">Step 1</dt>
+        <dd>
+            <p>Attach an electronic code printout (Use proper conventions.) of rmv script file, called <code>userid_rmv.pdf</code> to the SLATE Dropbox.  </p>	
+        </dd>
+        <dt class="btn btn-warning">Step 2</dt>
+        <dd>
+            <p>In the Comments area of the SLATE Dropbox, provide pathname to the file ( will be in the form of <code>~userid/bin/rmv</code> ) make sure I can read and execute it.  </p>
+            <hr>	
+        </dd>
+    </dl>
+    
+    <h4>Noteworthy:</h4>
+    <ul>
+        <li>For submission instructions and due dates, refer to SLATE dropbox.</li>
+        <li>Marks will be deducted for improper submission.</li>
+        <li>This is a summative evaluation instrument&mdash;individual effort. Ask questions and discuss the problem only, NOT THE SOLUTION.</li>
+    </ul>
+	<footer>
+		<hr>
+		<p id="back-top" style="text-align:right;padding-right:12px;"> <a href="#top"> <em>Back to top</em> </a> </p>
+	</footer>
+</section>    
+</body>
+</html>
