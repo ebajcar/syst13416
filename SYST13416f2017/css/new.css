@@ -3,11 +3,11 @@ body {
 	font-size: 12px;
 	color: #464646;
 	text-decoration: none;
-	background-color: #00b2ce;
+	/* background-color: #00b2ce; */
 	/* background : url(../images/Sheridan-Pattern-02-lightblue.jpg); */
 	margin:0;
 	padding:0;
-	width:739px;
+	width:70%;
 	margin:5px auto;
 	border-radius: 19px;
 }
@@ -17,12 +17,12 @@ body {
 	background-color: #FFFFFF;
 }
 article {
-	width: 700px;
+	width: 100%;
 	display:block;
 	float:left;
 	line-height:18px;
-/*	height:500px;
-	overflow:auto; */
+	min-height:500px;
+	overflow:auto; 
 }
 aside {
 	position: fixed;
@@ -33,15 +33,15 @@ aside {
 	float:right;
 	border-left:1px solid #C8C8C8;
 	text-align:right;
-	padding-top:10px;
 	padding: 10px;
 	background-color: white;
 	border-radius: 19px 0 0 19px;
-	z-index: -5;
+	z-index: 5;
 }
 .clear {
 	clear:both;
 }
+/*
 footer {
 	clear:both;
 	font-size: 12px;
@@ -49,14 +49,15 @@ footer {
 	text-align:center;
 	padding:12px;
 	line-height:18px;
-font-family: 'Carme', sans-serif;
+    font-family: 'Carme', sans-serif;
 	border-bottom-left-radius:19px;
 	border-bottom-right-radius:19px;
 	background: -webkit-linear-gradient(white, lightgrey); /* For Safari */
-	background: -o-linear-gradient(white, lightgrey); /* For Opera 11.1 to 12.0 */
-	background: -moz-linear-gradient(white, lightgrey); /* For Firefox 3.6 to 15 */
-	background: linear-gradient(white, lightgrey); /* Standard syntax (must be last) */	
-}
+/*	background: -o-linear-gradient(white, lightgrey); /* For Opera 11.1 to 12.0 */
+/*	background: -moz-linear-gradient(white, lightgrey); /* For Firefox 3.6 to 15 */
+/*	background: linear-gradient(white, lightgrey); /* Standard syntax (must be last) */	
+/*}
+*/
 
 aside li, span.bolded {
 	color:#164365;
@@ -71,7 +72,7 @@ a {
 	font-size: 11px;
 }
 #logo {
-	width:739px;
+	width:100%;
 	height:97px;
 	background-color: #FFFFFF;
 	background-image: url(../images/photoMain.jpg);
@@ -91,7 +92,7 @@ a {
 	padding:3px 0 3px 0;
 }
 
-h1 {
+h5 {
 	margin : 10px 0 10px;
 	padding : 0;
 	font-family: Allan, helvetica, arial, sans-serif;
@@ -138,7 +139,7 @@ h4 {
 	text-align: center;
 	background: linear-gradient(#eeeeee, white);
 }
-h5 {
+h1 {
 	margin: 0;
 	padding: 30px 18px 0 0 ;
 	font-family: 'Carme', sans-serif;
