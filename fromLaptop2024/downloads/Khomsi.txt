@@ -1,0 +1,51 @@
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+0
+0
+1
+1
+1
+0
+1
+1
+1
+1
+1
+1
+1
+1
+1  21
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+0
+1
+1
+1 13x2 = 26
+1  used ul/li, nav before h1, no indentation, 3/6
+0.5 all/nothing 0
+1 correct                4
+4/9 identify errors     5
+1/10 match            1
+1/4 all/nothing       0
+1/4                  1
+4/12             1
+6/9                2
+0
+0
+21 + 26 + 21 = 68

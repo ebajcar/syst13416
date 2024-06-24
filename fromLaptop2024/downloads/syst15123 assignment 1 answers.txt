@@ -1,0 +1,12 @@
+
+1 mkdir ~/Unix
+2 mkdir ~/Unix/{conf,bin,data,docs}
+3 man sed > ~/Unix/sed-info
+4 man join > ~/Unix/join-info
+5 mv ~/Unix/sed-info ~/Unix/join-info ~/Unix/docs
+6 cd ~
+7 mv ~/Unix/docs/sed-info ~/Unix/bin/sed-info
+8 cd ~/Unix/data
+9A cp ../bin/sed-info ../docs/join-info ../conf
+9B cp ~/Unix/{bin/sed-info,docs/join-info} ~/Unix/conf  
+10 cd ~; rm -r ~/Unix

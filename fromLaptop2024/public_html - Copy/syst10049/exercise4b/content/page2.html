@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Page 2</title>
+	<meta charset="utf-8">
+<!--
+Author:       Ellen Bajcar
+Program:      page2.html
+Date:         Sep. 26, 2022
+Updated:      [date last updated] 
+Version:      1.0 
+Purpose:      class demo
+Description:  exploring ordered and nested lists
+-->
+  </head>
+  <body>
+    <header><h1>Main heading</h1></header>
+	<hr>
+	<nav>
+	  <a href="https://www.w3schools.com" target="_blank">Visit W3Schools.com!</a>
+	  <a href="../indexa.html">Home</a>
+	  <a href="page1.html">Page 1</a>
+	  <a href="page2.html">Page 2</a>
+	  <a href="page3.html">Page 3</a>
+	  <a href="page4.html">Page 4</a>	
+	</nav>
+	<main>
+	<!-- https://www.w3schools.com/tags/tag_ul.asp -->
+<ul>
+  <li>Coffee</li>
+  <li>Tea</li>
+  <li>Milk</li>
+</ul>
+<!-- https://www.w3schools.com/tags/tag_ol.asp 
+reversed	reversed	Specifies that the list order should be reversed (9,8,7...)
+start	number	Specifies the start value of an ordered list 
+type	1 A a I i	Specifies the kind of marker to use in the list
+-->
+<ol>
+  <li>Coffee</li>
+  <li>Tea</li>
+  <li>Milk</li>
+</ol>
+
+<ol start="50" reversed="reversed">
+  <li>Coffee</li>
+  <li>Tea</li>
+  <li>Milk</li>
+</ol>
+<ol start="321" reversed>
+  <li>Coffee</li>
+  <li>Tea</li>
+  <li>Milk</li>
+</ol>
+<ol start="4" type="d">
+  <li>Coffee</li>
+  <li>Tea</li>
+  <li>Milk</li>
+</ol>
+<!-- nested lists -->
+<ol start="4" type="a">
+  <li>Types of coffee
+    <ol>
+	  <li>Coffee</li>
+	  <li>Coffee2</li>
+	  <li>Coffee3</li>
+	</ol>
+  </li>
+  <li>Tea</li>
+  <li>Milk</li>
+</ol>
+	</main>
+	<hr>
+	<footer>Web Development @ Sheridan College</footer>
+  </body>
+</html>

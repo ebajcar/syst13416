@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>minimal HTML5 document</title>
+		<meta charset="utf-8">
+	</head>
+	<body>
+		<header>
+			<h1>Project Title</h1>
+		</header>
+		<nav>
+		</nav>
+		<main>
+		<section>
+			<h3>Enter a number:</h3>
+			<!-- add id to target (select) the element -->
+			<input id="uval" type="number">
+      <output></output>
+    </section>		
+		</main>
+		<aside>
+		</aside>
+		<footer>
+		</footer>
+<script>
+// create a function that takes one argument
+// the argument represents the value to which we want to add 1
+// we can call this functions as many times as needed
+function plusOne(x) {
+	return x + 1;
+}
+// get value from the user and display on screen
+// use the DOM method getElementById() to target the element
+const uval = document.getElementById("uval");
+let x = uval.value;
+document.write("plusOne(" + x + ") ", plusOne(x),"<br>" );
+document.write("Notice calculation took place when the page loaded, not when the event user choosing value.");
+</script>
+</body>
+</html>

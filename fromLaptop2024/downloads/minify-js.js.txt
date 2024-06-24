@@ -1,0 +1,20 @@
+function init() {
+    // takes 2 arguments to add any two numbers
+    // if only one argument passed, it will increment it by 1
+    function sum( num1, num2=1 ) {
+        return num1 + num2;
+    }
+    // get value from the user WHEN 
+    // the EVENT onchance occurs on the object identified as uval 
+    uval.onchange = function() {
+        // using the property .valueAsNumber instead of .value 
+        let x = uval.valueAsNumber;
+        // target output element and add as iys content
+        // available properties innerText, innerHTML, textContent
+        out.innerHTML = "" + x + " + 1  = " + sum(x) + ""; 
+    }
+}
+// Javascript processing is done as soon as the Document Object Model (DOM) 
+//is ready to be access
+document.addEventListener( "DOMContentLoaded", init )
+</script>

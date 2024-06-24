@@ -1,0 +1,10 @@
+{
+	"nodes":[
+		{"id":"97e5bf76e3cbeaa4","x":-125,"y":-280,"width":250,"height":60,"color":"2","type":"text","text":"oh this is a canvas"},
+		{"id":"cb056dc98242bf9e","x":-125,"y":60,"width":250,"height":60,"type":"text","text":"what is a card\n??"},
+		{"id":"03f4e02ed73bd60b","x":-125,"y":-42,"width":250,"height":60,"type":"text","text":"another card"}
+	],
+	"edges":[
+		{"id":"2fb2b0a45e040d6b","fromNode":"03f4e02ed73bd60b","fromSide":"top","toNode":"97e5bf76e3cbeaa4","toSide":"bottom"}
+	]
+}

@@ -1,0 +1,78 @@
+﻿SYST15123 Midterm HandsOn Exam
+
+Student Name: _________________________ Number: ______________________ 
+
+Instructions: 
+* Add your answers (commands used to answer a given question) to this document, where indicated, and then upload your completed work to the provided Slate Midterm Hands-On Exam drop box. 
+
+* Do not change the question numbers and do not remove any text from this document.
+
+* DO NOT REMOVE ANY CONTENT FROM THIS DOCUMENT AND DO NOT CHANGE THE QUESTION NUMBERS.
+
+* The exam has a cut off time set. Work that is not submitted by the dropbox DUE DATE AND TIME will receive the grade of zero.
+
+* All commands must be syntactically and functionally correct and complete.
+
+There are 10 questions. Total is 10 marks.
+
+The exam is based on the file system as shown in the attachment to the SLATE dropbox. In this picture, HomeDir is Your Account Home folder. 
+
+NOTE: !!!! all paths MUST be absolute paths !!!! a 50% penalty will be applied to each question where a relative path was used.
+==============================================================================================================================
+
+Prerequisite (10% penalty if not completed). State an absolute path to your account home directory (do not use the ~ character): 
+Answer:
+
+------------------------------------------------------------------------------------------------------------------------------
+Q01 (1 mark) Create the directory structure as shown in the Pic1 and add files as indicated in the Pic1 (all those files are plain text files).
+Answer:
+
+
+Q02 (1 mark) Create folder called completed inside of the work folder and move the letter_of_engagement.txt to the completed folder.
+Answer:
+
+
+Q03 (1 mark) Using a single command with wild cards, move letter01.txt and letter02.txt to deleted folder.
+Answer:
+
+
+Q04 (1 mark) Using a single command with wild cards, remove the content of the deleted folder (do not remove the folder itself).
+Answer:
+
+
+Q05 (1 mark) Rename the to_do_list.txt file into completed_list.txt (make sure the file stays in the work folder).
+Answer:
+
+
+Q06 (1 mark) Move the work folder and its content to the personal folder.
+Answer:
+
+
+Q07 (1 mark) Copy the work folder and its content to the deleted folder (please remember that you have moved the work folder into the personal folder in question 6).
+Answer:
+
+
+Q08 (1 mark) Set the permissions of all files in the misc folder using a single command to: 
+	user   - read, write, execute, 
+	group  - read, execute
+	others - execute
+Answer (Using Letters):
+
+
+Answer (Using Octal values):
+
+
+Q09 (1 mark) Set the default permissions for newly created files to be: 
+	user: read, write
+	group: read
+	others: none 
+Answer:
+
+
+Q10 (1 mark) Create a command that would show the content of the /root directory including hidden files. Redirect the errors to the null device and redirect the output to a file named my.txt. The my.txt file must be stored in the account home directory.
+Answer:
+
+
+------------------------------------------------- END OF EXAM -----------------------------------------------------	
+
+
